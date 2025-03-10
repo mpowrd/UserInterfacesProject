@@ -4,13 +4,13 @@ Grupo P / EURODLE
 
 Integrantes y roles:
 
-Nombre:                              Correo:                        Rol:
-
-Eduardo García Rivas                 eduardogarr@uma.es             CTO
-Francisco Eloy González Castillo     eloygonzalez@uma.es            CEO
-Francisco Javier Jordá Garay         francisco.jorda@uma.es         CIO
-María Paulina Ordóñez Walkowiak      mpow@uma.es                    COO
-Javier Toledo Delgado                javier.toledo.delgado@uma.es   CXO
+| 🏆 Nombre     | 🎯 Correo | 🔍 Rol |
+|----------------------|--------------|-----------|
+| Eduardo García Rivas     | eduardogarr@uma.es | CTO |
+| Francisco Eloy González Castillo  | eloygonzalez@uma.es. | CEO |
+| Francisco Javier Jordá Garay      | francisco.jorda@uma.es | CIO |
+| María Paulina Ordóñez Walkowiak      | mpow@uma.es  | COO |
+| Javier Toledo Delgado       | javier.toledo.delgado@uma.es | CXO |
 
 Descripción del proyecto:
 
@@ -22,5 +22,7 @@ dando pistas sobre el cantante, la letra de la canción y otros detalles de esa 
 
 Hemos encontrado las siguientes bases de datos en las que nos apoyaremos para recopilar la información de las canciones:
 
-https://www.kaggle.com/datasets/diamondsnake/eurovision-song-contest-data
+[Eurovision Song Contest Data from Kaggle](https://www.kaggle.com/datasets/diamondsnake/eurovision-song-contest-data)
+
+
 [Spijkervet/eurovision-dataset: The Eurovision Song Contest Dataset is a freely-available dataset containing audio features, metadata, contest ranking and voting data of 1735 songs that have competed in the Eurovision Song Contests between 1956 and 2023.](https://github.com/Spijkervet/eurovision-dataset?tab=readme-ov-file)
