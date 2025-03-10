@@ -1,8 +1,10 @@
 # UserInterfacesProject
+## Título: EURODLE
 
-Grupo P / EURODLE
 
-Integrantes y roles:
+Grupo P
+
+### Integrantes y roles:
 
 | 🏆 Nombre     | 🎯 Correo | 🔍 Rol |
 |----------------------|--------------|-----------|
@@ -12,15 +14,12 @@ Integrantes y roles:
 | María Paulina Ordóñez Walkowiak      | mpow@uma.es  | COO |
 | Javier Toledo Delgado       | javier.toledo.delgado@uma.es | CXO |
 
-Descripción del proyecto:
+### Descripción del proyecto:
 
-Nuestro juego se inspira en otros minijuegos derivados de wordle como pueden ser GAMEDLE o POKÉDLE.
-La idea es adivinar algo con ayuda de pistas, que van siendo de menor a mayor ayuda y se van revelando a
-medida que se falla en adivinarlo, cuando te quedes sin pistas perderás el juego.
-En nuestro caso se adivinará una canción que haya ido a la final de Eurovisión en los últimos 10 años,
-dando pistas sobre el cantante, la letra de la canción y otros detalles de esa pieza musical en el concurso.
+Nuestro juego se inspira en otros populares minijuegos derivados de Wordle, como Gamedle o Pokédle. Aprovechando la proximidad de la próxima edición de Eurovisión Song Context, hemos decidido basar el juego en este evento. El objetivo es adivinar una canción de Eurovisión con la ayuda de pistas, que se van volviendo progresivamente más claras a medida que el jugador va fallando. Al llegar al final de las pistas sin adivinar correctamente, el jugador pierde el juego.
 
-Hemos encontrado las siguientes bases de datos en las que nos apoyaremos para recopilar la información de las canciones:
+Los datos de las canciones de Eurovisión Song Context serán extraídas de las siguientes bases de datos, eligiendo, únicamente, las canciones de los últimos 10 años:
+
 
 [Eurovision Song Contest Data from Kaggle](https://www.kaggle.com/datasets/diamondsnake/eurovision-song-contest-data)
 
