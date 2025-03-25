@@ -58,13 +58,78 @@ const GuessSongGame = () => {
                     setcurrentGuessYear('');
                 }
 
+                if(newIncorrectGuesses >= 7){
+                    setFeedbackMessage(`Has perdido, no te quedan más intentos :( . La canción era ${songToGuess.nombre}`);
+                    setGameStatus("lost");    
 
+                } else{
+                    const nextClue = newIncorrectGuesses; // La pista N se revela en el fallo N
+
+                    setRevealedClues(prevClues => [...prevClues, nextClue]);
+
+                    setFeedbackMessage(`Has fallado, sigue intentándolo. Te quedan ${7 - newIncorrectGuesses} intentos`);
+
+                }
             }
         }
 
     }
 
-    return (<div></div>);
+    return (
+        
+    <div className="game-container">
+
+      <Header /> {/* Puedes pasarle props si necesita interactividad */}
+
+      <FeedbackDisplay
+
+         guesses={incorrectGuesses}
+
+         message={feedbackMessage}
+
+         maxGuesses={7}
+
+      />
+
+      <ClueDisplay
+
+         songData={songToGuess}
+
+         revealedClues={revealedClues}
+
+         gameStatus={gameStatus}
+
+      />
+
+       {/* Mostrar input solo si se está jugando */}
+
+      {gameStatus === 'playing' && (
+
+         <GuessInput
+
+           value={currentGuess}
+
+           onChange={handleGuessChange}
+
+           onSubmit={handleGuessSubmit}
+
+         />
+
+       )}
+
+       {/* O mostrar un botón para jugar de nuevo si won/lost */}
+
+       {(gameStatus === 'won' || gameStatus === 'lost') && (
+
+            // Aquí iría un botón para reiniciar el juego (que llamaría a la lógica de inicialización de nuevo)
+
+            <button onClick={() => window.location.reload()}>Jugar de nuevo</button> // Recarga simple por ahora
+
+       )}
+
+    </div>
+
+    );
 }
 
 export default GuessSongGame;
