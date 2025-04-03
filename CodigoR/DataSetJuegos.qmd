@@ -6,6 +6,7 @@ editor: visual
 
 ```{r}
 library(stringr)
+library(tidyverse)
 ```
 
 
@@ -45,15 +46,52 @@ Verificamos de nuevo los valores inválidos.
 
 ```{r}
 
-indices <- lapply(datos,function(x) which(str_detect(x,"�")));indices
+indices <- lapply(,function(x) which(str_detect(x,"�")));indices
+
+```
+
+### Tratamiento de caracteres
+Observamos los caracteres.
+
+```{r}
+unique(datos$final_draw_position)
+unique(datos$favourite_10)
+```
+```{r}
+datos$final_draw_position <- ifelse(datos$final_draw_position == "", "-", datos$final_draw_position)
 
 ```
 
 
+### Eliminar Columnas innecesarias
 
-##
+```{r}
+datos_final <- datos |>
+  select(year, semi_final, semi_draw_position, final_draw_position, country, artist_name, song_name, language, style, gender, main_singers, final_televote_points, final_jury_points, final_televote_votes, final_jury_votes, final_place)
+```
 
-Para el primer juego debemos de coger las columnas de los puestos en función del año.
+
+## Escirbimos en un csv 
+
+```{r}
+write.csv(datos_final,file = "canciones.csv")
+```
+
+
+## Transformación a JSON
+
+```{r}
+library(jsonlite)
+```
+
+```{r}
+json_data <- toJSON(datos_final,pretty = TRUE)
+
+write(json_data, file = "canciones.json")
+
+```
+
+
 
 
 
