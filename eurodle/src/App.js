@@ -1,50 +1,29 @@
 import './App.css';
-import InteractiveMap    from "./GuessSingerCountry/GuessSingerCountry";
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function App() {
+  return (
+    <div>
+      <div id="Titulo">
+        <h1>Eurodle</h1>
+        <button className="opciones">Opciones</button>
+      </div>
 
-    return (
-        <div>
+      <div id="ModosJuego">
+        <Link to="/GuessSongGame">
+          <button>Adivina la Canción</button>
+        </Link>
 
-            <Routes>
-                <Route path="/" element={<App/>}></Route>
-                <Route path="/AdivinaPais" element={<InteractiveMap/>}></Route>
+        <button disabled>Ordenas las canciones</button>
 
-            </Routes>
+        <Link to="/AdivinaPais">
+          <button>País del cantante</button>
+        </Link>
 
-            <div id="Titulo">
-                <h1>Eurodle</h1>
-                <button className="opciones">Opciones</button>
-            </div>
-            <div id="ModosJuego">
-
-                <a href="">
-                    <button>Adivina la Canción</button>
-                </a>
-
-                <a href="">
-                    <button>Ordenas las canciones</button>
-                  </a>
-
-                <a href="">
-                    <button>Pais del cantante</button>
-                </a>
-
-                <a href="">
-                    <button>Pais del cantante</button>
-                </a>
-
-                <a href="">
-                    <button>Más Vistas o Menos Vistas</button>
-                </a>
-
-
-            </div>
-        </div>
-      );
+        <button disabled>Más Vistas o Menos Vistas</button>
+      </div>
+    </div>
+  );
 }
 
 export default App;
-
-

@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 import Header from './Header';
-import GuessInput from './GuessInput';
+import GuessForm from './GuessForm';
 import FeedbackDisplay from './FeedbackDisplay';
 import ClueDisplay from './ClueDisplay';
 
@@ -15,7 +15,7 @@ const GuessSongGame = () => {
 
     const [incorrectGuesses, setIncorrectGuesses] = useState(0);
     const [revealedClues, setRevealedClues] = useState([]);
-    const [gameStatus, setGameStatus] = useState("playing")
+    const [gameStatus, setGameStatus] = useState("playing");
     const [feedbackMessage, setFeedbackMessage] = useState('');
 
     function searchRandomSong(){
@@ -28,7 +28,7 @@ const GuessSongGame = () => {
         let song;
         song = searchRandomSong();
         setSongToGuess(song);
-    } );
+    }, [] );
 
     const handleGuessSubmit = (event) => {
         event.preventDefault();
@@ -54,8 +54,8 @@ const GuessSongGame = () => {
                 if(selectedGuessMethod === 0){
                     setcurrentGuessSong(''); // Limpiar input;
                 } else{
-                    setcurrentGuessCountry('');
-                    setcurrentGuessYear('');
+                    setCurrentGuessCountry('');
+                    setCurrentGuessYear('');
                 }
 
                 if(newIncorrectGuesses >= 7){
@@ -73,10 +73,27 @@ const GuessSongGame = () => {
             }
         }
 
-    }
+    };
 
-    return (
+    const handleGuessChangeYear = (event) => {
+
+        setCurrentGuessYear(event.target.value);
+    
+    };
+
+    const handleGuessChangeCountry = (event) => {
+
+        setCurrentGuessCountry(event.target.value);
+    
+    };
+
+    const handleGuessChangeSong = (event) => {
+
+        setcurrentGuessSong(event.target.value);
+    
+    };
         
+    return(
     <div className="game-container">
 
       <Header /> {/* Puedes pasarle props si necesita interactividad */}
@@ -105,11 +122,17 @@ const GuessSongGame = () => {
 
       {gameStatus === 'playing' && (
 
-         <GuessInput
+         <GuessForm
 
-           value={currentGuess}
+           value_country={currentGuessCountry}
+           value_year={currentGuessYear}
+           value_song={currentGuessSong}
+           value_method={selectedGuessMethod}
 
-           onChange={handleGuessChange}
+           onChange_country={handleGuessChangeCountry}
+           onChange_year={handleGuessChangeYear}
+           onChange_song={handleGuessChangeSong}
+           onChange_method={setSelectedGuessMethod}
 
            onSubmit={handleGuessSubmit}
 

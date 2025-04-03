@@ -1,10 +1,25 @@
+import React from 'react';
 
+// import SettingsIcon from './settings.svg'; // Importa tu icono SVG o usa una librería
 
-const Header = () => {
+function Header({ onSettingsClick }) {
 
+  return (
 
+    <header className="app-header">
 
-    return (<div></div>);
+      <h1>Eurodle</h1>
+
+      <button onClick={onSettingsClick} aria-label="Ajustes" className="settings-button">
+
+        ⚙️ {/* O usa tu componente de icono */}
+
+      </button>
+
+    </header>
+
+  );
+
 }
 
 export default Header;
