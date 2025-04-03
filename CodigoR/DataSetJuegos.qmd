@@ -1,0 +1,59 @@
+---
+title: "IU_Proyect"
+format: pdf
+editor: visual
+---
+
+```{r}
+library(stringr)
+```
+
+
+```{r}
+song_data <- read.csv("./Kaggle Dataset/song_data.csv", comment.char="#")
+str(song_data)
+```
+
+
+## Limpieza Data Set
+
+Para la primera parte procedemos a la limpieza de filas y columnas del data set que no vamos a requerir.
+
+```{r}
+
+indices <- lapply(song_data,function(x) which(str_detect(x,"�")));indices
+
+```
+
+Como podemos observar en el data set encontramos caracteres inválidos que debemos de tratar para procesar correctamente los datos en nuestra aplicación.
+
+Para ello verificamos la codificación del archivo.
+
+```{r}
+guess_encoding <- readr::guess_encoding("./Kaggle Dataset/song_data.csv")
+print(guess_encoding)
+
+```
+
+
+```{r}
+datos <- read.csv("./Kaggle Dataset/song_data.csv", fileEncoding = "windows-1252", stringsAsFactors = FALSE)
+
+```
+
+Verificamos de nuevo los valores inválidos.
+
+```{r}
+
+indices <- lapply(datos,function(x) which(str_detect(x,"�")));indices
+
+```
+
+
+
+##
+
+Para el primer juego debemos de coger las columnas de los puestos en función del año.
+
+
+
