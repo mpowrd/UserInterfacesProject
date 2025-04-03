@@ -1,25 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import InteractiveMap    from "./GuessSingerCountry/GuessSingerCountry";
+import { Routes, Route, Link } from 'react-router-dom';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div>
+
+            <Routes>
+                <Route path="/" element={<App/>}></Route>
+                <Route path="/AdivinaPais" element={<InteractiveMap/>}></Route>
+
+            </Routes>
+
+            <div id="Titulo">
+                <h1>Eurodle</h1>
+                <button className="opciones">Opciones</button>
+            </div>
+            <div id="ModosJuego">
+
+                <a href="">
+                    <button>Adivina la Canción</button>
+                </a>
+
+                <a href="">
+                    <button>Ordenas las canciones</button>
+                  </a>
+
+                <a href="">
+                    <button>Pais del cantante</button>
+                </a>
+
+                <a href="">
+                    <button>Pais del cantante</button>
+                </a>
+
+                <a href="">
+                    <button>Más Vistas o Menos Vistas</button>
+                </a>
+
+
+            </div>
+        </div>
+      );
 }
 
 export default App;
+
+
