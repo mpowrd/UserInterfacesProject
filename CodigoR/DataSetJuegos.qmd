@@ -93,5 +93,11 @@ write(json_data, file = "canciones.json")
 
 
 
+```{r}
+mejorcanciondelahistoria <- datos_final[which(datos_final$song_name == "Unicorn")];mejorcanciondelahistoria
+```
+
+
+
 
 
