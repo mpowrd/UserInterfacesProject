@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import EuropeMap from "../assets/europe.svg"; // Asegúrate de tener el SVG en la ruta correcta
+import React, {useRef, useState} from "react";
+import MapPaths from "../assets/MapPaths";
 
 const InteractiveMap = () => {
     // Estados para almacenar el país seleccionado
@@ -15,57 +15,109 @@ const InteractiveMap = () => {
     const handleMouseLeave = (event) => {
         const country = event.target;
         setHoveredCountry(null);
-        country.setAttribute("stroke", ""); // Restaurar borde original
+        country.setAttribute("stroke", "black"); // Restaurar borde original
         country.setAttribute("stroke-width", "1");
     };
 
-    /*const handleCountryClick = (event) => {
-      const countryName = event.target.getAttribute("name");
-      setSelectedCountry(countryName);
+    const [resultadoMensaje, setResultadoMensaje] = useState("");
 
-      // Cambia el color del país seleccionado
-      document.querySelectorAll("path").forEach((path) => path.setAttribute("fill", "#ccc")); // Color base
-      event.target.setAttribute("fill", "#ffcc00"); // Color seleccionado
-    };*/
+    function getCentroid(path) {
+        const bbox = path.getBBox();
+        return {
+            x: bbox.x + bbox.width / 2,
+            y: bbox.y + bbox.height / 2,
+        };
+    }
 
+    function getDirectionWithArrow(from, to) {
+        const dx = to.x - from.x;
+        const dy = to.y - from.y;
+        const angle = (Math.atan2(dy, dx) * 180) / Math.PI;
+        const adjusted = (angle + 360) % 360;
 
+        if (adjusted >= 337.5 || adjusted < 22.5) return {dir: "Este", arrow: "➡️"};
+        if (adjusted < 67.5) return {dir: "Sureste", arrow: "↘️"};
+        if (adjusted < 112.5) return {dir: "Sur", arrow: "⬇️"};
+        if (adjusted < 157.5) return {dir: "Suroeste", arrow: "↙️"};
+        if (adjusted < 202.5) return {dir: "Oeste", arrow: "⬅️"};
+        if (adjusted < 247.5) return {dir: "Noroeste", arrow: "↖️"};
+        if (adjusted < 292.5) return {dir: "Norte", arrow: "⬆️"};
+        if (adjusted < 337.5) return {dir: "Noreste", arrow: "↗️"};
+    }
+
+    function compararPaises(idDesde, paisAdivinar) {
+        const desde = document.getElementById(idDesde);
+        const hasta = document.getElementById(paisAdivinar);
+
+        if (!desde) {
+            console.warn("Países no encontrados");
+            return;
+        }
+
+        const centroDesde = getCentroid(desde);
+        const centroHasta = getCentroid(hasta);
+        const {dir, arrow} = getDirectionWithArrow(centroDesde, centroHasta);
+
+        const mensaje = `Pista: ${arrow}`;
+
+        setResultadoMensaje(mensaje);
+    }
+
+    const paisAdivinar= {
+        id:"CH",
+        name:"Switzerland",
+    }
+
+    const [selectedCountry,setSelectedCountry] = useState(null);
+
+    const handleCountryClick = (event) => {
+        const countrySelectedID = event.target.getAttribute("id");
+        const countrySelectedName = document.getElementById(countrySelectedID).getAttribute("name");
+        setSelectedCountry(countrySelectedID);
+
+        paisAdivinado(countrySelectedID);
+    };
+
+    function paisAdivinado(countrySelectedID) {
+        if (countrySelectedID === paisAdivinar.id) {
+            setResultadoMensaje("¡Correcto! Has adivinado el país.");
+        } else {
+            compararPaises(countrySelectedID, paisAdivinar.id);
+        }
+    }
 
     return (
         <div>
-            <h2>Pasa el ratón sobre un país</h2>
+            <h2>ADIVINA DONDE ESTA EL PAIS: {paisAdivinar.name}</h2>
 
+            <p>País seleccionado: {hoveredCountry}</p>
+            {paisAdivinar && <p>Has hecho click en: {selectedCountry}</p>}
+
+            <button onClick={() => paisAdivinado(selectedCountry)}>
+                Comparar paises
+            </button>
+
+            {/* Resultado de la dirección */}
+            <div
+                style={{ marginTop: "10px", fontSize: "18px", fontWeight: "bold" }}
+            >
+                {resultadoMensaje}
+            </div>
 
             {/* SVG como JSX */}
             <svg
-                viewBox="0 0 800 600" // Ajusta según el tamaño del mapa
-                width="60%"
+                viewBox="-300 0 1500 1000" // Ajusta según el tamaño del mapa
+                width="100%"
 
                 xmlns="http://www.w3.org/2000/svg"
             >
-                {/* Francia - Ejemplo de un país con eventos */}
-                <path
-                    d="M521.2 524.1l-0.3 2.3 1 1.7 0.6 6.5-1.8 3.2 0.1 3-1.6 4.3-0.8 1.1-3.8-2-1.2-1.1 1-1.8-2.2-0.9 0.4-1.7-0.2-0.9-1.6-0.5 1-1.3 0-0.8-1.5-1-0.3-0.9 1.3-1.1-0.6-0.9 0.1-1.3 0.9-1.9 1.2-0.9 2.8-0.8 1.2-1.1 1.9 0.6 0.6-1.2-0.2-2.7 0.3-1.1 1.3 0.5 0.4 2.7z m-133.9-47.9l-0.4 1.4-1.9-2.4 1-0.5 1.3 1.5z m84.4-55.6l2.1 1.2 1.4 0 2-0.6 1.3 0.7 1.4 0.1 3.5 4.3 1.8-0.7 1.4 0.4 0.3 0.9 2.1 0.1 3-0.6 2 1.4 4.8 0.8 1.6 0.6 0.1 1.3-3.5 3.8-1.4 5.5-1 1.8-0.3 1.5 0.2 2.4-0.6 2 0 1.5 1.1 1.3-1.5 0.7-0.8 1.4-2.7 0.3-0.8-0.8-1.1 0-1.8 1.4 1.3 1.1-0.6 0.9-3.8 4-2.1 0.9-0.5 2.9-3 2.2-1.1 2.9 0.8 0.7-0.3 1.5-1.5 1 0 1 1.4 0.1 2.3-1.6-0.5-1.3 2.3-1.5 1.9-0.1 2.2 0.3 0.8 2.2-0.5 1.7 2.3 2.3 0.9 1.4-2.6 1.7 0.1 1.6 0.9 0.6 1.7 2.6 1.8 1.6-0.8 2.5-1.2 0.3-1.7 1.3-1.9-0.2-0.8 0.4 1.5 3.1 3.2 1.4 0.5 1.7-0.8 0.7-1.4 2.5 0.7 1.3 0.1 1.4 0.9 0.9 5.1 2.4 3.3-0.6 0.3 2-2.1 2.6 0.2 1.5-0.6 0.3-0.8 0.3-2.4 1.1-3.9 3.4-1.8 1-0.7 1.8-2 1.4-2.4 0.5-2.3 1-1.1-0.4-2.8 0-1.7-1.2-3.4-0.8-1.1-1.8-2.5-0.1-0.8-1.5-1.9 0.3-1.5 0.7-2-0.1-5.9-1.8-1.4-1.4-1.7 0.5-1.6 1.6-6.5 4.1-2.6 4.3-0.1 1.2 0.7 3.9 1.6 2.5-3.1-0.6-3.8 1.1-1.2 0.8-4.7-1.2-2.1 1.1-1.3-1.2-2.8-1.2 0-1.5-2.6-0.6-0.9 0.7-1.1-1.5-1.7-0.3-2.5-1-4-1.1-0.8 2.4-4.7 0-0.7-0.4-3.1 0.4-3.2-2.1-3.6 0.4-2.2-2.1-2.2-0.2-4.4-1.7-1.8 0.4 0.3-3.2-4.3-1.3-0.5-1.3 2-0.5 1.9-1.9 1.7-7.1 1.3-8.3 1-1.6 1.2-0.4-1-1.2-1.1 1.5 0.7-7.6 0.5-2.8 0.9-3 3.1 2.4 0.8 1 0.9 3.4 0.6 0.1-1.1-4.6-1.8-2.3-3.6-2.3-0.5-1.3 1.8-0.6-0.5-1.8-0.5-5.9-3-0.6-4.8-2.6-1.7-2.6-1.6-1.9-0.4-1.7 0.9-1.8-0.8-1.1-1.4-0.8 1.1-1.6-3-0.2-1.8-0.5-0.3-1.1 1.3-1.4-1.6-0.8-2.6 0.2-0.2-1.7-2.2 0.3-1.2-0.3-1.1-1.1-1.3 0.2-2.2-0.4-0.8-0.7-4.8-1.3-2-0.1-1.9 0.6-1.1-0.3-1.3-2.2-3.1-1.1 0.6-0.7 3.1-0.6 0.6-0.7-2.2-0.9-0.2-1.2 1.6 0.3 0.1-1.2-4 0.1-0.4-1.3 0.5-1.4 2.3-1.2 5.8-1.4 2.5 0.2 1.7-0.2 3-1.6 2.9-0.4 2.7 0.8 2.5 2.8 1.2 1 3.1-1.7 4.4 0.1 0.9 0.9 1.2-1.7 1 1 4.7-0.2-1.5-2.5-0.2-6-1.3-1.7-2.1-4.3 0.2-1.4 3.2 0.3 2.7-0.6 1.3 0.4 0.3 2.8 1.1 1.6 2.2 0 2.3 0.5 3 0.1 4.3 0.8 1.8-0.5 3.5-2-1.8-0.7-0.2-0.7 0.9-2.2 5.2-2.5 3.7-0.7 3.8-1.3 2-1.4 1.2-1.8 0.5-1.3 0.3-6.8 1-2.2 2.9-1.6 6.4-1.1 0.9-0.5 0.9 2.2 0 1.2 2.9 2.4 3.2-1 1.6 1.8 0.5 2 4.2 1.1 0.6 2 0.9-0.3 3.6 0.4 1.6 1.1-0.4 1.6 0.7 0.7-0.7 1.4 0.5 0.6 2.3 0.3 2.2-0.3 1.3-0.6 0.5-1.4 1.9-0.6-0.8 2.7 0.6 0.6 0.4 2 1.7 0.1 3.3 1.5 2.8 2.6 3.4-0.4z"
-                    id="FR"
-                    name="France"
-                    fill="lightgray"
-                    stroke="black"
-                    strokeWidth="1"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
+                <MapPaths
+                    handleMouseEnter={handleMouseEnter}
+                    handleMouseLeave={handleMouseLeave}
+                    handleCountryClick={handleCountryClick}
                 />
-                <path
-                    d="M420.4 584.7l-0.4 1-2-0.4 0-1.5 1.2-1.6 2.7-0.7 0.8 1.3-2.3 1.9z m21.7-13.6l1.2 0.5 1.3-0.5 1.4 0.4 0.2 1-2.2 3.5-0.6 1.4-2.1 1.3-4-1.7-0.3-1.6-1.4-0.7-1.7 1.3-1.4-1-0.3-1.2 5.3-3.7 1.5-0.9 3.2-0.9 0.5 1.2-0.6 1.6z m14.7-0.8l-0.3 0.2-3.9-1.9-1.6-0.4 0.1-1.4 2.6-0.2 2.1 0.7 1.2 1.8-0.2 1.2z m-77.4-55.5l0.5 1.3 4.3 1.3-0.3 3.2 1.8-0.4 4.4 1.7 2.2 0.2 2.2 2.1 3.6-0.4 3.2 2.1 3.1-0.4 0.7 0.4 4.7 0 0.8-2.4 4 1.1 2.5 1 1.7 0.3 1.1 1.5 0 2.1 0.7 0.4 2.8-1.1 2.8 1.2 1.3 1.2 2.1-1.1 4.7 1.2 1.2-0.8 3.8-1.1 3.1 0.6 1.2 2.2-1.8 0.5-0.2 1.4 1.2 1.3 0.1 2.1-3 2.8-8.7 4.7-2.9 2.7-6.6 1.5-4.5 1.5-2.2 0.5-4.1 3.8 1.1 0.3 1.2 1.2-0.4 0.6-2.5 1.1-0.9 0-2.9 4.6-2.6 3.3-1.5 1.5-1.5 2.1-3.2 5.6-0.1 1.6 1.6 5.5 2.2 2.7 2.4 1.1 0.6 1-0.8 1-2.4 1.7-4.3 2.3-1.8 1.9-0.3 1.8-1.3 0.8-0.5 2.5-1.8 4.4 1.3 1.2-1.3 0.8-6.5 0.3-4.1 2.8-2 2.4-1.9 4.5-2.2 2.6-1 0.5-1.5-1.2-1.9-0.1-1.9 0.3-1 1-1.5 0.5-1.5-0.5-4.6-0.2-2.3 0.8-1.9-0.5-3.2-0.3-7 0.6-4 3.4-3.4 0-3.1 1.2-2.1 3-0.5 1.6-1-0.3-0.3 1.2-2.1 0.8-2.4-1-2-1.5-1-0.1-1.6-2.2-1.2-3.1 0-1.1-1.5-0.6-0.3-1.4 0.2-1.6-1.2-2-5-3.7-3.7-0.3-3 0.5-1.1-6.4 0.8-2.2 3.5-4.3 2.1-0.6 0.7-2.4-1.7 0.2-3-4.3 0.9-4 3.2-3 0.6-2.4-0.5-0.8-1.7-0.4-1.6-3.2-0.3-1.9-1.4-1.2-1.1-1.9 1.1-0.3 4.3 0 1-0.5 1.7-3.5 0-1.9-1.4-1.3 0.2-1 2.7-2.1-0.4-1.1 0.4-3.8-0.4-3.5-0.8-2 2-1.6 1.1-1.6 1.6-1.4 2.1-1.1 2.5-2.5-0.3-1.1-1.9-0.9-1.9-0.2-0.1-3.1-0.7-1.1-5.2-0.1-1.5-0.5-0.8 1.4-2.5 0.9-1.4 0-2.2-0.8-2.9 0.1-3 1.1-0.9-1.3 1.3-1.9-1-1.8-4.1 1-1.9 0.9-1.2 1.1-1.3-0.1 0-2.5 2.6-2.6-1.6-0.2 1.2-1.9-1-1 0.1-2.6-2.3 0.9-0.5-1.2 1.4-2.2-1.4-0.2-2.3-2.5 0.8-3.1 2-1 1.9-1.5 2.6 0.3 1.7-0.3 3.6-1.6-0.4-1.5 0.4-0.7 3.2-1.7 2-0.2 1.9-0.9 1.3 0.5 1.1-0.1 1.3 0.6 1.7 1.6 2.5 0.6 2-0.5 3.6-0.1 1.7 0.2 3.2-0.3 1.8 0.1 2.9-0.8 2.3 1 4.4 0.4 2.6 0.8 7.2 1.4 2.7 0 3.7-0.8 1.6-0.5 1.5 0.3 2.1-0.6 2.3 1 4.7 1.3 2.1-1.3 3.4 0.6 3.3 1.3 1.8 0.1 2.6-0.3 2.5-1z"
-                    id="ES"
-                    name="Spain"
-                    fill="lightgray"
-                    stroke="black"
-                    strokeWidth="1"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                />
-                {/* Agrega más <path> para otros países con los mismos eventos */}
             </svg>
-            {hoveredCountry && <p>País: {hoveredCountry}</p>}
+
         </div>
     );
 };
