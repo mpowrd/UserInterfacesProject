@@ -64,8 +64,8 @@ const InteractiveMap = () => {
     }
 
     const paisAdivinar= {
-        id:"CH",
-        name:"Switzerland",
+        id:"DE",
+        name:"Alemania",
     }
 
     const [selectedCountry,setSelectedCountry] = useState(null);
@@ -93,10 +93,6 @@ const InteractiveMap = () => {
             <p>País seleccionado: {hoveredCountry}</p>
             {paisAdivinar && <p>Has hecho click en: {selectedCountry}</p>}
 
-            <button onClick={() => paisAdivinado(selectedCountry)}>
-                Comparar paises
-            </button>
-
             {/* Resultado de la dirección */}
             <div
                 style={{ marginTop: "10px", fontSize: "18px", fontWeight: "bold" }}
@@ -107,7 +103,7 @@ const InteractiveMap = () => {
             {/* SVG como JSX */}
             <svg
                 viewBox="-300 0 1500 1000" // Ajusta según el tamaño del mapa
-                width="100%"
+                width="80%"
 
                 xmlns="http://www.w3.org/2000/svg"
             >
