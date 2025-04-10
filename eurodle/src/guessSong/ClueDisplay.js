@@ -1,6 +1,4 @@
-// ClueDisplay.js
 import React from "react";
-import ClueItem from "./ClueItem";
 
 const ClueDisplay = ({ pistas }) => {
     return (
@@ -10,9 +8,27 @@ const ClueDisplay = ({ pistas }) => {
             {pistas.length === 0 ? (
                 <p>Sin pistas todavía.</p>
             ) : (
-                pistas.map((pista, index) => (
-                    <ClueItem key={index} intento={pista.intento} pistas={pista.pistas} />
-                ))
+                <table className="pistas-table">
+                    <thead>
+                    <tr>
+                        <th>Canción</th>
+                        <th>Cantante</th>
+                        <th>País</th>
+                        <th>Año</th>
+                        <th>Ranking</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {pistas.map((pista, index) => (
+                        <tr key={index}>
+                            <td><strong>{pista.intento.song_name}</strong></td>
+                            {pista.pistas.map((p, idx) => (
+                                <td key={idx}>{p.acertado}</td>
+                            ))}
+                        </tr>
+                    ))}
+                    </tbody>
+                </table>
             )}
         </div>
     );

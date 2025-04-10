@@ -1,4 +1,3 @@
-// ClueItem.js
 import React from "react";
 
 const ClueItem = ({ intento, pistas }) => {
@@ -9,7 +8,7 @@ const ClueItem = ({ intento, pistas }) => {
             <ul>
                 {pistas.map((pista, index) => (
                     <li key={index}>
-                        {pista.atributo}: {pista.acertado ? "✔️" : "❌"}
+                        {pista.atributo}: {pista.acertado}
                     </li>
                 ))}
             </ul>

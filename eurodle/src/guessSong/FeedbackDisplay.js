@@ -11,7 +11,7 @@ const FeedbackDisplay = ({ fallos }) => {
                 <ul>
                     {fallos.map((fallo, index) => (
                         <li key={index}>
-                            {fallo.song_name} — {fallo.artist_name} ({fallo.country}, {fallo.year})
+                            {fallo.song_name}
                         </li>
                     ))}
                 </ul>

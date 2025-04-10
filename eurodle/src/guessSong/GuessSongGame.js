@@ -5,6 +5,7 @@ import SettingsModal from "./SettingsModal";
 import GuessForm from "./GuessForm";
 import FeedbackDisplay from "./FeedbackDisplay";
 import ClueDisplay from "./ClueDisplay";
+import ExtraClues from "./ExtraClues";
 
 const GuessSongGame = () => {
     const [canciones, setCanciones] = useState([]);
@@ -65,11 +66,38 @@ const GuessSongGame = () => {
 
             // Generar pistas
             const pistasDelIntento = [
-                { atributo: "Cantante", acertado: guess.artist_name === cancionCorrecta.artist_name },
-                { atributo: "País", acertado: guess.country === cancionCorrecta.country },
-                { atributo: "Año", acertado: guess.year === cancionCorrecta.year },
-                { atributo: "Ranking", acertado: guess.final_draw_position === cancionCorrecta.final_draw_position }
+                {
+                    atributo: "Cantante",
+                    acertado: guess.artist_name === cancionCorrecta.artist_name ? "✅" : "❌"
+                },
+                {
+                    atributo: "País",
+                    acertado: guess.country === cancionCorrecta.country ? "✅" : "❌"
+                },
+                {
+                    atributo: "Año",
+                    acertado: (() => {
+                        const guessYear = parseInt(guess.year);
+                        const correctYear = parseInt(cancionCorrecta.year);
+                        if (guessYear === correctYear) return "✔️ Correcto";
+                        if (guessYear < correctYear) return "🔼 Busca más reciente";
+                        return "🔽 Busca más antiguo";
+                    })()
+                },
+                {
+                    atributo: "Ranking",
+                    acertado: (() => {
+                        const guessRank = parseInt(guess.final_place);
+                        const correctRank = parseInt(cancionCorrecta.final_place);
+
+                        if (guessRank === correctRank) return "✔️ Correcto";
+                        if (guessRank > correctRank) return "🔼 Ranking más alto";
+                        return "🔽 Ranking más bajo";
+                    })()
+                }
             ];
+
+
 
             setPistas((prevPistas) => [...prevPistas, { intento: guess, pistas: pistasDelIntento }]);
         }
@@ -106,7 +134,7 @@ const GuessSongGame = () => {
 
                 {/* Formulario de adivinanza */}
                 {!acertado && intentosRestantes > 0 && (
-                    <GuessForm canciones={canciones} onGuess={handleGuess} />
+                    <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
                 )}
                 {/* Botón para reiniciar cuando acabe el juego */}
                 {(acertado || intentosRestantes <= 0) && (
@@ -117,6 +145,10 @@ const GuessSongGame = () => {
 
                 {/* Visualización de pistas */}
                 <ClueDisplay pistas={pistas} />
+
+                {/* Pistas adicionales progresivas */}
+                <ExtraClues songData={cancionCorrecta} fallos={fallos} />
+
 
             </div>
         </div>

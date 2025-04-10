@@ -1,566 +1,359 @@
-"","year","semi_final","semi_draw_position","final_draw_position","country","artist_name","song_name","language","style","gender","main_singers","final_televote_points","final_jury_points","final_televote_votes","final_jury_votes","final_place"
-"1",2023,"1","1","20","Norway","Alessandra","Queen of Kings","English","Pop","Female",1,216,52,36,11,5
-"2",2023,"1","2","-","Malta","The Busker","Dance (Our Own Party)","English","Pop","Male",1,NA,NA,NA,NA,NA
-"3",2023,"1","3","5","Serbia","Luke Black","Samo mi se spava","Serbian, English","Pop","Male",1,16,14,4,6,24
-"4",2023,"1","4","-","Latvia","Sudden Lights","Aija","English","Rock","Male",1,NA,NA,NA,NA,NA
-"5",2023,"1","5","2","Portugal","Mimicat","Ai coração","Portuguese","Pop","Female",1,16,43,3,9,23
-"6",2023,"1","6","-","Ireland","Wild Youth","We Are One","English","Rock","Male",1,NA,NA,NA,NA,NA
-"7",2023,"1","7","25","Croatia","Let 3","Mama ŠC!","Croatian","Pop","Male",1,112,11,20,2,13
-"8",2023,"1","8","3","Switzerland","Remo Forrer","Watergun","English","Ballad","Male",1,31,61,10,15,20
-"9",2023,"1","9","23","Israel","Noa Kirel","Unicorn","English","Pop","Female",1,185,177,30,25,3
-"10",2023,"1","10","18","Moldova","Pasha Parfeni","Soarele si luna","Romanian","Traditional","Male",1,76,20,17,4,18
-"11",2023,"1","11","9","Sweden","Loreen","Tattoo","English","Pop","Female",1,243,340,36,36,1
-"12",2023,"1","12","-","Azerbaijan","TuralTuranX","Tell Me More","English","Pop","Male",2,NA,NA,NA,NA,NA
-"13",2023,"1","13","14","Czech Republic","Vesna","My Sister's Crown","English, Ukrainian, Czech, Bulgarian","Pop","Female",6,35,94,12,18,10
-"14",2023,"1","14","-","Netherlands","Mia Nicolai and Dion Cooper","Burning Daylight","English","Ballad","Mix",2,NA,NA,NA,NA,NA
-"15",2023,"1","15","13","Finland","Käärijä","Cha Cha Cha","Finnish","Pop","Male",1,376,150,37,22,2
-"16",2023,"2","1","-","Denmark","Reiley","Breaking My Heart","English","Pop","Male",1,NA,NA,NA,NA,NA
-"17",2023,"2","2","17","Armenia","Brunette","Future Lover","English, Armenian","Ballad","Female",1,53,69,10,15,14
-"18",2023,"2","3","-","Romania","Theodor Andrei","D.G.T. (Off and On)","Romanian, English","Pop","Male",1,NA,NA,NA,NA,NA
-"19",2023,"2","4","12","Estonia","Alika","Bridges","English","Ballad","Female",1,22,146,4,22,8
-"20",2023,"2","5","16","Belgium","Gustaph","Because of You","English","Pop","Male",1,55,127,13,22,7
-"21",2023,"2","6","7","Cyprus","Andrew Lambrou","Break a Broken Heart","English","Ballad","Male",1,58,68,11,17,12
-"22",2023,"2","7","-","Iceland","Diljá","Power","English","Pop","Female",1,NA,NA,NA,NA,NA
-"23",2023,"2","8","-","Greece","Victor Vernicos","What They Say","English","Pop","Male",1,NA,NA,NA,NA,NA
-"24",2023,"2","9","4","Poland","Blanka","Solo","English","Pop","Female",1,81,12,17,5,19
-"25",2023,"2","10","24","Slovenia","Joker Out","Carpe Diem","Slovene","Rock","Male",1,45,33,11,6,21
-"26",2023,"2","11","-","Georgia","Iru","Echo","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"27",2023,"2","12","-","San Marino","Piqued Jacks","Like an Animal","English","Rock","Male",1,NA,NA,NA,NA,NA
-"28",2023,"2","13","1","Austria","Teya and Salena","Who the Hell Is Edgar?","English","Pop","Female",2,16,104,4,18,15
-"29",2023,"2","14","10","Albania","Albina and Familja Kelmendi","Duje","Albanian","Traditional","Female",1,59,17,10,4,22
-"30",2023,"2","15","22","Lithuania","Monika Linkyte","Stay","English","Ballad","Female",1,46,81,8,15,11
-"31",2023,"2","16","15","Australia","Voyager","Promise","English","Rock","Male",1,21,130,6,23,9
-"32",2023,"-","-","6","France","La Zarra","Évidemment","French","Ballad","Female",1,50,54,17,10,16
-"33",2023,"-","-","8","Spain","Blanca Paloma","Eaea","Spanish","Traditional","Female",1,5,95,2,21,17
-"34",2023,"-","-","11","Italy","Marco Mengoni","Due vite","Italian","Ballad","Male",1,174,176,29,27,4
-"35",2023,"-","-","19","Ukraine","Tvorchi","Heart of Steel","English, Ukrainian","Pop","Male",1,189,54,28,10,6
-"36",2023,"-","-","21","Germany","Lord of the Lost","Blood & Glitter","English","Rock","Male",1,15,3,3,2,26
-"37",2023,"-","-","26","United Kingdom","Mae Muller","I Wrote a Song","English","Pop","Female",1,9,15,2,5,25
-"38",2022,"1","1","-","Albania","Ronela Hajati","Sekret","Albanian, English","Pop","Female",1,NA,NA,NA,NA,NA
-"39",2022,"1","2","-","Latvia","Citi Zeni","Eat Your Salad","English","Pop","Male",1,NA,NA,NA,NA,NA
-"40",2022,"1","3","14","Lithuania","Monika Liu","Sentimentai","Lithuanian","Ballad","Female",1,93,35,21,10,14
-"41",2022,"1","4","5","Switzerland","Marius Bear","Boys Do Cry","English","Ballad","Male",1,0,78,0,21,17
-"42",2022,"1","5","-","Slovenia","LPS","Disko","Slovene","Pop","Male",1,NA,NA,NA,NA,NA
-"43",2022,"1","6","12","Ukraine","Kalush Orchestra","Stefania","Ukrainian","Traditional","Male",1,439,192,39,26,1
-"44",2022,"1","7","-","Bulgaria","Intelligent Music Project","Intention","English","Rock","Male",1,NA,NA,NA,NA,NA
-"45",2022,"1","8","11","Netherlands","S10","De diepte","Dutch","Ballad","Female",1,42,129,12,25,11
-"46",2022,"1","9","19","Moldova","Zdob si Zdub and Advahov Brothers","Trenuletul","Romanian, English","Traditional","Male",1,239,14,35,4,7
-"47",2022,"1","10","3","Portugal","Maro","Saudade, saudade","English, Portuguese","Ballad","Female",6,36,171,9,29,9
-"48",2022,"1","11","-","Croatia","Mia Dimsic","Guilty Pleasure","English, Croatian","Ballad","Female",1,NA,NA,NA,NA,NA
-"49",2022,"1","12","-","Denmark","Reddi","The Show","English","Rock","Female",1,NA,NA,NA,NA,NA
-"50",2022,"1","13","-","Austria","Lumix feat. Pia Maria","Halo","English","Dance","Female",1,NA,NA,NA,NA,NA
-"51",2022,"1","14","18","Iceland","Systur","Meo aekkandi sol","Icelandic","Traditional","Female",3,10,10,2,4,23
-"52",2022,"1","15","17","Greece","Amanda Georgiadi Tenfjord","Die Together","English","Ballad","Female",1,57,158,9,26,8
-"53",2022,"1","16","7","Norway","Subwoolfer","Give That Wolf a Banana","English","Pop","Male",2,146,36,32,10,10
-"54",2022,"1","17","8","Armenia","Rosa Linn","Snap","English","Ballad","Female",1,21,40,4,10,20
-"55",2022,"2","1","4","Finland","The Rasmus","Jezebel","English","Rock","Male",1,26,12,8,3,21
-"56",2022,"2","2","-","Israel","Michael Ben David","I.M","English","Pop","Male",1,NA,NA,NA,NA,NA
-"57",2022,"2","3","24","Serbia","Konstrakta","In corpore sano","Serbian, Latin","Traditional","Female",1,225,87,34,15,5
-"58",2022,"2","4","15","Azerbaijan","Nadir Rustamli","Fade to Black","English","Ballad","Male",1,3,103,1,19,16
-"59",2022,"2","5","-","Georgia","Circus Mircus","Lock Me In","English","Rock","Male",1,NA,NA,NA,NA,NA
-"60",2022,"2","6","-","Malta","Emma Muscat","I Am What I Am","English","Pop","Female",1,NA,NA,NA,NA,NA
-"61",2022,"2","7","-","San Marino","Achille Lauro","Stripper","Italian, English","Rock","Male",1,NA,NA,NA,NA,NA
-"62",2022,"2","8","21","Australia","Sheldon Riley","Not the Same","English","Ballad","Male",1,2,123,1,23,15
-"63",2022,"2","9","-","Cyprus","Andromache","Ela","English, Greek","Pop","Female",1,NA,NA,NA,NA,NA
-"64",2022,"2","10","-","Ireland","Brooke","That's Rich","English","Pop","Female",1,NA,NA,NA,NA,NA
-"65",2022,"2","11","-","North Macedonia","Andrea","Circles","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"66",2022,"2","12","25","Estonia","Stefan","Hope","English","Pop","Male",1,98,43,19,8,13
-"67",2022,"2","13","2","Romania","WRS","Llamame","English, Spanish","Pop","Male",1,53,12,12,3,18
-"68",2022,"2","14","23","Poland","Ochman","River","English","Ballad","Male",1,105,46,22,9,12
-"69",2022,"2","15","-","Montenegro","Vladana","Breathe","English, Italian","Ballad","Female",1,NA,NA,NA,NA,NA
-"70",2022,"2","16","16","Belgium","Jeremie Makiese","Miss You","English","Pop","Male",1,5,59,2,13,19
-"71",2022,"2","17","20","Sweden","Cornelia Jakobs","Hold Me Closer","English","Ballad","Female",1,180,258,33,33,4
-"72",2022,"2","18","1","Czech Republic","We Are Domi","Lights Off","English","Dance","Female",1,5,33,1,11,22
-"73",2022,"-","-","9","Italy","Mahmood and Blanco","Brividi","Italian","Ballad","Male",2,110,158,23,26,6
-"74",2022,"-","-","10","Spain","Chanel","SloMo","Spanish, English","Pop","Female",1,228,231,38,34,3
-"75",2022,"-","-","13","Germany","Malik Harris","Rockstars","English","Ballad","Male",1,6,0,3,0,25
-"76",2022,"-","-","22","United Kingdom","Sam Ryder","Space Man","English","Pop","Male",1,183,283,34,35,2
-"77",2022,"-","-","6","France","Alvan and Ahez","Fulenn","Breton","Traditional","Mix",4,8,9,6,3,24
-"78",2021,"1","1","18","Lithuania","The Roop","Discoteque","English","Dance","Male",1,165,55,27,12,8
-"79",2021,"1","2","-","Slovenia","Ana Soklic","Amen","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"80",2021,"1","3","5","Russia","Manizha","Russian Woman","Russian, English","Traditional","Female",1,100,104,22,21,9
-"81",2021,"1","4","25","Sweden","Tusse","Voices","English","Pop","Male",1,63,46,18,10,14
-"82",2021,"1","5","-","Australia","Montaigne","Technicolour","English","Pop","Female",1,NA,NA,NA,NA,NA
-"83",2021,"1","6","-","North Macedonia","Vasil","Here I Stand","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"84",2021,"1","7","-","Ireland","Lesley Roy","Maps","English","Pop","Female",1,NA,NA,NA,NA,NA
-"85",2021,"1","8","1","Cyprus","Elena Tsagrinou","El Diablo","English","Pop","Female",1,44,50,7,11,16
-"86",2021,"1","9","22","Norway","Tix","Fallen Angel","English","Pop","Male",1,60,15,16,5,18
-"87",2021,"1","10","-","Croatia","Albina","Tick-Tock","English, Croatian","Pop","Female",1,NA,NA,NA,NA,NA
-"88",2021,"1","11","4","Belgium","Hooverphonic","The Wrong Place","English","Ballad","Female",1,3,71,2,17,19
-"89",2021,"1","12","3","Israel","Eden Alene","Set Me Free","English","Pop","Female",1,20,73,4,17,17
-"90",2021,"1","13","-","Romania","Roxen","Amnesia","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"91",2021,"1","14","21","Azerbaijan","Efendi","Mata Hari","English","Pop","Female",1,33,32,12,9,20
-"92",2021,"1","15","19","Ukraine","Go_A","Shum","Ukrainian","Traditional","Female",1,267,97,38,19,5
-"93",2021,"1","16","6","Malta","Destiny","Je me casse","English","Pop","Female",1,47,208,15,35,7
-"94",2021,"2","1","-","San Marino","Senhit","Adrenalina","English","Dance","Mix",2,13,37,3,7,NA
-"95",2021,"2","2","-","Estonia","Uku Suviste","The Lucky One","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"96",2021,"2","3","-","Czech Republic","Benny Cristo","Omaga","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"97",2021,"2","4","10","Greece","Stefania","Last Dance","English","Pop","Female",1,79,91,11,15,10
-"98",2021,"2","5","-","Austria","Vincent Bueno","Amen","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"99",2021,"2","6","-","Poland","Rafal","The Ride","English","Pop","Male",1,NA,NA,NA,NA,NA
-"100",2021,"2","7","14","Moldova","Natalia Gordienko","Sugar","English","Pop","Female",1,62,53,11,6,13
-"101",2021,"2","8","-","Iceland","Dadi og Gagnamagnio","10 Years","English","Pop","Male",1,180,198,29,28,NA
-"102",2021,"2","9","8","Serbia","Hurricane","Loco Loco","Serbian","Pop","Female",3,82,20,12,3,15
-"103",2021,"2","10","-","Georgia","Tornike Kipiani","You","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"104",2021,"2","11","2","Albania","Anxhela Peristeri","Karma","Albanian","Ballad","Female",1,35,22,5,4,21
-"105",2021,"2","12","7","Portugal","The Black Mamba","Love Is on My Side","English","Traditional","Male",1,27,126,6,22,12
-"106",2021,"2","13","17","Bulgaria","Victoria","Growing Up Is Getting Old","English","Ballad","Female",1,30,140,5,26,11
-"107",2021,"2","14","16","Finland","Blind Channel","Dark Side","English","Rock","Male",2,218,83,37,19,6
-"108",2021,"2","15","-","Latvia","Samanta Tina","The Moon Is Rising","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"109",2021,"2","16","11","Switzerland","Gjon's Tears","Tout l'univers","French","Ballad","Male",1,165,267,34,34,3
-"110",2021,"2","17","-","Denmark","Fyr og Flamme","Ove os pa hinanden","Danish","Pop","Male",2,NA,NA,NA,NA,NA
-"111",2021,"-","-","23","Netherlands","Jeangu Macrooy","Birth of a New Age","English, Sranan Tongo","Ballad","Male",1,0,11,0,5,11
-"112",2021,"-","-","13","Spain","Blas Canto","Voy a quedarme","Spanish","Ballad","Male",1,0,6,0,2,24
-"113",2021,"-","-","9","United Kingdom","James Newman","Embers","English","Pop","Male",1,0,0,0,0,26
-"114",2021,"-","-","15","Germany","Jendrik","I Don't Feel Hate","English","Pop","Male",1,0,3,0,2,25
-"115",2021,"-","-","20","France","Barbara Pravi","Voila","French","Ballad","Female",1,251,248,38,33,2
-"116",2021,"-","-","24","Italy","Maneskin","Zitti e buoni","Italian","Rock","Male",1,318,206,38,28,1
-"117",2019,"1","1","11","Cyprus","Tamta","Replay","English","Dance","Female",1,32,77,4,15,13
-"118",2019,"1","2","-","Montenegro","D mol","Heaven","English","Pop","Mix",6,NA,NA,NA,NA,NA
-"119",2019,"1","3","-","Finland","Darude feat. Sebastian Rejman","Look Away","English","Dance","Male",1,NA,NA,NA,NA,NA
-"120",2019,"1","4","-","Poland","Tulia","Fire of Love","Polish, English","Traditional","Female",4,NA,NA,NA,NA,NA
-"121",2019,"1","5","10","Slovenia","Zala Kralj & Gasper santl","Sebi","Slovene","Ballad","Mix",2,59,46,13,9,15
-"122",2019,"1","6","3","Czech Republic","Lake Malawi","Friend of a Friend","English","Pop","Male",1,7,150,4,26,11
-"123",2019,"1","7","-","Hungary","Joci Papai","Az en apam","Hungarian","Ballad","Male",1,NA,NA,NA,NA,NA
-"124",2019,"1","8","19","Belarus","ZENA","Like It","English","Dance","Female",1,13,18,2,5,24
-"125",2019,"1","9","23","Serbia","Nevena Bozovic","Kruna","Serbian","Ballad","Female",1,54,35,7,8,18
-"126",2019,"1","10","-","Belgium","Eliot","Wake Up","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"127",2019,"1","11","-","Georgia","Oto Nemsadze","Keep on Going","Georgian","Traditional","Male",1,NA,NA,NA,NA,NA
-"128",2019,"1","12","25","Australia","Kate Miller-Heidke","Zero Gravity","English","Opera","Female",1,131,153,30,24,9
-"129",2019,"1","13","17","Iceland","Hatari","Hatrio mun sigra","Icelandic","Dance","Mix",2,186,46,34,9,10
-"130",2019,"1","14","18","Estonia","Victor Crone","Storm","English","Pop","Male",1,48,28,10,7,20
-"131",2019,"1","15","-","Portugal","Conan Osiris","TelemOveis","Portuguese","Traditional","Male",1,NA,NA,NA,NA,NA
-"132",2019,"1","16","13","Greece","Katerine Duska","Better Love","English","Pop","Female",1,24,50,3,8,21
-"133",2019,"1","17","7","San Marino","Serhat","Say Na Na Na","English","Dance","Male",1,65,12,11,3,19
-"134",2019,"2","1","-","Armenia","Srbuk","Walking Out","English","Pop","Female",1,NA,NA,NA,NA,NA
-"135",2019,"2","2","-","Ireland","Sarah McTernan","22","English","Pop","Female",1,NA,NA,NA,NA,NA
-"136",2019,"2","3","-","Moldova","Anna Odobescu","Stay","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"137",2019,"2","4","24","Switzerland","Luca Hanni","She Got Me","English","Dance","Male",1,212,152,38,28,4
-"138",2019,"2","5","-","Latvia","Carousel","That Night","English","Pop","Female",1,NA,NA,NA,NA,NA
-"139",2019,"2","6","-","Romania","Ester Peony","On a Sunday","English","Pop","Female",1,NA,NA,NA,NA,NA
-"140",2019,"2","7","6","Denmark","Leonora","Love Is Forever","English, French","Pop","Female",1,51,69,13,16,12
-"141",2019,"2","8","9","Sweden","John Lundvik","Too Late for Love","English","Ballad","Male",1,93,241,17,32,5
-"142",2019,"2","9","-","Austria","PAENDA","Limits","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"143",2019,"2","10","-","Croatia","Roko","The Dream","English, Croatian","Ballad","Male",1,NA,NA,NA,NA,NA
-"144",2019,"2","11","1","Malta","Michela","Chameleon","English","Pop","Female",1,20,87,4,19,14
-"145",2019,"2","12","-","Lithuania","Jurij Veklenko","Run with the Lions","English","Pop","Male",1,NA,NA,NA,NA,NA
-"146",2019,"2","13","5","Russia","Sergey Lazarev","Scream","English","Ballad","Male",1,244,126,30,24,3
-"147",2019,"2","14","2","Albania","Jonida Maliqi","Ktheju tokes","Albanian","Traditional","Female",1,47,43,6,10,17
-"148",2019,"2","15","15","Norway","KEiiNO","Spirit in the Sky","English","Dance","Mix",3,291,40,37,9,6
-"149",2019,"2","16","12","Netherlands","Duncan Laurence","Arcade","English","Ballad","Male",1,261,237,40,32,1
-"150",2019,"2","17","8","North Macedonia","Tamara Todevska","Proud","English","Ballad","Female",1,58,247,11,32,7
-"151",2019,"2","18","20","Azerbaijan","Chingiz","Truth","English","Pop","Male",1,100,202,26,33,8
-"152",2019,"-","-","4","Germany","S!sters","Sister","English","Ballad","Female",2,0,24,0,5,25
-"153",2019,"-","-","14","Israel","Kobi Marimi","Home","English","Ballad","Male",1,35,0,7,0,23
-"154",2019,"-","-","16","United Kingdom","Michael Rice","Bigger than Us","English","Ballad","Male",1,3,8,1,5,26
-"155",2019,"-","-","21","France","Bilal Hassani","Roi","French, English","Pop","Female",1,38,67,12,18,16
-"156",2019,"-","-","22","Italy","Mahmood","Soldi","Italian","Pop","Male",1,253,219,38,32,2
-"157",2019,"-","-","26","Spain","Miki","La Venda","Spanish","Pop","Male",1,53,1,12,1,22
-"158",2018,"1","1","-","Azerbaijan","Aisel","X My Heart","English","Pop","Female",1,NA,NA,NA,NA,NA
-"159",2018,"1","2","-","Iceland","Ari Olafsson","Our Choice","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"160",2018,"1","3","12","Albania","Eugent Bushpepa","Mall","Albanian","Rock","Male",4,58,126,8,20,11
-"161",2018,"1","4","-","Belgium","Sennek","A Matter of Time","English","Pop","Female",1,NA,NA,NA,NA,NA
-"162",2018,"1","5","14","Czech Republic","Mikolas Josef","Lie to Me","English","Pop","Male",1,215,66,35,16,6
-"163",2018,"1","6","4","Lithuania","Ieva Zasimauskaite","When We're Old","English","Ballad","Female",1,91,90,11,17,12
-"164",2018,"1","7","22","Israel","Netta","Toy","English","Pop","Female",1,317,212,39,34,1
-"165",2018,"1","8","-","Belarus","Alekseev","Forever","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"166",2018,"1","9","6","Estonia","Elina Nechayeva","La forza","Italian","Opera","Female",1,102,143,19,26,8
-"167",2018,"1","10","18","Bulgaria","Equinox","Bones","English","Pop","Mix",5,66,100,15,18,14
-"168",2018,"1","11","-","North Macedonia","Eye Cue","Lost and Found","English","Pop","Female",1,NA,NA,NA,NA,NA
-"169",2018,"1","12","-","Croatia","Franka","Crazy","English","Pop","Female",1,NA,NA,NA,NA,NA
-"170",2018,"1","13","5","Austria","Cesar Sampson","Nobody but You","English","Pop","Male",1,71,271,18,34,3
-"171",2018,"1","14","-","Greece","Yianna Terzi","Oniro mou","Greek","Pop","Female",1,NA,NA,NA,NA,NA
-"172",2018,"1","15","17","Finland","Saara Aalto","Monsters","English","Pop","Female",1,23,23,4,6,25
-"173",2018,"1","16","-","Armenia","Sevak Khanagyan","Qami","Armenian","Pop","Male",1,NA,NA,NA,NA,NA
-"174",2018,"1","17","-","Switzerland","ZiBBZ","Stones","English","Pop","Female",1,NA,NA,NA,NA,NA
-"175",2018,"1","18","24","Ireland","Ryan O'Shaughnessy","Together","English","Traditional","Male",1,62,74,14,19,16
-"176",2018,"1","19","25","Cyprus","Eleni Foureira","Fuego","English","Pop","Female",1,253,183,42,27,2
-"177",2018,"2","1","7","Norway","Alexander Rybak","That's How You Write a Song","English","Pop","Male",1,84,60,18,12,15
-"178",2018,"2","2","-","Romania","The Humans","Goodbye","English","Pop","Female",1,NA,NA,NA,NA,NA
-"179",2018,"2","3","10","Serbia","Sanja Ilic & Balkanika","Nova deca","Serbian","Traditional","Mix",2,75,38,9,6,19
-"180",2018,"2","4","-","San Marino","Jessika feat. Jenifer Brening","Who We Are","English","Pop","Female",1,NA,NA,NA,NA,NA
-"181",2018,"2","5","15","Denmark","Rasmussen","Higher Ground","English","Traditional","Male",1,188,38,32,8,9
-"182",2018,"2","6","-","Russia","Julia Samoylova","I Won't Break","English","Pop","Female",1,NA,NA,NA,NA,NA
-"183",2018,"2","7","19","Moldova","DoReDoS","My Lucky Day","English","Pop","Mix",3,115,94,23,13,10
-"184",2018,"2","8","23","Netherlands","Waylon","Outlaw in 'Em","English","Rock","Male",1,32,89,7,18,18
-"185",2018,"2","9","16","Australia","Jessica Mauboy","We Got Love","English","Pop","Female",1,9,90,3,17,20
-"186",2018,"2","10","-","Georgia","Ethno-Jazz Band Iriao","For You","Georgian","Pop","Male",3,NA,NA,NA,NA,NA
-"187",2018,"2","11","-","Poland","Gromee feat. Lukas Meijer","Light Me Up","English","Dance","Male",1,NA,NA,NA,NA,NA
-"188",2018,"2","12","-","Malta","Christabelle","Taboo","English","Pop","Female",1,NA,NA,0,0,NA
-"189",2018,"2","13","21","Hungary","AWS","Viszlat nyar","Hungarian","Rock","Male",1,65,28,15,7,21
-"190",2018,"2","14","-","Latvia","Laura Rizzotto","Funny Girl","English","Pop","Female",1,NA,NA,NA,NA,NA
-"191",2018,"2","15","20","Sweden","Benjamin Ingrosso","Dance You Off","English","Pop","Male",1,21,253,7,35,7
-"192",2018,"2","16","-","Montenegro","Vanja Radovanovic","Inje","Montenegrin","Rock","Male",1,NA,NA,NA,NA,NA
-"193",2018,"2","17","3","Slovenia","Lea Sirk","Hvala, ne!","Slovene","Pop","Female",1,23,41,4,12,22
-"194",2018,"2","18","1","Ukraine","Melovin","Under the Ladder","English","Dance","Male",1,119,11,18,2,17
-"195",2018,"-","-","8","Portugal","Claudia Pascoal","O jardim","Portuguese","Pop","Female",1,18,21,2,5,26
-"196",2018,"-","-","9","United Kingdom","SuRie","Storm","English","Pop","Female",1,25,23,7,6,24
-"197",2018,"-","-","11","Germany","Michael Schulte","You Let Me Walk Alone","English","Pop","Male",1,136,204,29,30,4
-"198",2018,"-","-","13","France","Madame Monsieur","Mercy","French","Pop","Female",1,59,114,13,21,13
-"199",2018,"-","-","26","Italy","Ermal Meta & Fabrizio Moro","Non mi avete fatto niente","Italian","Pop","Male",2,249,59,35,11,5
-"200",2018,"-","-","2","Spain","Amaia & Alfred","Tu canciOn","Spanish","Pop","Mix",2,18,43,3,10,23
-"201",2017,"1","1","24","Sweden","Robin Bengtsson","I Can't Go On","English","Pop","Male",1,126,218,35,33,5
-"202",2017,"1","2","-","Georgia","Tamara Gachechiladze","Keep the Faith","English","Pop","Female",1,NA,NA,NA,NA,NA
-"203",2017,"1","3","14","Australia","Isaiah","Don't Come Easy","English","Pop","Male",1,2,171,1,29,9
-"204",2017,"1","4","-","Albania","Lindita","World","English","Pop","Female",1,NA,NA,NA,NA,NA
-"205",2017,"1","5","23","Belgium","Blanche","City Lights","English","Pop","Female",1,255,108,40,21,4
-"206",2017,"1","6","-","Montenegro","Slavko Kalezic","Space","English","Pop","Male",1,NA,NA,NA,NA,NA
-"207",2017,"1","7","-","Finland","Norma John","Blackbird","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"208",2017,"1","8","12","Azerbaijan","Dihaj","Skeletons","English","Pop","Female",1,42,78,6,14,14
-"209",2017,"1","9","11","Portugal","Salvador Sobral","Amar pelos dois","Portuguese","Ballad","Male",1,376,382,41,39,1
-"210",2017,"1","10","15","Greece","Demy","This Is Love","English","Pop","Female",1,29,48,6,7,19
-"211",2017,"1","11","2","Poland","Kasia Mos","Flashlight","English","Pop","Female",1,41,23,11,7,22
-"212",2017,"1","12","7","Moldova","Sunstroke Project","Hey, Mamma!","English","Dance","Male",1,264,110,38,19,3
-"213",2017,"1","13","-","Iceland","Svala","Paper","English","Pop","Female",1,NA,NA,NA,NA,NA
-"214",2017,"1","14","-","Czech Republic","Martina Barta","My Turn","English","Pop","Female",1,NA,NA,NA,NA,NA
-"215",2017,"1","15","19","Cyprus","Hovig","Gravity","English","Pop","Male",1,32,36,6,7,21
-"216",2017,"1","16","5","Armenia","Artsvik","Fly with Me","English","Pop","Female",1,21,58,5,16,18
-"217",2017,"1","17","-","Slovenia","Omar Naber","On My Way","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"218",2017,"1","18","-","Latvia","Triana Park","Line","English","Pop","Female",1,NA,NA,NA,NA,NA
-"219",2017,"2","1","-","Serbia","Tijana Bogicevic","In Too Deep","English","Pop","Female",1,NA,NA,NA,NA,NA
-"220",2017,"2","2","4","Austria","Nathan Trent","Running on Air","English","Pop","Male",1,0,93,0,24,16
-"221",2017,"2","3","-","North Macedonia","Jana Burceska","Dance Alone","English","Pop","Female",1,NA,NA,NA,NA,NA
-"222",2017,"2","4","-","Malta","Claudia Faniello","Breathlessly","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"223",2017,"2","5","20","Romania","Ilinca ft. Alex Florea","Yodel It!","English","Pop","Mix",2,224,58,38,11,7
-"224",2017,"2","6","6","Netherlands","O'G3NE","Lights and Shadows","English","Pop","Female",3,15,135,5,25,11
-"225",2017,"2","7","8","Hungary","Joci Papai","Origo","Hungarian","Traditional","Male",1,152,48,33,10,8
-"226",2017,"2","8","10","Denmark","Anja","Where I Am","English","Pop","Female",1,8,69,1,14,20
-"227",2017,"2","9","-","Ireland","Brendan Murray","Dying to Try","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"228",2017,"2","10","-","San Marino","Valentina Monetta and Jimmie Wilson","Spirit of the Night","English","Pop","Mix",2,NA,NA,NA,NA,NA
-"229",2017,"2","11","13","Croatia","Jacques Houdek","My Friend","English, Italian","Opera","Male",1,103,25,21,6,13
-"230",2017,"2","12","17","Norway","JOWST","Grab the Moment","English","Pop","Male",1,29,129,8,24,10
-"231",2017,"2","13","-","Switzerland","Timebelle","Apollo","English","Pop","Female",1,NA,NA,NA,NA,NA
-"232",2017,"2","14","3","Belarus","Naviband","Story of My Life","Belarusian","Pop","Mix",2,33,50,9,11,17
-"233",2017,"2","15","25","Bulgaria","Kristian Kostov","Beautiful Mess","English","Pop","Male",1,337,278,41,38,2
-"234",2017,"2","16","-","Lithuania","Fusedmarc","Rain of Revolution","English","Pop","Female",1,NA,NA,NA,NA,NA
-"235",2017,"2","17","-","Estonia","Koit Toome and Laura","Verona","English","Pop","Mix",2,NA,NA,NA,NA,NA
-"236",2017,"2","18","1","Israel","IMRI","I Feel Alive","English","Pop","Male",1,5,34,3,8,23
-"237",2017,"-","-","9","Italy","Francesco Gabbani","Occidentali's Karma","Italian","Pop","Male",1,208,126,36,20,6
-"238",2017,"-","-","16","Spain","Manel Navarro","Do It for Your Lover","Spanish, English","Pop","Male",1,5,0,1,0,26
-"239",2017,"-","-","18","United Kingdom","Lucie Jones","Never Give Up on You","English","Ballad","Female",1,12,99,4,21,15
-"240",2017,"-","-","21","Germany","Levina","Perfect Life","English","Pop","Female",1,3,3,1,1,25
-"241",2017,"-","-","22","Ukraine","O.Torvald","Time","English","Rock","Male",1,24,12,6,3,24
-"242",2017,"-","-","26","France","Alma","Requiem","French, English","Pop","Female",1,90,45,24,12,12
-"243",2016,"1","1","-","Finland","Sandhja","Sing It Away","English","Pop","Female",1,NA,NA,NA,NA,NA
-"244",2016,"1","2","-","Greece","Argo","Utopian Land","English, Greek3","Pop","Mix",4,NA,NA,NA,NA,NA
-"245",2016,"1","3","-","Moldova","Lidia Isac","Falling Stars","English","Pop","Female",1,NA,NA,NA,NA,NA
-"246",2016,"1","4","5","Hungary","Freddie","Pioneer","English","Pop","Male",1,56,52,16,12,19
-"247",2016,"1","5","17","Croatia","Nina Kraljic","Lighthouse","English","Pop","Female",1,33,40,5,11,23
-"248",2016,"1","6","3","Netherlands","Douwe Bob","Slow Down","English","Pop","Male",1,39,114,8,22,11
-"249",2016,"1","7","26","Armenia","Iveta Mukuchyan","LoveWave","English","Pop","Female",1,134,115,21,21,7
-"250",2016,"1","8","-","San Marino","Serhat","I Didn't Know","English","Pop","Male",1,NA,NA,NA,NA,NA
-"251",2016,"1","9","18","Russia","Sergey Lazarev","You Are the Only One","English","Pop","Male",1,361,130,41,20,3
-"252",2016,"1","10","2","Czech Republic","Gabriela Guncikova","I Stand","English","Pop","Female",1,0,41,0,11,25
-"253",2016,"1","11","14","Cyprus","Minus One","Alter Ego","English","Rock","Male",1,53,43,11,10,21
-"254",2016,"1","12","24","Austria","Zoe","Loin d'ici","French","Pop","Female",1,120,31,27,7,13
-"255",2016,"1","13","-","Estonia","Juri Pootsmann","Play","English","Pop","Male",1,NA,NA,NA,NA,NA
-"256",2016,"1","14","4","Azerbaijan","Samra","Miracle","English","Pop","Female",1,73,44,13,11,17
-"257",2016,"1","15","-","Montenegro","Highway","The Real Thing","English","Pop","Male",1,NA,NA,NA,NA,NA
-"258",2016,"1","16","-","Iceland","Greta SalOme","Hear Them Calling","English","Pop","Female",1,NA,NA,NA,NA,NA
-"259",2016,"1","17","-","Bosnia and Herzegovina","Dalal & Deen feat. Ana Rucner and Jala","Ljubav je","Bosnian","Pop","Mix",3,NA,NA,NA,NA,NA
-"260",2016,"1","18","22","Malta","Ira Losco","Walk on Water","English","Pop","Female",1,16,137,3,23,12
-"261",2016,"2","1","20","Latvia","Justs","Heartbeat","English","Pop","Male",1,63,69,13,14,15
-"262",2016,"2","2","12","Poland","Michal Szpak","Color of Your Life","English","Pop","Male",1,222,7,35,4,8
-"263",2016,"2","3","-","Switzerland","Rykka","The Last of Our Kind","English","Pop","Female",1,NA,NA,NA,NA,NA
-"264",2016,"2","4","7","Israel","Hovi Star","Made of Stars","English","Ballad","Male",1,11,124,3,25,14
-"265",2016,"2","5","-","Belarus","Ivan","Help You Fly","English","Pop","Male",1,NA,NA,NA,NA,NA
-"266",2016,"2","6","15","Serbia","Sanja Vucic ZAA","Goodbye (Shelter)","English","Pop","Female",1,80,35,8,7,18
-"267",2016,"2","7","-","Ireland","Nicky Byrne","Sunlight","English","Pop","Male",1,NA,NA,NA,NA,NA
-"268",2016,"2","8","-","North Macedonia","Kaliopi","Dona","Macedonian","Ballad","Female",1,NA,NA,NA,NA,NA
-"269",2016,"2","9","16","Lithuania","Donny Montell","I've Been Waiting for This Night","English","Ballad","Male",1,96,104,17,22,9
-"270",2016,"2","10","13","Australia","Dami Im","Sound of Silence","English","Pop","Female",1,191,320,37,38,2
-"271",2016,"2","11","-","Slovenia","ManuElla","Blue and Red","English","Pop","Female",1,NA,NA,NA,NA,NA
-"272",2016,"2","12","8","Bulgaria","Poli Genova","If Love Was a Crime","English, Bulgarian","Dance","Female",1,180,127,34,23,4
-"273",2016,"2","13","-","Denmark","Lighthouse X","Soldiers of Love","English","Pop","Male",3,NA,NA,NA,NA,NA
-"274",2016,"2","14","21","Ukraine","Jamala","1944","English, Crimean Tatar","Pop","Female",1,323,211,40,24,1
-"275",2016,"2","15","-","Norway","Agnete","Icebreaker","English","Dance","Female",1,NA,NA,NA,NA,NA
-"276",2016,"2","16","23","Georgia","Nika Kocharov & Young Georgian Lolitaz","Midnight Gold","English","Rock","Male",1,24,80,6,12,20
-"277",2016,"2","17","-","Albania","Eneda Tarifa","Fairytale","English","Pop","Female",1,NA,NA,NA,NA,NA
-"278",2016,"2","18","1","Belgium","Laura Tesoro","What's the Pressure","English","Pop","Female",1,51,130,9,20,10
-"279",2016,"-","-","6","Italy","Francesca Michielin","No Degree of Separation","Italian, English","Pop","Female",1,34,90,8,14,16
-"280",2016,"-","-","9","Sweden","Frans","If I Were Sorry","English","Pop","Male",1,139,122,29,17,5
-"281",2016,"-","-","10","Germany","Jamie-Lee","Ghost","English","Pop","Female",1,10,1,2,1,26
-"282",2016,"-","-","11","France","Amir","J'ai cherche","French, English","Pop","Male",1,109,148,26,26,6
-"283",2016,"-","-","19","Spain","Barei","Say Yay!","English","Pop","Female",1,10,67,5,15,22
-"284",2016,"-","-","25","United Kingdom","Joe and Jake","You're Not Alone","English","Pop","Male",2,8,54,3,10,24
-"285",2015,"1","1","-","Moldova","Eduard Romanyuta","I Want Your Love","English","Pop","Male",1,NA,NA,NA,NA,NA
-"286",2015,"1","2","6","Armenia","Genealogy","Face the Shadow","English","Pop","Mix",6,15,77,11,4,16
-"287",2015,"1","3","13","Belgium","Loic Nottet","Rhythm Inside","English","Pop","Male",1,186,190,37,31,4
-"288",2015,"1","4","-","Netherlands","Trijntje Oosterhuis","Walk Along","English","Pop","Female",1,NA,NA,NA,NA,NA
-"289",2015,"1","5","-","Finland","Pertti Kurikan Nimipaivat","Aina mun pitaa","Finnish","Rock","Male",1,NA,NA,NA,NA,NA
-"290",2015,"1","6","15","Greece","Maria Elena Kyriakou","One Last Breath","English","Ballad","Female",1,29,24,4,5,19
-"291",2015,"1","7","4","Estonia","Elina Born & Stig Rasta","Goodbye to Yesterday","English","Pop","Mix",2,53,144,32,16,7
-"292",2015,"1","8","-","North Macedonia","Daniel Kajmakoski","Autumn Leaves","English","Pop","Male",1,NA,NA,NA,NA,NA
-"293",2015,"1","9","8","Serbia","Bojana Stamenov","Beauty Never Lies","English","Pop","Female",1,12,86,16,4,10
-"294",2015,"1","10","22","Hungary","Boggie","Wars for Nothing","English","Pop","Female",1,29,17,4,8,20
-"295",2015,"1","11","-","Belarus","Uzari & Maimuna","Time","English","Pop","Male",1,NA,NA,NA,NA,NA
-"296",2015,"1","12","25","Russia","Polina Gagarina","A Million Voices","English","Pop","Female",1,234,286,38,32,2
-"297",2015,"1","13","-","Denmark","Anti Social Media","The Way You Are","English","Pop","Male",1,NA,NA,NA,NA,NA
-"298",2015,"1","14","26","Albania","Elhaida Dani","I'm Alive","English","Pop","Female",1,4,93,12,2,17
-"299",2015,"1","15","20","Romania","Voltaj","De la capat","Romanian, English","Pop","Male",1,21,69,12,4,15
-"300",2015,"1","16","23","Georgia","Nina Sublatti","Warrior","English","Pop","Female",1,62,51,12,13,11
-"301",2015,"2","1","7","Lithuania","Monika Linkyte & Vaidas Baumila","This Time","English","Pop","Mix",2,31,44,6,9,18
-"302",2015,"2","2","-","Ireland","Molly Sterling","Playing with Numbers","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"303",2015,"2","3","-","San Marino","Anita Simoncini & Michele Perniola","Chain of Lights","English","Pop","Mix",2,NA,NA,NA,NA,NA
-"304",2015,"2","4","16","Montenegro","Knez","Adio","Montenegrin","Traditional","Male",1,44,34,5,9,13
-"305",2015,"2","5","-","Malta","Amber","Warrior","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"306",2015,"2","6","9","Norway","Morland & Debrah Scarlett","A Monster Like Me","English","Ballad","Mix",2,163,37,10,24,8
-"307",2015,"2","7","-","Portugal","Leonor Andrade","Ha um mar que nos separa","Portuguese","Ballad","Female",1,NA,NA,NA,NA,NA
-"308",2015,"2","8","-","Czech Republic","Marta Jandova & Vaclav Noid Barta","Hope Never Dies","English","Ballad","Mix",2,NA,NA,NA,NA,NA
-"309",2015,"2","9","3","Israel","Nadav Guedj","Golden Boy","English","Pop","Male",1,77,102,31,17,9
-"310",2015,"2","10","19","Latvia","Aminata","Love Injected","English","Pop","Female",1,249,88,22,35,6
-"311",2015,"2","11","24","Azerbaijan","Elnur Huseynov","Hour of the Wolf","English","Ballad","Male",1,40,48,8,8,12
-"312",2015,"2","12","-","Iceland","Maria Olafs","Unbroken","English","Pop","Female",1,NA,NA,NA,NA,NA
-"313",2015,"2","13","10","Sweden","Mans Zelmerlow","Heroes","English","Pop","Male",1,353,272,38,37,1
-"314",2015,"2","14","-","Switzerland","Melanie Rene","Time to Shine","English","Pop","Female",1,NA,NA,NA,NA,NA
-"315",2015,"2","15","11","Cyprus","John Karayiannis","One Thing I Should Have Done","English","Ballad","Male",1,63,8,1,15,22
-"316",2015,"2","16","1","Slovenia","Maraaya","Here for You","English","Pop","Female",1,36,27,6,10,14
-"317",2015,"2","17","18","Poland","Monika Kuszynska","In the Name of Love","English","Ballad","Female",1,2,47,10,1,23
-"318",2015,"-","-","2","France","Lisa Angell","N'oubliez pas","French","Ballad","Female",1,24,3,1,8,25
-"319",2015,"-","-","5","United Kingdom","Electro Velvet","Still in Love with You","English","Pop","Mix",2,12,4,2,6,24
-"320",2015,"-","-","14","Austria","The Makemakes","I Am Yours","English","Ballad","Male",1,40,0,0,12,26
-"321",2015,"-","-","17","Germany","Ann Sophie","Black Smoke","English","Pop","Female",1,24,5,2,7,27
-"322",2015,"-","-","21","Spain","Edurne","Amanecer","Spanish","Ballad","Female",1,6,26,8,3,21
-"323",2015,"-","-","27","Italy","Il Volo","Grande amore","Italian","Ballad","Male",3,171,356,38,27,3
-"324",2014,"1","1","7","Armenia","Aram MP3","Not Alone","English","Ballad","Male",1,113,187,26,19,4
-"325",2014,"1","2","-","Latvia","Aarzemnieki","Cake to Bake","English","Pop","Male",2,NA,NA,NA,NA,NA
-"326",2014,"1","3","-","Estonia","Tanja","Amazing","English","Dance","Female",1,NA,NA,NA,NA,NA
-"327",2014,"1","4","13","Sweden","Sanna Nielsen","Undo","English","Ballad","Female",1,199,173,32,25,3
-"328",2014,"1","5","4","Iceland","Pollaponk","No Prejudice","English","Rock","Male",3,59,38,9,9,15
-"329",2014,"1","6","-","Albania","Hersi","One Night's Anger","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"330",2014,"1","7","15","Russia","Tolmachevy Sisters","Shine","English","Pop","Female",2,62,132,18,11,7
-"331",2014,"1","8","3","Azerbaijan","Dilara Kazimova","Start a Fire","English","Ballad","Female",1,101,14,3,22,22
-"332",2014,"1","9","1","Ukraine","Mariya Yaremchuk","Tick-Tock","English","Pop","Female",1,72,112,19,14,6
-"333",2014,"1","10","-","Belgium","Axel Hirsoux","Mother","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"334",2014,"1","11","-","Moldova","Cristina Scarlat","Wild Soul","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"335",2014,"1","12","25","San Marino","Valentina Monetta","Maybe","English","Ballad","Female",2,16,15,7,3,24
-"336",2014,"1","13","-","Portugal","Suzy","Quero ser tua","Portuguese","Pop","Female",1,NA,NA,NA,NA,NA
-"337",2014,"1","14","24","Netherlands","The Common Linnets","Calm After the Storm","English","Traditional","Mix",2,NA,NA,NA,NA,2
-"338",2014,"1","15","8","Montenegro","Sergej cetkovic","Moj svijet","Montenegrin","Ballad","Male",1,48,27,3,9,19
-"339",2014,"1","16","21","Hungary","Andras Kallay-Saunders","Running","English","Pop","Male",1,138,83,21,21,5
-"340",2014,"2","1","22","Malta","Firelight","Coming Home","English","Traditional","Mix",2,119,12,4,22,23
-"341",2014,"2","2","-","Israel","Mei Finegold","Same Heart","English, Hebrew","Pop","Female",1,NA,NA,NA,NA,NA
-"342",2014,"2","3","5","Norway","Carl Espen","Silent Storm","English","Ballad","Male",1,102,39,13,18,8
-"343",2014,"2","4","-","Georgia","The Shin and Mariko","Three Minutes to Earth","English","Traditional","Mix",2,NA,NA,NA,NA,NA
-"344",2014,"2","5","9","Poland","Donatan & Cleo","My Slowianie – We Are Slavic","Polish, English","Traditional","Female",1,23,162,23,6,14
-"345",2014,"2","6","11","Austria","Conchita Wurst","Rise Like a Phoenix","English","Ballad","Male",1,214,306,34,26,1
-"346",2014,"2","7","-","Lithuania","Vilija","Attention","English","Pop","Female",1,NA,NA,NA,NA,NA
-"347",2014,"2","8","18","Finland","Softengine","Something Better","English","Rock","Male",1,114,36,7,19,11
-"348",2014,"2","9","-","Ireland","Can-Linn feat. Kasey Smith","Heartbeat","English","Pop","Female",1,NA,NA,NA,NA,NA
-"349",2014,"2","10","2","Belarus","Teo","Cheesecake","English","Pop","Male",1,50,56,10,9,16
-"350",2014,"2","11","-","North Macedonia","Tijana","To the Sky","English","Pop","Female",1,NA,NA,NA,NA,NA
-"351",2014,"2","12","20","Switzerland","Sebalter","Hunter of Stars","English","Pop","Male",1,26,114,29,5,13
-"352",2014,"2","13","10","Greece","Freaky Fortune feat. RiskyKidd","Rise Up","English","Dance","Male",2,45,41,11,11,20
-"353",2014,"2","14","17","Slovenia","Tinkara Kovac","Round and Round","English, Slovene","Pop","Female",1,21,15,2,7,25
-"354",2014,"2","15","6","Romania","Paula Seling & Ovi","Miracle","English","Dance","Mix",2,51,103,16,9,12
-"355",2014,"-","-","12","Germany","Elaiza","Is It Right","English","Traditional","Female",1,56,27,6,12,18
-"356",2014,"-","-","14","France","TWIN TWIN","Moustache","French","Dance","Male",1,5,1,1,2,26
-"357",2014,"-","-","16","Italy","Emma","La mia citta","Italian","Rock","Female",1,37,22,4,5,21
-"358",2014,"-","-","19","Spain","Ruth Lorenzo","Dancing in the Rain","English, Spanish","Ballad","Female",1,83,29,7,21,10
-"359",2014,"-","-","23","Denmark","Basim","Cliche Love Song","English","Pop","Male",1,85,42,12,16,9
-"360",2014,"-","-","26","United Kingdom","Molly","Children of the Universe","English","Pop","Female",1,49,24,5,12,17
-"361",2013,"1","1","-","Austria","Natalia Kelly","Shine","English","Pop","Female",1,NA,NA,NA,NA,NA
-"362",2013,"1","2","7","Estonia","Birgit","Et uus saaks alguse","Estonian","Ballad","Female",1,NA,NA,NA,NA,20
-"363",2013,"1","3","-","Slovenia","Hannah","Straight Into Love","English","Dance","Female",1,NA,NA,NA,NA,NA
-"364",2013,"1","4","-","Croatia","Klapa s Mora","Mizerja","Croatian","Traditional","Male",6,NA,NA,NA,NA,NA
-"365",2013,"1","5","18","Denmark","Emmelie de Forest","Only Teardrops","English","Pop","Female",1,NA,NA,NA,NA,1
-"366",2013,"1","6","10","Russia","Dina Garipova","What If","English","Ballad","Female",1,NA,NA,NA,NA,5
-"367",2013,"1","7","22","Ukraine","Zlata Ognevich","Gravity","English","Pop","Female",1,NA,NA,NA,NA,3
-"368",2013,"1","8","13","Netherlands","Anouk","Birds","English","Ballad","Female",1,NA,NA,NA,NA,9
-"369",2013,"1","9","-","Montenegro","Who See","Igranka","Montenegrin","Dance","Mix",3,NA,NA,NA,NA,NA
-"370",2013,"1","10","2","Lithuania","Andrius Pojavis","Something","English","Dance","Male",1,NA,NA,NA,NA,22
-"371",2013,"1","11","8","Belarus","Alyona Lanskaya","Solayoh","English","Dance","Female",1,NA,NA,NA,NA,16
-"372",2013,"1","12","3","Moldova","Aliona Moon","O mie","Romanian","Ballad","Female",1,NA,NA,NA,NA,11
-"373",2013,"1","13","26","Ireland","Ryan Dolan","Only Love Survives","English","Pop","Male",1,NA,NA,NA,NA,26
-"374",2013,"1","14","-","Cyprus","Despina Olympiou","An me thimasai","Greek","Ballad","Female",1,NA,NA,NA,NA,NA
-"375",2013,"1","15","6","Belgium","Roberto Bellarosa","Love Kills","English","Pop","Male",1,NA,NA,NA,NA,12
-"376",2013,"1","16","-","Serbia","Moje 3","Ljubav je svuda","Serbian","Dance","Female",3,NA,NA,NA,NA,NA
-"377",2013,"2","1","-","Latvia","PeR","Here We Go","English","Dance","Male",2,NA,NA,NA,NA,NA
-"378",2013,"2","2","-","San Marino","Valentina Monetta","Crisalide (Vola)","Italian","Ballad","Female",1,NA,NA,NA,NA,NA
-"379",2013,"2","3","-","North Macedonia","Esma & Lozano","Pred da se razdeni","Macedonian, Romani","Traditional","Mix",2,NA,NA,NA,NA,NA
-"380",2013,"2","4","20","Azerbaijan","Farid Mammadov","Hold Me","English","Ballad","Male",1,NA,NA,NA,NA,2
-"381",2013,"2","5","4","Finland","Krista Siegfrids","Marry Me","English","Pop","Female",1,NA,NA,NA,NA,24
-"382",2013,"2","6","9","Malta","Gianluca","Tomorrow","English","Pop","Male",1,NA,NA,NA,NA,8
-"383",2013,"2","7","-","Bulgaria","Elitsa Todorova & Stoyan Yankoulov","Samo shampioni","Bulgarian","Traditional","Mix",2,NA,NA,NA,NA,NA
-"384",2013,"2","8","19","Iceland","Eythor Ingi","Eg a lif","Icelandic","Traditional","Male",1,NA,NA,NA,NA,17
-"385",2013,"2","9","21","Greece","Koza Mostra feat. Agathon Iakovidis","Alcohol Is Free","Greek1","Traditional","Male",4,NA,NA,NA,NA,6
-"386",2013,"2","10","-","Israel","Moran Mazor","Rak Bishvilo","Hebrew","Ballad","Female",1,NA,NA,NA,NA,NA
-"387",2013,"2","11","12","Armenia","Dorians","Lonely Planet","English","Rock","Male",1,NA,NA,NA,NA,18
-"388",2013,"2","12","17","Hungary","ByeAlex","Kedvesem (Zoohacker Remix)","Hungarian","Pop","Male",1,NA,NA,NA,NA,10
-"389",2013,"2","13","24","Norway","Margaret Berger","I Feed You My Love","English","Dance","Female",1,NA,NA,NA,NA,4
-"390",2013,"2","14","-","Albania","Adrian Lulgjuraj & Bledar Sejko","Identitet","Albanian","Rock","Male",2,NA,NA,NA,NA,NA
-"391",2013,"2","15","25","Georgia","Nodi Tatishvili & Sophie Gelovani","Waterfall","English","Ballad","Mix",2,NA,NA,NA,NA,15
-"392",2013,"2","16","-","Switzerland","Takasa","You and Me","English","Pop","Mix",2,NA,NA,NA,NA,NA
-"393",2013,"2","17","14","Romania","Cezar","It's My Life","English","Dance","Male",1,NA,NA,NA,NA,13
-"394",2013,"-","-","1","France","Amandine Bourgeois","L'enfer et moi","French","Rock","Female",1,NA,NA,NA,NA,23
-"395",2013,"-","-","5","Spain","ESDM","Contigo hasta el final","Spanish","Rock","Female",1,NA,NA,NA,NA,25
-"396",2013,"-","-","11","Germany","Cascada","Glorious","English","Dance","Female",1,NA,NA,NA,NA,21
-"397",2013,"-","-","15","United Kingdom","Bonnie Tyler","Believe in Me","English","Rock","Female",1,NA,NA,NA,NA,19
-"398",2013,"-","-","16","Sweden","Robin Stjernberg","You","English","Dance","Male",1,NA,NA,NA,NA,14
-"399",2013,"-","-","23","Italy","Marco Mengoni","L'essenziale","Italian","Ballad","Male",1,NA,NA,NA,NA,7
-"400",2012,"1","1","-","Montenegro","Rambo Amadeus","Euro Neuro","English","Traditional","Male",1,NA,NA,NA,NA,NA
-"401",2012,"1","2","7","Iceland","Greta Salome and Jonsi","Never Forget","English","Ballad","Mix",2,39,53,NA,NA,20
-"402",2012,"1","3","16","Greece","Eleftheria Eleftheriou","Aphrodisiac","English","Dance","Female",1,89,60,NA,NA,17
-"403",2012,"1","4","-","Latvia","Anmary","Beautiful Song","English","Pop","Female",1,NA,NA,NA,NA,NA
-"404",2012,"1","5","3","Albania","Rona Nishliu","Suus3","Albanian","Ballad","Female",1,106,157,NA,NA,5
-"405",2012,"1","6","14","Romania","Mandinga","Zaleilah","Spanish, English","Dance","Female",1,117,53,NA,NA,12
-"406",2012,"1","7","-","Switzerland","Sinplus","Unbreakable","English","Rock","Male",1,NA,NA,NA,NA,NA
-"407",2012,"1","8","-","Belgium","Iris","Would You?","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"408",2012,"1","9","-","Finland","Pernilla Karlsson","Nar jag blundar","Swedish","Ballad","Female",1,NA,NA,NA,NA,NA
-"409",2012,"1","10","-","Israel","Izabo","Time","English, Hebrew","Pop","Male",1,NA,NA,NA,NA,NA
-"410",2012,"1","11","-","San Marino","Valentina Monetta","The Social Network Song (Oh Oh – Uh - Oh Oh)","English","Dance","Female",1,NA,NA,NA,NA,NA
-"411",2012,"1","12","8","Cyprus","Ivi Adamou","La La Love","English","Dance","Female",1,63,85,NA,NA,16
-"412",2012,"1","13","15","Denmark","Soluna Samay","Should've Known Better","English","Rock","Female",1,18,51,NA,NA,23
-"413",2012,"1","14","6","Russia","Buranovskiye Babushki","Party for Everybody","Udmurt, English","Dance","Female",6,332,94,NA,NA,2
-"414",2012,"1","15","2","Hungary","Compact Disco","Sound of Our Hearts","English","Pop","Male",1,20,30,NA,NA,24
-"415",2012,"1","16","-","Austria","Trackshittaz","Woki mit deim Popo","German5","Dance","Male",2,NA,NA,NA,NA,NA
-"416",2012,"1","17","26","Moldova","Pasha Parfeny","Lautar","English6","Pop","Male",1,75,104,NA,NA,11
-"417",2012,"1","18","23","Ireland","Jedward","Waterline","English","Dance","Male",2,89,14,NA,NA,19
-"418",2012,"2","1","24","Serbia","zeljko Joksimovic","Nije ljubav stvar ","Serbian","Ballad","Male",1,211,173,NA,NA,3
-"419",2012,"2","2","22","North Macedonia","Kaliopi","Crno i belo","Macedonian","Rock","Female",1,NA,NA,NA,NA,13
-"420",2012,"2","3","-","Netherlands","Joan Franka","You and Me","English","Pop","Female",1,NA,NA,NA,NA,NA
-"421",2012,"2","4","21","Malta","Kurt Calleja","This Is the Night","English","Dance","Male",1,10,70,NA,NA,21
-"422",2012,"2","5","-","Belarus","Litesound","We Are the Heroes","English","Dance","Male",1,NA,NA,NA,NA,NA
-"423",2012,"2","6","-","Portugal","Filipa Sousa","Vida minha","Portuguese","Ballad","Female",1,NA,NA,NA,NA,NA
-"424",2012,"2","7","25","Ukraine","Gaitana","Be My Guest","English","Dance","Female",1,37,125,NA,NA,15
-"425",2012,"2","8","-","Bulgaria","Sofi Marinova","Love Unlimited","Bulgarian","Dance","Female",1,NA,NA,NA,NA,NA
-"426",2012,"2","9","-","Slovenia","Eva Boto","Verjamem","Slovene","Ballad","Female",1,NA,NA,NA,NA,NA
-"427",2012,"2","10","-","Croatia","Nina Badric","Nebo","Croatian","Ballad","Female",1,NA,NA,NA,NA,NA
-"428",2012,"2","11","17","Sweden","Loreen","Euphoria","English","Dance","Female",1,343,296,NA,NA,1
-"429",2012,"2","12","-","Georgia","Anri Jokhadze","I'm a Joker","English, Georgian","Pop","Male",1,NA,NA,NA,NA,NA
-"430",2012,"2","13","18","Turkey","Can Bonomo","Love Me Back","English","Traditional","Male",1,176,50,NA,NA,7
-"431",2012,"2","14","11","Estonia","Ott Lepland","Kuula","Estonian","Ballad","Male",1,78,152,NA,NA,6
-"432",2012,"2","15","-","Slovakia","Max Jason Mai","Don't Close Your Eyes","English","Rock","Male",1,NA,NA,NA,NA,NA
-"433",2012,"2","16","12","Norway","Tooji","Stay","English","Dance","Male",1,16,24,NA,NA,26
-"434",2012,"2","17","5","Bosnia and Herzegovina","Maya Sar","Korake ti znam","Bosnian","Ballad","Female",1,NA,NA,NA,NA,18
-"435",2012,"2","18","4","Lithuania","Donny Montell","Love Is Blind","English","Ballad","Male",1,68,82,NA,NA,14
-"436",2012,"-","-","1","United Kingdom","Engelbert Humperdinck","Love Will Set You Free","English","Ballad","Male",1,36,11,NA,NA,25
-"437",2012,"-","-","9","France","Anggun","Echo (You and I)","French, English","Pop","Female",1,0,85,NA,NA,22
-"438",2012,"-","-","10","Italy","Nina Zilli","L'amore e femmina (Out of Love)","English, Italian","Pop","Female",1,56,157,NA,NA,9
-"439",2012,"-","-","13","Azerbaijan","Sabina Babayeva","When the Music Dies","English","Ballad","Female",1,151,118,NA,NA,4
-"440",2012,"-","-","19","Spain","Pastora Soler","Quedate conmigo (Stay With Me)","Spanish","Ballad","Female",1,45,154,NA,NA,10
-"441",2012,"-","-","20","Germany","Roman Lob","Standing Still","English","Pop","Male",1,125,98,NA,NA,8
-"442",2011,"1","1","-","Poland","Magdalena Tul","Jestem","Polish","Pop","Female",1,NA,NA,NA,NA,NA
-"443",2011,"1","2","-","Norway","Stella Mwangi","Haba Haba","English, Swahili","Pop","Female",1,NA,NA,NA,NA,NA
-"444",2011,"1","3","-","Albania","Aurela Gaçe","Feel the Passion","English","Rock","Female",1,NA,NA,NA,NA,NA
-"445",2011,"1","4","-","Armenia","Emmy","Boom Boom","English","Pop","Female",1,NA,NA,NA,NA,NA
-"446",2011,"1","5","-","Turkey","Yuksek Sadakat","Live It Up","English","Rock","Male",1,NA,NA,NA,NA,NA
-"447",2011,"1","6","24","Serbia","Nina","Caroban","Serbian","Pop","Female",1,89,111,NA,NA,14
-"448",2011,"1","7","10","Russia","Alexey Vorobyov","Get You","English, Russian","Pop","Male",1,138,25,NA,NA,16
-"449",2011,"1","8","13","Switzerland","Anna Rossinelli","In Love for a While","English","Pop","Female",1,2,53,NA,NA,25
-"450",2011,"1","9","25","Georgia","Eldrine","One More Day","English","Rock","Female",1,138,79,NA,NA,9
-"451",2011,"1","10","1","Finland","Paradise Oskar","Da Da Dam","English","Pop","Male",1,47,75,NA,NA,21
-"452",2011,"1","11","-","Malta","Glen Vella","One Life","English","Pop","Male",1,NA,NA,NA,NA,NA
-"453",2011,"1","12","-","San Marino","Senit","Stand By","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"454",2011,"1","13","-","Croatia","Daria","Celebrate","English","Dance","Female",1,NA,NA,NA,NA,NA
-"455",2011,"1","14","21","Iceland","Sjonni's Friends","Coming Home","English","Pop","Male",6,60,72,NA,NA,20
-"456",2011,"1","15","5","Hungary","Kati Wolf","What About My Dreams?","English, Hungarian","Dance","Female",1,64,60,NA,NA,22
-"457",2011,"1","16","-","Portugal","Homens da Luta","A luta e alegria","Portuguese","Pop","Mix",6,NA,NA,NA,NA,NA
-"458",2011,"1","17","4","Lithuania","Evelina Sasenko","C'est ma vie","English","Ballad","Female",1,55,66,NA,NA,19
-"459",2011,"1","18","19","Azerbaijan","Ell & Nikki","Running Scared","English","Ballad","Mix",2,223,182,NA,NA,1
-"460",2011,"1","19","9","Greece","Loukas Giorkas feat. Stereo Mike","Watch My Dance","English, Greek","Pop","Male",2,176,84,NA,NA,7
-"461",2011,"2","1","2","Bosnia and Herzegovina","Dino Merlin","Love in Rewind","English","Pop","Male",1,NA,NA,NA,NA,6
-"462",2011,"2","2","18","Austria","Nadine Beiler","The Secret Is Love","English","Ballad","Female",1,25,145,NA,NA,18
-"463",2011,"2","3","-","Netherlands","3JS","Never Alone","English","Ballad","Male",1,NA,NA,NA,NA,NA
-"464",2011,"2","4","-","Belgium","Witloof Bay","With Love Baby","English","Pop","Mix",6,NA,NA,NA,NA,NA
-"465",2011,"2","5","-","Slovakia","TWiiNS","I'm Still Alive","English","Ballad","Female",2,NA,NA,NA,NA,NA
-"466",2011,"2","6","23","Ukraine","Mika Newton","Angel","English","Ballad","Female",1,168,117,NA,NA,4
-"467",2011,"2","7","15","Moldova","Zdob si Zdub","So Lucky","English","Rock","Male",1,98,82,NA,NA,12
-"468",2011,"2","8","7","Sweden","Eric Saade","Popular","English","Dance","Male",1,221,106,NA,NA,3
-"469",2011,"2","9","-","Cyprus","Christos Mylordos","San aggelos s'agapisa","Greek","Pop","Male",4,NA,NA,NA,NA,NA
-"470",2011,"2","10","-","Bulgaria","Poli Genova","Na inat","Bulgarian","Rock","Female",1,NA,NA,NA,NA,NA
-"471",2011,"2","11","-","North Macedonia","Vlatko Ilievski","Rusinka","Macedonian, English","Pop","Male",1,NA,NA,NA,NA,NA
-"472",2011,"2","12","-","Israel","Dana International","Ding Dong","Hebrew, English","Pop","Female",1,NA,NA,NA,NA,NA
-"473",2011,"2","13","20","Slovenia","Maja Keuc","No One","English","Ballad","Female",1,39,160,NA,NA,13
-"474",2011,"2","14","17","Romania","Hotel FM","Change","English","Pop","Male",1,79,86,NA,NA,17
-"475",2011,"2","15","8","Estonia","Getter Jaani","Rockefeller Street","English","Pop","Female",1,32,74,NA,NA,24
-"476",2011,"2","16","-","Belarus","Anastasia Vinnikova","I Love Belarus","English","Pop","Female",1,NA,NA,NA,NA,NA
-"477",2011,"2","17","-","Latvia","Musiqq","Angel in Disguise","English","Pop","Male",2,NA,NA,NA,NA,NA
-"478",2011,"2","18","3","Denmark","A Friend in London","New Tomorrow","English","Rock","Male",1,61,168,NA,NA,5
-"479",2011,"2","19","6","Ireland","Jedward","Lipstick","English","Pop","Male",2,101,119,NA,NA,8
-"480",2011,"-","-","11","France","Amaury Vassili","Sognu","Corsican","Ballad","Male",1,76,90,NA,NA,15
-"481",2011,"-","-","12","Italy","Raphael Gualazzi","Madness of Love","Italian, English","Ballad","Male",1,99,251,NA,NA,2
-"482",2011,"-","-","14","United Kingdom","Blue","I Can","English","Pop","Male",4,166,57,NA,NA,11
-"483",2011,"-","-","16","Germany","Lena","Taken by a Stranger","English","Pop","Female",1,113,104,NA,NA,10
-"484",2011,"-","-","22","Spain","Lucia Perez","Que me quiten lo bailao","Spanish","Pop","Female",1,73,38,NA,NA,23
-"485",2010,"1","1","4","Moldova","SunStroke Project and Olia Tira","Run Away","English","Pop","Mix",2,28,33,NA,NA,22
-"486",2010,"1","2","20","Russia","Peter Nalitch and Friends","Lost and Forgotten","English","Ballad","Male",1,107,63,NA,NA,11
-"487",2010,"1","3","-","Estonia","Malcolm Lincoln","Siren","English","Pop","Male",1,NA,NA,NA,NA,NA
-"488",2010,"1","4","-","Slovakia","Kristina","Horehronie","Slovak","Traditional","Female",1,NA,NA,NA,NA,NA
-"489",2010,"1","5","-","Finland","Kuunkuiskaajat","Tyolki ellaa","Finnish","Traditional","Female",2,NA,NA,NA,NA,NA
-"490",2010,"1","6","-","Latvia","Aisha","What For?","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"491",2010,"1","7","8","Serbia","Milan Stankovic","Ovo je Balkan","Serbian","Pop","Male",1,110,37,NA,NA,13
-"492",2010,"1","8","6","Bosnia and Herzegovina","Vukasin Brajic","Thunder and Lightning","English","Rock","Male",1,NA,NA,NA,NA,17
-"493",2010,"1","9","-","Poland","Marcin Mrozinski","Legenda","English, Polish","Ballad","Male",1,NA,NA,NA,NA,NA
-"494",2010,"1","10","7","Belgium","Tom Dice","Me and My Guitar","English","Pop","Male",1,76,185,NA,NA,6
-"495",2010,"1","11","-","Malta","Thea Garrett","My Dream","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"496",2010,"1","12","15","Albania","Juliana Pasha","It's All About You","English","Pop","Female",1,35,97,NA,NA,16
-"497",2010,"1","13","11","Greece","Giorgos Alkaios and Friends","OPA","Greek1","Pop","Male",1,152,110,NA,NA,8
-"498",2010,"1","14","23","Portugal","Filipa Azevedo","Ha dias assim","Portuguese","Ballad","Female",1,24,69,NA,NA,18
-"499",2010,"1","15","-","North Macedonia","Gjoko Taneski","Jas ja imam silata","Macedonian","Pop","Male",1,NA,NA,NA,NA,NA
-"500",2010,"1","16","9","Belarus","3+2 feat Robert Wells","Butterflies","English","Ballad","Mix",5,18,22,NA,NA,24
-"501",2010,"1","17","16","Iceland","Hera Bjork","Je ne sais quoi","English","Dance","Female",1,40,57,NA,NA,19
-"502",2010,"2","1","-","Lithuania","InCulto","Eastern European Funk","English","Dance","Male",5,NA,NA,NA,NA,NA
-"503",2010,"2","2","21","Armenia","Eva Rivas","Apricot Stone","English","Pop","Female",1,166,116,NA,NA,7
-"504",2010,"2","3","24","Israel","Harel Skaat","Milim","Hebrew","Ballad","Male",1,27,134,NA,NA,14
-"505",2010,"2","4","25","Denmark","Chanee and N'evergreen","In a Moment Like This","English","Pop","Mix",2,174,121,NA,NA,4
-"506",2010,"2","5","-","Switzerland","Michael von der Heide","Il pleut de l'or","French","Pop","Male",1,NA,NA,NA,NA,NA
-"507",2010,"2","6","-","Sweden","Anna Bergendahl","This Is My Life","English","Pop","Female",1,NA,NA,NA,NA,NA
-"508",2010,"2","7","1","Azerbaijan","Safura","Drip Drop","English","Ballad","Female",1,161,116,NA,NA,5
-"509",2010,"2","8","17","Ukraine","Alyosha","Sweet People","English","Ballad","Female",1,94,129,NA,NA,10
-"510",2010,"2","9","-","Netherlands","Sieneke","Ik ben verliefd","Dutch","Pop","Female",1,NA,NA,NA,NA,NA
-"511",2010,"2","10","19","Romania","Paula Seling and Ovi","Playing with Fire","English","Pop","Mix",2,155,167,NA,NA,3
-"512",2010,"2","11","-","Slovenia","Ansambel zlindra and Kalamari","Narodnozabavni rock","Slovene","Rock","Mix",2,NA,NA,NA,NA,NA
-"513",2010,"2","12","10","Ireland","Niamh Kavanagh","It's for You","English","Ballad","Female",1,15,62,NA,NA,23
-"514",2010,"2","13","-","Bulgaria","Miro","Angel si ti","Bulgarian, English","Pop","Male",1,NA,NA,NA,NA,NA
-"515",2010,"2","14","5","Cyprus","Jon Lilygreen and The Islanders","Life Looks Better in Spring","English","Pop","Male",1,16,57,NA,NA,21
-"516",2010,"2","15","-","Croatia","Feminnem","Lako je sve","Croatian","Ballad","Female",3,NA,NA,NA,NA,NA
-"517",2010,"2","16","13","Georgia","Sofia Nizharadze","Shine","English","Ballad","Female",1,127,160,NA,NA,9
-"518",2010,"2","17","14","Turkey","maNga","We Could Be the Same","English","Rock","Male",1,177,119,NA,NA,2
-"519",2010,"-","-","2","Spain","Daniel Diges","Algo pequenito","Spanish","Pop","Male",1,106,43,NA,NA,15
-"520",2010,"-","-","3","Norway","Didrik Solli-Tangen","My Heart Is Yours","English","Ballad","Male",1,18,61,NA,NA,20
-"521",2010,"-","-","12","United Kingdom","Josh Dubovie","That Sounds Good to Me","English","Pop","Male",1,NA,NA,NA,NA,25
-"522",2010,"-","-","18","France","Jessy Matador","Allez Ola Ole","French","Dance","Male",1,151,34,NA,NA,12
-"523",2010,"-","-","22","Germany","Lena","Satellite","English","Pop","Female",1,243,187,NA,NA,1
-"524",2009,"1","1","-","Montenegro","Andrea Demirovic","Just Get Out of My Life","English","Pop","Female",1,NA,NA,NA,NA,NA
-"525",2009,"1","2","-","Czech Republic","Gipsy.cz","Aven Romale","English, Romani","Traditional","Male",1,NA,NA,NA,NA,NA
-"526",2009,"1","3","-","Belgium","Copycat","Copycat","English","Pop","Male",1,NA,NA,NA,NA,NA
-"527",2009,"1","4","-","Belarus","Petr Elfimov","Eyes That Never Lie","English","Rock","Male",1,NA,NA,NA,NA,NA
-"528",2009,"1","5","4","Sweden","Malena Ernman","La voix","French, English","Traditional","Female",1,59,27,NA,NA,21
-"529",2009,"1","6","9","Armenia","Inga and Anush","Jan Jan","English, Armenian","Traditional","Female",2,111,71,NA,NA,10
-"530",2009,"1","7","-","Andorra","Susanne Georgi","La teva decisio (Get a Life)","Catalan, English","Pop","Female",1,NA,NA,NA,NA,NA
-"531",2009,"1","8","-","Switzerland","Lovebugs","The Highest Heights","English","Rock","Male",1,NA,NA,NA,NA,NA
-"532",2009,"1","9","18","Turkey","Hadise","Dum Tek Tek","English","Dance","Female",1,203,114,NA,NA,4
-"533",2009,"1","10","2","Israel","Noa and Mira Awad","There Must Be Another Way","English, Hebrew, Arabic","Pop","Female",2,15,107,NA,NA,16
-"534",2009,"1","11","-","Bulgaria","Krassimir Avramov","Illusion","English","Dance","Mix",4,NA,NA,NA,NA,NA
-"535",2009,"1","12","7","Iceland","Yohanna","Is It True?","English","Ballad","Female",1,173,260,NA,NA,2
-"536",2009,"1","13","-","North Macedonia","Next Time","Nesto sto kje ostane","Macedonian","Rock","Male",1,NA,NA,NA,NA,NA
-"537",2009,"1","14","22","Romania","Elena","The Balkan Girls","English","Dance","Female",1,64,31,NA,NA,19
-"538",2009,"1","15","24","Finland","Waldo's People","Lose Control","English","Pop","Male",1,30,12,NA,NA,25
-"539",2009,"1","16","6","Portugal","Flor-de-Lis","Todas as ruas do amor","Portuguese","Traditional","Female",1,45,64,NA,NA,15
-"540",2009,"1","17","14","Malta","Chiara","What If We","English","Ballad","Female",1,18,87,NA,NA,22
-"541",2009,"1","18","12","Bosnia and Herzegovina","Regina","Bistra voda","Bosnian","Ballad","Male",1,124,90,NA,NA,9
-"542",2009,"2","1","5","Croatia","Igor Cukrov feat. Andrea","Lijepa Tena","Croatian","Ballad","Mix",2,55,58,NA,NA,18
-"543",2009,"2","2","-","Ireland","Sinead Mulvey and Black Daisy","Et Cetera","English","Rock","Female",1,NA,NA,NA,NA,NA
-"544",2009,"2","3","-","Latvia","Intars Busulis","Probka","Russian","Pop","Mix",3,NA,NA,NA,NA,NA
-"545",2009,"2","4","-","Serbia","Marko Kon and Milaan","Cipela","Serbian","Traditional","Male",1,NA,NA,NA,NA,NA
-"546",2009,"2","5","-","Poland","Lidia Kopania","I Don't Wanna Leave","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"547",2009,"2","6","20","Norway","Alexander Rybak","Fairytale","English","Traditional","Male",1,378,312,NA,NA,1
-"548",2009,"2","7","-","Cyprus","Christina Metaxa","Firefly","English","Ballad","Female",1,NA,NA,NA,NA,NA
-"549",2009,"2","8","-","Slovakia","Kamil Mikulcik and Nela Pociskova","Le? tmou","Slovak","Ballad","Mix",2,NA,NA,NA,NA,NA
-"550",2009,"2","9","16","Denmark","Niels Brinck","Believe Again","English","Rock","Male",1,40,120,NA,NA,13
-"551",2009,"2","10","-","Slovenia","Quartissimo feat. Martina","Love Symphony","English, Slovene","Pop","Female",1,NA,NA,NA,NA,NA
-"552",2009,"2","11","-","Hungary","Zoli adok","Dance with Me","English","Pop","Male",1,NA,NA,NA,NA,NA
-"553",2009,"2","12","11","Azerbaijan","AySel and Arash","Always","English","Pop","Mix",2,253,112,NA,NA,3
-"554",2009,"2","13","8","Greece","Sakis Rouvas","This Is Our Night","English","Dance","Male",1,151,93,NA,NA,7
-"555",2009,"2","14","1","Lithuania","Sasha Son","Love","English, Russian","Ballad","Male",1,38,31,NA,NA,23
-"556",2009,"2","15","13","Moldova","Nelly Ciobanu","Hora din Moldova","Romanian, English","Traditional","Female",1,66,93,NA,NA,14
-"557",2009,"2","16","19","Albania","Kejsi Tola","Carry Me in Your Dreams","English","Dance","Female",1,81,26,NA,NA,17
-"558",2009,"2","17","21","Ukraine","Svetlana Loboda","Be My Valentine! (Anti-Crisis Girl)","English","Pop","Female",1,70,68,NA,NA,12
-"559",2009,"2","18","15","Estonia","Urban Symphony","Randajad","Estonian","Ballad","Female",1,129,124,NA,NA,6
-"560",2009,"2","19","-","Netherlands","The Toppers","Shine","English","Pop","Male",3,NA,NA,NA,NA,NA
-"561",2009,"-","-","3","France","Patricia Kaas","Et s'il fallait le faire","French","Ballad","Female",1,54,164,NA,NA,8
-"562",2009,"-","-","10","Russia","Anastasiya Prikhodko","Mamo","Russian, Ukrainian","Ballad","Female",1,118,67,NA,NA,11
-"563",2009,"-","-","17","Germany","Alex Swings Oscar Sings!","Miss Kiss Kiss Bang","English","Pop","Male",1,18,73,NA,NA,20
-"564",2009,"-","-","23","United Kingdom","Jade Ewen","It's My Time","English","Ballad","Female",1,105,223,NA,NA,5
-"565",2009,"-","-","25","Spain","Soraya Arnelas","La noche es para mi","Spanish, English","Dance","Female",1,38,9,NA,NA,24
+X,year,semi_final,semi_draw_position,final_draw_position,country,artist_name,song_name,language,style,gender,main_singers,final_televote_points,final_jury_points,final_televote_votes,final_jury_votes,final_place
+1,2023,1,1,20,Norway,Alessandra,Queen of Kings,English,Pop,Female,1,216,52,36,11,5
+3,2023,1,3,5,Serbia,Luke Black,Samo mi se spava,"Serbian, English",Pop,Male,1,16,14,4,6,24
+5,2023,1,5,2,Portugal,Mimicat,Ai coração,Portuguese,Pop,Female,1,16,43,3,9,23
+7,2023,1,7,25,Croatia,Let 3,Mama ŠC!,Croatian,Pop,Male,1,112,11,20,2,13
+8,2023,1,8,3,Switzerland,Remo Forrer,Watergun,English,Ballad,Male,1,31,61,10,15,20
+9,2023,1,9,23,Israel,Noa Kirel,Unicorn,English,Pop,Female,1,185,177,30,25,3
+10,2023,1,10,18,Moldova,Pasha Parfeni,Soarele si luna,Romanian,Traditional,Male,1,76,20,17,4,18
+11,2023,1,11,9,Sweden,Loreen,Tattoo,English,Pop,Female,1,243,340,36,36,1
+13,2023,1,13,14,Czech Republic,Vesna,My Sister's Crown,"English, Ukrainian, Czech, Bulgarian",Pop,Female,6,35,94,12,18,10
+15,2023,1,15,13,Finland,Käärijä,Cha Cha Cha,Finnish,Pop,Male,1,376,150,37,22,2
+17,2023,2,2,17,Armenia,Brunette,Future Lover,"English, Armenian",Ballad,Female,1,53,69,10,15,14
+19,2023,2,4,12,Estonia,Alika,Bridges,English,Ballad,Female,1,22,146,4,22,8
+20,2023,2,5,16,Belgium,Gustaph,Because of You,English,Pop,Male,1,55,127,13,22,7
+21,2023,2,6,7,Cyprus,Andrew Lambrou,Break a Broken Heart,English,Ballad,Male,1,58,68,11,17,12
+24,2023,2,9,4,Poland,Blanka,Solo,English,Pop,Female,1,81,12,17,5,19
+25,2023,2,10,24,Slovenia,Joker Out,Carpe Diem,Slovene,Rock,Male,1,45,33,11,6,21
+28,2023,2,13,1,Austria,Teya and Salena,Who the Hell Is Edgar?,English,Pop,Female,2,16,104,4,18,15
+29,2023,2,14,10,Albania,Albina and Familja Kelmendi,Duje,Albanian,Traditional,Female,1,59,17,10,4,22
+30,2023,2,15,22,Lithuania,Monika Linkyte,Stay,English,Ballad,Female,1,46,81,8,15,11
+31,2023,2,16,15,Australia,Voyager,Promise,English,Rock,Male,1,21,130,6,23,9
+32,2023,-,-,6,France,La Zarra,Évidemment,French,Ballad,Female,1,50,54,17,10,16
+33,2023,-,-,8,Spain,Blanca Paloma,Eaea,Spanish,Traditional,Female,1,5,95,2,21,17
+34,2023,-,-,11,Italy,Marco Mengoni,Due vite,Italian,Ballad,Male,1,174,176,29,27,4
+35,2023,-,-,19,Ukraine,Tvorchi,Heart of Steel,"English, Ukrainian",Pop,Male,1,189,54,28,10,6
+36,2023,-,-,21,Germany,Lord of the Lost,Blood & Glitter,English,Rock,Male,1,15,3,3,2,26
+37,2023,-,-,26,United Kingdom,Mae Muller,I Wrote a Song,English,Pop,Female,1,9,15,2,5,25
+40,2022,1,3,14,Lithuania,Monika Liu,Sentimentai,Lithuanian,Ballad,Female,1,93,35,21,10,14
+41,2022,1,4,5,Switzerland,Marius Bear,Boys Do Cry,English,Ballad,Male,1,0,78,0,21,17
+43,2022,1,6,12,Ukraine,Kalush Orchestra,Stefania,Ukrainian,Traditional,Male,1,439,192,39,26,1
+45,2022,1,8,11,Netherlands,S10,De diepte,Dutch,Ballad,Female,1,42,129,12,25,11
+46,2022,1,9,19,Moldova,Zdob si Zdub and Advahov Brothers,Trenuletul,"Romanian, English",Traditional,Male,1,239,14,35,4,7
+47,2022,1,10,3,Portugal,Maro,"Saudade, saudade","English, Portuguese",Ballad,Female,6,36,171,9,29,9
+51,2022,1,14,18,Iceland,Systur,Meo aekkandi sol,Icelandic,Traditional,Female,3,10,10,2,4,23
+52,2022,1,15,17,Greece,Amanda Georgiadi Tenfjord,Die Together,English,Ballad,Female,1,57,158,9,26,8
+53,2022,1,16,7,Norway,Subwoolfer,Give That Wolf a Banana,English,Pop,Male,2,146,36,32,10,10
+54,2022,1,17,8,Armenia,Rosa Linn,Snap,English,Ballad,Female,1,21,40,4,10,20
+55,2022,2,1,4,Finland,The Rasmus,Jezebel,English,Rock,Male,1,26,12,8,3,21
+57,2022,2,3,24,Serbia,Konstrakta,In corpore sano,"Serbian, Latin",Traditional,Female,1,225,87,34,15,5
+58,2022,2,4,15,Azerbaijan,Nadir Rustamli,Fade to Black,English,Ballad,Male,1,3,103,1,19,16
+62,2022,2,8,21,Australia,Sheldon Riley,Not the Same,English,Ballad,Male,1,2,123,1,23,15
+66,2022,2,12,25,Estonia,Stefan,Hope,English,Pop,Male,1,98,43,19,8,13
+67,2022,2,13,2,Romania,WRS,Llamame,"English, Spanish",Pop,Male,1,53,12,12,3,18
+68,2022,2,14,23,Poland,Ochman,River,English,Ballad,Male,1,105,46,22,9,12
+70,2022,2,16,16,Belgium,Jeremie Makiese,Miss You,English,Pop,Male,1,5,59,2,13,19
+71,2022,2,17,20,Sweden,Cornelia Jakobs,Hold Me Closer,English,Ballad,Female,1,180,258,33,33,4
+72,2022,2,18,1,Czech Republic,We Are Domi,Lights Off,English,Dance,Female,1,5,33,1,11,22
+73,2022,-,-,9,Italy,Mahmood and Blanco,Brividi,Italian,Ballad,Male,2,110,158,23,26,6
+74,2022,-,-,10,Spain,Chanel,SloMo,"Spanish, English",Pop,Female,1,228,231,38,34,3
+75,2022,-,-,13,Germany,Malik Harris,Rockstars,English,Ballad,Male,1,6,0,3,0,25
+76,2022,-,-,22,United Kingdom,Sam Ryder,Space Man,English,Pop,Male,1,183,283,34,35,2
+77,2022,-,-,6,France,Alvan and Ahez,Fulenn,Breton,Traditional,Mix,4,8,9,6,3,24
+78,2021,1,1,18,Lithuania,The Roop,Discoteque,English,Dance,Male,1,165,55,27,12,8
+80,2021,1,3,5,Russia,Manizha,Russian Woman,"Russian, English",Traditional,Female,1,100,104,22,21,9
+81,2021,1,4,25,Sweden,Tusse,Voices,English,Pop,Male,1,63,46,18,10,14
+85,2021,1,8,1,Cyprus,Elena Tsagrinou,El Diablo,English,Pop,Female,1,44,50,7,11,16
+86,2021,1,9,22,Norway,Tix,Fallen Angel,English,Pop,Male,1,60,15,16,5,18
+88,2021,1,11,4,Belgium,Hooverphonic,The Wrong Place,English,Ballad,Female,1,3,71,2,17,19
+89,2021,1,12,3,Israel,Eden Alene,Set Me Free,English,Pop,Female,1,20,73,4,17,17
+91,2021,1,14,21,Azerbaijan,Efendi,Mata Hari,English,Pop,Female,1,33,32,12,9,20
+92,2021,1,15,19,Ukraine,Go_A,Shum,Ukrainian,Traditional,Female,1,267,97,38,19,5
+93,2021,1,16,6,Malta,Destiny,Je me casse,English,Pop,Female,1,47,208,15,35,7
+97,2021,2,4,10,Greece,Stefania,Last Dance,English,Pop,Female,1,79,91,11,15,10
+100,2021,2,7,14,Moldova,Natalia Gordienko,Sugar,English,Pop,Female,1,62,53,11,6,13
+102,2021,2,9,8,Serbia,Hurricane,Loco Loco,Serbian,Pop,Female,3,82,20,12,3,15
+104,2021,2,11,2,Albania,Anxhela Peristeri,Karma,Albanian,Ballad,Female,1,35,22,5,4,21
+105,2021,2,12,7,Portugal,The Black Mamba,Love Is on My Side,English,Traditional,Male,1,27,126,6,22,12
+106,2021,2,13,17,Bulgaria,Victoria,Growing Up Is Getting Old,English,Ballad,Female,1,30,140,5,26,11
+107,2021,2,14,16,Finland,Blind Channel,Dark Side,English,Rock,Male,2,218,83,37,19,6
+109,2021,2,16,11,Switzerland,Gjon's Tears,Tout l'univers,French,Ballad,Male,1,165,267,34,34,3
+111,2021,-,-,23,Netherlands,Jeangu Macrooy,Birth of a New Age,"English, Sranan Tongo",Ballad,Male,1,0,11,0,5,11
+112,2021,-,-,13,Spain,Blas Canto,Voy a quedarme,Spanish,Ballad,Male,1,0,6,0,2,24
+113,2021,-,-,9,United Kingdom,James Newman,Embers,English,Pop,Male,1,0,0,0,0,26
+114,2021,-,-,15,Germany,Jendrik,I Don't Feel Hate,English,Pop,Male,1,0,3,0,2,25
+115,2021,-,-,20,France,Barbara Pravi,Voila,French,Ballad,Female,1,251,248,38,33,2
+116,2021,-,-,24,Italy,Maneskin,Zitti e buoni,Italian,Rock,Male,1,318,206,38,28,1
+117,2019,1,1,11,Cyprus,Tamta,Replay,English,Dance,Female,1,32,77,4,15,13
+121,2019,1,5,10,Slovenia,Zala Kralj & Gasper santl,Sebi,Slovene,Ballad,Mix,2,59,46,13,9,15
+122,2019,1,6,3,Czech Republic,Lake Malawi,Friend of a Friend,English,Pop,Male,1,7,150,4,26,11
+124,2019,1,8,19,Belarus,ZENA,Like It,English,Dance,Female,1,13,18,2,5,24
+125,2019,1,9,23,Serbia,Nevena Bozovic,Kruna,Serbian,Ballad,Female,1,54,35,7,8,18
+128,2019,1,12,25,Australia,Kate Miller-Heidke,Zero Gravity,English,Opera,Female,1,131,153,30,24,9
+129,2019,1,13,17,Iceland,Hatari,Hatrio mun sigra,Icelandic,Dance,Mix,2,186,46,34,9,10
+130,2019,1,14,18,Estonia,Victor Crone,Storm,English,Pop,Male,1,48,28,10,7,20
+132,2019,1,16,13,Greece,Katerine Duska,Better Love,English,Pop,Female,1,24,50,3,8,21
+133,2019,1,17,7,San Marino,Serhat,Say Na Na Na,English,Dance,Male,1,65,12,11,3,19
+137,2019,2,4,24,Switzerland,Luca Hanni,She Got Me,English,Dance,Male,1,212,152,38,28,4
+140,2019,2,7,6,Denmark,Leonora,Love Is Forever,"English, French",Pop,Female,1,51,69,13,16,12
+141,2019,2,8,9,Sweden,John Lundvik,Too Late for Love,English,Ballad,Male,1,93,241,17,32,5
+144,2019,2,11,1,Malta,Michela,Chameleon,English,Pop,Female,1,20,87,4,19,14
+146,2019,2,13,5,Russia,Sergey Lazarev,Scream,English,Ballad,Male,1,244,126,30,24,3
+147,2019,2,14,2,Albania,Jonida Maliqi,Ktheju tokes,Albanian,Traditional,Female,1,47,43,6,10,17
+148,2019,2,15,15,Norway,KEiiNO,Spirit in the Sky,English,Dance,Mix,3,291,40,37,9,6
+149,2019,2,16,12,Netherlands,Duncan Laurence,Arcade,English,Ballad,Male,1,261,237,40,32,1
+150,2019,2,17,8,North Macedonia,Tamara Todevska,Proud,English,Ballad,Female,1,58,247,11,32,7
+151,2019,2,18,20,Azerbaijan,Chingiz,Truth,English,Pop,Male,1,100,202,26,33,8
+152,2019,-,-,4,Germany,S!sters,Sister,English,Ballad,Female,2,0,24,0,5,25
+153,2019,-,-,14,Israel,Kobi Marimi,Home,English,Ballad,Male,1,35,0,7,0,23
+154,2019,-,-,16,United Kingdom,Michael Rice,Bigger than Us,English,Ballad,Male,1,3,8,1,5,26
+155,2019,-,-,21,France,Bilal Hassani,Roi,"French, English",Pop,Female,1,38,67,12,18,16
+156,2019,-,-,22,Italy,Mahmood,Soldi,Italian,Pop,Male,1,253,219,38,32,2
+157,2019,-,-,26,Spain,Miki,La Venda,Spanish,Pop,Male,1,53,1,12,1,22
+160,2018,1,3,12,Albania,Eugent Bushpepa,Mall,Albanian,Rock,Male,4,58,126,8,20,11
+162,2018,1,5,14,Czech Republic,Mikolas Josef,Lie to Me,English,Pop,Male,1,215,66,35,16,6
+163,2018,1,6,4,Lithuania,Ieva Zasimauskaite,When We're Old,English,Ballad,Female,1,91,90,11,17,12
+164,2018,1,7,22,Israel,Netta,Toy,English,Pop,Female,1,317,212,39,34,1
+166,2018,1,9,6,Estonia,Elina Nechayeva,La forza,Italian,Opera,Female,1,102,143,19,26,8
+167,2018,1,10,18,Bulgaria,Equinox,Bones,English,Pop,Mix,5,66,100,15,18,14
+170,2018,1,13,5,Austria,Cesar Sampson,Nobody but You,English,Pop,Male,1,71,271,18,34,3
+172,2018,1,15,17,Finland,Saara Aalto,Monsters,English,Pop,Female,1,23,23,4,6,25
+175,2018,1,18,24,Ireland,Ryan O'Shaughnessy,Together,English,Traditional,Male,1,62,74,14,19,16
+176,2018,1,19,25,Cyprus,Eleni Foureira,Fuego,English,Pop,Female,1,253,183,42,27,2
+177,2018,2,1,7,Norway,Alexander Rybak,That's How You Write a Song,English,Pop,Male,1,84,60,18,12,15
+179,2018,2,3,10,Serbia,Sanja Ilic & Balkanika,Nova deca,Serbian,Traditional,Mix,2,75,38,9,6,19
+181,2018,2,5,15,Denmark,Rasmussen,Higher Ground,English,Traditional,Male,1,188,38,32,8,9
+183,2018,2,7,19,Moldova,DoReDoS,My Lucky Day,English,Pop,Mix,3,115,94,23,13,10
+184,2018,2,8,23,Netherlands,Waylon,Outlaw in 'Em,English,Rock,Male,1,32,89,7,18,18
+185,2018,2,9,16,Australia,Jessica Mauboy,We Got Love,English,Pop,Female,1,9,90,3,17,20
+189,2018,2,13,21,Hungary,AWS,Viszlat nyar,Hungarian,Rock,Male,1,65,28,15,7,21
+191,2018,2,15,20,Sweden,Benjamin Ingrosso,Dance You Off,English,Pop,Male,1,21,253,7,35,7
+193,2018,2,17,3,Slovenia,Lea Sirk,"Hvala, ne!",Slovene,Pop,Female,1,23,41,4,12,22
+194,2018,2,18,1,Ukraine,Melovin,Under the Ladder,English,Dance,Male,1,119,11,18,2,17
+195,2018,-,-,8,Portugal,Claudia Pascoal,O jardim,Portuguese,Pop,Female,1,18,21,2,5,26
+196,2018,-,-,9,United Kingdom,SuRie,Storm,English,Pop,Female,1,25,23,7,6,24
+197,2018,-,-,11,Germany,Michael Schulte,You Let Me Walk Alone,English,Pop,Male,1,136,204,29,30,4
+198,2018,-,-,13,France,Madame Monsieur,Mercy,French,Pop,Female,1,59,114,13,21,13
+199,2018,-,-,26,Italy,Ermal Meta & Fabrizio Moro,Non mi avete fatto niente,Italian,Pop,Male,2,249,59,35,11,5
+200,2018,-,-,2,Spain,Amaia & Alfred,Tu canciOn,Spanish,Pop,Mix,2,18,43,3,10,23
+201,2017,1,1,24,Sweden,Robin Bengtsson,I Can't Go On,English,Pop,Male,1,126,218,35,33,5
+203,2017,1,3,14,Australia,Isaiah,Don't Come Easy,English,Pop,Male,1,2,171,1,29,9
+205,2017,1,5,23,Belgium,Blanche,City Lights,English,Pop,Female,1,255,108,40,21,4
+208,2017,1,8,12,Azerbaijan,Dihaj,Skeletons,English,Pop,Female,1,42,78,6,14,14
+209,2017,1,9,11,Portugal,Salvador Sobral,Amar pelos dois,Portuguese,Ballad,Male,1,376,382,41,39,1
+210,2017,1,10,15,Greece,Demy,This Is Love,English,Pop,Female,1,29,48,6,7,19
+211,2017,1,11,2,Poland,Kasia Mos,Flashlight,English,Pop,Female,1,41,23,11,7,22
+212,2017,1,12,7,Moldova,Sunstroke Project,"Hey, Mamma!",English,Dance,Male,1,264,110,38,19,3
+215,2017,1,15,19,Cyprus,Hovig,Gravity,English,Pop,Male,1,32,36,6,7,21
+216,2017,1,16,5,Armenia,Artsvik,Fly with Me,English,Pop,Female,1,21,58,5,16,18
+220,2017,2,2,4,Austria,Nathan Trent,Running on Air,English,Pop,Male,1,0,93,0,24,16
+223,2017,2,5,20,Romania,Ilinca ft. Alex Florea,Yodel It!,English,Pop,Mix,2,224,58,38,11,7
+224,2017,2,6,6,Netherlands,O'G3NE,Lights and Shadows,English,Pop,Female,3,15,135,5,25,11
+225,2017,2,7,8,Hungary,Joci Papai,Origo,Hungarian,Traditional,Male,1,152,48,33,10,8
+226,2017,2,8,10,Denmark,Anja,Where I Am,English,Pop,Female,1,8,69,1,14,20
+229,2017,2,11,13,Croatia,Jacques Houdek,My Friend,"English, Italian",Opera,Male,1,103,25,21,6,13
+230,2017,2,12,17,Norway,JOWST,Grab the Moment,English,Pop,Male,1,29,129,8,24,10
+232,2017,2,14,3,Belarus,Naviband,Story of My Life,Belarusian,Pop,Mix,2,33,50,9,11,17
+233,2017,2,15,25,Bulgaria,Kristian Kostov,Beautiful Mess,English,Pop,Male,1,337,278,41,38,2
+236,2017,2,18,1,Israel,IMRI,I Feel Alive,English,Pop,Male,1,5,34,3,8,23
+237,2017,-,-,9,Italy,Francesco Gabbani,Occidentali's Karma,Italian,Pop,Male,1,208,126,36,20,6
+238,2017,-,-,16,Spain,Manel Navarro,Do It for Your Lover,"Spanish, English",Pop,Male,1,5,0,1,0,26
+239,2017,-,-,18,United Kingdom,Lucie Jones,Never Give Up on You,English,Ballad,Female,1,12,99,4,21,15
+240,2017,-,-,21,Germany,Levina,Perfect Life,English,Pop,Female,1,3,3,1,1,25
+241,2017,-,-,22,Ukraine,O.Torvald,Time,English,Rock,Male,1,24,12,6,3,24
+242,2017,-,-,26,France,Alma,Requiem,"French, English",Pop,Female,1,90,45,24,12,12
+246,2016,1,4,5,Hungary,Freddie,Pioneer,English,Pop,Male,1,56,52,16,12,19
+247,2016,1,5,17,Croatia,Nina Kraljic,Lighthouse,English,Pop,Female,1,33,40,5,11,23
+248,2016,1,6,3,Netherlands,Douwe Bob,Slow Down,English,Pop,Male,1,39,114,8,22,11
+249,2016,1,7,26,Armenia,Iveta Mukuchyan,LoveWave,English,Pop,Female,1,134,115,21,21,7
+251,2016,1,9,18,Russia,Sergey Lazarev,You Are the Only One,English,Pop,Male,1,361,130,41,20,3
+252,2016,1,10,2,Czech Republic,Gabriela Guncikova,I Stand,English,Pop,Female,1,0,41,0,11,25
+253,2016,1,11,14,Cyprus,Minus One,Alter Ego,English,Rock,Male,1,53,43,11,10,21
+254,2016,1,12,24,Austria,Zoe,Loin d'ici,French,Pop,Female,1,120,31,27,7,13
+256,2016,1,14,4,Azerbaijan,Samra,Miracle,English,Pop,Female,1,73,44,13,11,17
+260,2016,1,18,22,Malta,Ira Losco,Walk on Water,English,Pop,Female,1,16,137,3,23,12
+261,2016,2,1,20,Latvia,Justs,Heartbeat,English,Pop,Male,1,63,69,13,14,15
+262,2016,2,2,12,Poland,Michal Szpak,Color of Your Life,English,Pop,Male,1,222,7,35,4,8
+264,2016,2,4,7,Israel,Hovi Star,Made of Stars,English,Ballad,Male,1,11,124,3,25,14
+266,2016,2,6,15,Serbia,Sanja Vucic ZAA,Goodbye (Shelter),English,Pop,Female,1,80,35,8,7,18
+269,2016,2,9,16,Lithuania,Donny Montell,I've Been Waiting for This Night,English,Ballad,Male,1,96,104,17,22,9
+270,2016,2,10,13,Australia,Dami Im,Sound of Silence,English,Pop,Female,1,191,320,37,38,2
+272,2016,2,12,8,Bulgaria,Poli Genova,If Love Was a Crime,"English, Bulgarian",Dance,Female,1,180,127,34,23,4
+274,2016,2,14,21,Ukraine,Jamala,1944,"English, Crimean Tatar",Pop,Female,1,323,211,40,24,1
+276,2016,2,16,23,Georgia,Nika Kocharov & Young Georgian Lolitaz,Midnight Gold,English,Rock,Male,1,24,80,6,12,20
+278,2016,2,18,1,Belgium,Laura Tesoro,What's the Pressure,English,Pop,Female,1,51,130,9,20,10
+279,2016,-,-,6,Italy,Francesca Michielin,No Degree of Separation,"Italian, English",Pop,Female,1,34,90,8,14,16
+280,2016,-,-,9,Sweden,Frans,If I Were Sorry,English,Pop,Male,1,139,122,29,17,5
+281,2016,-,-,10,Germany,Jamie-Lee,Ghost,English,Pop,Female,1,10,1,2,1,26
+282,2016,-,-,11,France,Amir,J'ai cherche,"French, English",Pop,Male,1,109,148,26,26,6
+283,2016,-,-,19,Spain,Barei,Say Yay!,English,Pop,Female,1,10,67,5,15,22
+284,2016,-,-,25,United Kingdom,Joe and Jake,You're Not Alone,English,Pop,Male,2,8,54,3,10,24
+286,2015,1,2,6,Armenia,Genealogy,Face the Shadow,English,Pop,Mix,6,15,77,11,4,16
+287,2015,1,3,13,Belgium,Loic Nottet,Rhythm Inside,English,Pop,Male,1,186,190,37,31,4
+290,2015,1,6,15,Greece,Maria Elena Kyriakou,One Last Breath,English,Ballad,Female,1,29,24,4,5,19
+291,2015,1,7,4,Estonia,Elina Born & Stig Rasta,Goodbye to Yesterday,English,Pop,Mix,2,53,144,32,16,7
+293,2015,1,9,8,Serbia,Bojana Stamenov,Beauty Never Lies,English,Pop,Female,1,12,86,16,4,10
+294,2015,1,10,22,Hungary,Boggie,Wars for Nothing,English,Pop,Female,1,29,17,4,8,20
+296,2015,1,12,25,Russia,Polina Gagarina,A Million Voices,English,Pop,Female,1,234,286,38,32,2
+298,2015,1,14,26,Albania,Elhaida Dani,I'm Alive,English,Pop,Female,1,4,93,12,2,17
+299,2015,1,15,20,Romania,Voltaj,De la capat,"Romanian, English",Pop,Male,1,21,69,12,4,15
+300,2015,1,16,23,Georgia,Nina Sublatti,Warrior,English,Pop,Female,1,62,51,12,13,11
+301,2015,2,1,7,Lithuania,Monika Linkyte & Vaidas Baumila,This Time,English,Pop,Mix,2,31,44,6,9,18
+304,2015,2,4,16,Montenegro,Knez,Adio,Montenegrin,Traditional,Male,1,44,34,5,9,13
+306,2015,2,6,9,Norway,Morland & Debrah Scarlett,A Monster Like Me,English,Ballad,Mix,2,163,37,10,24,8
+309,2015,2,9,3,Israel,Nadav Guedj,Golden Boy,English,Pop,Male,1,77,102,31,17,9
+310,2015,2,10,19,Latvia,Aminata,Love Injected,English,Pop,Female,1,249,88,22,35,6
+311,2015,2,11,24,Azerbaijan,Elnur Huseynov,Hour of the Wolf,English,Ballad,Male,1,40,48,8,8,12
+313,2015,2,13,10,Sweden,Mans Zelmerlow,Heroes,English,Pop,Male,1,353,272,38,37,1
+315,2015,2,15,11,Cyprus,John Karayiannis,One Thing I Should Have Done,English,Ballad,Male,1,63,8,1,15,22
+316,2015,2,16,1,Slovenia,Maraaya,Here for You,English,Pop,Female,1,36,27,6,10,14
+317,2015,2,17,18,Poland,Monika Kuszynska,In the Name of Love,English,Ballad,Female,1,2,47,10,1,23
+318,2015,-,-,2,France,Lisa Angell,N'oubliez pas,French,Ballad,Female,1,24,3,1,8,25
+319,2015,-,-,5,United Kingdom,Electro Velvet,Still in Love with You,English,Pop,Mix,2,12,4,2,6,24
+320,2015,-,-,14,Austria,The Makemakes,I Am Yours,English,Ballad,Male,1,40,0,0,12,26
+321,2015,-,-,17,Germany,Ann Sophie,Black Smoke,English,Pop,Female,1,24,5,2,7,27
+322,2015,-,-,21,Spain,Edurne,Amanecer,Spanish,Ballad,Female,1,6,26,8,3,21
+323,2015,-,-,27,Italy,Il Volo,Grande amore,Italian,Ballad,Male,3,171,356,38,27,3
+324,2014,1,1,7,Armenia,Aram MP3,Not Alone,English,Ballad,Male,1,113,187,26,19,4
+327,2014,1,4,13,Sweden,Sanna Nielsen,Undo,English,Ballad,Female,1,199,173,32,25,3
+328,2014,1,5,4,Iceland,Pollaponk,No Prejudice,English,Rock,Male,3,59,38,9,9,15
+330,2014,1,7,15,Russia,Tolmachevy Sisters,Shine,English,Pop,Female,2,62,132,18,11,7
+331,2014,1,8,3,Azerbaijan,Dilara Kazimova,Start a Fire,English,Ballad,Female,1,101,14,3,22,22
+332,2014,1,9,1,Ukraine,Mariya Yaremchuk,Tick-Tock,English,Pop,Female,1,72,112,19,14,6
+335,2014,1,12,25,San Marino,Valentina Monetta,Maybe,English,Ballad,Female,2,16,15,7,3,24
+337,2014,1,14,24,Netherlands,The Common Linnets,Calm After the Storm,English,Traditional,Mix,2,NA,NA,NA,NA,2
+338,2014,1,15,8,Montenegro,Sergej cetkovic,Moj svijet,Montenegrin,Ballad,Male,1,48,27,3,9,19
+339,2014,1,16,21,Hungary,Andras Kallay-Saunders,Running,English,Pop,Male,1,138,83,21,21,5
+340,2014,2,1,22,Malta,Firelight,Coming Home,English,Traditional,Mix,2,119,12,4,22,23
+342,2014,2,3,5,Norway,Carl Espen,Silent Storm,English,Ballad,Male,1,102,39,13,18,8
+344,2014,2,5,9,Poland,Donatan & Cleo,My Slowianie – We Are Slavic,"Polish, English",Traditional,Female,1,23,162,23,6,14
+345,2014,2,6,11,Austria,Conchita Wurst,Rise Like a Phoenix,English,Ballad,Male,1,214,306,34,26,1
+347,2014,2,8,18,Finland,Softengine,Something Better,English,Rock,Male,1,114,36,7,19,11
+349,2014,2,10,2,Belarus,Teo,Cheesecake,English,Pop,Male,1,50,56,10,9,16
+351,2014,2,12,20,Switzerland,Sebalter,Hunter of Stars,English,Pop,Male,1,26,114,29,5,13
+352,2014,2,13,10,Greece,Freaky Fortune feat. RiskyKidd,Rise Up,English,Dance,Male,2,45,41,11,11,20
+353,2014,2,14,17,Slovenia,Tinkara Kovac,Round and Round,"English, Slovene",Pop,Female,1,21,15,2,7,25
+354,2014,2,15,6,Romania,Paula Seling & Ovi,Miracle,English,Dance,Mix,2,51,103,16,9,12
+355,2014,-,-,12,Germany,Elaiza,Is It Right,English,Traditional,Female,1,56,27,6,12,18
+356,2014,-,-,14,France,TWIN TWIN,Moustache,French,Dance,Male,1,5,1,1,2,26
+357,2014,-,-,16,Italy,Emma,La mia citta,Italian,Rock,Female,1,37,22,4,5,21
+358,2014,-,-,19,Spain,Ruth Lorenzo,Dancing in the Rain,"English, Spanish",Ballad,Female,1,83,29,7,21,10
+359,2014,-,-,23,Denmark,Basim,Cliche Love Song,English,Pop,Male,1,85,42,12,16,9
+360,2014,-,-,26,United Kingdom,Molly,Children of the Universe,English,Pop,Female,1,49,24,5,12,17
+362,2013,1,2,7,Estonia,Birgit,Et uus saaks alguse,Estonian,Ballad,Female,1,NA,NA,NA,NA,20
+365,2013,1,5,18,Denmark,Emmelie de Forest,Only Teardrops,English,Pop,Female,1,NA,NA,NA,NA,1
+366,2013,1,6,10,Russia,Dina Garipova,What If,English,Ballad,Female,1,NA,NA,NA,NA,5
+367,2013,1,7,22,Ukraine,Zlata Ognevich,Gravity,English,Pop,Female,1,NA,NA,NA,NA,3
+368,2013,1,8,13,Netherlands,Anouk,Birds,English,Ballad,Female,1,NA,NA,NA,NA,9
+370,2013,1,10,2,Lithuania,Andrius Pojavis,Something,English,Dance,Male,1,NA,NA,NA,NA,22
+371,2013,1,11,8,Belarus,Alyona Lanskaya,Solayoh,English,Dance,Female,1,NA,NA,NA,NA,16
+372,2013,1,12,3,Moldova,Aliona Moon,O mie,Romanian,Ballad,Female,1,NA,NA,NA,NA,11
+373,2013,1,13,26,Ireland,Ryan Dolan,Only Love Survives,English,Pop,Male,1,NA,NA,NA,NA,26
+375,2013,1,15,6,Belgium,Roberto Bellarosa,Love Kills,English,Pop,Male,1,NA,NA,NA,NA,12
+380,2013,2,4,20,Azerbaijan,Farid Mammadov,Hold Me,English,Ballad,Male,1,NA,NA,NA,NA,2
+381,2013,2,5,4,Finland,Krista Siegfrids,Marry Me,English,Pop,Female,1,NA,NA,NA,NA,24
+382,2013,2,6,9,Malta,Gianluca,Tomorrow,English,Pop,Male,1,NA,NA,NA,NA,8
+384,2013,2,8,19,Iceland,Eythor Ingi,Eg a lif,Icelandic,Traditional,Male,1,NA,NA,NA,NA,17
+385,2013,2,9,21,Greece,Koza Mostra feat. Agathon Iakovidis,Alcohol Is Free,Greek1,Traditional,Male,4,NA,NA,NA,NA,6
+387,2013,2,11,12,Armenia,Dorians,Lonely Planet,English,Rock,Male,1,NA,NA,NA,NA,18
+388,2013,2,12,17,Hungary,ByeAlex,Kedvesem (Zoohacker Remix),Hungarian,Pop,Male,1,NA,NA,NA,NA,10
+389,2013,2,13,24,Norway,Margaret Berger,I Feed You My Love,English,Dance,Female,1,NA,NA,NA,NA,4
+391,2013,2,15,25,Georgia,Nodi Tatishvili & Sophie Gelovani,Waterfall,English,Ballad,Mix,2,NA,NA,NA,NA,15
+393,2013,2,17,14,Romania,Cezar,It's My Life,English,Dance,Male,1,NA,NA,NA,NA,13
+394,2013,-,-,1,France,Amandine Bourgeois,L'enfer et moi,French,Rock,Female,1,NA,NA,NA,NA,23
+395,2013,-,-,5,Spain,ESDM,Contigo hasta el final,Spanish,Rock,Female,1,NA,NA,NA,NA,25
+396,2013,-,-,11,Germany,Cascada,Glorious,English,Dance,Female,1,NA,NA,NA,NA,21
+397,2013,-,-,15,United Kingdom,Bonnie Tyler,Believe in Me,English,Rock,Female,1,NA,NA,NA,NA,19
+398,2013,-,-,16,Sweden,Robin Stjernberg,You,English,Dance,Male,1,NA,NA,NA,NA,14
+399,2013,-,-,23,Italy,Marco Mengoni,L'essenziale,Italian,Ballad,Male,1,NA,NA,NA,NA,7
+401,2012,1,2,7,Iceland,Greta Salome and Jonsi,Never Forget,English,Ballad,Mix,2,39,53,NA,NA,20
+402,2012,1,3,16,Greece,Eleftheria Eleftheriou,Aphrodisiac,English,Dance,Female,1,89,60,NA,NA,17
+404,2012,1,5,3,Albania,Rona Nishliu,Suus3,Albanian,Ballad,Female,1,106,157,NA,NA,5
+405,2012,1,6,14,Romania,Mandinga,Zaleilah,"Spanish, English",Dance,Female,1,117,53,NA,NA,12
+411,2012,1,12,8,Cyprus,Ivi Adamou,La La Love,English,Dance,Female,1,63,85,NA,NA,16
+412,2012,1,13,15,Denmark,Soluna Samay,Should've Known Better,English,Rock,Female,1,18,51,NA,NA,23
+413,2012,1,14,6,Russia,Buranovskiye Babushki,Party for Everybody,"Udmurt, English",Dance,Female,6,332,94,NA,NA,2
+414,2012,1,15,2,Hungary,Compact Disco,Sound of Our Hearts,English,Pop,Male,1,20,30,NA,NA,24
+416,2012,1,17,26,Moldova,Pasha Parfeny,Lautar,English6,Pop,Male,1,75,104,NA,NA,11
+417,2012,1,18,23,Ireland,Jedward,Waterline,English,Dance,Male,2,89,14,NA,NA,19
+418,2012,2,1,24,Serbia,zeljko Joksimovic,Nije ljubav stvar ,Serbian,Ballad,Male,1,211,173,NA,NA,3
+419,2012,2,2,22,North Macedonia,Kaliopi,Crno i belo,Macedonian,Rock,Female,1,NA,NA,NA,NA,13
+421,2012,2,4,21,Malta,Kurt Calleja,This Is the Night,English,Dance,Male,1,10,70,NA,NA,21
+424,2012,2,7,25,Ukraine,Gaitana,Be My Guest,English,Dance,Female,1,37,125,NA,NA,15
+428,2012,2,11,17,Sweden,Loreen,Euphoria,English,Dance,Female,1,343,296,NA,NA,1
+430,2012,2,13,18,Turkey,Can Bonomo,Love Me Back,English,Traditional,Male,1,176,50,NA,NA,7
+431,2012,2,14,11,Estonia,Ott Lepland,Kuula,Estonian,Ballad,Male,1,78,152,NA,NA,6
+433,2012,2,16,12,Norway,Tooji,Stay,English,Dance,Male,1,16,24,NA,NA,26
+434,2012,2,17,5,Bosnia and Herzegovina,Maya Sar,Korake ti znam,Bosnian,Ballad,Female,1,NA,NA,NA,NA,18
+435,2012,2,18,4,Lithuania,Donny Montell,Love Is Blind,English,Ballad,Male,1,68,82,NA,NA,14
+436,2012,-,-,1,United Kingdom,Engelbert Humperdinck,Love Will Set You Free,English,Ballad,Male,1,36,11,NA,NA,25
+437,2012,-,-,9,France,Anggun,Echo (You and I),"French, English",Pop,Female,1,0,85,NA,NA,22
+438,2012,-,-,10,Italy,Nina Zilli,L'amore e femmina (Out of Love),"English, Italian",Pop,Female,1,56,157,NA,NA,9
+439,2012,-,-,13,Azerbaijan,Sabina Babayeva,When the Music Dies,English,Ballad,Female,1,151,118,NA,NA,4
+440,2012,-,-,19,Spain,Pastora Soler,Quedate conmigo (Stay With Me),Spanish,Ballad,Female,1,45,154,NA,NA,10
+441,2012,-,-,20,Germany,Roman Lob,Standing Still,English,Pop,Male,1,125,98,NA,NA,8
+447,2011,1,6,24,Serbia,Nina,Caroban,Serbian,Pop,Female,1,89,111,NA,NA,14
+448,2011,1,7,10,Russia,Alexey Vorobyov,Get You,"English, Russian",Pop,Male,1,138,25,NA,NA,16
+449,2011,1,8,13,Switzerland,Anna Rossinelli,In Love for a While,English,Pop,Female,1,2,53,NA,NA,25
+450,2011,1,9,25,Georgia,Eldrine,One More Day,English,Rock,Female,1,138,79,NA,NA,9
+451,2011,1,10,1,Finland,Paradise Oskar,Da Da Dam,English,Pop,Male,1,47,75,NA,NA,21
+455,2011,1,14,21,Iceland,Sjonni's Friends,Coming Home,English,Pop,Male,6,60,72,NA,NA,20
+456,2011,1,15,5,Hungary,Kati Wolf,What About My Dreams?,"English, Hungarian",Dance,Female,1,64,60,NA,NA,22
+458,2011,1,17,4,Lithuania,Evelina Sasenko,C'est ma vie,English,Ballad,Female,1,55,66,NA,NA,19
+459,2011,1,18,19,Azerbaijan,Ell & Nikki,Running Scared,English,Ballad,Mix,2,223,182,NA,NA,1
+460,2011,1,19,9,Greece,Loukas Giorkas feat. Stereo Mike,Watch My Dance,"English, Greek",Pop,Male,2,176,84,NA,NA,7
+461,2011,2,1,2,Bosnia and Herzegovina,Dino Merlin,Love in Rewind,English,Pop,Male,1,NA,NA,NA,NA,6
+462,2011,2,2,18,Austria,Nadine Beiler,The Secret Is Love,English,Ballad,Female,1,25,145,NA,NA,18
+466,2011,2,6,23,Ukraine,Mika Newton,Angel,English,Ballad,Female,1,168,117,NA,NA,4
+467,2011,2,7,15,Moldova,Zdob si Zdub,So Lucky,English,Rock,Male,1,98,82,NA,NA,12
+468,2011,2,8,7,Sweden,Eric Saade,Popular,English,Dance,Male,1,221,106,NA,NA,3
+473,2011,2,13,20,Slovenia,Maja Keuc,No One,English,Ballad,Female,1,39,160,NA,NA,13
+474,2011,2,14,17,Romania,Hotel FM,Change,English,Pop,Male,1,79,86,NA,NA,17
+475,2011,2,15,8,Estonia,Getter Jaani,Rockefeller Street,English,Pop,Female,1,32,74,NA,NA,24
+478,2011,2,18,3,Denmark,A Friend in London,New Tomorrow,English,Rock,Male,1,61,168,NA,NA,5
+479,2011,2,19,6,Ireland,Jedward,Lipstick,English,Pop,Male,2,101,119,NA,NA,8
+480,2011,-,-,11,France,Amaury Vassili,Sognu,Corsican,Ballad,Male,1,76,90,NA,NA,15
+481,2011,-,-,12,Italy,Raphael Gualazzi,Madness of Love,"Italian, English",Ballad,Male,1,99,251,NA,NA,2
+482,2011,-,-,14,United Kingdom,Blue,I Can,English,Pop,Male,4,166,57,NA,NA,11
+483,2011,-,-,16,Germany,Lena,Taken by a Stranger,English,Pop,Female,1,113,104,NA,NA,10
+484,2011,-,-,22,Spain,Lucia Perez,Que me quiten lo bailao,Spanish,Pop,Female,1,73,38,NA,NA,23
+485,2010,1,1,4,Moldova,SunStroke Project and Olia Tira,Run Away,English,Pop,Mix,2,28,33,NA,NA,22
+486,2010,1,2,20,Russia,Peter Nalitch and Friends,Lost and Forgotten,English,Ballad,Male,1,107,63,NA,NA,11
+491,2010,1,7,8,Serbia,Milan Stankovic,Ovo je Balkan,Serbian,Pop,Male,1,110,37,NA,NA,13
+492,2010,1,8,6,Bosnia and Herzegovina,Vukasin Brajic,Thunder and Lightning,English,Rock,Male,1,NA,NA,NA,NA,17
+494,2010,1,10,7,Belgium,Tom Dice,Me and My Guitar,English,Pop,Male,1,76,185,NA,NA,6
+496,2010,1,12,15,Albania,Juliana Pasha,It's All About You,English,Pop,Female,1,35,97,NA,NA,16
+497,2010,1,13,11,Greece,Giorgos Alkaios and Friends,OPA,Greek1,Pop,Male,1,152,110,NA,NA,8
+498,2010,1,14,23,Portugal,Filipa Azevedo,Ha dias assim,Portuguese,Ballad,Female,1,24,69,NA,NA,18
+500,2010,1,16,9,Belarus,3+2 feat Robert Wells,Butterflies,English,Ballad,Mix,5,18,22,NA,NA,24
+501,2010,1,17,16,Iceland,Hera Bjork,Je ne sais quoi,English,Dance,Female,1,40,57,NA,NA,19
+503,2010,2,2,21,Armenia,Eva Rivas,Apricot Stone,English,Pop,Female,1,166,116,NA,NA,7
+504,2010,2,3,24,Israel,Harel Skaat,Milim,Hebrew,Ballad,Male,1,27,134,NA,NA,14
+505,2010,2,4,25,Denmark,Chanee and N'evergreen,In a Moment Like This,English,Pop,Mix,2,174,121,NA,NA,4
+508,2010,2,7,1,Azerbaijan,Safura,Drip Drop,English,Ballad,Female,1,161,116,NA,NA,5
+509,2010,2,8,17,Ukraine,Alyosha,Sweet People,English,Ballad,Female,1,94,129,NA,NA,10
+511,2010,2,10,19,Romania,Paula Seling and Ovi,Playing with Fire,English,Pop,Mix,2,155,167,NA,NA,3
+513,2010,2,12,10,Ireland,Niamh Kavanagh,It's for You,English,Ballad,Female,1,15,62,NA,NA,23
+515,2010,2,14,5,Cyprus,Jon Lilygreen and The Islanders,Life Looks Better in Spring,English,Pop,Male,1,16,57,NA,NA,21
+517,2010,2,16,13,Georgia,Sofia Nizharadze,Shine,English,Ballad,Female,1,127,160,NA,NA,9
+518,2010,2,17,14,Turkey,maNga,We Could Be the Same,English,Rock,Male,1,177,119,NA,NA,2
+519,2010,-,-,2,Spain,Daniel Diges,Algo pequenito,Spanish,Pop,Male,1,106,43,NA,NA,15
+520,2010,-,-,3,Norway,Didrik Solli-Tangen,My Heart Is Yours,English,Ballad,Male,1,18,61,NA,NA,20
+521,2010,-,-,12,United Kingdom,Josh Dubovie,That Sounds Good to Me,English,Pop,Male,1,NA,NA,NA,NA,25
+522,2010,-,-,18,France,Jessy Matador,Allez Ola Ole,French,Dance,Male,1,151,34,NA,NA,12
+523,2010,-,-,22,Germany,Lena,Satellite,English,Pop,Female,1,243,187,NA,NA,1
+528,2009,1,5,4,Sweden,Malena Ernman,La voix,"French, English",Traditional,Female,1,59,27,NA,NA,21
+529,2009,1,6,9,Armenia,Inga and Anush,Jan Jan,"English, Armenian",Traditional,Female,2,111,71,NA,NA,10
+532,2009,1,9,18,Turkey,Hadise,Dum Tek Tek,English,Dance,Female,1,203,114,NA,NA,4
+533,2009,1,10,2,Israel,Noa and Mira Awad,There Must Be Another Way,"English, Hebrew, Arabic",Pop,Female,2,15,107,NA,NA,16
+535,2009,1,12,7,Iceland,Yohanna,Is It True?,English,Ballad,Female,1,173,260,NA,NA,2
+537,2009,1,14,22,Romania,Elena,The Balkan Girls,English,Dance,Female,1,64,31,NA,NA,19
+538,2009,1,15,24,Finland,Waldo's People,Lose Control,English,Pop,Male,1,30,12,NA,NA,25
+539,2009,1,16,6,Portugal,Flor-de-Lis,Todas as ruas do amor,Portuguese,Traditional,Female,1,45,64,NA,NA,15
+540,2009,1,17,14,Malta,Chiara,What If We,English,Ballad,Female,1,18,87,NA,NA,22
+541,2009,1,18,12,Bosnia and Herzegovina,Regina,Bistra voda,Bosnian,Ballad,Male,1,124,90,NA,NA,9
+542,2009,2,1,5,Croatia,Igor Cukrov feat. Andrea,Lijepa Tena,Croatian,Ballad,Mix,2,55,58,NA,NA,18
+547,2009,2,6,20,Norway,Alexander Rybak,Fairytale,English,Traditional,Male,1,378,312,NA,NA,1
+550,2009,2,9,16,Denmark,Niels Brinck,Believe Again,English,Rock,Male,1,40,120,NA,NA,13
+553,2009,2,12,11,Azerbaijan,AySel and Arash,Always,English,Pop,Mix,2,253,112,NA,NA,3
+554,2009,2,13,8,Greece,Sakis Rouvas,This Is Our Night,English,Dance,Male,1,151,93,NA,NA,7
+555,2009,2,14,1,Lithuania,Sasha Son,Love,"English, Russian",Ballad,Male,1,38,31,NA,NA,23
+556,2009,2,15,13,Moldova,Nelly Ciobanu,Hora din Moldova,"Romanian, English",Traditional,Female,1,66,93,NA,NA,14
+557,2009,2,16,19,Albania,Kejsi Tola,Carry Me in Your Dreams,English,Dance,Female,1,81,26,NA,NA,17
+558,2009,2,17,21,Ukraine,Svetlana Loboda,Be My Valentine! (Anti-Crisis Girl),English,Pop,Female,1,70,68,NA,NA,12
+559,2009,2,18,15,Estonia,Urban Symphony,Randajad,Estonian,Ballad,Female,1,129,124,NA,NA,6
+561,2009,-,-,3,France,Patricia Kaas,Et s'il fallait le faire,French,Ballad,Female,1,54,164,NA,NA,8
+562,2009,-,-,10,Russia,Anastasiya Prikhodko,Mamo,"Russian, Ukrainian",Ballad,Female,1,118,67,NA,NA,11
+563,2009,-,-,17,Germany,Alex Swings Oscar Sings!,Miss Kiss Kiss Bang,English,Pop,Male,1,18,73,NA,NA,20
+564,2009,-,-,23,United Kingdom,Jade Ewen,It's My Time,English,Ballad,Female,1,105,223,NA,NA,5
+565,2009,-,-,25,Spain,Soraya Arnelas,La noche es para mi,"Spanish, English",Dance,Female,1,38,9,NA,NA,24

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const GuessForm = ({ canciones, onGuess }) => {
+const GuessForm = ({ canciones, onGuess, fallos }) => {
     const [entrada, setEntrada] = useState("");
     const [sugerencias, setSugerencias] = useState([]);
 
@@ -13,11 +13,18 @@ const GuessForm = ({ canciones, onGuess }) => {
             return;
         }
 
-        // Filtra las sugerencias en base a lo que el usuario escribe
-        const filtro = canciones.filter((cancion) =>
-            cancion.song_name.toLowerCase().includes(valor.toLowerCase())
-        );
-        setSugerencias(filtro.slice(0, 10)); // Mostrar solo las x sugerencias
+        // Listado de nombres de canciones falladas
+        const falladas = fallos.map(f => f.song_name.toLowerCase());
+
+        //No mostramos en el filtro la canción si ya fue fallada
+        const filtro = canciones
+            .filter((cancion) =>
+                cancion.song_name.toLowerCase().includes(valor.toLowerCase()) &&
+                !falladas.includes(cancion.song_name.toLowerCase())
+            )
+            .slice(0, 10); // Mostramos 10 canciones de autocompletado
+
+        setSugerencias(filtro);
     };
 
     const handleSubmit = (e) => {
