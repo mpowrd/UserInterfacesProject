@@ -1,25 +1,23 @@
-import React from 'react';
+import React from "react";
 
-function FeedbackDisplay({ guesses, message, maxGuesses }) {
+const FeedbackDisplay = ({ fallos }) => {
+    return (
+        <div className="feedback-display">
+            <h2>Fallos</h2>
 
-  return (
-
-    <div className="feedback-section">
-
-      <div className="failures-counter">
-
-         Fallos: {guesses} / {maxGuesses}
-
-         {/* Podrías mostrar iconos o barras de progreso aquí */}
-
-      </div>
-
-      {message && <p className="feedback-message">{message}</p>}
-
-    </div>
-
-  );
-
-}
+            {fallos.length === 0 ? (
+                <p>No hay fallos aún.</p>
+            ) : (
+                <ul>
+                    {fallos.map((fallo, index) => (
+                        <li key={index}>
+                            {fallo.song_name} — {fallo.artist_name} ({fallo.country}, {fallo.year})
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+};
 
 export default FeedbackDisplay;

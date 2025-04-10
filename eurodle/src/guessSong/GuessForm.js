@@ -1,131 +1,64 @@
-import React, { useEffect } from 'react';
+import React, { useState } from "react";
 
-function GuessForm({ value_country, value_year, value_song, value_method, onChange_country, onChange_year, onChange_song, onChange_method, onSubmit }) {
+const GuessForm = ({ canciones, onGuess }) => {
+    const [entrada, setEntrada] = useState("");
+    const [sugerencias, setSugerencias] = useState([]);
 
-    // value_country={currentGuessCountry}
-    // value_year={currentGuessYear}
-    // value_song={currentGuessSong}
+    const handleChange = (e) => {
+        const valor = e.target.value;
+        setEntrada(valor);
 
-    // onChange_country={handleGuessChangeCountry}
-    // onChange_year={handleGuessChangeYear}
-    // onChange_song={handleGuessChangeSong}
-
-    // onSubmit={handleGuessSubmit}
-
-    const cambiarAanyoYpais = () => {
-        onChange_method(1);
-    };
-    
-    const cambiarAcancion = () => {
-        onChange_method(0);
-    };
-
-    useEffect(() => {
-        if (value_method === undefined || value_method === null) {
-          onChange_method(0); // Por defecto: adivinar por canción
+        if (valor.length === 0) {
+            setSugerencias([]);
+            return;
         }
-    }, [value_method, onChange_method]);
 
-  return (
+        // Filtra las sugerencias en base a lo que el usuario escribe
+        const filtro = canciones.filter((cancion) =>
+            cancion.song_name.toLowerCase().includes(valor.toLowerCase())
+        );
+        setSugerencias(filtro.slice(0, 10)); // Mostrar solo las x sugerencias
+    };
 
-    // Usar form es semánticamente correcto y permite enviar con Enter
+    const handleSubmit = (e) => {
+        e.preventDefault();
 
-    <form onSubmit={onSubmit} className="guess-form">
+        if (entrada.trim() !== "") {
+            onGuess(entrada.trim());
+            setEntrada("");
+            setSugerencias([]);
+        }
+    };
 
-        <label> cancion: </label>
+    const handleClickSugerencia = (titulo) => {
+        setEntrada(titulo);
+        setSugerencias([]);
+    };
 
-    <input
+    return (
+        <div className="guess-form">
+            <form onSubmit={handleSubmit}>
+                <input
+                    type="text"
+                    placeholder="Adivina la canción..."
+                    value={entrada}
+                    onChange={handleChange}
+                />
+                <button type="submit">Adivinar</button>
+            </form>
 
-        type="text"
-
-        value={value_song}
-
-        onChange={onChange_song}
-
-        placeholder="Adivina la canción" // Actualiza placeholder si es necesario
-
-        aria-label="Introduce tu respuesta"
-
-        className="guess-input"
-        
-        disabled={value_method === 1}
-
-      />
-
-      <br></br>
-
-        <label> país: </label>
-
-    <input
-
-        type="text"
-
-        value={value_country}
-
-        onChange={onChange_country}
-
-        placeholder="Introduce el pais" // Actualiza placeholder si es necesario
-
-        aria-label="Introduce tu respuesta"
-
-        className="guess-input"
-        
-        disabled={value_method === 0}
-
-    />
-
-        <label> año: </label>
-
-    <input
-
-        type="text"
-
-        value={value_year}
-
-        onChange={onChange_year}
-
-        placeholder="Introduce el año" // Actualiza placeholder si es necesario
-
-        aria-label="Introduce tu respuesta"
-
-        className="guess-input"
-        
-        disabled={value_method === 0}
-
-    />
-
-    <br></br>
-
-    <label>
-        <input
-          type="radio"
-          name="guessType"
-          onChange={cambiarAcancion}
-          checked={value_method === 0}
-        />
-        Por nombre de la canción
-      </label>
-
-      <label>
-        <input
-          type="radio"
-          name="guessType"
-          onChange={cambiarAanyoYpais}
-          checked={value_method === 1}
-        />
-        Por año y país
-      </label>
-      
-      <button type="submit" className="guess-button">
-
-        Adivinar
-
-      </button>
-
-    </form>
-
-  );
-
-}
+            {/* Sugerencias dinámicas */}
+            {sugerencias.length > 0 && (
+                <ul className="sugerencias">
+                    {sugerencias.map((s, index) => (
+                        <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
+                            {s.song_name}
+                        </li>
+                    ))}
+                </ul>
+            )}
+        </div>
+    );
+};
 
 export default GuessForm;
