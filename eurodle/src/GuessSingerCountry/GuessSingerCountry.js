@@ -10,7 +10,7 @@ const InteractiveMap = () => {
         setHoveredCountry(country.getAttribute("name"));
         country.setAttribute("stroke", "#ffcc00"); // Color del borde resaltado
         country.setAttribute("stroke-width", "2"); // Grosor del borde resaltado
-    };
+    }; 
 
     const handleMouseLeave = (event) => {
         const country = event.target;
