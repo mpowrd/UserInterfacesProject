@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import Papa from 'papaparse';
+import {CancionesContext} from "../context/CancionesContext";
 
 /*
 Función que devuelve datos y nombre de columnas, observar ejemplo de ejecución en :
@@ -10,6 +11,10 @@ const  useDataLoader = (filepath, type= 'json') => {
     const [columns, setColumns] = useState([]); // guarda el nombre de las columnas
     const [loading, setLoading] = useState(true); // indica el estado de la carga
     const [error, setError] = useState(null); // guarda el error
+
+    //CARGAR DATOS EN EL CONTEXTO
+    const { cargarCanciones} = useContext(CancionesContext);
+
 
     // USEEFFECT: Se ejecuta cada vez que se inicia el componente (constructor del componente)
     // En este caso llamará una función una función
@@ -47,10 +52,12 @@ const  useDataLoader = (filepath, type= 'json') => {
 
         loadData();
 
+        cargarCanciones(data,columns);
+
 
     }, [filepath, type]);
 
-    return {data, columns,loading,error};
+    return null;
 };
 
 export default useDataLoader;

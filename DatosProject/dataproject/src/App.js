@@ -5,7 +5,7 @@ import UseDataLoaderExample from "./useDataLoaderExample";
 import RandomSong from "./hooks/RandomSong";
 
 function App() {
-    const col =['year', 'song_name'];
+    const col =['year', 'song_name',''];
     const [cancion, setCancion] = useState("🎲 Mostrar aleatoria");
 
     return (
