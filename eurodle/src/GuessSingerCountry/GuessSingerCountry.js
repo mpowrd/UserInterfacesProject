@@ -64,8 +64,8 @@ const InteractiveMap = () => {
     }
 
     const paisAdivinar= {
-        id:"DE",
-        name:"Alemania",
+        id:"ES",
+        name:"España",
     }
 
     const [selectedCountry,setSelectedCountry] = useState(null);

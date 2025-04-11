@@ -1,158 +1,158 @@
-import {useEffect, useState} from "react";
-import Header from './Header';
-import GuessForm from './GuessForm';
-import FeedbackDisplay from './FeedbackDisplay';
-import ClueDisplay from './ClueDisplay';
+import React, { useState, useEffect } from "react";
+import Papa from "papaparse";
+import Header from "./Header";
+import SettingsModal from "./SettingsModal";
+import GuessForm from "./GuessForm";
+import FeedbackDisplay from "./FeedbackDisplay";
+import ClueDisplay from "./ClueDisplay";
+import ExtraClues from "./ExtraClues";
 
 const GuessSongGame = () => {
+    const [canciones, setCanciones] = useState([]);
+    const [cancionCorrecta, setCancionCorrecta] = useState(null);
+    const [fallos, setFallos] = useState([]);
+    const [pistas, setPistas] = useState([]);
+    const [intentosRestantes, setIntentosRestantes] = useState(7); // Puedes ajustarlo a tu gusto
+    const [acertado, setAcertado] = useState(false);
 
-    const [songToGuess, setSongToGuess] = useState("");
+    useEffect(() => {
+        // Cargamos las caciones del csv al iniciar
+        Papa.parse("/canciones.csv", {
+            header: true,
+            download: true,
+            complete: (results) => {
+                /*
+                Vamos a filtrar la cancion por el atributo song_name asegurandonos que
+                todos los campos clave existan y no estén vacíos.
+                 */
+                const listaCanciones = results.data.filter(c =>
+                    c.song_name && c.song_name.trim() !== "" &&
+                    c.artist_name && c.artist_name.trim() !== "" &&
+                    c.country && c.country.trim() !== "" &&
+                    c.year && c.year.trim() !== ""
+                );
 
-    const [currentGuessSong, setcurrentGuessSong] = useState("");
-    const [currentGuessYear, setCurrentGuessYear] = useState("");
-    const [currentGuessCountry, setCurrentGuessCountry] = useState("");
-    const [selectedGuessMethod, setSelectedGuessMethod] = useState(0); // 0 - SONG / 1 - YEAR & COUNTRY
+                setCanciones(listaCanciones);
 
-    const [incorrectGuesses, setIncorrectGuesses] = useState(0);
-    const [revealedClues, setRevealedClues] = useState([]);
-    const [gameStatus, setGameStatus] = useState("playing");
-    const [feedbackMessage, setFeedbackMessage] = useState('');
-
-    function searchRandomSong(){
-        let song = "";
-        // TO-DO
-        return song;
-    }
-
-    useEffect( () => {
-        let song;
-        song = searchRandomSong();
-        setSongToGuess(song);
-    }, [] );
-
-    const handleGuessSubmit = (event) => {
-        event.preventDefault();
-        if((gameStatus === "playing")
-        || (selectedGuessMethod === 0 && currentGuessSong !== "")
-        || (selectedGuessMethod === 1 && currentGuessYear !== "" && currentGuessCountry !== "")){
-
-            let isCorrect = false;
-
-            if(selectedGuessMethod === 0){
-                isCorrect = currentGuessSong === songToGuess.name;
-            } else{
-                isCorrect = currentGuessYear === songToGuess.year && currentGuessCountry === songToGuess.country;
+                // Elegimos una canción aleatoria solo entre las válidas. Esta será la canción a adivinar
+                const randomIndex = Math.floor(Math.random() * listaCanciones.length);
+                setCancionCorrecta(listaCanciones[randomIndex]);
+            },
+            error: (error) => {
+                console.error("Error al cargar el CSV:", error);
             }
+        });
+    }, []);
 
-            if(isCorrect){
-                setGameStatus("won");
-                setFeedbackMessage(`¡Correcto! La canción era ${songToGuess.nombre}`);
-            } else{
-                const newIncorrectGuesses = incorrectGuesses + 1;
-                setIncorrectGuesses(newIncorrectGuesses);
+    const handleGuess = (entrada) => {
+        if (!entrada) return;
 
-                if(selectedGuessMethod === 0){
-                    setcurrentGuessSong(''); // Limpiar input;
-                } else{
-                    setCurrentGuessCountry('');
-                    setCurrentGuessYear('');
-                }
+        const guess = canciones.find((c) => c.song_name.toLowerCase() === entrada.toLowerCase());
 
-                if(newIncorrectGuesses >= 7){
-                    setFeedbackMessage(`Has perdido, no te quedan más intentos :( . La canción era ${songToGuess.nombre}`);
-                    setGameStatus("lost");    
-
-                } else{
-                    const nextClue = newIncorrectGuesses; // La pista N se revela en el fallo N
-
-                    setRevealedClues(prevClues => [...prevClues, nextClue]);
-
-                    setFeedbackMessage(`Has fallado, sigue intentándolo. Te quedan ${7 - newIncorrectGuesses} intentos`);
-
-                }
-            }
+        if (!guess) {
+            alert("Canción no encontrada. Asegúrate de seleccionar de la lista.");
+            return;
         }
 
+        // Verificar si el intento es correcto
+        if (guess.song_name === cancionCorrecta.song_name) {
+            setAcertado(true);
+            alert("¡Correcto! Has adivinado la canción 🎉");
+            return;
+        } else {
+            // Añadimos el fallo
+            setFallos((prevFallos) => [...prevFallos, guess]);
+            setIntentosRestantes((prev) => prev - 1);
+
+            // Generar pistas
+            const pistasDelIntento = [
+                {
+                    atributo: "Cantante",
+                    acertado: guess.artist_name === cancionCorrecta.artist_name ? "✅" : "❌"
+                },
+                {
+                    atributo: "País",
+                    acertado: guess.country === cancionCorrecta.country ? "✅" : "❌"
+                },
+                {
+                    atributo: "Año",
+                    acertado: (() => {
+                        const guessYear = parseInt(guess.year);
+                        const correctYear = parseInt(cancionCorrecta.year);
+                        if (guessYear === correctYear) return "✔️ Correcto";
+                        if (guessYear < correctYear) return "🔼 Busca más reciente";
+                        return "🔽 Busca más antiguo";
+                    })()
+                },
+                {
+                    atributo: "Ranking",
+                    acertado: (() => {
+                        const guessRank = parseInt(guess.final_place);
+                        const correctRank = parseInt(cancionCorrecta.final_place);
+
+                        if (guessRank === correctRank) return "✔️ Correcto";
+                        if (guessRank > correctRank) return "🔼 Ranking más alto";
+                        return "🔽 Ranking más bajo";
+                    })()
+                }
+            ];
+
+
+
+            setPistas((prevPistas) => [...prevPistas, { intento: guess, pistas: pistasDelIntento }]);
+        }
     };
 
-    const handleGuessChangeYear = (event) => {
-
-        setCurrentGuessYear(event.target.value);
-    
+    const reiniciarJuego = () => {
+        // Resetear todo
+        const randomIndex = Math.floor(Math.random() * canciones.length);
+        setCancionCorrecta(canciones[randomIndex]);
+        setFallos([]);
+        setPistas([]);
+        setIntentosRestantes(7);
+        setAcertado(false);
     };
 
-    const handleGuessChangeCountry = (event) => {
+    return (
+        <div className="guess-song-game">
+            <Header />
 
-        setCurrentGuessCountry(event.target.value);
-    
-    };
+            <SettingsModal />
 
-    const handleGuessChangeSong = (event) => {
+            <div className="contenido-principal">
+                <h2>Fallos: {fallos.length} / 7</h2>
+                {!acertado && intentosRestantes > 0 ? (
+                    <p>Has fallado, sigue intentándolo. Te quedan {intentosRestantes} intentos</p>
+                ) : acertado ? (
+                    <p>¡Enhorabuena! Has acertado la canción.</p>
+                ) : (
+                    <p>Te has quedado sin intentos. 😢 La canción era: {cancionCorrecta?.song_name}</p>
+                )}
 
-        setcurrentGuessSong(event.target.value);
-    
-    };
-        
-    return(
-    <div className="game-container">
+                {/* Visualización de fallos */}
+                <FeedbackDisplay fallos={fallos} />
 
-      <Header /> {/* Puedes pasarle props si necesita interactividad */}
+                {/* Formulario de adivinanza */}
+                {!acertado && intentosRestantes > 0 && (
+                    <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
+                )}
+                {/* Botón para reiniciar cuando acabe el juego */}
+                {(acertado || intentosRestantes <= 0) && (
+                    <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
+                        Reiniciar Juego
+                    </button>
+                )}
 
-      <FeedbackDisplay
+                {/* Visualización de pistas */}
+                <ClueDisplay pistas={pistas} />
 
-         guesses={incorrectGuesses}
+                {/* Pistas adicionales progresivas */}
+                <ExtraClues songData={cancionCorrecta} fallos={fallos} />
 
-         message={feedbackMessage}
 
-         maxGuesses={7}
-
-      />
-
-      <ClueDisplay
-
-         songData={songToGuess}
-
-         revealedClues={revealedClues}
-
-         gameStatus={gameStatus}
-
-      />
-
-       {/* Mostrar input solo si se está jugando */}
-
-      {gameStatus === 'playing' && (
-
-         <GuessForm
-
-           value_country={currentGuessCountry}
-           value_year={currentGuessYear}
-           value_song={currentGuessSong}
-           value_method={selectedGuessMethod}
-
-           onChange_country={handleGuessChangeCountry}
-           onChange_year={handleGuessChangeYear}
-           onChange_song={handleGuessChangeSong}
-           onChange_method={setSelectedGuessMethod}
-
-           onSubmit={handleGuessSubmit}
-
-         />
-
-       )}
-
-       {/* O mostrar un botón para jugar de nuevo si won/lost */}
-
-       {(gameStatus === 'won' || gameStatus === 'lost') && (
-
-            // Aquí iría un botón para reiniciar el juego (que llamaría a la lógica de inicialización de nuevo)
-
-            <button onClick={() => window.location.reload()}>Jugar de nuevo</button> // Recarga simple por ahora
-
-       )}
-
-    </div>
-
+            </div>
+        </div>
     );
-}
+};
 
 export default GuessSongGame;

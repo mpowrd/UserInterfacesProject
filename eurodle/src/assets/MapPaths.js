@@ -67,6 +67,8 @@ const MapPaths = ({ handleMouseEnter, handleMouseLeave, handleCountryClick }) =>
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 onClick={handleCountryClick}
+                transform={"translate(0, 0)"}
+
             />
             <path
                 d="M654.7 528.1l0.5 0.4 2 2.9 1.4 0.5 1.9 1.3 1.4 3.2 0.1 2.2-0.5 2.6 0.3 2.1-0.8 0.8 0.7 2 0.2 1.9
@@ -1034,6 +1036,7 @@ const MapPaths = ({ handleMouseEnter, handleMouseLeave, handleCountryClick }) =>
                 onMouseLeave={handleMouseLeave}
                 onClick={handleCountryClick}
             />
+
         </>
     );
 };
