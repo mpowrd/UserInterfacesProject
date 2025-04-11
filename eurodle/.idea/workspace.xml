@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/guessSong/ClueDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/guessSong/ExtraClues.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/guessSong/FeedbackDisplay.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/guessSong/GuessForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/guessSong/GuessSongGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Eurodle/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Eurodle/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Eurodle/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Eurodle/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Eurodle/Eurodle.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Eurodle/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/public/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/public/logo192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/public/logo512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/public/manifest.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/App.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/App.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/App.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/GuessSingerCountry/GuessSingerCountry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/PaisCantante.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/assets/MapPaths.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/assets/europe.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/ClueDisplay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/ClueItem.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/FeedbackDisplay.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/GuessForm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/GuessSongGame.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/Header.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/SettingsModal.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/AdivinaCancion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/MasVistasMenosVistas.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/Opciones.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/OrdenaCanciones.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/PaisCantante.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/inicio.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/reportWebVitals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../eurodle/src/setupTests.js" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2vWrLIILArW13KuTD9rCeBvedVp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Edu",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/GITHUB PROJECTS/MDS/UserInterfacesProject/Eurodle (la buena)/eurodle/src/assets",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.npm start.executor": "Run",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\src\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\public" />
+      <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\src" />
+      <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\src\guessSong" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.npm start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
+        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="" />
+      <created>1744271613779</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744271613779</updated>
+      <workItem from="1744271614962" duration="364000" />
+      <workItem from="1744385855089" duration="4075000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
