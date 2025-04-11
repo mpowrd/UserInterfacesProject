@@ -17,7 +17,7 @@ const InteractiveMap = () => {
         setHoveredCountry(null);
         country.setAttribute("stroke", "black"); // Restaurar borde original
         country.setAttribute("stroke-width", "1");
-    };
+    }; 
 
     const [resultadoMensaje, setResultadoMensaje] = useState("");
 
