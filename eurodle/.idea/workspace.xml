@@ -5,51 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guessSong/ClueDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guessSong/ExtraClues.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guessSong/FeedbackDisplay.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guessSong/GuessForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/guessSong/GuessSongGame.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Eurodle/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Eurodle/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Eurodle/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Eurodle/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Eurodle/Eurodle.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Eurodle/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/App.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/GuessSingerCountry/GuessSingerCountry.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/PaisCantante.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/assets/MapPaths.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/assets/europe.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/ClueDisplay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/ClueItem.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/FeedbackDisplay.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/GuessForm.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/GuessSongGame.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/guessSong/SettingsModal.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/AdivinaCancion.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/MasVistasMenosVistas.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/Opciones.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/OrdenaCanciones.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/PaisCantante.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/html/inicio.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/logo.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/reportWebVitals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../eurodle/src/setupTests.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,12 +14,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
   <component name="ProjectId" id="2vWrLIILArW13KuTD9rCeBvedVp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,9 +29,10 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Edu",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/GITHUB PROJECTS/MDS/UserInterfacesProject/Eurodle (la buena)/eurodle/src/assets",
+    "last_opened_file_path": "C:/GITHUB PROJECTS/UserInterfacesProject/eurodle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,6 +40,7 @@
     "nodejs_interpreter_path": "node",
     "nodejs_package_manager_path": "npm",
     "npm.npm start.executor": "Run",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -128,10 +88,16 @@
       <updated>1744271613779</updated>
       <workItem from="1744271614962" duration="364000" />
       <workItem from="1744385855089" duration="4075000" />
+      <workItem from="1744465991337" duration="66000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/../.." />
+    </ignored-roots>
   </component>
 </project>
