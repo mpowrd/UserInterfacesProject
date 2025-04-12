@@ -21,7 +21,8 @@ const ClueDisplay = ({ pistas }) => {
                     <tbody>
                     {pistas.map((pista, index) => (
                         <tr key={index}>
-                            <td><strong>{pista.intento.song_name}</strong></td>
+                            <td><p><strong>{pista.intento.song_name}</strong></p>
+                            <p>{pista.intento.year + " — " + pista.intento.country}</p></td>
                             {pista.pistas.map((p, idx) => (
                                 <td key={idx}>{p.acertado}</td>
                             ))}

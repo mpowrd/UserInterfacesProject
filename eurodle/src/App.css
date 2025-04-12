@@ -45,6 +45,19 @@
   margin: 20px auto;
 }
 
+.input-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.inputYC {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
 
 .guess-form input[type="text"] {
   width: 100%;
@@ -163,9 +176,60 @@
 }
 
 .clue-block.unlocked {
-  background-color: #d0f5d0;
+  background-color: #cbfaec;
   font-weight: bold;
   color: #333;
 }
+
 /* Fin de styles para ExtraClues */
+
+/* Contenedor general de los radio buttons */
+.guess-method-selector {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+/* Estilo básico para cada opción */
+.radio-option {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 24px;
+}
+
+/* Ocultamos los radio buttons originales */
+.radio-option input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Crear un círculo de selección personalizado */
+.radio-option input:checked + span {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
+
+/* El círculo del radio button */
+.radio-option span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Estilo cuando se selecciona */
+.radio-option input:checked + span {
+  background-color: #4CAF50;
+  border-color: #4CAF50;
+}
 

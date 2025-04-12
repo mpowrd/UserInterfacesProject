@@ -36,7 +36,22 @@ const GuessSongGame = () => {
 
                 // Elegimos una canción aleatoria solo entre las válidas. Esta será la canción a adivinar
                 const randomIndex = Math.floor(Math.random() * listaCanciones.length);
-                setCancionCorrecta(listaCanciones[randomIndex]);
+                const cancionSeleccionada = listaCanciones[randomIndex];
+
+                const cancionArriba = results.data.filter(c =>
+                    c.final_place && parseInt(c.final_place.trim()) === parseInt(cancionSeleccionada.final_place) - 1 &&
+                    c.year && parseInt(c.year.trim()) === parseInt(cancionSeleccionada.year)
+                );
+
+                const cancionAbajo = results.data.filter(c =>
+                    c.final_place && parseInt(c.final_place.trim()) === parseInt(cancionSeleccionada.final_place) + 1 &&
+                    c.year && parseInt(c.year.trim()) === parseInt(cancionSeleccionada.year)
+                );
+
+                cancionSeleccionada.paisArriba = cancionArriba.length === 0 ? "Desconocido" : cancionArriba[0].country;
+                cancionSeleccionada.paisAbajo = cancionAbajo.length === 0 ? "Desconocido" : cancionAbajo[0].country;
+
+                setCancionCorrecta(cancionSeleccionada);
             },
             error: (error) => {
                 console.error("Error al cargar el CSV:", error);
@@ -44,13 +59,21 @@ const GuessSongGame = () => {
         });
     }, []);
 
-    const handleGuess = (entrada) => {
+    const handleGuess = (entrada, tipo) => {
         if (!entrada) return;
 
-        const guess = canciones.find((c) => c.song_name.toLowerCase() === entrada.toLowerCase());
+        let guess;
+
+        if(tipo === 0){
+            guess = canciones.find((c) => c.song_name.toLowerCase() === entrada.toLowerCase());
+        } else{
+            const partes = entrada.split("$songGuess$");
+            guess = canciones.find((c) => c.country.toLowerCase() === partes[0].toLowerCase()
+            && c.year === partes[1]);
+        }
 
         if (!guess) {
-            alert("Canción no encontrada. Asegúrate de seleccionar de la lista.");
+            alert("Canción no encontrada. Asegúrate de seleccionar de la lista. " + entrada);
             return;
         }
 
@@ -119,18 +142,12 @@ const GuessSongGame = () => {
 
             <SettingsModal />
 
+            {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
+
             <div className="contenido-principal">
-                <h2>Fallos: {fallos.length} / 7</h2>
-                {!acertado && intentosRestantes > 0 ? (
-                    <p>Has fallado, sigue intentándolo. Te quedan {intentosRestantes} intentos</p>
-                ) : acertado ? (
-                    <p>¡Enhorabuena! Has acertado la canción.</p>
-                ) : (
-                    <p>Te has quedado sin intentos. 😢 La canción era: {cancionCorrecta?.song_name}</p>
-                )}
 
                 {/* Visualización de fallos */}
-                <FeedbackDisplay fallos={fallos} />
+                <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta}/>
 
                 {/* Formulario de adivinanza */}
                 {!acertado && intentosRestantes > 0 && (

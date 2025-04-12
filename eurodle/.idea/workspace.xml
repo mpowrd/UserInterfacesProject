@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guessSong/ClueDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/ClueDisplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guessSong/ExtraClues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/ExtraClues.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guessSong/FeedbackDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/FeedbackDisplay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guessSong/GuessForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/GuessForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/guessSong/GuessSongGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/GuessSongGame.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +40,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/GITHUB PROJECTS/UserInterfacesProject/eurodle",
+    "last_opened_file_path": "C:/Users/feloy/Documents/GitHub/UserInterfacesProject/eurodle",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -89,6 +97,7 @@
       <workItem from="1744271614962" duration="364000" />
       <workItem from="1744385855089" duration="4075000" />
       <workItem from="1744465991337" duration="66000" />
+      <workItem from="1744466510341" duration="10920000" />
     </task>
     <servers />
   </component>
