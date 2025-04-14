@@ -8,11 +8,12 @@ import ClueDisplay from "./ClueDisplay";
 import ExtraClues from "./ExtraClues";
 
 const GuessSongGame = () => {
+    const totalIntentos = 8;
     const [canciones, setCanciones] = useState([]);
     const [cancionCorrecta, setCancionCorrecta] = useState(null);
     const [fallos, setFallos] = useState([]);
     const [pistas, setPistas] = useState([]);
-    const [intentosRestantes, setIntentosRestantes] = useState(7); // Puedes ajustarlo a tu gusto
+    const [intentosRestantes, setIntentosRestantes] = useState(totalIntentos); // Puedes ajustarlo a tu gusto
     const [acertado, setAcertado] = useState(false);
 
     useEffect(() => {
@@ -81,49 +82,46 @@ const GuessSongGame = () => {
         if (guess.song_name === cancionCorrecta.song_name) {
             setAcertado(true);
             alert("¡Correcto! Has adivinado la canción 🎉");
-            return;
         } else {
             // Añadimos el fallo
             setFallos((prevFallos) => [...prevFallos, guess]);
             setIntentosRestantes((prev) => prev - 1);
-
-            // Generar pistas
-            const pistasDelIntento = [
-                {
-                    atributo: "Cantante",
-                    acertado: guess.artist_name === cancionCorrecta.artist_name ? "✅" : "❌"
-                },
-                {
-                    atributo: "País",
-                    acertado: guess.country === cancionCorrecta.country ? "✅" : "❌"
-                },
-                {
-                    atributo: "Año",
-                    acertado: (() => {
-                        const guessYear = parseInt(guess.year);
-                        const correctYear = parseInt(cancionCorrecta.year);
-                        if (guessYear === correctYear) return "✔️ Correcto";
-                        if (guessYear < correctYear) return "🔼 Busca más reciente";
-                        return "🔽 Busca más antiguo";
-                    })()
-                },
-                {
-                    atributo: "Ranking",
-                    acertado: (() => {
-                        const guessRank = parseInt(guess.final_place);
-                        const correctRank = parseInt(cancionCorrecta.final_place);
-
-                        if (guessRank === correctRank) return "✔️ Correcto";
-                        if (guessRank > correctRank) return "🔼 Ranking más alto";
-                        return "🔽 Ranking más bajo";
-                    })()
-                }
-            ];
-
-
-
-            setPistas((prevPistas) => [...prevPistas, { intento: guess, pistas: pistasDelIntento }]);
         }
+
+        // Generar pistas
+        const pistasDelIntento = [
+            {
+                atributo: "Cantante",
+                acertado: guess.artist_name === cancionCorrecta.artist_name ? "✅" : "❌"
+            },
+            {
+                atributo: "País",
+                acertado: guess.country === cancionCorrecta.country ? "✅" : "❌"
+            },
+            {
+                atributo: "Año",
+                acertado: (() => {
+                    const guessYear = parseInt(guess.year);
+                    const correctYear = parseInt(cancionCorrecta.year);
+                    if (guessYear === correctYear) return "✔️ Correcto";
+                    if (guessYear < correctYear) return "🔼 Busca más reciente";
+                    return "🔽 Busca más antiguo";
+                })()
+            },
+            {
+                atributo: "Ranking",
+                acertado: (() => {
+                    const guessRank = parseInt(guess.final_place);
+                    const correctRank = parseInt(cancionCorrecta.final_place);
+
+                    if (guessRank === correctRank) return "✔️ Correcto";
+                    if (guessRank > correctRank) return "🔼 Ranking más alto";
+                    return "🔽 Ranking más bajo";
+                })()
+            }
+        ];
+
+        setPistas((prevPistas) => [...prevPistas, { intento: guess, pistas: pistasDelIntento }]);
     };
 
     const reiniciarJuego = () => {
@@ -132,7 +130,7 @@ const GuessSongGame = () => {
         setCancionCorrecta(canciones[randomIndex]);
         setFallos([]);
         setPistas([]);
-        setIntentosRestantes(7);
+        setIntentosRestantes(totalIntentos);
         setAcertado(false);
     };
 
@@ -142,12 +140,15 @@ const GuessSongGame = () => {
 
             <SettingsModal />
 
-            {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
+            {/*{cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}*/}
 
             <div className="contenido-principal">
 
                 {/* Visualización de fallos */}
-                <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta}/>
+                <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta} totalIntentos={totalIntentos}/>
+
+                {/* Visualización de pistas */}
+                <ClueDisplay pistas={pistas}/>
 
                 {/* Formulario de adivinanza */}
                 {!acertado && intentosRestantes > 0 && (
@@ -160,11 +161,8 @@ const GuessSongGame = () => {
                     </button>
                 )}
 
-                {/* Visualización de pistas */}
-                <ClueDisplay pistas={pistas} />
-
                 {/* Pistas adicionales progresivas */}
-                <ExtraClues songData={cancionCorrecta} fallos={fallos} />
+                <ExtraClues songData={cancionCorrecta} fallos={fallos} acertado={acertado}/>
 
 
             </div>

@@ -1,7 +1,7 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.css';
 
-const FeedbackDisplay = ({ fallos, acertado, cancionCorrecta }) => {
+const FeedbackDisplay = ({ fallos, acertado, cancionCorrecta, totalIntentos }) => {
     return (
         <div className="feedback-display">
             <h2>Fallos</h2>
@@ -11,11 +11,11 @@ const FeedbackDisplay = ({ fallos, acertado, cancionCorrecta }) => {
             ) : (
                 <div>
                     <p className="alert alert-dark d-inline-block">
-                    {fallos.length} / 7
+                    {fallos.length} / {totalIntentos}
                     </p>
 
-                    {!acertado && 7 - fallos.length > 0 ? (
-                        <> Has fallado, sigue intentándolo. Te quedan {7- fallos.length} intentos</>
+                    {!acertado && totalIntentos - fallos.length > 0 ? (
+                        <> Has fallado, sigue intentándolo. Te quedan {totalIntentos- fallos.length} intentos</>
                     ) : acertado ? (
                         <> ¡Enhorabuena! Has acertado la canción.</>
                     ) : (

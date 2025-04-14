@@ -8,6 +8,9 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
     const [sugerenciasPais, setSugerenciasPais] = useState([]);
     const [guessType, setGuessType] = useState(0);
 
+    const [falladas, setFalladas] = useState(fallos.map(f => f.song_name.toLowerCase()));
+    const [falladasPaisAnyo, setFalladasPaisAnyo] = useState(fallos.map(f => f.country + "$songGuess$" + f.year));
+
     const handleChange = (e) => {
         const valor = e.target.value;
         setEntrada(valor);
@@ -18,13 +21,17 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
         }
 
         // Listado de nombres de canciones falladas
-        const falladas = fallos.map(f => f.song_name.toLowerCase());
+        const falladasNew = fallos.map(f => f.song_name.toLowerCase());
+        setFalladas(falladasNew);
+
+        const falladasPANew = fallos.map(f => f.country + "$songGuess$" + f.year);
+        setFalladasPaisAnyo(falladasPANew);
 
         //No mostramos en el filtro la canción si ya fue fallada
         const filtro = canciones
             .filter((cancion) =>
                 cancion.song_name.toLowerCase().includes(valor.toLowerCase()) &&
-                !falladas.includes(cancion.song_name.toLowerCase())
+                !falladasNew.includes(cancion.song_name.toLowerCase())
             )
             .slice(0, 10); // Mostramos 10 canciones de autocompletado
 
@@ -39,6 +46,9 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
             setSugerenciasPais([]);
             return;
         }
+
+        const falladasPANew = fallos.map(f => f.country + "$songGuess$" + f.year);
+        setFalladasPaisAnyo(falladasPANew);
 
         const filtro = canciones
             .filter((cancion) =>
@@ -62,7 +72,7 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
 
     const handleChangeAnyo = (e) => {
         const valor = e.target.value;
-        if (valor.length <= 4) {
+        if (valor.length <= 4 && valor>=0) {
             setEntradaAnyo(valor); // Actualiza el estado solo si no excede los 4 dígitos
         }
     };
@@ -72,7 +82,11 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
 
         if(guessType === 0){
             if (entrada.trim() !== "") {
-                onGuess(entrada.trim(), guessType);
+                if(!falladas.includes(entrada.toLowerCase())){
+                    onGuess(entrada.trim(), guessType);
+                } else{
+                    alert("Ya has intentado con esa, ¡prueba otra diferente!");
+                }
                 setEntrada("");
                 setEntradaAnyo("");
                 setEntradaPais("");
@@ -81,7 +95,12 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
             }
         } else{
             if (entradaPais.trim() !== "" && entradaAnyo.trim() !== "") {
-                onGuess(entradaPais + "$songGuess$" + entradaAnyo.trim(), guessType);
+                const currYearCountryGuess = entradaPais + "$songGuess$" + entradaAnyo.trim();
+                if(!falladasPaisAnyo.includes(currYearCountryGuess)){
+                    onGuess(entradaPais + "$songGuess$" + entradaAnyo.trim(), guessType);
+                } else{
+                    alert("Ya has intentado con esa combinación de país y año, ¡prueba otra diferente!");
+                }
                 setEntrada("");
                 setEntradaAnyo("");
                 setEntradaPais("");
