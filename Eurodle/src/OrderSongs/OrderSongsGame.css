@@ -1,0 +1,132 @@
+.order-songs-game {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px; /* Increased space between tarjetas and huecos */
+}
+
+.tarjeta {
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: grab;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px; /* Fixed width */
+    height: 50px; /* Fixed height */
+    box-sizing: border-box;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:active {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hueco-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 5px;
+    cursor: grab; /* Ensure the same cursor style as .tarjeta */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hueco-contenido:active {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.huecos {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px; /* Reduced gap between elements */
+    justify-content: center;
+    margin-bottom: 40px; /* Increased space between huecos and tarjetas */
+}
+
+.hueco {
+    width: 120px;
+    height: 50px;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    position: relative;
+}
+
+.hueco:nth-child(1) {
+    grid-column: 3;
+}
+
+.hueco:nth-child(2) {
+    grid-column: 2 / span 1;
+}
+
+.hueco:nth-child(3) {
+    grid-column: 4 / span 1;
+}
+
+.hueco:nth-child(4) {
+    grid-column: 1 / span 1;
+}
+
+.hueco:nth-child(5) {
+    grid-column: 5 / span 1;
+}
+
+.puesto {
+    position: absolute;
+    top: -20px;
+    font-size: 12px;
+    color: #666;
+}
+
+.comprobar-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comprobar-btn:hover {
+    background-color: #0056b3;
+}
+
+.mensaje {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+    font-size: 16px;
+    color: #333;
+}
+
+.reiniciar-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reiniciar-btn:hover {
+    background-color: #218838;
+}

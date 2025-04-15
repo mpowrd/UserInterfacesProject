@@ -7,6 +7,7 @@ import GuessSongGame from "./guessSong/GuessSongGame";
 import { Routes, Route } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import OrderSongsGame from './OrderSongs/OrderSongsGame';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,6 +16,8 @@ root.render(
     <Route path="/" element={<App />} />
     <Route path="/AdivinaPais" element={<InteractiveMap />} />
     <Route path="/GuessSongGame" element={<GuessSongGame />} />
+    <Route path="/OrderSong" element={<OrderSongsGame />} />
+
     {/* Puedes poner una ruta por defecto si quieres */}
     {/* <Route path="/" element={<HomeComponent />} /> */}
   </Routes>

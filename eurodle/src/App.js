@@ -14,7 +14,9 @@ function App() {
           <button>Adivina la Canción</button>
         </Link>
 
-        <button disabled>Ordenas las canciones</button>
+        <Link to="/OrderSong">
+        <button>Ordenas las canciones</button>
+        </Link>
 
         <Link to="/AdivinaPais">
           <button>País del cantante</button>
