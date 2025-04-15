@@ -9,7 +9,7 @@ const OrderSongsGame = () => {
     const [canciones, setCanciones] = useState([]);
     const [ordenCorrecto, setOrdenCorrecto] = useState([]);
     const [ordenUsuario, setOrdenUsuario] = useState([]);
-    const [feedback, setFeedback] = useState([]);
+    const [feedback, setFeedback] = useState(null); // Initialize feedback as null
     const [year, setYear] = useState(null);
     const [vidas, setVidas] = useState(3);
     const [mensaje, setMensaje] = useState(null);
@@ -35,11 +35,12 @@ const OrderSongsGame = () => {
                     .sort((a, b) => parseInt(a.final_place) - parseInt(b.final_place))
                     .slice(0, 5);
 
+                setOrdenCorrecto(topSongs.map(c => c.song_name)); // Set correct order before shuffling
+
                 // Shuffle the order of the cards
-                const shuffledSongs = topSongs.sort(() => Math.random() - 0.5);
+                const shuffledSongs = [...topSongs].sort(() => Math.random() - 0.5);
 
                 setCanciones(shuffledSongs);
-                setOrdenCorrecto(topSongs.map(c => c.song_name));
                 setOrdenUsuario(Array(5).fill(null));
             },
             error: (error) => console.error("Error loading CSV:", error),
@@ -52,6 +53,7 @@ const OrderSongsGame = () => {
             const newOrdenUsuario = [...ordenUsuario];
             newOrdenUsuario[index] = null;
             setOrdenUsuario(newOrdenUsuario);
+            setFeedback(null); // Reset feedback when modifying the order
         }
     };
 
@@ -61,6 +63,7 @@ const OrderSongsGame = () => {
         const newOrdenUsuario = [...ordenUsuario];
         newOrdenUsuario[index] = songName;
         setOrdenUsuario(newOrdenUsuario);
+        setFeedback(null); // Reset feedback when modifying the order
     };
 
     const handleDragOver = (e) => {
@@ -73,7 +76,7 @@ const OrderSongsGame = () => {
         const newFeedback = ordenUsuario.map((song, index) =>
             song === ordenCorrecto[index] ? "✔️" : "❌"
         );
-        setFeedback(newFeedback);
+        setFeedback(newFeedback); // Set feedback after checking
 
         if (ordenUsuario.every((song, index) => song === ordenCorrecto[index])) {
             setMensaje("¡Felicidades! Has ordenado las canciones correctamente 🎉");
@@ -100,7 +103,7 @@ const OrderSongsGame = () => {
             <Tarjetas canciones={canciones} ordenUsuario={ordenUsuario} handleDragStart={handleDragStart} />
             <Huecos
                 ordenUsuario={ordenUsuario}
-                feedback={feedback}
+                feedback={feedback || []} // Show feedback only after checking or game ends
                 handleDrop={handleDrop}
                 handleDragOver={handleDragOver}
                 handleDragStart={handleDragStart}
