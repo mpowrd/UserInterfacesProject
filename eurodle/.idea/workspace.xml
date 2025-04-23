@@ -6,20 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guessSong/ClueDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/ClueDisplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guessSong/ExtraClues.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/ExtraClues.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guessSong/FeedbackDisplay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/FeedbackDisplay.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guessSong/GuessForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/GuessForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/guessSong/GuessSongGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessSong/GuessSongGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -41,6 +40,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/feloy/Documents/GitHub/UserInterfacesProject/eurodle",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,8 +81,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.26053.27" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.26053.27" />
       </set>
     </attachedChunks>
   </component>
@@ -98,6 +98,7 @@
       <workItem from="1744385855089" duration="4075000" />
       <workItem from="1744465991337" duration="66000" />
       <workItem from="1744466510341" duration="10920000" />
+      <workItem from="1745394784027" duration="2442000" />
     </task>
     <servers />
   </component>

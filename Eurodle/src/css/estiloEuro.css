@@ -1,0 +1,143 @@
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+:root {
+    --bg-dark: #121213;
+    --tile-bg: #1a1a1b;
+    --text: #ffffff;
+    --tile-hover: #2a2a2d;
+    --disabled: #3a3a3c;
+    --accent: #6aaa64;
+}
+
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: var(--bg-dark);
+}
+
+.eurodle-wrapper {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    padding: 2rem;
+    font-family: 'Times New Roman', serif;
+    color: #FFFFFF;
+}
+
+/*.eurodle-container {*/
+/*    background-color: rgba(0, 0, 0, 0.85);*/
+/*    border-radius: 16px;*/
+/*    padding: 2rem 1.5rem;*/
+/*    max-width: 400px;*/
+/*    width: 100%;*/
+/*    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);*/
+/*    position: relative;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.eurodle-wrapper {*/
+/*    min-height: 100vh;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    background: var(--bg-dark);*/
+/*    color: var(--text);*/
+/*    padding: 2rem;*/
+/*}*/
+
+.eurodle-container {
+    background-color: var(--bg-dark);
+    border-radius: 12px;
+    padding: 1.5rem;
+    width: 100%;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    border: 1px solid #3a3a3c;
+}
+
+.settings-icon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+}
+
+.settings-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.settings-btn:hover {
+    transform: scale(1.2);
+}
+
+.eurodle-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.eurodle-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: var(--text);
+}
+
+.eurodle-subtitle {
+    font-size: 0.9rem;
+    color: #999;
+    margin-top: 0.5rem;
+}
+
+.eurodle-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+}
+
+.eurodle-btn {
+    background-color: var(--tile-bg);
+    color: var(--text);
+    border: 2px solid #3a3a3c;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+.eurodle-btn:hover {
+    background-color: var(--tile-hover);
+    transform: scale(1.02);
+}
+
+.eurodle-btn.disabled {
+    background-color: var(--disabled);
+    color: #777;
+    cursor: not-allowed;
+}
+
+.eurodle-footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    color: #666;
+}
+
+
