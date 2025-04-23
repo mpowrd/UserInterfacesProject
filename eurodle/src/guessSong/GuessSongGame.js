@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import Header from "./Header";
-import SettingsModal from "./SettingsModal";
+import SettingsProvider from "../SettingsProvider";
 import GuessForm from "./GuessForm";
 import FeedbackDisplay from "./FeedbackDisplay";
 import ClueDisplay from "./ClueDisplay";
 import ExtraClues from "./ExtraClues";
+import { useTranslation } from 'react-i18next';
 
 const GuessSongGame = () => {
+    const { t } = useTranslation(['guessSong', 'common']);
+
     const totalIntentos = 8;
     const [canciones, setCanciones] = useState([]);
     const [cancionCorrecta, setCancionCorrecta] = useState(null);
@@ -49,16 +51,18 @@ const GuessSongGame = () => {
                     c.year && parseInt(c.year.trim()) === parseInt(cancionSeleccionada.year)
                 );
 
-                cancionSeleccionada.paisArriba = cancionArriba.length === 0 ? "Desconocido" : cancionArriba[0].country;
-                cancionSeleccionada.paisAbajo = cancionAbajo.length === 0 ? "Desconocido" : cancionAbajo[0].country;
+                const unknownText = t('guessSong:extraClues.clueTemplates.neighboursParts.unknown'); // Obtener texto traducido
+
+                cancionSeleccionada.paisArriba = cancionArriba.length === 0 ? unknownText : cancionArriba[0].country;
+                cancionSeleccionada.paisAbajo = cancionAbajo.length === 0 ? unknownText : cancionAbajo[0].country;
 
                 setCancionCorrecta(cancionSeleccionada);
             },
             error: (error) => {
-                console.error("Error al cargar el CSV:", error);
+                console.error(t('common:other.errorLoading'), error);
             }
         });
-    }, []);
+    }, [t]);
 
     const handleGuess = (entrada, tipo) => {
         if (!entrada) return;
@@ -74,14 +78,14 @@ const GuessSongGame = () => {
         }
 
         if (!guess) {
-            alert("Canción no encontrada. Asegúrate de seleccionar de la lista. " + entrada);
+            alert(t('guessSong:form.notFound', { input: entrada }));
             return;
         }
 
         // Verificar si el intento es correcto
         if (guess.song_name === cancionCorrecta.song_name) {
             setAcertado(true);
-            alert("¡Correcto! Has adivinado la canción 🎉");
+            alert(t('guessSong:form.correctGuess')); // Comentado, ya se muestra en FeedbackDisplay
         } else {
             // Añadimos el fallo
             setFallos((prevFallos) => [...prevFallos, guess]);
@@ -90,22 +94,16 @@ const GuessSongGame = () => {
 
         // Generar pistas
         const pistasDelIntento = [
-            {
-                atributo: "Cantante",
-                acertado: guess.artist_name === cancionCorrecta.artist_name ? "✅" : "❌"
-            },
-            {
-                atributo: "País",
-                acertado: guess.country === cancionCorrecta.country ? "✅" : "❌"
-            },
+            { atributo: "Cantante", acertado: guess.artist_name === cancionCorrecta.artist_name ? "✅" : "❌" },
+            { atributo: "País", acertado: guess.country === cancionCorrecta.country ? "✅" : "❌" },
             {
                 atributo: "Año",
                 acertado: (() => {
                     const guessYear = parseInt(guess.year);
                     const correctYear = parseInt(cancionCorrecta.year);
-                    if (guessYear === correctYear) return "✔️ Correcto";
-                    if (guessYear < correctYear) return "🔼 Busca más reciente";
-                    return "🔽 Busca más antiguo";
+                    if (guessYear === correctYear) return "✔️ Correcto"; // Clave interna que ClueDisplay traducirá
+                    if (guessYear < correctYear) return "🔼 Busca más reciente"; // Clave interna
+                    return "🔽 Busca más antiguo"; // Clave interna
                 })()
             },
             {
@@ -113,10 +111,9 @@ const GuessSongGame = () => {
                 acertado: (() => {
                     const guessRank = parseInt(guess.final_place);
                     const correctRank = parseInt(cancionCorrecta.final_place);
-
-                    if (guessRank === correctRank) return "✔️ Correcto";
-                    if (guessRank > correctRank) return "🔼 Ranking más alto";
-                    return "🔽 Ranking más bajo";
+                    if (guessRank === correctRank) return "✔️ Correcto"; // Clave interna
+                    if (guessRank > correctRank) return "🔼 Ranking más alto"; // Clave interna
+                    return "🔽 Ranking más bajo"; // Clave interna
                 })()
             }
         ];
@@ -134,13 +131,22 @@ const GuessSongGame = () => {
         setAcertado(false);
     };
 
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        if(cancionCorrecta) setIsLoading(false);
+    }, [cancionCorrecta]);
+
+
+    // Mostrar carga mientras cancionCorrecta es null
+    if (isLoading) {
+        // Línea ~130 (nueva): Mostrar mensaje de carga
+        return <div>{t('common:other.loading')}</div>;
+    }
+
     return (
         <div className="guess-song-game">
-            <Header />
 
-            <SettingsModal />
-
-            {/*{cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}*/}
+            {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
 
             <div className="contenido-principal">
 
@@ -157,7 +163,7 @@ const GuessSongGame = () => {
                 {/* Botón para reiniciar cuando acabe el juego */}
                 {(acertado || intentosRestantes <= 0) && (
                     <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
-                        Reiniciar Juego
+                        {t('guessSong:game.restart')}
                     </button>
                 )}
 

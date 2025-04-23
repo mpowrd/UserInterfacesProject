@@ -1,0 +1,8 @@
+{
+  "title": "ADIVINA DONDE ESTA EL PAIS: {{countryName}}",
+  "hovered": "País seleccionado:",
+  "clicked": "Has hecho click en: {{countryId}}",
+  "hint": "Pista: {{arrow}}",
+  "correct": "¡Correcto! Has adivinado el país.",
+  "notFoundWarning": "Países no encontrados"
+}

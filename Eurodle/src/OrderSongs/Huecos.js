@@ -1,6 +1,15 @@
 import React from "react";
+import { useTranslation } from 'react-i18next';
 
 const Huecos = ({ ordenUsuario, feedback, handleDrop, handleDragOver, handleDragStart }) => {
+    const { t } = useTranslation('orderSongs');
+
+    const translateFeedback = (fb) => {
+        if (fb === "✔️") return t('feedback.correct');
+        if (fb === "❌") return t('feedback.incorrect');
+        return fb; // Devuelve original si no coincide
+    };
+
     return (
         <div className="huecos">
             {[...Array(5)].map((_, index) => (
@@ -10,7 +19,7 @@ const Huecos = ({ ordenUsuario, feedback, handleDrop, handleDragOver, handleDrag
                     onDrop={(e) => handleDrop(e, index)}
                     onDragOver={handleDragOver}
                 >
-                    <span className="puesto">Puesto {index + 1}</span>
+                    <span className="puesto">{t('slots.position', { position: index + 1 })}</span>
                     {ordenUsuario[index] ? (
                         <div
                             className="hueco-contenido"
@@ -18,10 +27,10 @@ const Huecos = ({ ordenUsuario, feedback, handleDrop, handleDragOver, handleDrag
                             onDragStart={(e) => handleDragStart(e, ordenUsuario[index], index)}
                         >
                             {ordenUsuario[index]}
-                            {feedback[index] && <span>{feedback[index]}</span>}
+                            {feedback[index] && <span>{translateFeedback(feedback[index])}</span>}
                         </div>
                     ) : (
-                        <span>Arrastra aquí</span>
+                        <span>{t('slots.placeholder')}</span>
                     )}
                 </div>
             ))}

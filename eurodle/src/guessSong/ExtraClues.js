@@ -1,7 +1,12 @@
-import React from "react";
-import YouTubePlayer from './YouTubePlayer'; // Adjust the import path
+import React, {useState} from "react";
+import YouTubePlayer from './YouTubePlayer';
+import { useTranslation } from 'react-i18next';
 
 const ExtraClues = ({ songData, fallos, acertado }) => {
+    const { t } = useTranslation('guessSong');
+
+    const [videoDisplayed, setVideoDisplayed] = useState(false);
+
     if (!songData) return null;
 
     const minStart = 6;
@@ -18,21 +23,28 @@ const ExtraClues = ({ songData, fallos, acertado }) => {
 
     const pistasDisponibles = [
 
-        `Ranking final: ${"la canción quedó en el puesto "+songData.final_place}`,
+        t('extraClues.clueTemplates.rank', { rank: songData.final_place || '?' }),
 
-        `${"la canción quedó" + (songData.paisAbajo==="Desconocido"? "" : " por encima de " + songData.paisAbajo) +
-        (songData.paisAbajo==="Desconocido" || songData.paisArriba==="Desconocido"? "" : " y ") +
-        (songData.paisArriba==="Desconocido"? "" : "y por debajo de " + songData.paisArriba)}`,
+        (() => {
+            const paisAbajo = songData.paisAbajo === "Desconocido" ? t('extraClues.clueTemplates.neighboursParts.unknown') : songData.paisAbajo;
+            const paisArriba = songData.paisArriba === "Desconocido" ? t('extraClues.clueTemplates.neighboursParts.unknown') : songData.paisArriba;
+            const partBelow = paisAbajo !== t('extraClues.clueTemplates.neighboursParts.unknown') ? t('extraClues.clueTemplates.neighboursParts.below', { country: paisAbajo }) : "";
+            const partAbove = paisArriba !== t('extraClues.clueTemplates.neighboursParts.unknown') ? t('extraClues.clueTemplates.neighboursParts.above', { country: paisArriba }) : "";
+            const separator = partBelow && partAbove ? t('extraClues.clueTemplates.neighboursParts.separator') : "";
 
-        `${"El idioma del tema es: " + songData.language + " y el género: " + songData.style}`,
+            return t('extraClues.clueTemplates.neighbours', { below: partBelow, separator: separator, above: partAbove });
+        })(),
 
-        `El nombre de la canción empieza con la letra: ${songData.song_name?.charAt(0)} y termina con: ${songData.song_name?.slice(-1)}`,
+        t('extraClues.clueTemplates.langStyle', { language: songData.language || '?', style: songData.style || '?' }),
 
-        `Fragmento de la letra: ${obtenerFragmentoOptimizado(songData.lyrics)}`,
+        t('extraClues.clueTemplates.letters', { firstLetter: songData.song_name?.charAt(0) || '?', lastLetter: songData.song_name?.slice(-1) || '?' }),
 
-        `${"Nombre del/los artista/s o del grupo: " + songData.artist_name}`,
+        t('extraClues.clueTemplates.lyrics', { fragment: obtenerFragmentoOptimizado(songData.lyrics || '') }),
 
-        { type: 'component', component: <YouTubePlayer videoId={videoId} startTime={startTime} /> },
+        t('extraClues.clueTemplates.artist', { artistName: songData.artist_name || '?' }),
+
+        { type: 'component', component: <YouTubePlayer videoId={videoId} startTime={startTime} setVideoDisplayed={setVideoDisplayed}/> },
+
     ];
 
     function obtenerFragmentoOptimizado(texto, minLong = 70, maxLong = 100, intentos = 10) {
@@ -67,18 +79,23 @@ const ExtraClues = ({ songData, fallos, acertado }) => {
 
     return (
         <div className="extra-clues">
-            <h2>Pistas adicionales</h2>
+            <h2>{t('extraClues.title')}</h2>
             <ul className="extra-clues-list">
                 {pistasDisponibles.map((pista, index) => {
                     const desbloqueada = fallos.length > index || acertado;
+                    const pistaIndex = index + 1;
                     return (
                         <li key={index} className={`clue-block ${desbloqueada ? "unlocked" : "locked"}`}>
                             {desbloqueada ? (
                                 <>
-                                    🔓 {pista.type === 'component' ? pista.component : pista}
+                                    {/* Línea ~90: Añadir prefijo traducido */}
+                                    {t('extraClues.unlockedPrefix')}
+                                    {/* Línea ~91: Usar texto traducido si el video se completó */}
+                                    {pista.type === 'component' ? (videoDisplayed === false ? pista.component : t('extraClues.videoCompleted')) : pista}
                                 </>
                             ) : (
-                                `🔒 Pista ${index + 1}`
+                                // Línea ~95: Usar texto traducido para pista bloqueada
+                                t('extraClues.locked', { index: pistaIndex })
                             )}
                         </li>
                     );

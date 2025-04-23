@@ -1,39 +1,51 @@
+import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
 import "./css/estiloEuro.css";
 import { FiSettings } from 'react-icons/fi'; // Necesita instalar: npm install react-icons
+import { useTranslation } from 'react-i18next';
+import { useNavigate } from "react-router-dom";
 
 
 function App() {
+
+    const { t } = useTranslation('common');
+
+    const navigate = useNavigate();
+
+    const onSettingsClick = () => {
+        navigate("/Settings");
+    };
+
   return (
       <div className="eurodle-wrapper">
           <div className="eurodle-container">
               <div className="settings-icon">
-                  <button className="settings-btn" aria-label="Opciones">
+                  <button onClick={onSettingsClick} className="settings-btn" aria-label={t('settings.buttonLabel')}>
                       <FiSettings size={24} />
                   </button>
               </div>
 
               <header className="eurodle-header">
-                  <h1 className="eurodle-title">Eurodle</h1>
-                  <p className="eurodle-subtitle">Inspirado en Eurovisión 2025</p>
+                  <h1 className="eurodle-title">{t('app.title')}</h1>
+                  <p className="eurodle-subtitle">{t('app.subtitle')}</p>
               </header>
 
               <main className="eurodle-menu">
                   <Link to="/GuessSongGame">
-                      <button className="eurodle-btn">Adivina la Canción</button>
+                      <button className="eurodle-btn">{t('menu.guessSong')}</button>
                   </Link>
                   <Link to="/OrderSongsGame">
-                      <button className="eurodle-btn">Ordena las Canciones</button>
+                      <button className="eurodle-btn">{t('menu.orderSongs')}</button>
                   </Link>
                   <Link to="/AdivinaPais">
-                      <button className="eurodle-btn">País del Cantante</button>
+                      <button className="eurodle-btn">{t('menu.guessCountry')}</button>
                   </Link>
-                  <button className="eurodle-btn disabled" disabled>Más Vistas o Menos Vistas</button>
+                  <button className="eurodle-btn disabled" disabled>{t('menu.higherLower')}</button>
               </main>
 
               <footer className="eurodle-footer">
-                  <p>© 2025 Eurodle. Unidos por la música.</p>
+                  <p>{t('app.footer')}</p>
               </footer>
           </div>
       </div>

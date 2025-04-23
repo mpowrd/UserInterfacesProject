@@ -1,0 +1,20 @@
+{
+  "app": {
+    "title": "Eurodle",
+    "subtitle": "Inspired by Eurovision 2025",
+    "footer": "© 2025 Eurodle. United by music."
+  },
+  "menu": {
+    "guessSong": "Guess the Song",
+    "orderSongs": "Order the Songs",
+    "guessCountry": "Singer's Country",
+    "higherLower": "More Views or Less Views"
+  },
+  "settings": {
+    "buttonLabel": "Settings"
+  },
+  "other": {
+    "loading": "Loading...",
+    "errorLoading": "Error loading data."
+  }
+}

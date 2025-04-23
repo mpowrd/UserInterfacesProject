@@ -1,0 +1,22 @@
+{
+  "title": "Ordena las Canciones",
+  "selectedYear": "Año seleccionado: <strong>{{year}}</strong>",
+  "instructions": "Arrastra las canciones a los huecos en el orden correcto.",
+  "livesLeft": "Vidas restantes: <strong>{{count}}</strong>",
+  "feedback": {
+    "correct": "✔️",
+    "incorrect": "❌"
+  },
+  "messages": {
+    "win": "¡Felicidades! Has ordenado las canciones correctamente 🎉",
+    "lose": "Has perdido. El orden correcto era: {{correctOrder}}"
+  },
+  "buttons": {
+    "check": "Comprobar",
+    "restart": "Reiniciar"
+  },
+  "slots": {
+    "position": "Puesto {{position}}",
+    "placeholder": "Arrastra aquí"
+  }
+}

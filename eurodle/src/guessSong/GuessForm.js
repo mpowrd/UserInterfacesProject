@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useTranslation } from 'react-i18next';
 
 const GuessForm = ({ canciones, onGuess, fallos }) => {
+    const { t } = useTranslation('guessSong');
+
     const [entrada, setEntrada] = useState("");
     const [entradaAnyo, setEntradaAnyo] = useState("");
     const [entradaPais, setEntradaPais] = useState("");
@@ -85,7 +88,7 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
                 if(!falladas.includes(entrada.toLowerCase())){
                     onGuess(entrada.trim(), guessType);
                 } else{
-                    alert("Ya has intentado con esa, ¡prueba otra diferente!");
+                    alert(t('form.alreadyGuessedSong'));
                 }
                 setEntrada("");
                 setEntradaAnyo("");
@@ -99,7 +102,7 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
                 if(!falladasPaisAnyo.includes(currYearCountryGuess)){
                     onGuess(entradaPais + "$songGuess$" + entradaAnyo.trim(), guessType);
                 } else{
-                    alert("Ya has intentado con esa combinación de país y año, ¡prueba otra diferente!");
+                    alert(t('form.alreadyGuessedYearCountry'));
                 }
                 setEntrada("");
                 setEntradaAnyo("");
@@ -127,10 +130,11 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Adivina la canción..."
+                    placeholder={t('form.placeholderSong')}
                     value={entrada}
                     onChange={handleChange}
                     hidden={guessType}
+                    aria-label={t('form.placeholderSong')}
                 />
                 {/* Sugerencias dinámicas */}
                 {sugerencias.length > 0 && (
@@ -147,17 +151,19 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
                 <div className="input-group">
                     <input className="inputYC"
                            type="number"
-                           placeholder="Introduce el año..."
+                           placeholder={t('form.placeholderYear')}
                            value={entradaAnyo}
                            onChange={handleChangeAnyo}
                            hidden={!guessType}
+                           aria-label={t('form.placeholderYear')}
                     />
                     <input className="inputYC"
                            type="text"
-                           placeholder="Introduce el país..."
+                           placeholder={t('form.placeholderCountry')}
                            value={entradaPais}
                            onChange={handleChangePais}
                            hidden={!guessType}
+                           aria-label={t('form.placeholderCountry')}
                     />
                 </div>
 
@@ -171,21 +177,21 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
                     </ul>
                 )}
 
-                <button type="submit">Adivinar</button>
+                <button type="submit">{t('form.submitButton')}</button>
 
                 <div className="guess-method-selector">
                     <label className="radio-option">
                         <input type="radio" name="guessMethod" value="0" onClick={() => setGuessType(0)}
                                checked={guessType === 0}/>
                         <span></span>
-                        Adivinar por título
+                        {t('form.guessMethodTitle')}
                     </label>
 
                     <label className="radio-option">
                         <input type="radio" name="guessMethod" value="1" onClick={() => setGuessType(1)}
                                checked={guessType === 1}/>
                         <span></span>
-                        Adivinar por Año y País
+                        {t('form.guessMethodYearCountry')}
                     </label>
                 </div>
 
