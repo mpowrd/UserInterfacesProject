@@ -1,0 +1,12 @@
+{
+  "title": "Settings",
+  "volume": "Volume",
+  "daltonicMode": "Daltonic mode",
+  "language": "Language",
+  "back": "Back",
+  "languages": {
+    "es": "Spanish",
+    "en": "English",
+    "fr": "French"
+  }
+}

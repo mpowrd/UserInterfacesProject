@@ -1,0 +1,64 @@
+{
+  "feedback": {
+    "title": "Fallos",
+    "noErrors": "No hay fallos aún.",
+    "attemptsLeft": "Has fallado, sigue intentándolo. Te quedan {{count}} intento",
+    "attemptsLeft_plural": "Has fallado, sigue intentándolo. Te quedan {{count}} intentos",
+    "congrats": "¡Enhorabuena! Has acertado la canción.",
+    "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}"
+  },
+  "clues": {
+    "title": "Pistas",
+    "noClues": "Sin pistas todavía.",
+    "headers": {
+      "song": "Canción",
+      "artist": "Cantante",
+      "country": "País",
+      "year": "Año",
+      "rank": "Ranking"
+    },
+    "comparison": {
+      "correct": "✅",
+      "incorrect": "❌",
+      "yearHigher": "🔼 Busca más reciente",
+      "yearLower": "🔽 Busca más antiguo",
+      "rankHigher": "🔼 Ranking más alto",
+      "rankLower": "🔽 Ranking más bajo"
+    }
+  },
+  "extraClues": {
+    "title": "Pistas adicionales",
+    "locked": "🔒 Pista {{index}}",
+    "unlockedPrefix": "🔓 ",
+    "videoCompleted": "Pista de video completada ✓",
+    "clueTemplates": {
+      "rank": "Ranking final: la canción quedó en el puesto {{rank}}",
+      "neighbours": "La canción quedó{{above}}{{separator}}{{below}}",
+      "neighboursParts": {
+        "above": " por debajo de {{country}}",
+        "below": " por encima de {{country}}",
+        "separator": " y ",
+        "unknown": "Desconocido"
+      },
+      "langStyle": "El idioma del tema es: {{language}} y el género: {{style}}",
+      "letters": "El nombre de la canción empieza con la letra: {{firstLetter}} y termina con: {{lastLetter}}",
+      "lyrics": "Fragmento de la letra: {{fragment}}",
+      "artist": "Nombre del/los artista/s o del grupo: {{artistName}}"
+    }
+  },
+  "form": {
+    "notFound": "Canción no encontrada. Asegúrate de seleccionar de la lista. {{input}}",
+    "correctGuess": "¡Correcto! Has adivinado la canción 🎉",
+    "placeholderSong": "Adivina la canción...",
+    "placeholderYear": "Introduce el año...",
+    "placeholderCountry": "Introduce el país...",
+    "alreadyGuessedSong": "Ya has intentado con esa, ¡prueba otra diferente!",
+    "alreadyGuessedYearCountry": "Ya has intentado con esa combinación de país y año, ¡prueba otra diferente!",
+    "submitButton": "Adivinar",
+    "guessMethodTitle": "Adivinar por título",
+    "guessMethodYearCountry": "Adivinar por Año y País"
+  },
+  "game": {
+    "restart": "Reiniciar Juego"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Order the Songs",
+  "selectedYear": "Selected year: <strong>{{year}}</strong>",
+  "instructions": "Drag the songs to the slots in the correct order.",
+  "livesLeft": "Lives remaining: <strong>{{count}}</strong>",
+  "feedback": {
+    "correct": "✔️",
+    "incorrect": "❌"
+  },
+  "messages": {
+    "win": "Congratulations! You ordered the songs correctly 🎉",
+    "lose": "You lost. The correct order was: {{correctOrder}}"
+  },
+  "buttons": {
+    "check": "Check",
+    "restart": "Restart"
+  },
+  "slots": {
+    "position": "Position {{position}}",
+    "placeholder": "Drag here"
+  }
+}

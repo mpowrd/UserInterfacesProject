@@ -8,6 +8,7 @@
     justify-content: center;
     gap: 10px;
     margin-top: 40px; /* Increased space between tarjetas and huecos */
+    margin-bottom: 40px;
 }
 
 .tarjeta {
@@ -48,9 +49,11 @@
 .huecos {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 5px; /* Reduced gap between elements */
-    justify-content: center;
-    margin-bottom: 40px; /* Increased space between huecos and tarjetas */
+    gap: 30px;
+    margin-bottom: 40px;
+    width: max-content;              /* <-- hace que el grid solo ocupe lo necesario */
+    margin-left: auto;               /* <-- centra horizontalmente */
+    margin-right: auto;
 }
 
 .hueco {
@@ -92,7 +95,6 @@
 }
 
 .comprobar-btn {
-    position: absolute;
     top: 10px;
     left: 10px;
     padding: 10px 20px;

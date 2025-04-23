@@ -1,0 +1,64 @@
+{
+  "feedback": {
+    "title": "Errors",
+    "noErrors": "No errors yet.",
+    "attemptsLeft": "Incorrect, keep trying. You have {{count}} attempt left",
+    "attemptsLeft_plural": "Incorrect, keep trying. You have {{count}} attempts left",
+    "congrats": "Congratulations! You guessed the song.",
+    "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
+  },
+  "clues": {
+    "title": "Clues",
+    "noClues": "No clues yet.",
+    "headers": {
+      "song": "Song",
+      "artist": "Artist",
+      "country": "Country",
+      "year": "Year",
+      "rank": "Ranking"
+    },
+    "comparison": {
+      "correct": "✅",
+      "incorrect": "❌",
+      "yearHigher": "🔼 Look for newer",
+      "yearLower": "🔽 Look for older",
+      "rankHigher": "🔼 Higher ranking",
+      "rankLower": "🔽 Lower ranking"
+    }
+  },
+  "extraClues": {
+    "title": "Additional Clues",
+    "locked": "🔒 Clue {{index}}",
+    "unlockedPrefix": "🔓 ",
+    "videoCompleted": "Video clue completed ✓",
+    "clueTemplates": {
+      "rank": "Final ranking: the song finished in {{rank}} position",
+      "neighbours": "The song ranked{{above}}{{separator}}{{below}}",
+      "neighboursParts": {
+        "above": " below {{country}}",
+        "below": " above {{country}}",
+        "separator": " and ",
+        "unknown": "Unknown"
+      },
+      "langStyle": "The language of the song is: {{language}} and the genre: {{style}}",
+      "letters": "The song name starts with the letter: {{firstLetter}} and ends with: {{lastLetter}}",
+      "lyrics": "Lyric snippet: {{fragment}}",
+      "artist": "Name of the artist(s) or group: {{artistName}}"
+    }
+  },
+  "form": {
+    "notFound": "Song not found. Make sure to select from the list. {{input}}",
+    "correctGuess": "Correct! You guessed the song 🎉",
+    "placeholderSong": "Guess the song...",
+    "placeholderYear": "Enter the year...",
+    "placeholderCountry": "Enter the country...",
+    "alreadyGuessedSong": "You've already tried that one, try a different one!",
+    "alreadyGuessedYearCountry": "You've already tried that country and year combination, try a different one!",
+    "submitButton": "Guess",
+    "guessMethodTitle": "Guess by title",
+    "guessMethodYearCountry": "Guess by Year and Country"
+  },
+  "game": {
+    "restart": "Restart Game"
+  }
+}

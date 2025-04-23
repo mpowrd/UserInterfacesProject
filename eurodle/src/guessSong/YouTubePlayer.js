@@ -1,10 +1,13 @@
 import React, {useEffect, useRef, useState} from 'react';
+import {useSettings} from "../SettingsProvider";
 
-const YouTubePlayer = ({ videoId, startTime = 30 }) => {
+const YouTubePlayer = ({ videoId, startTime = 30 , setVideoDisplayed}) => {
     const containerRef = useRef(null);
     const playerRef = useRef(null);
     const playerInitializedRef = useRef(false);
     const completedRef = useRef(false);
+
+    const { volume } = useSettings();
 
     // Keep track of all timers to clear them if needed
     const timersRef = useRef([]);
@@ -84,16 +87,16 @@ const YouTubePlayer = ({ videoId, startTime = 30 }) => {
                     playerRef.current.unMute();
                     playerRef.current.setVolume(0);
 
-                    let volume = 0;
+                    let vol = 0;
                     const fadeInInterval = setInterval(() => {
                         if (completedRef.current) {
                             clearInterval(fadeInInterval);
                             return;
                         }
 
-                        volume += 10;
-                        if (volume <= 100 && playerRef.current) {
-                            playerRef.current.setVolume(volume);
+                        vol += 5;
+                        if (vol <= volume && playerRef.current) {
+                            playerRef.current.setVolume(vol);
                         } else {
                             clearInterval(fadeInInterval);
                         }
@@ -106,16 +109,16 @@ const YouTubePlayer = ({ videoId, startTime = 30 }) => {
                     if (completedRef.current) return;
 
                     // Fade out audio
-                    let volume = 100;
+                    let vol = volume;
                     const fadeOutInterval = setInterval(() => {
                         if (completedRef.current) {
                             clearInterval(fadeOutInterval);
                             return;
                         }
 
-                        volume -= 10;
-                        if (volume >= 0 && playerRef.current) {
-                            playerRef.current.setVolume(volume);
+                        vol -= 5;
+                        if (vol >= 0 && playerRef.current) {
+                            playerRef.current.setVolume(vol);
                         } else {
                             clearInterval(fadeOutInterval);
                         }
@@ -136,11 +139,7 @@ const YouTubePlayer = ({ videoId, startTime = 30 }) => {
 
                         // Show completion message
                         container.innerHTML = '';
-                        const completionMsg = document.createElement('div');
-                        completionMsg.textContent = "Video hint completed ✓";
-                        completionMsg.style.textAlign = 'center';
-                        setHeight("40px")
-                        container.appendChild(completionMsg);
+                        setVideoDisplayed(true);
 
                     }, 1000);
                     timersRef.current.push(completeTimer);

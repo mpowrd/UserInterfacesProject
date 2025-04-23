@@ -4,24 +4,32 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import InteractiveMap from "./GuessSingerCountry/GuessSingerCountry";
 import GuessSongGame from "./guessSong/GuessSongGame";
+import Header from "./Header";
 import { Routes, Route } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import OrderSongsGame from './OrderSongs/OrderSongsGame';
+import Settings from "./Settings";
+import { SettingsProvider } from './SettingsProvider';
+import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<BrowserRouter>
-  <Routes>
-    <Route path="/" element={<App />} />
-    <Route path="/AdivinaPais" element={<InteractiveMap />} />
-    <Route path="/GuessSongGame" element={<GuessSongGame />} />
-    <Route path="/OrderSong" element={<OrderSongsGame />} />
+  <SettingsProvider>
+    <BrowserRouter>
+      <Header></Header>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/AdivinaPais" element={<InteractiveMap />} />
+        <Route path="/GuessSongGame" element={<GuessSongGame />} />
+        <Route path="/OrderSongsGame" element={<OrderSongsGame />} />
+        <Route path="/Settings" element={<Settings />} />
 
-    {/* Puedes poner una ruta por defecto si quieres */}
-    {/* <Route path="/" element={<HomeComponent />} /> */}
-  </Routes>
-  </BrowserRouter>
+        {/* Puedes poner una ruta por defecto si quieres */}
+        {/* <Route path="/" element={<HomeComponent />} /> */}
+      </Routes>
+    </BrowserRouter>
+  </SettingsProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

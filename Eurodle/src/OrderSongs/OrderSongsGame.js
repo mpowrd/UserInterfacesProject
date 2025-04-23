@@ -4,6 +4,7 @@ import "./OrderSongsGame.css";
 import Tarjetas from "./Tarjetas";
 import Huecos from "./Huecos";
 import Mensaje from "./Mensaje";
+import { useTranslation } from 'react-i18next';
 
 const OrderSongsGame = () => {
     const [canciones, setCanciones] = useState([]);
@@ -13,6 +14,9 @@ const OrderSongsGame = () => {
     const [year, setYear] = useState(null);
     const [vidas, setVidas] = useState(3);
     const [mensaje, setMensaje] = useState(null);
+    const [isLoading, setIsLoading] = useState(true); // Estado de carga
+
+    const { t } = useTranslation(['orderSongs', 'common']);
 
     useEffect(() => {
         Papa.parse("/canciones.csv", {
@@ -42,10 +46,14 @@ const OrderSongsGame = () => {
 
                 setCanciones(shuffledSongs);
                 setOrdenUsuario(Array(5).fill(null));
+                setIsLoading(false);
             },
-            error: (error) => console.error("Error loading CSV:", error),
+            error: (error) => {
+                console.error(t('common:other.errorLoading'), error); // Traducir error
+                setIsLoading(false); // Finaliza carga incluso con error
+            },
         });
-    }, []);
+    }, [t]);
 
     const handleDragStart = (e, songName, index = null) => {
         e.dataTransfer.setData("text/plain", songName);
@@ -71,20 +79,25 @@ const OrderSongsGame = () => {
     };
 
     const handleCheck = () => {
-        if (vidas <= 0 || mensaje) return;
+        if (vidas <= 0 || mensaje) return; // Si ya hay mensaje (juego terminado), no hacer nada
 
         const newFeedback = ordenUsuario.map((song, index) =>
+            // Usar claves internas que Huecos traducirá
             song === ordenCorrecto[index] ? "✔️" : "❌"
         );
-        setFeedback(newFeedback); // Set feedback after checking
+        setFeedback(newFeedback);
 
         if (ordenUsuario.every((song, index) => song === ordenCorrecto[index])) {
-            setMensaje("¡Felicidades! Has ordenado las canciones correctamente 🎉");
+            // Línea ~71: Usar texto traducido para mensaje de victoria
+            setMensaje(t('messages.win'));
         } else {
-            setVidas(vidas - 1);
-            if (vidas - 1 === 0) {
-                setMensaje(`Has perdido. El orden correcto era: ${ordenCorrecto.join(", ")}`);
+            const newVidas = vidas - 1;
+            setVidas(newVidas);
+            if (newVidas === 0) {
+                // Línea ~76: Usar texto traducido para mensaje de derrota con interpolación
+                setMensaje(t('messages.lose', { correctOrder: ordenCorrecto.join(", ") }));
             }
+            // Si no es victoria y aún quedan vidas, no ponemos mensaje permanente aquí
         }
     };
 
@@ -92,25 +105,35 @@ const OrderSongsGame = () => {
         window.location.reload(); // Reload the webpage
     };
 
+    if (isLoading) {
+        return <div>{t('common:other.loading')}</div>;
+    }
+
     return (
         <div className="order-songs-game">
-            <h1>Ordena las Canciones</h1>
-            {year && <p>Año seleccionado: <strong>{year}</strong></p>}
-            <p>Arrastra las canciones a los huecos en el orden correcto.</p>
-            <p>Vidas restantes: <strong>{vidas}</strong></p>
+            <h1>{t('title')}</h1>
+            {year && <p dangerouslySetInnerHTML={{ __html: t('selectedYear', { year }) }} />}
+            <p>{t('instructions')}</p>
+            <p dangerouslySetInnerHTML={{ __html: t('livesLeft', { count: vidas }) }}/>
 
-            <Mensaje mensaje={mensaje} />
+            <Mensaje mensaje={mensaje} /> {/* Mensaje ya está traducido */}
             <Tarjetas canciones={canciones} ordenUsuario={ordenUsuario} handleDragStart={handleDragStart} />
             <Huecos
                 ordenUsuario={ordenUsuario}
-                feedback={feedback || []} // Show feedback only after checking or game ends
+                feedback={feedback || []}
                 handleDrop={handleDrop}
                 handleDragOver={handleDragOver}
                 handleDragStart={handleDragStart}
             />
 
-            <button onClick={handleCheck} className="comprobar-btn">Comprobar</button>
-            {mensaje && <button onClick={reiniciarJuego} className="reiniciar-btn">Reiniciar</button>}
+            {/* Línea ~114: Cambiar texto botón, deshabilitar si el juego terminó */}
+            <button onClick={handleCheck} className="comprobar-btn" disabled={!!mensaje}>
+                {t('buttons.check')}
+            </button>
+            {/* Línea ~115: Cambiar texto botón */}
+            {mensaje && <button onClick={reiniciarJuego} className="reiniciar-btn">
+                {t('buttons.restart')}
+            </button>}
         </div>
     );
 };

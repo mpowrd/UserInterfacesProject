@@ -1,0 +1,8 @@
+{
+  "title": "GUESS THE COUNTRY: {{countryName}}",
+  "hovered": "Selected country:",
+  "clicked": "You clicked on: {{countryId}}",
+  "hint": "Hint: {{arrow}}",
+  "correct": "Correct! You guessed the country.",
+  "notFoundWarning": "Countries not found"
+}
