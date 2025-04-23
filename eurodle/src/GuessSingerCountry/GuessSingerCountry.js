@@ -1,9 +1,64 @@
-import React, {useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import MapPaths from "../assets/MapPaths";
+import "./GuessSingerCountry.css"
+import Papa from "papaparse";
 
 const InteractiveMap = () => {
+
+    const [canciones, setCanciones] = useState([]);
+
+    const [cancionSelect, setCancionSelect] = useState(null);
+
+    const [countrySelected, setCountrySelected] = useState(null);
+
+    const [resultadoMensaje, setResultadoMensaje] = useState("Pista: ");
+
     // Estados para almacenar el país seleccionado
     const [hoveredCountry, setHoveredCountry] = useState(null);
+
+    useEffect(() => {
+        // Cargamos las caciones del csv al iniciar
+        Papa.parse("/canciones.csv", {
+            header: true,
+            download: true,
+            complete: (results) => {
+                /*
+                Vamos a filtrar la cancion por el atributo song_name asegurandonos que
+                todos los campos clave existan y no estén vacíos.
+                 */
+                const listaCanciones = results.data.filter(c =>
+                    c.artist_name && c.artist_name.trim() !== "" &&
+                    c.country && c.country.trim() !== ""
+                );
+
+                setCanciones(listaCanciones);
+
+                // Elegimos una canción aleatoria solo entre las válidas. Esta será la canción a adivinar
+                const randomIndex = Math.floor(Math.random() * listaCanciones.length);
+                const cancionSeleccionada = listaCanciones[randomIndex];
+
+                // const cancionArriba = results.data.filter(c =>
+                //     c.final_place && parseInt(c.final_place.trim()) === parseInt(cancionSeleccionada.final_place) - 1 &&
+                //     c.year && parseInt(c.year.trim()) === parseInt(cancionSeleccionada.year)
+                // );
+                //
+                // const cancionAbajo = results.data.filter(c =>
+                //     c.final_place && parseInt(c.final_place.trim()) === parseInt(cancionSeleccionada.final_place) + 1 &&
+                //     c.year && parseInt(c.year.trim()) === parseInt(cancionSeleccionada.year)
+                // );
+                //
+                // cancionSeleccionada.paisArriba = cancionArriba.length === 0 ? "Desconocido" : cancionArriba[0].country;
+                // cancionSeleccionada.paisAbajo = cancionAbajo.length === 0 ? "Desconocido" : cancionAbajo[0].country;
+
+                setCancionSelect(cancionSeleccionada);
+            },
+            error: (error) => {
+                console.error("Error al cargar el CSV:", error);
+            }
+        });
+    }, []);
+
+
 
     const handleMouseEnter = (event) => {
         const country = event.target;
@@ -17,9 +72,14 @@ const InteractiveMap = () => {
         setHoveredCountry(null);
         country.setAttribute("stroke", "black"); // Restaurar borde original
         country.setAttribute("stroke-width", "1");
-    }; 
+    };
 
-    const [resultadoMensaje, setResultadoMensaje] = useState("");
+    const cantanteAdivinar= {
+        nameCantante: cancionSelect?.artist_name,
+        nameCountry: cancionSelect?.country,
+    }
+
+
 
     function getCentroid(path) {
         const bbox = path.getBBox();
@@ -45,17 +105,31 @@ const InteractiveMap = () => {
         if (adjusted < 337.5) return {dir: "Noreste", arrow: "↗️"};
     }
 
-    function compararPaises(idDesde, paisAdivinar) {
-        const desde = document.getElementById(idDesde);
-        const hasta = document.getElementById(paisAdivinar);
+    const getIdByName = (name) => {
+        const element = document.querySelector(`path[name="${name}"]`);
+        return element ? element.id : null;
+    };
 
-        if (!desde) {
+    function compararPaises(paisSeleccionado, paisAdivinar) {
+        const idSeleccionado = getIdByName(paisSeleccionado);
+        const idAdivinar = getIdByName(paisAdivinar);
+
+        const paisSelected = document.getElementById(idSeleccionado);
+        const paisAdivin = document.getElementById(idAdivinar);
+
+        console.log("ID seleccionado:", idSeleccionado);
+        console.log("ID a adivinar:", idAdivinar);
+
+        if (!paisSelected || !paisAdivin) {
             console.warn("Países no encontrados");
             return;
         }
 
-        const centroDesde = getCentroid(desde);
-        const centroHasta = getCentroid(hasta);
+        //const paisSelected = paisesList[0].path;
+        //const paisAdivin = adivinarList[0].path;
+
+        const centroDesde = getCentroid(paisSelected);
+        const centroHasta = getCentroid(paisAdivin);
         const {dir, arrow} = getDirectionWithArrow(centroDesde, centroHasta);
 
         const mensaje = `Pista: ${arrow}`;
@@ -63,56 +137,90 @@ const InteractiveMap = () => {
         setResultadoMensaje(mensaje);
     }
 
-    const paisAdivinar= {
-        id:"ES",
-        name:"España",
-    }
+
 
     const [selectedCountry,setSelectedCountry] = useState(null);
 
     const handleCountryClick = (event) => {
         const countrySelectedID = event.target.getAttribute("id");
         const countrySelectedName = document.getElementById(countrySelectedID).getAttribute("name");
-        setSelectedCountry(countrySelectedID);
+        setSelectedCountry(countrySelectedName);
 
-        paisAdivinado(countrySelectedID);
+        paisAdivinado(countrySelectedName);
     };
 
-    function paisAdivinado(countrySelectedID) {
-        if (countrySelectedID === paisAdivinar.id) {
+    function paisAdivinado(countrySelectedName) {
+        if (countrySelectedName === cantanteAdivinar.nameCountry) {
             setResultadoMensaje("¡Correcto! Has adivinado el país.");
         } else {
-            compararPaises(countrySelectedID, paisAdivinar.id);
+            compararPaises(countrySelectedName, cantanteAdivinar.nameCountry);
         }
     }
 
+    const reiniciarJuego = () => {
+        // Resetear todo
+        const randomIndex = Math.floor(Math.random() * canciones.length);
+        setCancionSelect(canciones[randomIndex]);
+        setResultadoMensaje("Pista: ");
+    };
+
     return (
         <div>
-            <h2>ADIVINA DONDE ESTA EL PAIS: {paisAdivinar.name}</h2>
+            <h2>ADIVINA EL PAIS DEL CANTANTE</h2>
 
-            <p>País seleccionado: {hoveredCountry}</p>
-            {paisAdivinar && <p>Has hecho click en: {selectedCountry}</p>}
+            <div style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                width: '100%',
+                gap: '20px',
+                margin: '20px 0',
+                padding: '15px',
+                borderRadius: '8px'
+            }}>
+                <div style={{
+                    flex: '1 1 300px',
+                    minWidth: '0',
+                    fontSize: 'clamp(12px, 2vw, 16px)',
+                    lineHeight: '1.5'
+                }}>
+                    <h3>Cantante: {cantanteAdivinar.nameCantante}</h3>
+                    {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
 
-            {/* Resultado de la dirección */}
-            <div
-                style={{ marginTop: "10px", fontSize: "18px", fontWeight: "bold" }}
-            >
-                {resultadoMensaje}
+                    <p>País seleccionado: {hoveredCountry}</p>
+                    {cantanteAdivinar && <p>Has hecho click en: {selectedCountry}</p>}
+
+                    {/* Resultado de la dirección */}
+                    <div
+                        style={{ marginTop: "10px", fontSize: "25px", fontWeight: "bold" }}
+                    >
+                        {resultadoMensaje}
+                    </div>
+
+                    <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
+                        Reiniciar Juego
+                    </button>
+                </div>
+                <div style={{
+                    flex: '0 0 300px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'flex-start'
+                }}>
+                    <svg
+                        width="800" height="446" viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <MapPaths
+                            handleMouseEnter={handleMouseEnter}
+                            handleMouseLeave={handleMouseLeave}
+                            handleCountryClick={handleCountryClick}
+                        />
+                    </svg>
+                </div>
             </div>
 
-            {/* SVG como JSX */}
-            <svg
-                viewBox="-300 0 1500 1000" // Ajusta según el tamaño del mapa
-                width="80%"
 
-                xmlns="http://www.w3.org/2000/svg"
-            >
-                <MapPaths
-                    handleMouseEnter={handleMouseEnter}
-                    handleMouseLeave={handleMouseLeave}
-                    handleCountryClick={handleCountryClick}
-                />
-            </svg>
+
 
         </div>
     );
