@@ -7,6 +7,7 @@ import ClueDisplay from "./ClueDisplay";
 import ExtraClues from "./ExtraClues";
 import { useTranslation } from 'react-i18next';
 
+
 const GuessSongGame = () => {
     const { t } = useTranslation(['guessSong', 'common']);
 
@@ -144,33 +145,35 @@ const GuessSongGame = () => {
     }
 
     return (
-        <div className="guess-song-game">
+        <div className=".eurodle-wrapper">
+            <div className="guess-song-container">
 
-            {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
+                {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
 
-            <div className="contenido-principal">
+                <div className="contenido-principal">
 
-                {/* Visualización de fallos */}
-                <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta} totalIntentos={totalIntentos}/>
+                    {/* Visualización de fallos */}
+                    <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta} totalIntentos={totalIntentos}/>
 
-                {/* Visualización de pistas */}
-                <ClueDisplay pistas={pistas}/>
+                    {/* Visualización de pistas */}
+                    <ClueDisplay pistas={pistas}/>
 
-                {/* Formulario de adivinanza */}
-                {!acertado && intentosRestantes > 0 && (
-                    <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
-                )}
-                {/* Botón para reiniciar cuando acabe el juego */}
-                {(acertado || intentosRestantes <= 0) && (
-                    <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
-                        {t('guessSong:game.restart')}
-                    </button>
-                )}
+                    {/* Formulario de adivinanza */}
+                    {!acertado && intentosRestantes > 0 && (
+                        <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
+                    )}
+                    {/* Botón para reiniciar cuando acabe el juego */}
+                    {(acertado || intentosRestantes <= 0) && (
+                        <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
+                            {t('guessSong:game.restart')}
+                        </button>
+                    )}
 
-                {/* Pistas adicionales progresivas */}
-                <ExtraClues songData={cancionCorrecta} fallos={fallos} acertado={acertado}/>
+                    {/* Pistas adicionales progresivas */}
+                    <ExtraClues songData={cancionCorrecta} fallos={fallos} acertado={acertado}/>
 
 
+                </div>
             </div>
         </div>
     );

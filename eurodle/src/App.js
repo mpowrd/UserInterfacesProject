@@ -21,8 +21,13 @@ function App() {
       <div className="eurodle-wrapper">
           <div className="eurodle-container">
               <div className="settings-icon">
-                  <button onClick={onSettingsClick} className="settings-btn" aria-label={t('settings.buttonLabel')}>
-                      <FiSettings size={24} />
+                  {/*<button onClick={onSettingsClick} className="settings-btn" aria-label={t('settings.buttonLabel')}>*/}
+                  {/*    <FiSettings size={24} />*/}
+                  {/*</button>*/}
+
+                  <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
+                      ⚙️
+                      {/*<FiSettings size={24} color="#ffffff"/>*/}
                   </button>
               </div>
 

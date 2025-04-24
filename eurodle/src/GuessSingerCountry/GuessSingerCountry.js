@@ -183,15 +183,15 @@ const InteractiveMap = () => {
                     fontSize: 'clamp(12px, 2vw, 16px)',
                     lineHeight: '1.5'
                 }}>
-                    <h3>Cantante: {cantanteAdivinar.nameCantante}</h3>
+                    <h3 >Cantante: {cantanteAdivinar.nameCantante}</h3>
                     {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
 
-                    <p>País seleccionado: {hoveredCountry}</p>
-                    {cantanteAdivinar && <p>Has hecho click en: {selectedCountry}</p>}
+                    <p style={{ color: "white"}}>País seleccionado: {hoveredCountry}</p>
+                    {cantanteAdivinar && <p style={{color: "white" }}>Has hecho click en: {selectedCountry}</p>}
 
                     {/* Resultado de la dirección */}
                     <div
-                        style={{ marginTop: "10px", fontSize: "25px", fontWeight: "bold" }}
+                        style={{ marginTop: "10px", fontSize: "25px", fontWeight: "bold"}}
                     >
                         {resultadoMensaje}
                     </div>
