@@ -2,6 +2,8 @@ import React from 'react';
 import { useSettings } from './SettingsProvider'; // Importa el hook del contexto
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import './css/settings.css';
+
 
 const Settings = () => {
     const { t, i18n } = useTranslation('settings'); // Usa el namespace específico
@@ -33,7 +35,7 @@ const Settings = () => {
                     value={volume} // Enlace con la variable de estado
                     onChange={(e) => updateVolume(e.target.value)} // Actualizamos la variable de estado al cambiar
                 />
-                <span>{volume}</span> {/* Muestra el valor del volumen */}
+                {/*<span>{volume}</span> /!* Muestra el valor del volumen *!/*/}
             </div>
 
             <div className="settings-item">
@@ -62,7 +64,7 @@ const Settings = () => {
                 </select>
             </div>
 
-            <button onClick={handleBack}>{t('back')}</button>
+            <button onClick={handleBack} className="settings-btn-return-home">{t('back')}</button>
 
         </div>
     );

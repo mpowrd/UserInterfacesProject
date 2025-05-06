@@ -2,9 +2,10 @@ import React from 'react';
 import './App.css';
 import { Link } from 'react-router-dom';
 import "./css/estiloEuro.css";
-import { FiSettings } from 'react-icons/fi'; // Necesita instalar: npm install react-icons
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
+import { useLocation } from 'react-router-dom';
+
 
 
 function App() {
@@ -17,19 +18,21 @@ function App() {
         navigate("/Settings");
     };
 
-  return (
+    const location = useLocation();
+    const isSettingsPage = location.pathname === "/Settings";
+
+
+    return (
       <div className="eurodle-wrapper">
           <div className="eurodle-container">
-              <div className="settings-icon">
-                  {/*<button onClick={onSettingsClick} className="settings-btn" aria-label={t('settings.buttonLabel')}>*/}
-                  {/*    <FiSettings size={24} />*/}
-                  {/*</button>*/}
+              {!isSettingsPage && (
+                  <div className="settings-icon">
+                      <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
+                          ⚙️
+                      </button>
+                  </div>
+              )}
 
-                  <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
-                      ⚙️
-                      {/*<FiSettings size={24} color="#ffffff"/>*/}
-                  </button>
-              </div>
 
               <header className="eurodle-header">
                   <h1 className="eurodle-title">{t('app.title')}</h1>

@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate, useLocation  } from "react-router-dom";
+import "./css/estiloEuro.css";
+
 
 // import SettingsIcon from './settings.svg'; // Importa tu icono SVG o usa una librería
 
@@ -7,6 +9,8 @@ function Header() {
 
     const navigate = useNavigate();
     const location = useLocation();
+
+    const isSettingsPage = location.pathname === "/Settings";
 
     if (location.pathname === '/') {
         return null;
@@ -21,20 +25,29 @@ function Header() {
     };
 
   return (
+      <div>
+          {!isSettingsPage && (
+              <div className="settings-icon">
+                  <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
+                      ⚙️
+                  </button>
+              </div>
+          )}
 
-    <header className="app-header">
+          <header className="eurodle-header">
 
-    <h1>
-        <a onClick={onNameClick} style={{ cursor: "pointer", textDecoration: "none" }}>Eurodle</a>
-    </h1>
+              <h1>
+                  <a onClick={onNameClick} style={{ cursor: "pointer", textDecoration: "none" }}>Eurodle</a>
+              </h1>
+          </header>
+      </div>
 
-      <button onClick={onSettingsClick} aria-label="Ajustes" className="settings-button">
 
-        ⚙️ {/* O usa tu componente de icono */}
 
-      </button>
 
-    </header>
+
+
+
 
   );
 

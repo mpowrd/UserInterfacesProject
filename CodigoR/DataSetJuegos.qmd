@@ -9,12 +9,10 @@ library(stringr)
 library(tidyverse)
 ```
 
-
 ```{r}
 song_data <- read.csv("./Kaggle Dataset/song_data.csv", comment.char="#")
 str(song_data)
 ```
-
 
 ## Limpieza Data Set
 
@@ -36,7 +34,6 @@ print(guess_encoding)
 
 ```
 
-
 ```{r}
 datos <- read.csv("./Kaggle Dataset/song_data.csv", fileEncoding = "windows-1252", stringsAsFactors = FALSE)
 
@@ -51,17 +48,18 @@ indices <- lapply(,function(x) which(str_detect(x,"�")));indices
 ```
 
 ### Tratamiento de caracteres
+
 Observamos los caracteres.
 
 ```{r}
 unique(datos$final_draw_position)
 unique(datos$favourite_10)
 ```
+
 ```{r}
 datos$final_draw_position <- ifelse(datos$final_draw_position == "", "-", datos$final_draw_position)
 
 ```
-
 
 ### Eliminar Columnas innecesarias
 
@@ -70,13 +68,11 @@ datos_final <- datos |>
   select(year, semi_final, semi_draw_position, final_draw_position, country, artist_name, song_name, language, style, gender, main_singers, final_televote_points, final_jury_points, final_televote_votes, final_jury_votes, final_place)
 ```
 
-
-## Escirbimos en un csv 
+## Escirbimos en un csv
 
 ```{r}
 write.csv(datos_final,file = "canciones.csv")
 ```
-
 
 ## Transformación a JSON
 
@@ -91,13 +87,6 @@ write(json_data, file = "canciones.json")
 
 ```
 
-
-
 ```{r}
 mejorcanciondelahistoria <- datos_final[which(datos_final$song_name == "Unicorn")];mejorcanciondelahistoria
 ```
-
-
-
-
-
