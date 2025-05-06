@@ -111,10 +111,12 @@ const OrderSongsGame = () => {
 
     return (
         <div className="order-songs-game">
-            <h1>{t('title')}</h1>
+            <h1 className="title-order-song">{t('title')}</h1>
             {year && <p dangerouslySetInnerHTML={{ __html: t('selectedYear', { year }) }} />}
-            <p>{t('instructions')}</p>
-            <p dangerouslySetInnerHTML={{ __html: t('livesLeft', { count: vidas }) }}/>
+            <p className="information-order-song">{t('instructions')}</p>
+            <p dangerouslySetInnerHTML={{ __html: t('livesLeft', { count: vidas }) }} className="information-order-song"/>
+
+
 
             <Mensaje mensaje={mensaje} /> {/* Mensaje ya está traducido */}
             <Tarjetas canciones={canciones} ordenUsuario={ordenUsuario} handleDragStart={handleDragStart} />
@@ -125,6 +127,9 @@ const OrderSongsGame = () => {
                 handleDragOver={handleDragOver}
                 handleDragStart={handleDragStart}
             />
+
+
+
 
             {/* Línea ~114: Cambiar texto botón, deshabilitar si el juego terminó */}
             <button onClick={handleCheck} className="comprobar-btn" disabled={!!mensaje}>

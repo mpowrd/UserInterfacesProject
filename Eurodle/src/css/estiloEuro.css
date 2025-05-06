@@ -19,6 +19,12 @@ body {
     background: var(--bg-dark);
 }
 
+.engranaje{
+    width: 30px;
+    height: auto; /* mantiene la proporción */
+}
+
+
 .eurodle-wrapper {
     min-height: 100vh;
     display: flex;
@@ -30,6 +36,23 @@ body {
     padding: 2rem;
     font-family: 'Roboto', serif;
     color: #FFFFFF;
+}
+
+.eurodle-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+
+
+}
+
+.eurodle-header-text{
+    transition: transform 0.2s ease;
+}
+
+.eurodle-header-text:hover{
+    transform: scale(1.2);
 }
 
 /*
@@ -145,19 +168,26 @@ footer p{
     right: 12px;
 }
 
+.engranaje-home{
+    filter: invert(100%);
+    width: 30px;
+    height: auto;
+}
+
 .settings-btn {
     background: none;
     border: none;
     color: white;
     cursor: pointer;
-    transition: transform 0.2s ease;
+    transition: transform 1.5s ease;
 }
 
 .settings-btn:hover {
-    transform: scale(1.2);
+    /*transform: scale(1.2);*/
+    transform: rotate(180deg);
 }
 
-.eurodle-header {
+.eurodle-header-home {
     text-align: center;
     margin-bottom: 2rem;
 }

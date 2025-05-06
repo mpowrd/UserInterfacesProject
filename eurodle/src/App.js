@@ -28,13 +28,13 @@ function App() {
               {!isSettingsPage && (
                   <div className="settings-icon">
                       <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
-                          ⚙️
+                          <img className="engranaje-home" src={"/engranaje.png"} />
                       </button>
                   </div>
               )}
 
 
-              <header className="eurodle-header">
+              <header className="eurodle-header-home">
                   <h1 className="eurodle-title">{t('app.title')}</h1>
                   <p className="eurodle-subtitle">{t('app.subtitle')}</p>
               </header>

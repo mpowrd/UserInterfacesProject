@@ -29,14 +29,14 @@ function Header() {
           {!isSettingsPage && (
               <div className="settings-icon">
                   <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
-                      ⚙️
+                      <img className="engranaje" src={"/engranaje.png"}/>
                   </button>
               </div>
           )}
 
           <header className="eurodle-header">
 
-              <h1>
+              <h1 className="eurodle-header-text">
                   <a onClick={onNameClick} style={{ cursor: "pointer", textDecoration: "none" }}>Eurodle</a>
               </h1>
           </header>
