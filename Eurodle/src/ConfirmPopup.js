@@ -1,10 +1,8 @@
 // src/components/ConfirmPopup.js
 import React from 'react';
 import './css/ConfirmPopup.css';
-import { useTranslation } from 'react-i18next';
 
-const ConfirmPopup = ({ title, message, onConfirm, onCancel }) => {
-    const { t, i18n } = useTranslation('settings'); // Usa el namespace específico
+const ConfirmPopup = ({ title, message, yes, no, onConfirm, onCancel }) => {
 
     return (
         <div className="popup-overlay">
@@ -12,8 +10,8 @@ const ConfirmPopup = ({ title, message, onConfirm, onCancel }) => {
                 <h3>{title || "Confirmación"}</h3>
                 <p>{message || "¿Estás seguro de que deseas continuar?"}</p>
                 <div className="popup-buttons">
-                    <button onClick={onConfirm}>{t('afirmation')}</button>
-                    <button onClick={onCancel}>{t('negative')}</button>
+                    <button onClick={onConfirm}>{yes}</button>
+                    <button onClick={onCancel}>{no}</button>
                 </div>
             </div>
         </div>

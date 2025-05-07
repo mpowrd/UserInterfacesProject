@@ -34,7 +34,7 @@ i18n // Detecta el idioma del navegador
             }
         },
         // lng: 'es', // Puedes quitar esto si usas LanguageDetector
-        fallbackLng: 'en', // Idioma de respaldo si el detectado no está disponible
+        fallbackLng: 'es', // Idioma de respaldo si el detectado no está disponible
         // Lista de todos los namespaces
         ns: ['settings', 'common', 'guessSong', 'orderSongs', 'guessCountry'],
         // Namespace por defecto si no se especifica en useTranslation

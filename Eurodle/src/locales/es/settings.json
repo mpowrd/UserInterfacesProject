@@ -11,5 +11,9 @@
     "es": "Español",
     "en": "Inglés",
     "fr": "Francés"
-  }
+  },
+  "confirmTitleSettings": "Guardar cambios",
+  "confirmMessageSettings": "¿Desea que se apliquen los cambios seleccionados?",
+  "confirmYesSettings": "Sí",
+  "confirmNoSettings": "No"
 }

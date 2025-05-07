@@ -82,6 +82,8 @@ const Settings = () => {
                 <ConfirmPopup
                     title={t('confirmTitleSettings')}
                     message={t('confirmMessageSettings')}
+                    yes={t('confirmYesSettings')}
+                    no={t('confirmNoSettings')}
                     onConfirm={() => {
                         handleSave();
                         setShowConfirm(false);

@@ -8,6 +8,7 @@ import ExtraClues from "./ExtraClues";
 import { useTranslation } from 'react-i18next';
 
 import "../css/daltonicMode.css";
+import "../css/guessSong.css"
 
 const GuessSongGame = () => {
     const { t } = useTranslation(['guessSong', 'common']);
@@ -147,7 +148,7 @@ const GuessSongGame = () => {
     }
 
     return (
-        <div className={`${daltonicMode ? "modo-daltonico" : ""}`}>
+        <div className={`${daltonicMode ? "modo-daltonico" : ".eurodle-wrapper"}`}>
             <div className="guess-song-container">
 
                 {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}

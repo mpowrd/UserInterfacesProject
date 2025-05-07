@@ -13,5 +13,7 @@
     "fr": "French"
   },
   "confirmTitleSettings": "Save changes",
-  "confirmMessageSettings": "Would you like to save this changes?"
+  "confirmMessageSettings": "Would you like to save this changes?",
+  "confirmYesSettings": "Yes",
+  "confirmNoSettings": "No"
 }
