@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './css/guessSong.css';
 import { Link } from 'react-router-dom';
 import "./css/estiloEuro.css";
 import { useTranslation } from 'react-i18next';

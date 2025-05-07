@@ -8,7 +8,7 @@
     "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
   },
   "clues": {
-    "title": "Clues",
+    "title": "Clues   <-- scroll to see more -->",
     "noClues": "No clues yet.",
     "headers": {
       "song": "Song",
@@ -55,8 +55,8 @@
     "alreadyGuessedSong": "You've already tried that one, try a different one!",
     "alreadyGuessedYearCountry": "You've already tried that country and year combination, try a different one!",
     "submitButton": "Guess",
-    "guessMethodTitle": "Guess by title",
-    "guessMethodYearCountry": "Guess by Year and Country"
+    "guessMethodTitle": "Title",
+    "guessMethodYearCountry": "Year and Country"
   },
   "game": {
     "restart": "Restart Game"

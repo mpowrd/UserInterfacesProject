@@ -117,10 +117,15 @@
 /* Fin de styles para FeedbackDisplay */
 
 /* Styles para ClueDisplay */
+
+.div-pistas-table{
+  overflow-x: auto;
+}
+
 .pistas-table {
-  width: 100%;
+  width: 98%;
   border-collapse: collapse;
-  margin-top: 15px;
+  margin: 15px;
 }
 
 .pistas-table th, .pistas-table td {
@@ -150,7 +155,7 @@
 
 /* Styles para ExtraClues */
 .extra-clues {
-  margin-top: 20px;
+  margin: 20px;
   padding: 15px;
   border: 2px dashed #bbb;
   border-radius: 10px;

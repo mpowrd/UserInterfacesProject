@@ -128,6 +128,23 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
     return (
         <div className="guess-form">
             <form onSubmit={handleSubmit}>
+
+                <div className="guess-method-selector">
+                    <label className="radio-option">
+                        <input type="radio" name="guessMethod" value="0" onClick={() => setGuessType(0)}
+                               checked={guessType === 0}/>
+                        <span></span>
+                        {t('form.guessMethodTitle')}
+                    </label>
+
+                    <label className="radio-option">
+                        <input type="radio" name="guessMethod" value="1" onClick={() => setGuessType(1)}
+                               checked={guessType === 1}/>
+                        <span></span>
+                        {t('form.guessMethodYearCountry')}
+                    </label>
+                </div>
+
                 <input
                     type="text"
                     placeholder={t('form.placeholderSong')}
@@ -178,22 +195,8 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
                 )}
 
                 <button type="submit">{t('form.submitButton')}</button>
+                <button>Pistas 💡</button>
 
-                <div className="guess-method-selector">
-                    <label className="radio-option">
-                        <input type="radio" name="guessMethod" value="0" onClick={() => setGuessType(0)}
-                               checked={guessType === 0}/>
-                        <span></span>
-                        {t('form.guessMethodTitle')}
-                    </label>
-
-                    <label className="radio-option">
-                        <input type="radio" name="guessMethod" value="1" onClick={() => setGuessType(1)}
-                               checked={guessType === 1}/>
-                        <span></span>
-                        {t('form.guessMethodYearCountry')}
-                    </label>
-                </div>
 
             </form>
         </div>

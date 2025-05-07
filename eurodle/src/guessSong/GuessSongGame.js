@@ -150,7 +150,15 @@ const GuessSongGame = () => {
 
                 {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
 
+                <h1>Adivina la cancion</h1>
+                <h1>por...</h1>
+
                 <div className="contenido-principal">
+
+                    {/* Formulario de adivinanza */}
+                    {!acertado && intentosRestantes > 0 && (
+                        <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
+                    )}
 
                     {/* Visualización de fallos */}
                     <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta} totalIntentos={totalIntentos}/>
@@ -158,10 +166,6 @@ const GuessSongGame = () => {
                     {/* Visualización de pistas */}
                     <ClueDisplay pistas={pistas}/>
 
-                    {/* Formulario de adivinanza */}
-                    {!acertado && intentosRestantes > 0 && (
-                        <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
-                    )}
                     {/* Botón para reiniciar cuando acabe el juego */}
                     {(acertado || intentosRestantes <= 0) && (
                         <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>

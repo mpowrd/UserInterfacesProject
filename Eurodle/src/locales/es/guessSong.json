@@ -8,7 +8,7 @@
     "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}"
   },
   "clues": {
-    "title": "Pistas",
+    "title": "Pistas  <--desliza para ver más-->",
     "noClues": "Sin pistas todavía.",
     "headers": {
       "song": "Canción",
@@ -55,8 +55,8 @@
     "alreadyGuessedSong": "Ya has intentado con esa, ¡prueba otra diferente!",
     "alreadyGuessedYearCountry": "Ya has intentado con esa combinación de país y año, ¡prueba otra diferente!",
     "submitButton": "Adivinar",
-    "guessMethodTitle": "Adivinar por título",
-    "guessMethodYearCountry": "Adivinar por Año y País"
+    "guessMethodTitle": "Título",
+    "guessMethodYearCountry": "Año y País"
   },
   "game": {
     "restart": "Reiniciar Juego"
