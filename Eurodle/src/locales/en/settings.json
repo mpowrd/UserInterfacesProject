@@ -4,6 +4,9 @@
   "daltonicMode": "Daltonic mode",
   "language": "Language",
   "back": "Save changes",
+  "afirmation": "Yes",
+  "negative": "No",
+  "confirmTitleSettings": "Save Changes",
   "languages": {
     "es": "Spanish",
     "en": "English",

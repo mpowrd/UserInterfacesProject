@@ -4,6 +4,9 @@
   "daltonicMode": "Modo daltónico",
   "language": "Idioma",
   "back": "Guardar Cambios",
+  "afirmation": "Sí",
+  "negative": "No",
+  "confirmTitleSettings": "Guardar Cambios",
   "languages": {
     "es": "Español",
     "en": "Inglés",
