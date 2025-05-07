@@ -22,6 +22,7 @@ body {
 .engranaje{
     width: 40px;
     height: auto; /* mantiene la proporción */
+    filter: invert(100%);
 }
 
 
@@ -263,12 +264,14 @@ footer p{
 .eurodle-heart-logo{
     width: 70px;
     height: auto;
+    filter: invert(100%);
 }
 
 .eurodle-title-logo {
     width: 130px;
     height: auto;
     padding-left: 15px;
+    filter: invert(100%);
 }
 
 .eurodle-header-home img{
