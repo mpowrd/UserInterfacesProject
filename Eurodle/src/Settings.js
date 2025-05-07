@@ -2,22 +2,34 @@ import React from 'react';
 import { useSettings } from './SettingsProvider'; // Importa el hook del contexto
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from 'react-i18next';
+import {useEffect, useState} from "react";
+import ConfirmPopup from './ConfirmPopup'; // Ajusta la ruta si es necesario
+
 import './css/settings.css';
 
 
 const Settings = () => {
     const { t, i18n } = useTranslation('settings'); // Usa el namespace específico
     const { volume, daltonicMode, language, updateVolume, updateDaltonicMode, updateLanguage } = useSettings(); // Usamos el hook para acceder a los valores y actualizarlos
+    const [selected_language, setLangu] = useState(language)
+    const [selected_volume, setVolum] = useState(volume)
+    const [selected_daltonic, setDaltonic] = useState(daltonicMode)
+    const [showConfirm, setShowConfirm] = useState(false);
 
     const navigate = useNavigate();
 
-    const handleBack = () => {
-        navigate(-1); // vuelve a la pantalla anterior
+    const handleSave = () => {
+
+        updateLanguage(selected_language);
+        i18n.changeLanguage(selected_language); // Cambia el idioma solo para este componente
+        updateVolume(selected_volume);
+        updateDaltonicMode(selected_daltonic);
+
     };
 
     const handleLanguageChange = (lang) => {
-        updateLanguage(lang);
-        i18n.changeLanguage(lang); // Cambia el idioma solo para este componente
+
+        setLangu(lang);
     };
 
     return (
@@ -32,8 +44,8 @@ const Settings = () => {
                     name="volume"
                     min="0"
                     max="100"
-                    value={volume} // Enlace con la variable de estado
-                    onChange={(e) => updateVolume(e.target.value)} // Actualizamos la variable de estado al cambiar
+                    value={selected_volume} // Enlace con la variable de estado
+                    onChange={(e) => setVolum(e.target.value)} // Actualizamos la variable de estado al cambiar
                 />
                 {/*<span>{volume}</span> /!* Muestra el valor del volumen *!/*/}
             </div>
@@ -43,8 +55,8 @@ const Settings = () => {
                     <input
                         type="checkbox"
                         id="daltonicMode"
-                        checked={daltonicMode} // Enlace con la variable de estado
-                        onChange={(e) => updateDaltonicMode(e.target.checked)} // Actualizamos la variable de estado al cambiar
+                        checked={selected_daltonic} // Enlace con la variable de estado
+                        onChange={(e) => setDaltonic(e.target.checked)} // Actualizamos la variable de estado al cambiar
                     />
                     {t('daltonicMode')}
                 </label>
@@ -55,7 +67,7 @@ const Settings = () => {
                 <select
                     id="language"
                     name="language"
-                    value={language} // Enlace con la variable de estado
+                    value={selected_language} // Enlace con la variable de estado
                     onChange={(e) => handleLanguageChange(e.target.value)} // Actualizamos la variable de estado al cambiar
                 >
                     <option value="es">{t('languages.es')}</option>
@@ -64,7 +76,19 @@ const Settings = () => {
                 </select>
             </div>
 
-            <button onClick={handleBack} className="settings-btn-return-home">{t('back')}</button>
+            <button onClick={()=>{setShowConfirm(true)}} className="settings-btn-return-home">{t('back')}</button>
+
+            {showConfirm && (
+                <ConfirmPopup
+                    title={t('confirmTitleSettings')}
+                    message={t('confirmMessageSettings')}
+                    onConfirm={() => {
+                        handleSave();
+                        setShowConfirm(false);
+                    }}
+                    onCancel={() => setShowConfirm(false)}
+                />
+            )}
 
         </div>
     );

@@ -1,0 +1,52 @@
+/* src/components/ConfirmPopup.css */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.popup-buttons button {
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.popup-buttons button:first-child {
+    background-color: #4caf50;
+    color: white;
+}
+
+.popup-buttons button:last-child {
+    background-color: #f44336;
+    color: white;
+}
+
+.popup-buttons button:hover {
+    opacity: 0.85;
+}

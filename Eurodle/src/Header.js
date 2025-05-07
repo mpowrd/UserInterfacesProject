@@ -20,6 +20,10 @@ function Header() {
         navigate("/Settings");
     };
 
+    const onBackClick = () => {
+        navigate(-1);
+    };
+
     const onNameClick = () => {
         navigate("/");
     };
@@ -33,6 +37,11 @@ function Header() {
                   </button>
               </div>
           )}
+          <div className="back-icon">
+          <button onClick={onBackClick} className="back-btn">
+              <img src={"/flecha-hacia-atras.png"} className="engranaje"/>
+          </button>
+          </div>
 
           <header className="eurodle-header">
 
@@ -40,6 +49,8 @@ function Header() {
                   <a onClick={onNameClick} style={{ cursor: "pointer", textDecoration: "none" }}>Eurodle</a>
               </h1>
           </header>
+
+
       </div>
 
 

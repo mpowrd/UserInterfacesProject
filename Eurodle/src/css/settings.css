@@ -64,6 +64,11 @@ select {
     cursor: pointer;
     font-weight: bold;
     width: 100%;
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.settings-btn-return-home:hover {
+    background-color: var(--tile-hover);
+    transform: scale(1.02);
 }
 

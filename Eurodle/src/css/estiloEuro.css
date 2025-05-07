@@ -187,6 +187,24 @@ footer p{
     transform: rotate(180deg);
 }
 
+.back-icon {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: transform 1.5s ease;
+}
+
+.back-btn:hover {
+    transform: scale(1.2);
+}
+
 .eurodle-header-home {
     text-align: center;
     margin-bottom: 2rem;
