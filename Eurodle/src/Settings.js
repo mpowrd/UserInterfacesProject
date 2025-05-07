@@ -76,7 +76,7 @@ const Settings = () => {
                 </select>
             </div>
 
-            <button onClick={()=>{setShowConfirm(true)}} className="settings-btn-return-home">{t('back')}</button>
+            <button onClick={()=>{setShowConfirm(true)}} className="settings-btn-return-home">{t('save')}</button>
 
             {showConfirm && (
                 <ConfirmPopup

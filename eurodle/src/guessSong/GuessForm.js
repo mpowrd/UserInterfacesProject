@@ -129,6 +129,7 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
         <div className="guess-form">
             <form onSubmit={handleSubmit}>
 
+                {/*RADIO DE TITULO Y AÑO/PAIS*/}
                 <div className="guess-method-selector">
                     <label className="radio-option">
                         <input type="radio" name="guessMethod" value="0" onClick={() => setGuessType(0)}

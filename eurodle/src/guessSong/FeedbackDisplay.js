@@ -20,23 +20,36 @@ const FeedbackDisplay = ({ fallos, acertado, cancionCorrecta, totalIntentos }) =
         statusMessage = t('feedback.attemptsLeft', { count: intentosQueQuedan });
     }
 
-    return (
-        <div className="feedback-display">
-            {/* Línea ~21: Cambiar h2 */}
-            <h2>{t('feedback.title')}</h2>
+    const getHeartImage = (index) => {
 
-            {intentosFallidos === 0 && !acertado ? ( // Mostrar solo si no hay fallos Y no se ha acertado
-                // Línea ~25: Cambiar p
-                <p>{t('feedback.noErrors')}</p>
-            ) : (
-                <div>
-                    <p className="alert alert-dark d-inline-block">
-                        {intentosFallidos} / {totalIntentos}
-                    </p>
-                    {/* Mostrar el mensaje de estado generado */}
-                    {statusMessage && <p style={{ marginLeft: '10px', display: 'inline-block' }}>{statusMessage}</p>}
+        const offset = index-1;
+        // 0 1 2 3 4 5 6 7 8
+
+        // 4        0 >= 1+1-1 // 0 === 1-1
+        // 3
+        // 2
+        // 1*
+        if (intentosFallidos >= index + 1 + offset) {
+            return "/corazonEuroVacio.png"; // Corazón vacío
+        } else if (intentosFallidos === index + offset) {
+            return "/corazonEuroMitadIzquierda.png"; // Mitad izquierda
+        } else {
+            return "/corazonEuroEntero.png"; // Corazón entero
+        }
+    };
+
+    return (
+        <div className="feedback-display" style={{ marginTop: 20 }}>
+            <h3 className="feedback-text">
+                <div id="hearts">
+                    <img id="heart3" className="heart-HP" src={getHeartImage(4)} />
+                    <img id="heart2" className="heart-HP" src={getHeartImage(3)} />
+                    <img id="heart1" className="heart-HP" src={getHeartImage(2)} />
+                    <img id="heart0" className="heart-HP" style={{ marginRight: 10 }} src={getHeartImage(1)} />
+                    {intentosFallidos}/{totalIntentos} {t('feedback.tries')}
                 </div>
-            )}
+
+            </h3>
         </div>
     );
 };

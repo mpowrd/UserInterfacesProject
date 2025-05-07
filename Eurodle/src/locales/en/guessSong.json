@@ -1,6 +1,7 @@
 {
   "feedback": {
     "title": "Errors",
+    "tries": "tries",
     "noErrors": "No errors yet.",
     "attemptsLeft": "Incorrect, keep trying. You have {{count}} attempt left",
     "attemptsLeft_plural": "Incorrect, keep trying. You have {{count}} attempts left",
@@ -8,7 +9,7 @@
     "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
   },
   "clues": {
-    "title": "Clues   <-- scroll to see more -->",
+    "title": "Clues   <-- scroll to see more (Estoy en el JSON) (ESTO SOLO VA EN MOVIL) -->",
     "noClues": "No clues yet.",
     "headers": {
       "song": "Song",

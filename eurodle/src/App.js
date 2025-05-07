@@ -32,7 +32,7 @@ function App() {
 
                 <header className="eurodle-header-home">
                     <img src={"/tituloEuro.png"} className="eurodle-title-logo"/>
-                    <img  src={"/corazonEuro.png"} className="eurodle-heart-logo"/>
+                    <img  src={"/corazonEuroVacio.png"} className="eurodle-heart-logo"/>
                     <p className="eurodle-subtitle">{t('app.subtitle')}</p>
                 </header>
 

@@ -3,9 +3,7 @@
   "volume": "Volume",
   "daltonicMode": "Daltonic mode",
   "language": "Language",
-  "back": "Save changes",
-  "afirmation": "Yes",
-  "negative": "No",
+  "save": "Save changes",
   "confirmTitleSettings": "Save Changes",
   "languages": {
     "es": "Spanish",

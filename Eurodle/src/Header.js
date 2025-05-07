@@ -46,7 +46,7 @@ function Header() {
           <header className="eurodle-header">
               <div className="eurodle-header-text" onClick={onNameClick} style={{ cursor: "pointer", textDecoration: "none" }}>
                   <img src={"/tituloEuro.png"} className="eurodle-title-logo"/>
-                  <img  src={"/corazonEuro.png"} className="eurodle-heart-logo"/>
+                  <img  src={"/corazonEuroVacio.png"} className="eurodle-heart-logo"/>
               </div>
           </header>
 

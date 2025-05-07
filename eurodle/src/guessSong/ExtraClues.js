@@ -1,13 +1,16 @@
 import React, {useState} from "react";
 import YouTubePlayer from './YouTubePlayer';
 import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const ExtraClues = ({ songData, fallos, acertado }) => {
+
+
     const { t } = useTranslation('guessSong');
 
     const [videoDisplayed, setVideoDisplayed] = useState(false);
 
-    if (!songData) return null;
+    const [pistasDesbloqueadas, setPistasDesbloqueadas] = useState([]);
 
     const minStart = 6;
     const startTime = Math.floor(Math.random() * (100 - minStart)) + minStart;
@@ -47,6 +50,14 @@ const ExtraClues = ({ songData, fallos, acertado }) => {
 
     ];
 
+    useEffect(() => {
+        if(acertado){
+            setPistasDesbloqueadas( pistasDisponibles.reverse());
+        }else{
+            setPistasDesbloqueadas( pistasDisponibles.slice(0, (fallos.length                                                                                                                                                   )).reverse());
+        }
+    }, [fallos, acertado, videoDisplayed]);
+
     function obtenerFragmentoOptimizado(texto, minLong = 70, maxLong = 100, intentos = 10) {
         const limpio = texto
             .replace(/(\\n\s*){1,}/g, ", ")  // Agrupa 1 o más \n seguidos como una coma
@@ -81,22 +92,15 @@ const ExtraClues = ({ songData, fallos, acertado }) => {
         <div className="extra-clues">
             <h2>{t('extraClues.title')}</h2>
             <ul className="extra-clues-list">
-                {pistasDisponibles.map((pista, index) => {
-                    const desbloqueada = fallos.length > index || acertado;
-                    const pistaIndex = index + 1;
+                {pistasDesbloqueadas.map((pista, index) => {
                     return (
-                        <li key={index} className={`clue-block ${desbloqueada ? "unlocked" : "locked"}`}>
-                            {desbloqueada ? (
-                                <>
-                                    {/* Línea ~90: Añadir prefijo traducido */}
-                                    {t('extraClues.unlockedPrefix')}
-                                    {/* Línea ~91: Usar texto traducido si el video se completó */}
-                                    {pista.type === 'component' ? (videoDisplayed === false ? pista.component : t('extraClues.videoCompleted')) : pista}
-                                </>
-                            ) : (
-                                // Línea ~95: Usar texto traducido para pista bloqueada
-                                t('extraClues.locked', { index: pistaIndex })
-                            )}
+                        <li key={index} className={`clue-block unlocked`}>
+                            <>
+                                {/* Línea ~90: Añadir prefijo traducido */}
+                                {t('extraClues.unlockedPrefix')}
+                                {/* Línea ~91: Usar texto traducido si el video se completó */}
+                                {pista.type === 'component' ? (videoDisplayed === false ? pista.component : t('extraClues.videoCompleted')) : pista}
+                            </>
                         </li>
                     );
                 })}
