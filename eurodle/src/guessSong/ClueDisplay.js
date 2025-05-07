@@ -35,30 +35,32 @@ const ClueDisplay = ({ pistas }) => {
                 // Línea ~9: Cambiar p
                 <p>{t('clues.noClues')}</p>
             ) : (
-                <table className="pistas-table">
-                    <thead>
-                    <tr>
-                        {/* Líneas ~14-18: Cambiar th */}
-                        <th>{t('clues.headers.song')}</th>
-                        <th>{t('clues.headers.artist')}</th>
-                        <th>{t('clues.headers.country')}</th>
-                        <th>{t('clues.headers.year')}</th>
-                        <th>{t('clues.headers.rank')}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {pistas.map((pista, index) => (
-                        <tr key={index}>
-                            <td><p><strong>{pista.intento.song_name}</strong></p>
-                                <p>{pista.intento.year + " — " + pista.intento.country}</p></td>
-                            {/* Línea ~29: Traducir el resultado de la pista */}
-                            {pista.pistas.map((p, idx) => (
-                                <td key={idx}>{translateComparison(p.acertado)}</td>
-                            ))}
+                <div className="div-pistas-table">
+                    <table className="pistas-table">
+                        <thead>
+                        <tr>
+                            {/* Líneas ~14-18: Cambiar th */}
+                            <th>{t('clues.headers.song')}</th>
+                            <th>{t('clues.headers.artist')}</th>
+                            <th>{t('clues.headers.country')}</th>
+                            <th>{t('clues.headers.year')}</th>
+                            <th>{t('clues.headers.rank')}</th>
                         </tr>
-                    ))}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                        {pistas.map((pista, index) => (
+                            <tr key={index}>
+                                <td><p><strong>{pista.intento.song_name}</strong></p>
+                                    <p>{pista.intento.year + " — " + pista.intento.country}</p></td>
+                                {/* Línea ~29: Traducir el resultado de la pista */}
+                                {pista.pistas.map((p, idx) => (
+                                    <td key={idx}>{translateComparison(p.acertado)}</td>
+                                ))}
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                </div>
             )}
         </div>
     );
