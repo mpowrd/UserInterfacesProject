@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import SettingsProvider from "../SettingsProvider";
+import { useSettings } from '../SettingsProvider';
 import GuessForm from "./GuessForm";
 import FeedbackDisplay from "./FeedbackDisplay";
 import ClueDisplay from "./ClueDisplay";
 import ExtraClues from "./ExtraClues";
 import { useTranslation } from 'react-i18next';
 
+import "../css/daltonicMode.css";
 
 const GuessSongGame = () => {
     const { t } = useTranslation(['guessSong', 'common']);
 
+    const { daltonicMode } = useSettings();
     const totalIntentos = 8;
     const [canciones, setCanciones] = useState([]);
     const [cancionCorrecta, setCancionCorrecta] = useState(null);
@@ -145,7 +147,7 @@ const GuessSongGame = () => {
     }
 
     return (
-        <div className=".eurodle-wrapper">
+        <div className={`${daltonicMode ? "modo-daltonico" : ""}`}>
             <div className="guess-song-container">
 
                 {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}

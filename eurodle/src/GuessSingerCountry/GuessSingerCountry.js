@@ -1,9 +1,14 @@
 import React, {useEffect, useRef, useState} from "react";
 import MapPaths from "../assets/MapPaths";
-import "./GuessSingerCountry.css"
+import {useSettings} from "../SettingsProvider";
 import Papa from "papaparse";
 
+import "./GuessSingerCountry.css"
+import "../css/daltonicMode.css";
+
 const InteractiveMap = () => {
+
+    const { daltonicMode } = useSettings();
 
     const [canciones, setCanciones] = useState([]);
 
@@ -65,7 +70,7 @@ const InteractiveMap = () => {
         setHoveredCountry(country.getAttribute("name"));
         country.setAttribute("stroke", "#ffcc00"); // Color del borde resaltado
         country.setAttribute("stroke-width", "2"); // Grosor del borde resaltado
-    }; 
+    };
 
     const handleMouseLeave = (event) => {
         const country = event.target;
@@ -165,7 +170,7 @@ const InteractiveMap = () => {
     };
 
     return (
-        <div>
+        <div className={` ${daltonicMode ? "modo-daltonico" : ""}`}>
             <h2>ADIVINA EL PAIS DEL CANTANTE</h2>
 
             <div style={{

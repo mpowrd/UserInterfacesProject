@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import "./OrderSongsGame.css";
+import {useSettings} from "../SettingsProvider";
 import Tarjetas from "./Tarjetas";
 import Huecos from "./Huecos";
 import Mensaje from "./Mensaje";
 import { useTranslation } from 'react-i18next';
 
+import "./OrderSongsGame.css";
+import "../css/daltonicMode.css";
+
 const OrderSongsGame = () => {
+    const { daltonicMode } = useSettings();
     const [canciones, setCanciones] = useState([]);
     const [ordenCorrecto, setOrdenCorrecto] = useState([]);
     const [ordenUsuario, setOrdenUsuario] = useState([]);
@@ -110,7 +114,7 @@ const OrderSongsGame = () => {
     }
 
     return (
-        <div className="order-songs-game">
+        <div className={` order-songs-game ${daltonicMode ? "modo-daltonico" : ""}`}>
             <h1 className="title-order-song">{t('title')}</h1>
             {year && <p dangerouslySetInnerHTML={{ __html: t('selectedYear', { year }) }} />}
             <p className="information-order-song">{t('instructions')}</p>
