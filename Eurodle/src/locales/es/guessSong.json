@@ -33,18 +33,18 @@
     "unlockedPrefix": "🔓 ",
     "videoCompleted": "Pista de video completada ✓",
     "clueTemplates": {
-      "rank": "Ranking final: la canción quedó en el puesto {{rank}}",
-      "neighbours": "La canción quedó{{above}}{{separator}}{{below}}",
+      "rank": "Ranking final: puesto numero {{rank}}",
+      "neighbours": "La canción quedó entre {{above}}{{separator}}{{below}}",
       "neighboursParts": {
-        "above": " por debajo de {{country}}",
-        "below": " por encima de {{country}}",
+        "above": "{{country}}",
+        "below": "{{country}}",
         "separator": " y ",
         "unknown": "Desconocido"
       },
-      "langStyle": "El idioma del tema es: {{language}} y el género: {{style}}",
-      "letters": "El nombre de la canción empieza con la letra: {{firstLetter}} y termina con: {{lastLetter}}",
+      "langStyle": "Idioma: {{language}}  ||  Género: {{style}}",
+      "letters": "Primera y ultima letra del nombre de la canción: {{firstLetter}}...{{lastLetter}}",
       "lyrics": "Fragmento de la letra: {{fragment}}",
-      "artist": "Nombre del/los artista/s o del grupo: {{artistName}}"
+      "artist": "Artista(s)/grupo: {{artistName}}"
     }
   },
   "form": {

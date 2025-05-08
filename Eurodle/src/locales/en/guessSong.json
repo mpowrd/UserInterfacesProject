@@ -33,18 +33,18 @@
     "unlockedPrefix": "🔓 ",
     "videoCompleted": "Video clue completed ✓",
     "clueTemplates": {
-      "rank": "Final ranking: the song finished in {{rank}} position",
-      "neighbours": "The song ranked{{above}}{{separator}}{{below}}",
+      "rank": "Final ranking: position number {{rank}}",
+      "neighbours": "The song ranked between {{above}}{{separator}}{{below}}",
       "neighboursParts": {
-        "above": " below {{country}}",
-        "below": " above {{country}}",
+        "above": "{{country}}",
+        "below": "{{country}}",
         "separator": " and ",
         "unknown": "Unknown"
       },
-      "langStyle": "The language of the song is: {{language}} and the genre: {{style}}",
-      "letters": "The song name starts with the letter: {{firstLetter}} and ends with: {{lastLetter}}",
+      "langStyle": "Language: {{language}}  ||  Genre: {{style}}",
+      "letters": "First and last letter of the song name: {{firstLetter}}...{{lastLetter}}",
       "lyrics": "Lyric snippet: {{fragment}}",
-      "artist": "Name of the artist(s) or group: {{artistName}}"
+      "artist": "Artist(s)/group: {{artistName}}"
     }
   },
   "form": {
