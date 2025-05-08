@@ -14,12 +14,18 @@ const InteractiveMap = () => {
 
     const [cancionSelect, setCancionSelect] = useState(null);
 
-    const [countrySelected, setCountrySelected] = useState(null);
+    // Estados para almacenar los paises seleccionados erroneamente
+    // Con css los pintamos de rojo en la pantalla
+    const [wrongCountries, setWrongCountries] = useState([]);
 
     const [resultadoMensaje, setResultadoMensaje] = useState("Pista: ");
 
     // Estados para almacenar el país seleccionado
     const [hoveredCountry, setHoveredCountry] = useState(null);
+
+    // Estado para identificar el fin de una partida
+    const [finPartida, setFinPartida] = useState(false);
+
 
     useEffect(() => {
         // Cargamos las caciones del csv al iniciar
@@ -66,17 +72,31 @@ const InteractiveMap = () => {
 
 
     const handleMouseEnter = (event) => {
+        if (finPartida) return;
+
         const country = event.target;
+        const name = country.getAttribute("name");
         setHoveredCountry(country.getAttribute("name"));
-        country.setAttribute("stroke", "#ffcc00"); // Color del borde resaltado
-        country.setAttribute("stroke-width", "2"); // Grosor del borde resaltado
+
+        if (wrongCountries.includes(name)) {
+            country.setAttribute("class", daltonicMode ? "wrong-country-daltonic" : "wrong-country");
+        } else {
+            country.setAttribute("stroke", "#ffcc00"); // Color del borde resaltado
+            country.setAttribute("stroke-width", "2"); // Grosor del borde resaltado
+
+        }
     };
 
     const handleMouseLeave = (event) => {
         const country = event.target;
-        setHoveredCountry(null);
-        country.setAttribute("stroke", "black"); // Restaurar borde original
-        country.setAttribute("stroke-width", "1");
+        const name = country.getAttribute("name");
+
+        if (!wrongCountries.includes(name)) {
+            setHoveredCountry(null);
+            country.setAttribute("stroke", "black"); // Restaurar borde original
+            country.setAttribute("stroke-width", "1");
+            country.removeAttribute("class");
+        }
     };
 
     const cantanteAdivinar= {
@@ -147,9 +167,14 @@ const InteractiveMap = () => {
     const [selectedCountry,setSelectedCountry] = useState(null);
 
     const handleCountryClick = (event) => {
+        if (finPartida) return;
+
         const countrySelectedID = event.target.getAttribute("id");
         const countrySelectedName = document.getElementById(countrySelectedID).getAttribute("name");
         setSelectedCountry(countrySelectedName);
+
+        const country = event.target;
+        country.setAttribute("class", daltonicMode ? "wrong-country-daltonic" : "wrong-country");
 
         paisAdivinado(countrySelectedName);
     };
@@ -157,16 +182,38 @@ const InteractiveMap = () => {
     function paisAdivinado(countrySelectedName) {
         if (countrySelectedName === cantanteAdivinar.nameCountry) {
             setResultadoMensaje("¡Correcto! Has adivinado el país.");
+            setFinPartida(true); // Termina la partida actual
+
+            // Pinta el pais correcto de verde
+            const idCorrecto = getIdByName(countrySelectedName);
+            const paisCorrecto = document.getElementById(idCorrecto);
+            if (paisCorrecto) {
+                paisCorrecto.setAttribute("fill", "#008000");
+            }
+
         } else {
             compararPaises(countrySelectedName, cantanteAdivinar.nameCountry);
+            setWrongCountries(prev => [...prev, countrySelectedName]);
         }
+        // Condicion para guardar el pais incorrecto en estado wrongCountries
+        if (countrySelectedName !== cantanteAdivinar.nameCountry) {
+            setWrongCountries(prev => [...prev, countrySelectedName]);
+        }
+
     }
 
     const reiniciarJuego = () => {
-        // Resetear todo
+        setFinPartida(false);
         const randomIndex = Math.floor(Math.random() * canciones.length);
         setCancionSelect(canciones[randomIndex]);
         setResultadoMensaje("Pista: ");
+        setWrongCountries([]);
+        document.querySelectorAll("path").forEach(p => {
+            p.removeAttribute("class");
+            p.setAttribute("fill", "#cccccc");
+            p.setAttribute("stroke", "black");
+            p.setAttribute("stroke-width", "1");
+        });
     };
 
     return (
@@ -188,7 +235,7 @@ const InteractiveMap = () => {
                     fontSize: 'clamp(12px, 2vw, 16px)',
                     lineHeight: '1.5'
                 }}>
-                    <h3 >Cantante: {cantanteAdivinar.nameCantante}</h3>
+                    <h3 style={{ color: "white"}}>Cantante: {cantanteAdivinar.nameCantante}</h3>
                     {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
 
                     <p style={{ color: "white"}}>País seleccionado: {hoveredCountry}</p>

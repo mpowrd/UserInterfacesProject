@@ -256,6 +256,24 @@ MODO DALTONICO
     border: 1px solid #ccc;
 }
 
+/* Color del pais correctamente adivinado */
+.correct-country-daltonic {
+    fill: #2e91e5 !important;
+    stroke: black !important;
+    stroke-width: 1 !important;
+    pointer-events: none;
+}
+
+
+/* Color de paises seleccionados de forma erronea */
+.wrong-country-daltonic {
+    fill: #f6c915 !important; /* Amarillo accesible */
+    pointer-events: none;
+}
+
+
+
+
 /* -------------------------------------------------------------------------*/
 
 
