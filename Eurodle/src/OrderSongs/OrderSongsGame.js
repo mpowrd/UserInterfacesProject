@@ -1,31 +1,43 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import {useSettings} from "../SettingsProvider";
+import { useSettings } from "../SettingsProvider";
 import Tarjetas from "./Tarjetas";
 import Huecos from "./Huecos";
-import Mensaje from "./Mensaje";
 import { useTranslation } from 'react-i18next';
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import ResultadoPopUp from "./ResultadoPopUp";
 
+// Asumo que OrderSongsGame.css es el principal que me pasaste
 import "./OrderSongsGame.css";
+// Si daltonicMode.css es específico para este componente o una característica, está bien.
+// Si es más global, podría ir en index.js o App.js
 import "../css/daltonicMode.css";
 
 const OrderSongsGame = () => {
     const { daltonicMode } = useSettings();
-    const [canciones, setCanciones] = useState([]);
-    const [ordenCorrecto, setOrdenCorrecto] = useState([]);
-    const [ordenUsuario, setOrdenUsuario] = useState([]);
-    const [feedback, setFeedback] = useState(null); // Initialize feedback as null
-    const [year, setYear] = useState(null);
-    const [vidas, setVidas] = useState(3);
-    const [mensaje, setMensaje] = useState(null);
-    const [isLoading, setIsLoading] = useState(true); // Estado de carga
-
     const { t } = useTranslation(['orderSongs', 'common']);
 
+    const [canciones, setCanciones] = useState([]);
+    const [ordenCorrecto, setOrdenCorrecto] = useState([]);
+    const [ordenUsuario, setOrdenUsuarioState] = useState([]);
+    const [feedback, setFeedback] = useState(null);
+    const [year, setYear] = useState(null);
+    const [vidas, setVidas] = useState(3);
+    // 'mensaje' ya no se usa directamente para el display, ahora es 'mensajePopUp'
+    // const [mensaje, setMensaje] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
+    const [resultadoTipo, setResultadoTipo] = useState(null);
+    const [mensajePopUp, setMensajePopUp] = useState(null);
+    const [mensajeSecundarioPopUp, setMensajeSecundarioPopUp] = useState(null);
+
+
     useEffect(() => {
+        setIsLoading(true);
         Papa.parse("/canciones.csv", {
             header: true,
             download: true,
+            skipEmptyLines: true,
             complete: (results) => {
                 const validSongs = results.data.filter(c =>
                     c.song_name && c.final_place && c.year &&
@@ -33,6 +45,13 @@ const OrderSongsGame = () => {
                     c.final_place.trim() !== "" &&
                     c.year.trim() !== ""
                 );
+
+                if (validSongs.length === 0) {
+                    setResultadoTipo('error'); // Usar para el pop-up de error
+                    setMensajePopUp(t('common:other.errorNoValidSongs'));
+                    setIsLoading(false);
+                    return;
+                }
 
                 const years = [...new Set(validSongs.map(c => c.year))];
                 const randomYear = years[Math.floor(Math.random() * years.length)];
@@ -43,107 +62,153 @@ const OrderSongsGame = () => {
                     .sort((a, b) => parseInt(a.final_place) - parseInt(b.final_place))
                     .slice(0, 5);
 
-                setOrdenCorrecto(topSongs.map(c => c.song_name)); // Set correct order before shuffling
+                if (topSongs.length < 5) { // Asegurar que hay suficientes canciones
+                    setResultadoTipo('error');
+                    setMensajePopUp(t('common:other.errorNotEnoughSongsForYear', { year: randomYear, count: 5 }));
+                    setIsLoading(false);
+                    return;
+                }
 
-                // Shuffle the order of the cards
+                setOrdenCorrecto(topSongs.map(c => c.song_name));
                 const shuffledSongs = [...topSongs].sort(() => Math.random() - 0.5);
-
                 setCanciones(shuffledSongs);
-                setOrdenUsuario(Array(5).fill(null));
+                setOrdenUsuarioState(Array(topSongs.length).fill(null)); // Usar topSongs.length
+                setFeedback(null);
+                setResultadoTipo(null); // Asegurar que se resetea al cargar
+                setMensajePopUp(null);
+                setMensajeSecundarioPopUp(null);
+                setVidas(3); // Resetear vidas
                 setIsLoading(false);
             },
             error: (error) => {
-                console.error(t('common:other.errorLoading'), error); // Traducir error
-                setIsLoading(false); // Finaliza carga incluso con error
+                console.error(t('common:other.errorLoadingCsv'), error);
+                setResultadoTipo('error');
+                setMensajePopUp(t('common:other.errorLoadingCsv'));
+                setIsLoading(false);
             },
         });
-    }, [t]);
+    }, [t]); // t como dependencia
 
-    const handleDragStart = (e, songName, index = null) => {
-        e.dataTransfer.setData("text/plain", songName);
-        if (index !== null) {
-            const newOrdenUsuario = [...ordenUsuario];
-            newOrdenUsuario[index] = null;
-            setOrdenUsuario(newOrdenUsuario);
-            setFeedback(null); // Reset feedback when modifying the order
-        }
-    };
+    const setOrdenUsuario = (newOrdenUsuarioSetter) => {
+        setOrdenUsuarioState(prevOrdenUsuario => {
+            const newOrden = typeof newOrdenUsuarioSetter === 'function'
+                ? newOrdenUsuarioSetter(prevOrdenUsuario)
+                : newOrdenUsuarioSetter;
 
-    const handleDrop = (e, index) => {
-        e.preventDefault();
-        const songName = e.dataTransfer.getData("text/plain");
-        const newOrdenUsuario = [...ordenUsuario];
-        newOrdenUsuario[index] = songName;
-        setOrdenUsuario(newOrdenUsuario);
-        setFeedback(null); // Reset feedback when modifying the order
-    };
-
-    const handleDragOver = (e) => {
-        e.preventDefault();
+            if (feedback !== null && JSON.stringify(newOrden) !== JSON.stringify(prevOrdenUsuario) && !resultadoTipo) {
+                setFeedback(null);
+            }
+            return newOrden;
+        });
     };
 
     const handleCheck = () => {
-        if (vidas <= 0 || mensaje) return; // Si ya hay mensaje (juego terminado), no hacer nada
-
-        const newFeedback = ordenUsuario.map((song, index) =>
-            // Usar claves internas que Huecos traducirá
-            song === ordenCorrecto[index] ? "✔️" : "❌"
-        );
-        setFeedback(newFeedback);
+        if (resultadoTipo || ordenUsuario.some(song => song === null)) {
+            return;
+        }
+        const newFeedbackArray = ordenUsuario.map((song, index) => {
+            if (song === null) return null;
+            return song === ordenCorrecto[index] ? "✔️" : "❌";
+        });
+        setFeedback(newFeedbackArray);
 
         if (ordenUsuario.every((song, index) => song === ordenCorrecto[index])) {
-            // Línea ~71: Usar texto traducido para mensaje de victoria
-            setMensaje(t('messages.win'));
+            setResultadoTipo('victoria');
+            setMensajePopUp(t('orderSongs:messages.win'));
+            setMensajeSecundarioPopUp(null);
         } else {
             const newVidas = vidas - 1;
             setVidas(newVidas);
             if (newVidas === 0) {
-                // Línea ~76: Usar texto traducido para mensaje de derrota con interpolación
-                setMensaje(t('messages.lose', { correctOrder: ordenCorrecto.join(", ") }));
+                setResultadoTipo('derrota');
+                setMensajePopUp(t('orderSongs:messages.loseBase'));
+                setMensajeSecundarioPopUp(t('orderSongs:messages.loseCorrectOrder', { correctOrder: ordenCorrecto.join(", ") }));
             }
-            // Si no es victoria y aún quedan vidas, no ponemos mensaje permanente aquí
         }
     };
 
     const reiniciarJuego = () => {
-        window.location.reload(); // Reload the webpage
+        // Reseteo de estados para el pop-up antes de la recarga, aunque la recarga lo haría igual
+        setResultadoTipo(null);
+        setMensajePopUp(null);
+        setMensajeSecundarioPopUp(null);
+        window.location.reload();
     };
 
     if (isLoading) {
-        return <div>{t('common:other.loading')}</div>;
+        // Aplicar una clase para estilizar el mensaje de carga
+        return <div className="loading-message-container">{t('common:other.loading')}</div>;
     }
 
+    // Si hay un mensaje de error en el pop-up (por ej. error de carga), mostrar solo el pop-up.
+    // Esto se maneja al final con el renderizado de ResultadoPopUp.
+    // Si el resultadoTipo es 'error', el resto del juego no debería renderizarse o interactuar.
+
     return (
-        <div className={` order-songs-game ${daltonicMode ? "modo-daltonico" : ""}`}>
-            <h1 className="title-order-song">{t('title')}</h1>
-            {year && <p dangerouslySetInnerHTML={{ __html: t('selectedYear', { year }) }} />}
-            <p className="information-order-song">{t('instructions')}</p>
-            <p dangerouslySetInnerHTML={{ __html: t('livesLeft', { count: vidas }) }} className="information-order-song"/>
+        <DndProvider backend={HTML5Backend}>
+            <div className={`order-songs-game ${daltonicMode ? "modo-daltonico" : ""}`}>
+                <h1 className="title-order-song">{t('orderSongs:title')}</h1>
+                <p className="instructions">{t('orderSongs:instructions')}</p>
+
+                {/* NUEVA BARRA DE ESTADO Y ACCIONES */}
+                <div className="game-status-and-actions">
+                    {year && (
+                        <div className="status-info-item">
+                            <span className="label">{t('orderSongs:yearLabel', 'Año')}</span>
+                            <span className="value">{year}</span>
+                        </div>
+                    )}
+
+                    {/* Botón Comprobar en el medio o según layout de flex */}
+                    {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
+                        <button
+                            onClick={handleCheck}
+                            className="comprobar-btn" // Puede necesitar ajustes específicos si está aquí
+                            disabled={
+                                !!resultadoTipo ||
+                                ordenUsuario.some(s => s === null) ||
+                                !!feedback
+                            }
+                        >
+                            {t('orderSongs:buttons.check')}
+                        </button>
+                    )}
+
+                    <div className="status-info-item">
+                        <span className="label">{t('orderSongs:livesLabel', 'Vidas')}</span>
+                        <span className="value">{vidas}</span>
+                    </div>
+                </div>
 
 
+                {resultadoTipo !== 'error' && (
+                    <>
+                        <div className="game-container">
+                            <Tarjetas
+                                canciones={canciones}
+                                ordenUsuario={ordenUsuario}
+                                setOrdenUsuario={setOrdenUsuario}
+                                isGameFinished={!!resultadoTipo}
+                            />
+                            <Huecos
+                                ordenUsuario={ordenUsuario}
+                                setOrdenUsuario={setOrdenUsuario}
+                                feedback={feedback}
+                                isGameFinished={!!resultadoTipo}
+                            />
+                        </div>
+                        {/* El div .action-buttons original se elimina o se vacía */}
+                    </>
+                )}
 
-            <Mensaje mensaje={mensaje} /> {/* Mensaje ya está traducido */}
-            <Tarjetas canciones={canciones} ordenUsuario={ordenUsuario} handleDragStart={handleDragStart} />
-            <Huecos
-                ordenUsuario={ordenUsuario}
-                feedback={feedback || []}
-                handleDrop={handleDrop}
-                handleDragOver={handleDragOver}
-                handleDragStart={handleDragStart}
-            />
-
-
-
-
-            {/* Línea ~114: Cambiar texto botón, deshabilitar si el juego terminó */}
-            <button onClick={handleCheck} className="comprobar-btn" disabled={!!mensaje}>
-                {t('buttons.check')}
-            </button>
-            {/* Línea ~115: Cambiar texto botón */}
-            {mensaje && <button onClick={reiniciarJuego} className="reiniciar-btn">
-                {t('buttons.restart')}
-            </button>}
-        </div>
+                <ResultadoPopUp
+                    tipo={resultadoTipo}
+                    mensajePrincipal={mensajePopUp}
+                    mensajeSecundario={mensajeSecundarioPopUp}
+                    onRestart={reiniciarJuego}
+                />
+            </div>
+        </DndProvider>
     );
 };
 

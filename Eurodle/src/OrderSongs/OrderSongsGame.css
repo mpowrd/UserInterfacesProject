@@ -1,135 +1,467 @@
+/* ==========================================================================
+   GLOBALES Y LAYOUT DEL JUEGO
+   ========================================================================== */
+
+body {
+    font-family: 'Roboto', "Helvetica Neue", sans-serif;
+    margin: 0;
+    background-color: #282c34;
+    color: #f0f0f0;
+    }
+
 .order-songs-game {
-    text-align: center;
-    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 900px;
 }
 
-.tarjetas {
+.title-order-song {
+    font-size: 2.5em;
+    color: #61dafb;
+    margin-top: 10px;
+    margin-bottom: 10px; /* MODIFICACIÓN: Reducido */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.instructions {
+    font-size: 1em;
+    margin-bottom: 20px;
+    max-width: 550px;
+    text-align: center;
+    color: #c0c0c0;
+    line-height: 1.4;
+}
+
+/* NUEVA SECCIÓN: Panel de Estado y Acciones */
+.game-status-and-actions {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap; /* Permite que el botón baje si no hay espacio */
+    justify-content: space-around;
     align-items: center;
-    gap: 10px;
-    margin-top: 40px; /* Increased space between tarjetas and huecos */
-    margin-bottom: 40px;
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: 25px; /* Espacio antes de las tarjetas */
+    padding: 12px 15px; /* Padding ajustado */
+    background-color: rgba(255, 255, 255, 0.07); /* Un poco más visible */
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+.status-info-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 10px; /* Espacio para que no se peguen si están muy juntos */
+    min-width: 70px;
+}
+
+.status-info-item .label {
+    font-size: 0.75em;
+    color: #b0b0b0;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-info-item .value {
+    font-size: 1.3em;
+    font-weight: bold;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+/* Estilos para el botón comprobar CUANDO ESTÁ DENTRO DE game-status-and-actions */
+.game-status-and-actions .comprobar-btn {
+    padding: 10px 25px; /* Ajustar padding si es necesario */
+    margin: 0; /* Resetear márgenes para controlarlos con flexbox gap o el layout del padre */
+    order: 0; /* Por defecto en el medio. Si quieres Año - Vidas - Botón, usa order en los items */
+}
+
+.game-container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   ZONA DE TARJETAS DISPONIBLES
+   ========================================================================== */
+
+.tarjetas-container-droppable {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    min-height: 120px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed transparent; /* Borde por defecto, cambia con :hover o .can-drop-over */
+    transition: background-color 0.2s ease, border-color 0.2s ease; /* Transiciones */
+}
+
+/* Estado cuando se puede soltar una tarjeta sobre esta zona */
+.tarjetas-container-droppable.can-drop-over {
+    background-color: rgba(76, 175, 80, 0.1); /* Un verde muy sutil */
+    border-color: #4CAF50; /* Borde verde */
+}
+
+.tarjetas-container-droppable h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #e0e0e0;
+    font-size: 1.4em;
+}
+
+.tarjetas-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
 }
 
 .tarjeta {
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: grab;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px; /* Fixed width */
-    height: 50px; /* Fixed height */
+    width: 130px;
+    height: 55px;
+    padding: 8px 12px;
+    background-color: #4a4e57;
+    color: #ffffff;
+    border: 1px solid #5f6368;
+    border-radius: 6px;
+    cursor: grab; /* Cursor por defecto para arrastrar */
+    text-align: center;
+    font-size: 0.9em;
     box-sizing: border-box;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease, transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.2s;
+    user-select: none;
+    opacity: 1; /* Opacidad por defecto */
 }
 
-.tarjeta:active {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Estilo cuando la tarjeta se está arrastrando */
+.tarjeta.is-dragging {
+    opacity: 0.5; /* Opacidad reducida al arrastrar */
 }
 
-.hueco-contenido {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 0 5px;
-    cursor: grab; /* Ensure the same cursor style as .tarjeta */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+/* Cursor cuando el juego ha terminado */
+.tarjeta.game-finished {
+    cursor: default;
 }
 
-.hueco-contenido:active {
-    transform: scale(1.1);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.tarjeta:hover:not(:active):not(.game-finished) { /* Hover si no está activa y el juego no ha terminado */
+    background-color: #5f6368;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
+
+.tarjeta:active:not(.game-finished) { /* Activa si el juego no ha terminado */
+    transform: scale(1.05);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: grabbing; /* Cambia a cursor de "agarrando" */
+    z-index: 10;
+}
+
+.tarjetas-container-droppable .no-available-tarjetas-message, /* Aplicar a la clase del p */
+.tarjetas-container-droppable p { /* Mantener para compatibilidad si la clase no se usa */
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* ==========================================================================
+   HUECOS PARA ORDENAR
+   ========================================================================== */
 
 .huecos {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        ". . h1 . ."
+        ". h2 . h3 ."
+        "h4 . . . h5";
     gap: 20px;
-    margin-bottom: 20px;
-    width: max-content;              /* <-- hace que el grid solo ocupe lo necesario */
-    margin-left: auto;               /* <-- centra horizontalmente */
+    margin-bottom: 30px;
+    width: fit-content;
+    margin-left: auto;
     margin-right: auto;
+    padding: 10px;
 }
 
 .hueco {
-    width: 120px;
-    height: 50px;
-    border: 2px dashed #ccc;
+    width: 130px;
+    height: 55px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fff;
+    background-color: transparent;
+    border: 2px dashed #777;
+    border-radius: 8px;
+    font-size: 0.9em;
+    box-sizing: border-box;
     position: relative;
+    transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease; /* Añadida opacidad */
+    user-select: none;
+    cursor: default; /* Cursor por defecto */
 }
 
-.hueco:nth-child(1) {
-    grid-column: 3;
+/* Estado cuando el hueco está vacío (antes de colocar una tarjeta) */
+.hueco.hueco-vacio-placeholder {
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo del hueco vacío */
+}
+.hueco.hueco-vacio-placeholder span { /* Estilo para el texto "(Vacío)" */
+    color: #ffffff; /* TEXTO para "(Vacío)" */
+    font-style: italic;
 }
 
-.hueco:nth-child(2) {
-    grid-column: 2 / span 1;
+/* Estilo para la canción cuando está DENTRO de un hueco */
+.hueco.hueco-con-cancion .cancion-en-hueco { /* Aplicar solo cuando hay una canción */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 8px 12px;
+    background-color: #4a4e57;
+    color: #ffffff;
+    border-radius: 6px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.hueco.hueco-con-cancion, /* Cuando tiene una canción, el borde del hueco se vuelve sólido */
+.hueco.is-dragging-source { /* O cuando se arrastra desde él */
+    border-style: solid;
+    border-color: #5f6368;
 }
 
-.hueco:nth-child(3) {
-    grid-column: 4 / span 1;
+/* Estado cuando se arrastra sobre un hueco y se puede soltar */
+.hueco.is-over-can-drop {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: #a0a0a0; /* Borde más claro al hacer hover */
 }
 
-.hueco:nth-child(4) {
-    grid-column: 1 / span 1;
+/* Feedback de la canción correcta/incorrecta */
+.hueco.feedback-correct {
+    border-color: green !important;
+}
+.hueco.feedback-incorrect {
+    border-color: red !important;
 }
 
-.hueco:nth-child(5) {
-    grid-column: 5 / span 1;
+/* Estilos para el icono de feedback */
+.cancion-en-hueco .feedback-icono {
+    margin-left: 8px;
+    font-weight: bold;
 }
 
-.puesto {
+/* Asignar cada hueco a su área en el grid */
+.hueco:nth-child(1) { grid-area: h1; }
+.hueco:nth-child(2) { grid-area: h2; }
+.hueco:nth-child(3) { grid-area: h3; }
+.hueco:nth-child(4) { grid-area: h4; }
+.hueco:nth-child(5) { grid-area: h5; }
+
+/* Pseudo-elemento para el número de posición */
+.hueco::before {
+    content: "";
     position: absolute;
-    top: -20px;
-    font-size: 12px;
-    color: #666;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #aaa;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 2px 5px;
+}
+.hueco:nth-child(1)::before { content: "1"; }
+.hueco:nth-child(2)::before { content: "2"; }
+.hueco:nth-child(3)::before { content: "3"; }
+.hueco:nth-child(4)::before { content: "4"; }
+.hueco:nth-child(5)::before { content: "5"; }
+
+/* ==========================================================================
+   BOTONES DE ACCIÓN (Comprobar, Reiniciar)
+   ========================================================================== */
+
+.action-buttons { /* Contenedor para los botones de abajo */
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre botones */
+    margin-top: 20px;
+}
+
+.comprobar-btn,
+.reiniciar-btn-general {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .comprobar-btn {
-    top: 10px;
-    left: 10px;
-    padding: 10px 20px;
     background-color: #007bff;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
 }
-
-.comprobar-btn:hover {
+.comprobar-btn:hover:not(:disabled) {
     background-color: #0056b3;
+    transform: translateY(-1px);
+}
+.comprobar-btn:disabled {
+    background-color: #5a5a5a;
+    cursor: not-allowed;
 }
 
-.mensaje {
-    margin-top: 10px;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f8f9fa;
-    font-size: 16px;
-    color: #333;
-}
-
-.reiniciar-btn {
-    margin-top: 20px;
-    padding: 10px 20px;
+.reiniciar-btn-general { /* Si usas esta clase para un botón de reiniciar siempre visible */
     background-color: #28a745;
     color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+}
+.reiniciar-btn-general:hover {
+    background-color: #218838;
+    transform: translateY(-1px);
 }
 
-.reiniciar-btn:hover {
-    background-color: #218838;
+/* ==========================================================================
+   POP-UP DE RESULTADO
+   ========================================================================== */
+.resultado-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(20, 22, 28, 0.85); /* Overlay más oscuro y menos transparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+    backdrop-filter: blur(3px); /* Efecto de desenfoque del fondo */
+}
+
+.resultado-popup-content {
+    padding: 35px 45px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+    animation: fadeInScale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border-top: 6px solid transparent;
+}
+
+.resultado-popup-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.resultado-popup-content .mensaje-principal {
+    font-size: 1.25em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #333; /* Color de texto principal dentro del pop-up claro */
+}
+
+.resultado-popup-content .mensaje-secundario {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    word-break: break-word;
+}
+
+.popup-victoria {
+    background-color: #f0fff0;
+    border-top-color: #4CAF50;
+}
+.popup-victoria h2 { color: #388E3C; }
+.popup-victoria .mensaje-principal, .popup-victoria .mensaje-secundario { color: #2e7d32; }
+
+
+.popup-derrota {
+    background-color: #fff0f0;
+    border-top-color: #f44336;
+}
+.popup-derrota h2 { color: #D32F2F; }
+.popup-derrota .mensaje-principal, .popup-derrota .mensaje-secundario { color: #c62828; }
+
+
+.popup-botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.popup-botones button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.popup-boton-reiniciar {
+    background-color: #1e88e5;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.popup-boton-reiniciar:hover {
+    background-color: #1565c0;
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   MENSAJE DE CARGA
+   ========================================================================== */
+
+.loading-message-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ocupa toda la pantalla */
+    font-size: 1.5em;
+    color: #e0e0e0; /* Color de texto claro */
+    background-color: #282c34; /* Mismo fondo que body */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.loading-message-container::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+    border: 4px solid rgba(224, 224, 224, 0.3);
+    border-top-color: #61dafb; /* Color de la parte que gira */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
