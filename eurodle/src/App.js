@@ -22,20 +22,13 @@ function App() {
     return (
         <div className={`eurodle-wrapper ${daltonicMode ? "modo-daltonico" : ""}`}>
             <div className="eurodle-container">
-                {!isSettingsPage && (
-                    <div className="settings-icon">
-                        <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
-                            <img className="engranaje-home" src={"/engranaje.png"} />
-                        </button>
-                    </div>
-                )}
+
 
                 <header className="eurodle-header-home">
                     <img src={"/tituloEuro.png"} className="eurodle-title-logo"/>
                     <img  src={"/corazonEuroVacio.png"} className="eurodle-heart-logo"/>
                     <p className="eurodle-subtitle">{t('app.subtitle')}</p>
                 </header>
-
                 <main className="eurodle-menu">
                     <Link to="/GuessSongGame">
                         <button className="eurodle-btn">{t('menu.guessSong')}</button>
@@ -46,7 +39,11 @@ function App() {
                     <Link to="/AdivinaPais">
                         <button className="eurodle-btn">{t('menu.guessCountry')}</button>
                     </Link>
-                    <button className="eurodle-btn disabled" disabled>{t('menu.higherLower')}</button>
+
+                    <button onClick={onSettingsClick} className="eurodle-btn eurodle-setting" aria-label="Opciones">
+                        {t('menu.settings')}
+                    </button>
+
                 </main>
 
                 <footer className="eurodle-footer">

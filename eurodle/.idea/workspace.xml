@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/css/GuessSingerCountry.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/css/estiloEuro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/estiloEuro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/en/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/en/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/locales/es/common.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/es/common.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/1.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/10.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/10.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/11.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/11.pack" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/12.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/12.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/13.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/13.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/14.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/14.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/15.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/15.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/2.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/2.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/4.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/4.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/5.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/5.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/7.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/8.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/8.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/9.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/9.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuessSingerCountry/GuessSingerCountry.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GuessSingerCountry/GuessSingerCountry.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/GuessSingerCountry/GuessSingerCountry.js" afterDir="false" />
     </list>
     <list id="d1be4970-1b31-4ca7-8123-bf1925038879" name="Changes by griva" comment="" />
     <list id="75a91be4-b4f7-411b-a5e5-7a8f5033395d" name="Changes by jtdel" comment="" />
@@ -69,6 +84,7 @@
       <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\src\assets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mpord\Documents\3IngSoft\2Cuatri\IU\UserInterfacesProject\Eurodle\src\css" />
       <recent name="C:\Users\mpord\Documents\3IngSoft\2Cuatri\IU\UserInterfacesProject\Eurodle\public" />
       <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\public" />
       <recent name="C:\GITHUB PROJECTS\MDS\UserInterfacesProject\Eurodle (la buena)\eurodle\src" />
@@ -119,6 +135,7 @@
       <workItem from="1746605381862" duration="4000" />
       <workItem from="1746614929679" duration="4803000" />
       <workItem from="1746632401856" duration="853000" />
+      <workItem from="1746702102815" duration="4046000" />
     </task>
     <servers />
   </component>

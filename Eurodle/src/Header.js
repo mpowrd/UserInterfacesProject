@@ -39,7 +39,7 @@ function Header() {
           )}
           <div className="back-icon">
           <button onClick={onBackClick} className="back-btn">
-              <img src={"/flecha-hacia-atras.png"} className="engranaje"/>
+              <img src={"/flecha-hacia-atras.png"} className="back"/>
           </button>
           </div>
 

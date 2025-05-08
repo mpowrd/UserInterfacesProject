@@ -19,11 +19,7 @@ body {
     background: var(--bg-dark);
 }
 
-.engranaje{
-    width: 40px;
-    height: auto; /* mantiene la proporción */
-    filter: invert(100%);
-}
+
 
 
 .eurodle-wrapper {
@@ -39,23 +35,7 @@ body {
     color: #FFFFFF;
 }
 
-.eurodle-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
 
-
-}
-
-.eurodle-header-text{
-
-    transition: transform 0.2s ease;
-}
-
-.eurodle-header-text:hover{
-    transform: scale(1.2);
-}
 
 /*
 GUESS SONG
@@ -164,11 +144,6 @@ footer p{
     border: 1px solid #3a3a3c;
 }
 
-.settings-icon {
-    position: absolute;
-    top: 15px;
-    right: 1px;
-}
 
 .engranaje-home{
     filter: invert(100%);
@@ -190,10 +165,7 @@ footer p{
     transform: rotate(180deg);
 }
 
-.back-icon {
-    position: absolute;
-    top: 15px;
-}
+
 
 .back-btn {
     background: none;
@@ -243,6 +215,11 @@ footer p{
     width: 100%;
 }
 
+.eurodle-setting{
+    border: none;
+    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+}
+
 .eurodle-btn:hover {
     background-color: var(--tile-hover);
     transform: scale(1.02);
@@ -276,6 +253,81 @@ footer p{
 
 .eurodle-header-home img{
     filter: invert(100%);
+}
+
+.eurodle-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+
+
+}
+.engranaje,.back{
+    width: 40px;
+    height: auto; /* mantiene la proporción */
+    filter: invert(100%);
+}
+
+
+.eurodle-header-text{
+
+    transition: transform 0.2s ease;
+}
+
+.eurodle-header-text:hover{
+    transform: scale(1.2);
+}
+
+.back-icon {
+    position: absolute;
+    top: 15px;
+}
+
+.settings-icon {
+    position: absolute;
+    top: 15px;
+    right: 1px;
+}
+
+
+@media (max-width: 768px) {
+    .eurodle-heart-logo{
+        width: 50px;
+        height: auto;
+        filter: invert(100%);
+    }
+
+    .eurodle-title-logo {
+        width: 110px;
+        height: auto;
+        padding-left: 15px;
+        filter: invert(100%);
+    }
+
+    .engranaje{
+        width: 30px;
+        height: auto; /* mantiene la proporción */
+        filter: invert(100%);
+    }
+
+    .back{
+        width: 40px;
+        height: auto; /* mantiene la proporción */
+        filter: invert(100%);
+    }
+
+    .settings-icon{
+        position: absolute;
+        top: 10px;
+        right: 1px;
+    }
+
+    .back-icon {
+        position: absolute;
+        top: 5px;
+    }
+
 }
 
 

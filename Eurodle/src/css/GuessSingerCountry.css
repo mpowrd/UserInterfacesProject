@@ -1,0 +1,43 @@
+div{
+    color: white;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto;
+    background: var(--bg-dark);
+}
+
+
+
+
+
+#columnaSVG{
+    flex: 0 0 300px;
+    display: flex;
+
+}
+
+svg{
+    transform: scaleY(1.25);
+    margin-top:60px;
+}
+
+
+
+/* Color del pais correctamente adivinado */
+.correct-country {
+    fill: #2584d8 !important;
+    stroke: black !important;
+    stroke-width: 1 !important;
+    pointer-events: none;
+}
+
+
+
+/* Color de paises seleccionados de forma erronea */
+.wrong-country {
+    fill: #dd0045 !important;
+    stroke: black;
+    pointer-events: none;
+}

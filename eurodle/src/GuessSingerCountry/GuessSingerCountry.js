@@ -3,7 +3,7 @@ import MapPaths from "../assets/MapPaths";
 import {useSettings} from "../SettingsProvider";
 import Papa from "papaparse";
 
-import "./GuessSingerCountry.css"
+import "../css/GuessSingerCountry.css"
 import "../css/daltonicMode.css";
 
 const InteractiveMap = () => {
@@ -188,7 +188,7 @@ const InteractiveMap = () => {
             const idCorrecto = getIdByName(countrySelectedName);
             const paisCorrecto = document.getElementById(idCorrecto);
             if (paisCorrecto) {
-                paisCorrecto.setAttribute("fill", "#008000");
+                paisCorrecto.setAttribute("fill", "#2584d8");
             }
 
         } else {
@@ -217,48 +217,26 @@ const InteractiveMap = () => {
     };
 
     return (
-        <div className={` ${daltonicMode ? "modo-daltonico" : ""}`}>
-            <h2>ADIVINA EL PAIS DEL CANTANTE</h2>
+        <div className={` ${daltonicMode ? "modo-daltonico" : "guess-singer-country-container"}`}>
+                <h2 className="guess-singer-country-header">ADIVINA EL PAIS DEL CANTANTE</h2>
 
-            <div style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                width: '100%',
-                gap: '20px',
-                margin: '20px 0',
-                padding: '15px',
-                borderRadius: '8px'
-            }}>
-                <div style={{
-                    flex: '1 1 300px',
-                    minWidth: '0',
-                    fontSize: 'clamp(12px, 2vw, 16px)',
-                    lineHeight: '1.5'
-                }}>
-                    <h3 style={{ color: "white"}}>Cantante: {cantanteAdivinar.nameCantante}</h3>
+                    <h3 className="guess-singer-country-singer">Cantante: {cantanteAdivinar.nameCantante}</h3>
                     {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
 
-                    <p style={{ color: "white"}}>País seleccionado: {hoveredCountry}</p>
-                    {cantanteAdivinar && <p style={{color: "white" }}>Has hecho click en: {selectedCountry}</p>}
+                    <p className="guess-singer-country-country-selected">País seleccionado: {hoveredCountry}</p>
+                    {cantanteAdivinar && <p >Has hecho click en: {selectedCountry}</p>}
 
                     {/* Resultado de la dirección */}
-                    <div
-                        style={{ marginTop: "10px", fontSize: "25px", fontWeight: "bold"}}
-                    >
-                        {resultadoMensaje}
-                    </div>
 
-                    <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
+                        {resultadoMensaje}
+
+
+                    <button onClick={reiniciarJuego} >
                         Reiniciar Juego
                     </button>
-                </div>
-                <div style={{
-                    flex: '0 0 300px',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'flex-start'
-                }}>
-                    <svg
+
+
+                    <svg className="guess-singer-country-mapa"
                         width="800" height="446" viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
                         xmlns="http://www.w3.org/2000/svg"
                     >
@@ -268,11 +246,6 @@ const InteractiveMap = () => {
                             handleCountryClick={handleCountryClick}
                         />
                     </svg>
-                </div>
-            </div>
-
-
-
 
         </div>
     );
