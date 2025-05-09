@@ -7,11 +7,24 @@ body {
     margin: 0;
     background-color: #282c34;
     color: #f0f0f0;
-    }
+}
 
-.order-songs-game {
+.order-songs-game{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 100%;
+
+
+}
+
+.order-songs-game-container {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
@@ -29,6 +42,7 @@ body {
 }
 
 .instructions {
+
     font-size: 1em;
     margin-bottom: 20px;
     max-width: 550px;

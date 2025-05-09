@@ -147,66 +147,69 @@ const OrderSongsGame = () => {
     return (
         <DndProvider backend={HTML5Backend}>
             <div className={`order-songs-game ${daltonicMode ? "modo-daltonico" : ""}`}>
-                <h1 className="title-order-song">{t('orderSongs:title')}</h1>
-                <p className="instructions">{t('orderSongs:instructions')}</p>
+                <div className="order-songs-game-container">
+                    <h1 className="title-order-song">{t('orderSongs:title')}</h1>
+                    <p className="instructions">{t('orderSongs:instructions')}</p>
 
-                {/* NUEVA BARRA DE ESTADO Y ACCIONES */}
-                <div className="game-status-and-actions">
-                    {year && (
+                    {/* NUEVA BARRA DE ESTADO Y ACCIONES */}
+                    <div className="game-status-and-actions">
+                        {year && (
+                            <div className="status-info-item">
+                                <span className="label">{t('orderSongs:yearLabel', 'Año')}</span>
+                                <span className="value">{year}</span>
+                            </div>
+                        )}
+
+                        {/* Botón Comprobar en el medio o según layout de flex */}
+                        {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
+                            <button
+                                onClick={handleCheck}
+                                className="comprobar-btn" // Puede necesitar ajustes específicos si está aquí
+                                disabled={
+                                    !!resultadoTipo ||
+                                    ordenUsuario.some(s => s === null) ||
+                                    !!feedback
+                                }
+                            >
+                                {t('orderSongs:buttons.check')}
+                            </button>
+                        )}
+
                         <div className="status-info-item">
-                            <span className="label">{t('orderSongs:yearLabel', 'Año')}</span>
-                            <span className="value">{year}</span>
+                            <span className="label">{t('orderSongs:livesLabel', 'Vidas')}</span>
+                            <span className="value">{vidas}</span>
                         </div>
-                    )}
-
-                    {/* Botón Comprobar en el medio o según layout de flex */}
-                    {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
-                        <button
-                            onClick={handleCheck}
-                            className="comprobar-btn" // Puede necesitar ajustes específicos si está aquí
-                            disabled={
-                                !!resultadoTipo ||
-                                ordenUsuario.some(s => s === null) ||
-                                !!feedback
-                            }
-                        >
-                            {t('orderSongs:buttons.check')}
-                        </button>
-                    )}
-
-                    <div className="status-info-item">
-                        <span className="label">{t('orderSongs:livesLabel', 'Vidas')}</span>
-                        <span className="value">{vidas}</span>
                     </div>
+
+
+                    {resultadoTipo !== 'error' && (
+                        <>
+                            <div className="game-container">
+                                <Tarjetas
+                                    canciones={canciones}
+                                    ordenUsuario={ordenUsuario}
+                                    setOrdenUsuario={setOrdenUsuario}
+                                    isGameFinished={!!resultadoTipo}
+                                />
+                                <Huecos
+                                    ordenUsuario={ordenUsuario}
+                                    setOrdenUsuario={setOrdenUsuario}
+                                    feedback={feedback}
+                                    isGameFinished={!!resultadoTipo}
+                                />
+                            </div>
+                            {/* El div .action-buttons original se elimina o se vacía */}
+                        </>
+                    )}
+
+                    <ResultadoPopUp
+                        tipo={resultadoTipo}
+                        mensajePrincipal={mensajePopUp}
+                        mensajeSecundario={mensajeSecundarioPopUp}
+                        onRestart={reiniciarJuego}
+                    />
                 </div>
 
-
-                {resultadoTipo !== 'error' && (
-                    <>
-                        <div className="game-container">
-                            <Tarjetas
-                                canciones={canciones}
-                                ordenUsuario={ordenUsuario}
-                                setOrdenUsuario={setOrdenUsuario}
-                                isGameFinished={!!resultadoTipo}
-                            />
-                            <Huecos
-                                ordenUsuario={ordenUsuario}
-                                setOrdenUsuario={setOrdenUsuario}
-                                feedback={feedback}
-                                isGameFinished={!!resultadoTipo}
-                            />
-                        </div>
-                        {/* El div .action-buttons original se elimina o se vacía */}
-                    </>
-                )}
-
-                <ResultadoPopUp
-                    tipo={resultadoTipo}
-                    mensajePrincipal={mensajePopUp}
-                    mensajeSecundario={mensajeSecundarioPopUp}
-                    onRestart={reiniciarJuego}
-                />
             </div>
         </DndProvider>
     );
