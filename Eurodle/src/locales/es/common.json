@@ -15,6 +15,7 @@
   },
   "other": {
     "loading": "Cargando...",
-    "errorLoading": "Error al cargar datos."
+    "errorLoading": "Error al cargar datos.",
+    "errorNotEnoughSongsForYear": "No hay suficientes canciones para este año en la base de datos"
   }
 }

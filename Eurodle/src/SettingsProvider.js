@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext } from 'react';
+import i18n from "i18next";
 
 // Crear el contexto
 const SettingsContext = createContext();
@@ -22,6 +23,7 @@ export const SettingsProvider = ({ children }) => {
 
     const updateLanguage = (value) => {
         setLanguage(value);
+        i18n.changeLanguage(value);
         localStorage.setItem('language', value); // Guardar en localStorage
     };
 

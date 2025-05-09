@@ -3,13 +3,23 @@
   "selectedYear": "Selected year: <strong>{{year}}</strong>",
   "instructions": "Drag the songs to the slots in the correct order.",
   "livesLeft": "Lives remaining: <strong>{{count}}</strong>",
+  "yearLabel": "Year",
+  "livesLabel": "Lives",
+  "allClear": "All the cards are placed in the gaps",
+  "avaliableCards": "Avaliable cards:",
+  "emptyCard": "Empty",
   "feedback": {
     "correct": "✔️",
     "incorrect": "❌"
   },
+  "results": {
+    "winTitle": "Congratulations!",
+    "loseTitle": "Oh, no!"
+  },
   "messages": {
-    "win": "Congratulations! You ordered the songs correctly 🎉",
-    "lose": "You lost. The correct order was: {{correctOrder}}"
+    "win": "You ordered the songs correctly 🎉",
+    "loseBase": "You lost",
+    "lose": "The correct order was: {{correctOrder}}"
   },
   "buttons": {
     "check": "Check",

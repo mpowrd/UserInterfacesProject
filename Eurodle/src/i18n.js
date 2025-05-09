@@ -12,10 +12,12 @@ import orderSongs_en from './locales/en/orderSongs.json';
 import orderSongs_es from './locales/es/orderSongs.json';
 import guessCountry_en from './locales/en/guessCountry.json';
 import guessCountry_es from './locales/es/guessCountry.json';
-
+import {useSettings} from "./SettingsProvider";
+import LanguageDetector from 'i18next-browser-languagedetector';
 
 i18n // Detecta el idioma del navegador
     .use(initReactI18next)
+    .use(LanguageDetector)
     .init({
         resources: {
             en: {

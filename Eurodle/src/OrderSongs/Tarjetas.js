@@ -1,6 +1,7 @@
 // Tarjetas.js
 import React from "react";
 import { useDrag, useDrop } from "react-dnd";
+import {useTranslation} from "react-i18next";
 // Asumo que OrderSongsGame.css o un CSS global contiene los estilos.
 // Si tienes un Tarjetas.css específico, impórtalo:
 // import "./Tarjetas.css";
@@ -12,6 +13,7 @@ const DRAG_TYPES = {
 
 // Componente Tarjeta individual (arrastrable)
 const Tarjeta = ({ cancion, isGameFinished }) => {
+
     const [{ isDragging }, drag] = useDrag(() => ({
         type: DRAG_TYPES.TARJETA_NUEVA,
         item: { song_name: cancion.song_name },
@@ -36,6 +38,9 @@ const Tarjeta = ({ cancion, isGameFinished }) => {
 
 // Componente Tarjetas (contenedor y DropTarget)
 const Tarjetas = ({ canciones, ordenUsuario, setOrdenUsuario, isGameFinished }) => {
+
+    const { t } = useTranslation(['orderSongs']);
+
     const [{ isOver, canDrop }, drop] = useDrop(() => ({
         accept: DRAG_TYPES.TARJETA_EN_HUECO,
         drop: (item, monitor) => {
@@ -66,7 +71,7 @@ const Tarjetas = ({ canciones, ordenUsuario, setOrdenUsuario, isGameFinished }) 
 
     return (
         <div ref={drop} className={containerClasses}>
-            <h3>Tarjetas Disponibles</h3> {/* Asumo que tienes un t() para esto si es multilingüe */}
+            <h3>{t('avaliableCards')}</h3> {/* Asumo que tienes un t() para esto si es multilingüe */}
             {availableTarjetas.length > 0 ? (
                 <div className="tarjetas-list">
                     {availableTarjetas.map((cancion) => (
@@ -79,7 +84,7 @@ const Tarjetas = ({ canciones, ordenUsuario, setOrdenUsuario, isGameFinished }) 
                 </div>
             ) : (
                 <p className="no-available-tarjetas-message"> {/* Clase para el mensaje */}
-                    Todas las tarjetas están en los huecos.
+                    {t('allClear')}
                 </p>
             )}
         </div>

@@ -48,7 +48,7 @@ const OrderSongsGame = () => {
 
                 if (validSongs.length === 0) {
                     setResultadoTipo('error'); // Usar para el pop-up de error
-                    setMensajePopUp(t('common:other.errorNoValidSongs'));
+                    setMensajePopUp(t('common:other.errorLoading'));
                     setIsLoading(false);
                     return;
                 }
@@ -81,9 +81,9 @@ const OrderSongsGame = () => {
                 setIsLoading(false);
             },
             error: (error) => {
-                console.error(t('common:other.errorLoadingCsv'), error);
+                console.error(t('common:other.errorLoading'), error);
                 setResultadoTipo('error');
-                setMensajePopUp(t('common:other.errorLoadingCsv'));
+                setMensajePopUp(t('common:other.errorLoading'));
                 setIsLoading(false);
             },
         });
@@ -122,7 +122,7 @@ const OrderSongsGame = () => {
             if (newVidas === 0) {
                 setResultadoTipo('derrota');
                 setMensajePopUp(t('orderSongs:messages.loseBase'));
-                setMensajeSecundarioPopUp(t('orderSongs:messages.loseCorrectOrder', { correctOrder: ordenCorrecto.join(", ") }));
+                setMensajeSecundarioPopUp(t('orderSongs:messages.lose', { correctOrder: ordenCorrecto.join(", ") }));
             }
         }
     };

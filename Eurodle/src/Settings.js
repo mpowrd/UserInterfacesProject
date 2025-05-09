@@ -21,7 +21,6 @@ const Settings = () => {
     const handleSave = () => {
 
         updateLanguage(selected_language);
-        i18n.changeLanguage(selected_language); // Cambia el idioma solo para este componente
         updateVolume(selected_volume);
         updateDaltonicMode(selected_daltonic);
 

@@ -3,13 +3,23 @@
   "selectedYear": "Año seleccionado: <strong>{{year}}</strong>",
   "instructions": "Arrastra las canciones a los huecos en el orden correcto.",
   "livesLeft": "Vidas restantes: <strong>{{count}}</strong>",
+  "yearLabel": "Año",
+  "livesLabel": "Vidas",
+  "allClear": "Todas las tarjetas están en los huecos",
+  "avaliableCards": "Tarjetas disponibles:",
+  "emptyCard": "Vacío",
   "feedback": {
     "correct": "✔️",
     "incorrect": "❌"
   },
+  "results": {
+    "winTitle": "¡Felicidades!",
+    "loseTitle": "¡Mala suerte!"
+  },
   "messages": {
-    "win": "¡Felicidades! Has ordenado las canciones correctamente 🎉",
-    "lose": "Has perdido. El orden correcto era: {{correctOrder}}"
+    "win": "Has ordenado las canciones correctamente 🎉",
+    "loseBase": "Has perdido",
+    "lose": "El orden correcto era: {{correctOrder}}"
   },
   "buttons": {
     "check": "Comprobar",

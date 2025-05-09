@@ -1,6 +1,7 @@
 // Huecos.js
 import React from "react";
 import { useDrag, useDrop } from "react-dnd";
+import {useTranslation} from "react-i18next";
 
 const DRAG_TYPES = {
     TARJETA_NUEVA: "TARJETA",
@@ -28,6 +29,8 @@ const Huecos = ({ ordenUsuario, setOrdenUsuario, feedback, isGameFinished }) => 
 
 // Componente Hueco (individual)
 const Hueco = ({ index, currentSongName, setOrdenUsuario, feedbackIcon, isGameFinished }) => {
+
+    const { t } = useTranslation(['orderSongs']);
 
     const [{ isDragging: isDraggingThisHuecoContent }, drag] = useDrag(() => ({
         type: DRAG_TYPES.TARJETA_EN_HUECO,
@@ -102,7 +105,7 @@ const Hueco = ({ index, currentSongName, setOrdenUsuario, feedbackIcon, isGameFi
                 </div>
             ) : (
                 // El texto "(Vacío)" se estilizará con .hueco-vacio-placeholder o .texto-hueco-vacio
-                !feedbackIcon && <span>(Vacío)</span>
+                !feedbackIcon && <span>({t("emptyCard")})</span>
             )}
         </div>
     );
