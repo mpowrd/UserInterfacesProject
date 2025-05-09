@@ -90,7 +90,7 @@ const ExtraClues = ({ songData, fallos, acertado }) => {
 
     return (
         <div className="extra-clues">
-            <h2>{t('extraClues.title')}</h2>
+            <p>{pistasDesbloqueadas.length === 0 ? t('clues.noClues') : ""}</p>
             <ul className="extra-clues-list">
                 {pistasDesbloqueadas.map((pista, index) => {
                     return (

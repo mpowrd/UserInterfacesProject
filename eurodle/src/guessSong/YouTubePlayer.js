@@ -15,8 +15,6 @@ const YouTubePlayer = ({ videoId, startTime = 30 , setVideoDisplayed}) => {
     // Create a unique container ID
     const containerId = `youtube-container-${videoId}-${startTime}`;
 
-    const [height, setHeight] = useState("315px")
-
     useEffect(() => {
         // Ensure the container exists in the DOM
         const container = document.getElementById(containerId);
@@ -186,8 +184,8 @@ const YouTubePlayer = ({ videoId, startTime = 30 , setVideoDisplayed}) => {
             ref={containerRef}
             style={{
                 position: 'relative',
-                width: '560px',
-                height: height,
+                width: '100%',
+                height: '300px',
                 pointerEvents: 'none'
             }}
         />

@@ -1,4 +1,5 @@
 {
+  "tries": "tries",
   "app": {
     "title": "Eurodle",
     "subtitle": "Inspired by Eurovision",

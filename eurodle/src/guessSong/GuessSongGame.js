@@ -5,10 +5,13 @@ import GuessForm from "./GuessForm";
 import FeedbackDisplay from "./FeedbackDisplay";
 import ClueDisplay from "./ClueDisplay";
 import ExtraClues from "./ExtraClues";
+import DefaultPopup from "../DefaultPopup";
 import { useTranslation } from 'react-i18next';
+
 
 import "../css/daltonicMode.css";
 import "../css/guessSong.css"
+import YouTubePlayer from "./YouTubePlayer";
 
 const GuessSongGame = () => {
     const { t } = useTranslation(['guessSong', 'common']);
@@ -21,6 +24,7 @@ const GuessSongGame = () => {
     const [pistas, setPistas] = useState([]);
     const [intentosRestantes, setIntentosRestantes] = useState(totalIntentos); // Puedes ajustarlo a tu gusto
     const [acertado, setAcertado] = useState(false);
+    const [pistasAdicionales, setPistasAdicionales] = useState(false); // controla si se muestra o no el popup con las pistas adicionales
 
     useEffect(() => {
         // Cargamos las caciones del csv al iniciar
@@ -67,6 +71,14 @@ const GuessSongGame = () => {
             }
         });
     }, [t]);
+
+    const mostrarPistas = () => {
+        setPistasAdicionales(true);
+    };
+
+    const ocultarPistas = () => {
+        setPistasAdicionales(false);
+    };
 
     const handleGuess = (entrada, tipo) => {
         if (!entrada) return;
@@ -122,7 +134,7 @@ const GuessSongGame = () => {
             }
         ];
 
-        setPistas((prevPistas) => [...prevPistas, { intento: guess, pistas: pistasDelIntento }]);
+        setPistas((prevPistas) => [{ intento: guess, pistas: pistasDelIntento }, ...prevPistas]);
     };
 
     const reiniciarJuego = () => {
@@ -160,7 +172,7 @@ const GuessSongGame = () => {
 
                     {/* Formulario de adivinanza */}
                     {!acertado && intentosRestantes > 0 && (
-                        <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} />
+                        <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} mostrarPistas={mostrarPistas}/>
                     )}
 
                     {/* Visualización de fallos */}
@@ -171,14 +183,24 @@ const GuessSongGame = () => {
 
                     {/* Botón para reiniciar cuando acabe el juego */}
                     {(acertado || intentosRestantes <= 0) && (
-                        <button onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
+                        <div className='end-buttons'>
+                        <button className='guess-btn' onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
                             {t('guessSong:game.restart')}
                         </button>
+                        <button className='guess-btn' onClick={mostrarPistas} style={{ marginTop: "20px" }}>
+                            {t('guessSong:game.showAll')}
+                        </button>
+                        </div>
                     )}
 
                     {/* Pistas adicionales progresivas */}
-                    <ExtraClues songData={cancionCorrecta} fallos={fallos} acertado={acertado}/>
 
+                    {pistasAdicionales &&
+                    <DefaultPopup
+                        content={{ type: 'component', component: <ExtraClues songData={cancionCorrecta} fallos={fallos} acertado={acertado} /> }}
+                        title={t('guessSong:extraClues.title')}
+                        onCancel={ocultarPistas}
+                    />}
 
                 </div>
             </div>

@@ -1,7 +1,6 @@
 {
   "feedback": {
     "title": "Errors",
-    "tries": "tries",
     "noErrors": "No errors yet.",
     "attemptsLeft": "Incorrect, keep trying. You have {{count}} attempt left",
     "attemptsLeft_plural": "Incorrect, keep trying. You have {{count}} attempts left",
@@ -9,7 +8,8 @@
     "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
   },
   "clues": {
-    "title": "Clues   <-- scroll to see more (Estoy en el JSON) (ESTO SOLO VA EN MOVIL) -->",
+    "title": "Clues",
+    "title-movil": "<--Scroll to see more --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "No clues yet.",
     "headers": {
       "song": "Song",
@@ -34,10 +34,10 @@
     "videoCompleted": "Video clue completed ✓",
     "clueTemplates": {
       "rank": "Final ranking: position number {{rank}}",
-      "neighbours": "The song ranked between {{above}}{{separator}}{{below}}",
+      "neighbours": "The song ranked {{above}}{{separator}}{{below}}",
       "neighboursParts": {
-        "above": "{{country}}",
-        "below": "{{country}}",
+        "above": "before {{country}}",
+        "below": "after {{country}}",
         "separator": " and ",
         "unknown": "Unknown"
       },
@@ -57,9 +57,11 @@
     "alreadyGuessedYearCountry": "You've already tried that country and year combination, try a different one!",
     "submitButton": "Guess",
     "guessMethodTitle": "Title",
-    "guessMethodYearCountry": "Year and Country"
+    "guessMethodYearCountry": "Year and Country",
+    "clues": "Show more clues"
   },
   "game": {
-    "restart": "Restart Game"
+    "restart": "Restart Game",
+    "showAll": "Show all clues 💡"
   }
 }

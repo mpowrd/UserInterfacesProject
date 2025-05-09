@@ -1,7 +1,6 @@
 {
   "feedback": {
     "title": "Fallos",
-    "tries": "intentos",
     "noErrors": "No hay fallos aún.",
     "attemptsLeft": "Has fallado, sigue intentándolo. Te quedan {{count}} intento",
     "attemptsLeft_plural": "Has fallado, sigue intentándolo. Te quedan {{count}} intentos",
@@ -9,7 +8,8 @@
     "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}"
   },
   "clues": {
-    "title": "Pistas  <--desliza para ver más--> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
+    "title": "Pistas",
+    "title-movil": "<--Desliza para ver más --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "Sin pistas todavía.",
     "headers": {
       "song": "Canción",
@@ -34,10 +34,10 @@
     "videoCompleted": "Pista de video completada ✓",
     "clueTemplates": {
       "rank": "Ranking final: puesto numero {{rank}}",
-      "neighbours": "La canción quedó entre {{above}}{{separator}}{{below}}",
+      "neighbours": "La canción quedó {{above}}{{separator}}{{below}}",
       "neighboursParts": {
-        "above": "{{country}}",
-        "below": "{{country}}",
+        "above": "por debajo de {{country}}",
+        "below": "por encima de {{country}}",
         "separator": " y ",
         "unknown": "Desconocido"
       },
@@ -57,9 +57,11 @@
     "alreadyGuessedYearCountry": "Ya has intentado con esa combinación de país y año, ¡prueba otra diferente!",
     "submitButton": "Adivinar",
     "guessMethodTitle": "Título",
-    "guessMethodYearCountry": "Año y País"
+    "guessMethodYearCountry": "Año y País",
+    "clues": "Más pistas"
   },
   "game": {
-    "restart": "Reiniciar Juego"
+    "restart": "Reiniciar Juego",
+    "showAll": "Mostrar todas las pistas 💡"
   }
 }

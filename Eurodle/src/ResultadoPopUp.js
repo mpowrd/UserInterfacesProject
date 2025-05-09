@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import "./OrderSongsGame.css"
+import "./OrderSongs/OrderSongsGame.css"
 
 const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, onRestart }) => {
     const { t } = useTranslation(['orderSongs', 'common']);

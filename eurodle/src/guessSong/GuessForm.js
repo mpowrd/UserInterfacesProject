@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-const GuessForm = ({ canciones, onGuess, fallos }) => {
+const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas }) => {
     const { t } = useTranslation('guessSong');
 
     const [entrada, setEntrada] = useState("");
@@ -127,7 +127,7 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
 
     return (
         <div className="guess-form">
-            <form onSubmit={handleSubmit}>
+
 
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
                 <div className="guess-method-selector">
@@ -195,11 +195,9 @@ const GuessForm = ({ canciones, onGuess, fallos }) => {
                     </ul>
                 )}
 
-                <button type="submit">{t('form.submitButton')}</button>
-                <button>Pistas 💡</button>
+                <button onClick={handleSubmit}>{t('form.submitButton')}</button>
+                <button onClick={mostrarPistas}>{t('form.clues')} 💡</button>
 
-
-            </form>
         </div>
     );
 };

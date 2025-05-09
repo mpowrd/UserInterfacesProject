@@ -71,6 +71,38 @@
   padding: 8px 16px;
 }
 
+.end-buttons {
+  display: flex;
+  justify-content: space-around;
+
+  padding: 2%;
+}
+
+.guess-btn {
+  background: linear-gradient(135deg,
+  rgba(230, 0, 38, 0.7),
+  rgba(208, 0, 111, 0.7),
+  rgba(123, 31, 162, 0.7),
+  rgba(0, 176, 240, 0.7)
+  ) 0 0;
+  background-size: 200%, 200%;
+  color: var(--text);
+  border: 2px solid #3a3a3c;
+  font-weight: bold;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.5s ease-in-out, transform 0.2s ease;
+  width: 47%;
+}
+
+.guess-btn:hover {
+  background-size: 100%, 100%;
+  background-position: right bottom;
+  transform: scale(1.02);
+}
+
 .sugerencias {
   list-style: none;
   margin: 0;
@@ -162,6 +194,8 @@
 
 /* Styles para ExtraClues */
 .extra-clues {
+  max-height: 300px;
+  overflow-y: auto;
   margin: 20px;
   padding: 15px;
   border: 2px dashed #bbb;

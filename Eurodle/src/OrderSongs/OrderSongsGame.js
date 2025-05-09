@@ -6,7 +6,7 @@ import Huecos from "./Huecos";
 import { useTranslation } from 'react-i18next';
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import ResultadoPopUp from "./ResultadoPopUp";
+import ResultadoPopUp from "../ResultadoPopUp";
 
 // Asumo que OrderSongsGame.css es el principal que me pasaste
 import "./OrderSongsGame.css";

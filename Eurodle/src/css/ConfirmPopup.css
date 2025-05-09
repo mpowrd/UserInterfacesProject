@@ -14,14 +14,31 @@
 
 .popup-content {
     background-color: white;
-    padding: 2rem;
+    padding-top: 0.2rem;
+    padding-bottom: 2rem;
     border-radius: 1rem;
     text-align: center;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-    width: 90%;
-    max-width: 400px;
+    /*max-width: 75%;*/
+    width: 75vw;
 }
 
+.popup-Xbutton-container{
+    display:flex;
+    justify-content: right ;
+}
+
+.popup-Xbutton {
+    padding: 0.5rem 1.2rem;
+    font-weight: bold;
+    font-size: xx-large;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    background-color: #ffffff;
+    color: #808080;
+}
 
 h3 {
     color: black;
