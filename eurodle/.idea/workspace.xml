@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/OrderSongs/OrderSongsGame.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderSongs/OrderSongsGame.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderSongs/OrderSongsGame.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderSongs/OrderSongsGame.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/GuessSingerCountry.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/GuessSingerCountry.css" afterDir="false" />
     </list>
     <list id="d1be4970-1b31-4ca7-8123-bf1925038879" name="Changes by griva" comment="" />
     <list id="75a91be4-b4f7-411b-a5e5-7a8f5033395d" name="Changes by jtdel" comment="" />
@@ -113,7 +112,7 @@
       <workItem from="1746614929679" duration="4803000" />
       <workItem from="1746632401856" duration="853000" />
       <workItem from="1746702102815" duration="4046000" />
-      <workItem from="1746729715942" duration="1263000" />
+      <workItem from="1746729715942" duration="6974000" />
     </task>
     <servers />
   </component>

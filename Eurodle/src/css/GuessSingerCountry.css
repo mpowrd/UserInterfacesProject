@@ -4,29 +4,80 @@ div{
 
 body {
     margin: 0;
-    font-family: Roboto;
+    font-family: 'Inter', sans-serif;
     background: var(--bg-dark);
 }
 
+.guess-singer-country-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.guess-singer-country-mapa-wrapper{
+    padding-top: 70px;
+    padding-bottom: 60px;
+}
+.guess-singer-country-mapa{
+    background-color: var(--tile-bg);
+    border: 2px solid #3a3a3c;
+    border-radius: 10px;
 
+}
 
+.guess-singer-country-header {
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-align: center;
+}
 
+.guess-singer-country-singer{
+    font-size: 1.75rem;
+    color: #D0006F;
+    border-bottom: 5px solid #D0006F;
+    border-top: 5px solid #D0006F;
+
+    border-radius: 10px;
+}
+
+.guess-singer-country-country-selected{
+    color: #888888;
+}
+
+.guess-singer-country-btn{
+
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 1.25rem;
+    background-color: #3a3a3c;
+    font-weight: bold;
+    color: #cccccc;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
 
 #columnaSVG{
-    flex: 0 0 300px;
+
+    flex: 0 0 200px;
     display: flex;
 
 }
 
 svg{
+    background: #cccccc;
     transform: scaleY(1.25);
-    margin-top:60px;
 }
 
 
 
 /* Color del pais correctamente adivinado */
 .correct-country {
+
     fill: #2584d8 !important;
     stroke: black !important;
     stroke-width: 1 !important;

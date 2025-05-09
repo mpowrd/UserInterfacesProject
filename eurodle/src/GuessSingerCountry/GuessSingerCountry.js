@@ -5,6 +5,7 @@ import Papa from "papaparse";
 
 import "../css/GuessSingerCountry.css"
 import "../css/daltonicMode.css";
+import FeedbackDisplay from "../guessSong/FeedbackDisplay";
 
 const InteractiveMap = () => {
 
@@ -142,6 +143,7 @@ const InteractiveMap = () => {
         const paisSelected = document.getElementById(idSeleccionado);
         const paisAdivin = document.getElementById(idAdivinar);
 
+
         console.log("ID seleccionado:", idSeleccionado);
         console.log("ID a adivinar:", idAdivinar);
 
@@ -217,28 +219,30 @@ const InteractiveMap = () => {
     };
 
     return (
-        <div className={` ${daltonicMode ? "modo-daltonico" : "guess-singer-country-container"}`}>
+
+        <div className={` ${daltonicMode ? "modo-daltonico" : "guess-singer-country"}`}>
+            <div className="guess-singer-country-container">
                 <h2 className="guess-singer-country-header">ADIVINA EL PAIS DEL CANTANTE</h2>
 
-                    <h3 className="guess-singer-country-singer">Cantante: {cantanteAdivinar.nameCantante}</h3>
-                    {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
-
-                    <p className="guess-singer-country-country-selected">País seleccionado: {hoveredCountry}</p>
-                    {cantanteAdivinar && <p >Has hecho click en: {selectedCountry}</p>}
-
-                    {/* Resultado de la dirección */}
-
-                        {resultadoMensaje}
+                <h3 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h3>
 
 
-                    <button onClick={reiniciarJuego} >
-                        Reiniciar Juego
-                    </button>
+                {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
+
+                {/*{cantanteAdivinar && <p >Has hecho click en: {selectedCountry}</p>}*/}
+
+                {/* Resultado de la dirección */}
+
+                {resultadoMensaje}
 
 
+
+
+
+                <div className="guess-singer-country-mapa-wrapper">
                     <svg className="guess-singer-country-mapa"
-                        width="800" height="446" viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
-                        xmlns="http://www.w3.org/2000/svg"
+                         width="800" height="446" viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
+                         xmlns="http://www.w3.org/2000/svg"
                     >
                         <MapPaths
                             handleMouseEnter={handleMouseEnter}
@@ -247,6 +251,20 @@ const InteractiveMap = () => {
                         />
                     </svg>
 
+
+
+
+                </div>
+
+                <p className="guess-singer-country-country-selected">País seleccionado: {hoveredCountry}</p>
+
+
+
+
+                <button onClick={reiniciarJuego} className="guess-singer-country-btn" >
+                    Reiniciar Juego
+                </button>
+            </div>
         </div>
     );
 };
