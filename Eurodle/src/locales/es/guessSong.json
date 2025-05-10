@@ -8,7 +8,7 @@
     "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}"
   },
   "clues": {
-    "title": "Pistas:",
+    "title": "Pistas",
     "title-movil": "<--Desliza para ver más --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "Sin pistas todavía.",
     "headers": {

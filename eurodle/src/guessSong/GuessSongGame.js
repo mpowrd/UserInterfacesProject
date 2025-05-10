@@ -175,10 +175,10 @@ const GuessSongGame = () => {
     }
 
     return (
-        <div className={`${daltonicMode ? "modo-daltonico" : ".eurodle-wrapper"}`}>
+        <div className={`${daltonicMode ? "modo-daltonico" : ".eurodle-guess-song-wrapper"}`}>
             <div className="guess-song-container">
 
-                {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
+                {/*{cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}*/}
 
                 <h1 className='guess-title'>
                     {t('guessSong:game.guessBy')}
