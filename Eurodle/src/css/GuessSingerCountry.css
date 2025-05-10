@@ -10,34 +10,87 @@ body {
 
 .guess-singer-country-container {
     width: 100%;
+    max-width: 1000px;
+    height: auto;
+    margin: 0 auto;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 0;
 }
-.guess-singer-country-mapa-wrapper{
-    padding-top: 70px;
-    padding-bottom: 60px;
+
+
+.guess-singer-country-mapa-wrapper {
+    width: 100%;
+    max-width: 90vw;
+    aspect-ratio: 800 / 446;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px;
 }
-.guess-singer-country-mapa{
-    background-color: var(--tile-bg);
+
+.guess-singer-country-mapa {
+    width: 100%;
+    height: auto;
+    display: block;
+    background-color: #404040;
     border: 2px solid #3a3a3c;
     border-radius: 10px;
+    transform: scaleY(1.2); /* <-- ESTIRADO VERTICAL */
 
 }
 
-.guess-singer-country-header {
-    font-size: 2rem;
-    margin-top: 1rem;
-    text-align: center;
+
+
+
+
+
+/*.guess-singer-country-mapa-wrapper{*/
+/*    padding-top: 70px;*/
+/*    padding-bottom: 60px;*/
+/*}*/
+/*.guess-singer-country-mapa{*/
+/*    width: max-content;*/
+/*    height: max-content;*/
+/*    background-color: #404040;*/
+/*    border: 2px solid #3a3a3c;*/
+/*    border-radius: 10px;*/
+
+/*}*/
+
+.guess-singer-country-mapa[width][height] {
+    width: 100% !important;
+    height: max-content !important;
 }
+
+
+.guess-singer-country-message{
+    color: #888888;
+    padding-top: 5px;
+}
+
+/*.guess-singer-country-header {*/
+/*    font-size: 100px;*/
+/*    margin-top: 1rem;*/
+/*    text-align: center;*/
+/*}*/
 
 .guess-singer-country-singer{
-    font-size: 1.75rem;
-    color: #D0006F;
-    border-bottom: 5px solid #D0006F;
-    border-top: 5px solid #D0006F;
-
-    border-radius: 10px;
+    /*font-size: 2rem;*/
+    color: #cccccc;
+    background: linear-gradient(135deg,
+    rgba(0, 176, 240, 0.9),
+    rgba(123, 31, 162, 0.9),
+    rgba(208, 0, 111, 0.9),
+    rgba(230, 0, 38, 0.9)
+    );
+    /*border-bottom: 5px solid #D0006F;*/
+    /*border-top: 5px solid #D0006F;*/
+    text-align: center;
+    border-radius: 5px;
 }
 
 .guess-singer-country-country-selected{
@@ -47,7 +100,7 @@ body {
 .guess-singer-country-btn{
 
     position: absolute;
-    bottom: 1rem;
+    top: 13rem;
     right: 1rem;
     padding: 0.75rem 1.25rem;
     font-size: 1.25rem;
@@ -68,10 +121,12 @@ body {
 
 }
 
-svg{
+svg {
     background: #cccccc;
-    transform: scaleY(1.25);
+    max-width: 100%;
+    height: auto;
 }
+
 
 
 
@@ -91,4 +146,43 @@ svg{
     fill: #dd0045 !important;
     stroke: black;
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .guess-singer-country-mapa{
+        width: 400px;
+        height: max-content;
+        margin: none;
+    }
+    .guess-singer-country-container{
+        position: relative;
+    }
+    .guess-singer-country-btn{
+        position: static; /* Quita el absoluto para flujo normal */
+        margin: 1rem auto; /* Centra horizontalmente */
+        display: block;
+        width: 90%; /* Ocupa la mayor parte del ancho de pantalla */
+        font-size: 1rem;
+
+    }
+
+    /* Color del pais correctamente adivinado */
+    .correct-country {
+
+        fill: #2584d8 !important;
+        stroke: black !important;
+        stroke-width: 1 !important;
+        pointer-events: none;
+    }
+
+
+
+    /* Color de paises seleccionados de forma erronea */
+    .wrong-country {
+        fill: #dd0045 !important;
+        stroke: black;
+        pointer-events: none;
+    }
+
+
 }

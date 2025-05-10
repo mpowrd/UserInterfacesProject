@@ -1,8 +1,15 @@
 {
-  "title": "ADIVINA DONDE ESTA EL PAIS: {{countryName}}",
-  "hovered": "País seleccionado:",
-  "clicked": "Has hecho click en: {{countryId}}",
-  "hint": "Pista: {{arrow}}",
-  "correct": "¡Correcto! Has adivinado el país.",
-  "notFoundWarning": "Países no encontrados"
+  "game": {
+    "title": "ADIVINA EL PAIS DEL CANTANTE",
+    "arr": "País seleccionado:",
+    "clicked": "Has hecho click en: {{countryId}}",
+    "hint": "Pista: {{arrow}}",
+    "correct": "¡Correcto! Has adivinado el país.",
+    "notFoundWarning": "Países no encontrados",
+    "refresh": "Reiniciar Juego"
+  },
+  "feedback": {
+    "congrats": "¡Enhorabuena! Has acertado el país.",
+    "gameOver": "Te has quedado sin intentos. 😢 El país era: {{country}}"
+  }
 }

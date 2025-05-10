@@ -204,7 +204,7 @@ footer p{
 }
 
 .eurodle-btn {
-    background-color: var(--tile-bg);
+    background-color: #1a1a1a;
     color: var(--text);
     border: 2px solid #3a3a3c;
     padding: 1rem;

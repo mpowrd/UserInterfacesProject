@@ -3,11 +3,16 @@ import MapPaths from "../assets/MapPaths";
 import {useSettings} from "../SettingsProvider";
 import Papa from "papaparse";
 
+
 import "../css/GuessSingerCountry.css"
 import "../css/daltonicMode.css";
-import FeedbackDisplay from "../guessSong/FeedbackDisplay";
+import HeartDisplay from "../HeartDisplay";
+import {useTranslation} from "react-i18next";
 
 const InteractiveMap = () => {
+
+    const { t } = useTranslation(['guessCountry', 'common']);
+
 
     const { daltonicMode } = useSettings();
 
@@ -19,13 +24,17 @@ const InteractiveMap = () => {
     // Con css los pintamos de rojo en la pantalla
     const [wrongCountries, setWrongCountries] = useState([]);
 
-    const [resultadoMensaje, setResultadoMensaje] = useState("Pista: ");
+    const [resultadoMensaje, setResultadoMensaje] = useState(t("game.hint", { arrow: '' }));
 
     // Estados para almacenar el país seleccionado
     const [hoveredCountry, setHoveredCountry] = useState(null);
 
     // Estado para identificar el fin de una partida
     const [finPartida, setFinPartida] = useState(false);
+
+    // Número de fallos realizados
+    const [fallos, setFallos] = useState(0);
+    const intentos = 6;
 
 
     useEffect(() => {
@@ -159,7 +168,7 @@ const InteractiveMap = () => {
         const centroHasta = getCentroid(paisAdivin);
         const {dir, arrow} = getDirectionWithArrow(centroDesde, centroHasta);
 
-        const mensaje = `Pista: ${arrow}`;
+        const mensaje = t("game.hint", { arrow: arrow || '?' });
 
         setResultadoMensaje(mensaje);
     }
@@ -169,37 +178,60 @@ const InteractiveMap = () => {
     const [selectedCountry,setSelectedCountry] = useState(null);
 
     const handleCountryClick = (event) => {
+
+
+
         if (finPartida) return;
+
 
         const countrySelectedID = event.target.getAttribute("id");
         const countrySelectedName = document.getElementById(countrySelectedID).getAttribute("name");
         setSelectedCountry(countrySelectedName);
 
+
+
         const country = event.target;
         country.setAttribute("class", daltonicMode ? "wrong-country-daltonic" : "wrong-country");
 
         paisAdivinado(countrySelectedName);
+
     };
 
     function paisAdivinado(countrySelectedName) {
         if (countrySelectedName === cantanteAdivinar.nameCountry) {
-            setResultadoMensaje("¡Correcto! Has adivinado el país.");
+            setResultadoMensaje(t("feedback.congrats"));
             setFinPartida(true); // Termina la partida actual
+            setFallos(0);
 
             // Pinta el pais correcto de verde
             const idCorrecto = getIdByName(countrySelectedName);
             const paisCorrecto = document.getElementById(idCorrecto);
+
+
             if (paisCorrecto) {
+
                 paisCorrecto.setAttribute("fill", "#2584d8");
+
             }
 
         } else {
             compararPaises(countrySelectedName, cantanteAdivinar.nameCountry);
             setWrongCountries(prev => [...prev, countrySelectedName]);
+
+
         }
         // Condicion para guardar el pais incorrecto en estado wrongCountries
         if (countrySelectedName !== cantanteAdivinar.nameCountry) {
             setWrongCountries(prev => [...prev, countrySelectedName]);
+            setFallos(fallos+1);
+
+
+        }
+
+        if(fallos===intentos-1 && !finPartida){
+            setFinPartida(true);
+            setResultadoMensaje(t("feedback.gameOver",{country: cantanteAdivinar.nameCountry}));
+
         }
 
     }
@@ -210,6 +242,7 @@ const InteractiveMap = () => {
         setCancionSelect(canciones[randomIndex]);
         setResultadoMensaje("Pista: ");
         setWrongCountries([]);
+        setFallos(0);
         document.querySelectorAll("path").forEach(p => {
             p.removeAttribute("class");
             p.setAttribute("fill", "#cccccc");
@@ -220,11 +253,11 @@ const InteractiveMap = () => {
 
     return (
 
-        <div className={` ${daltonicMode ? "modo-daltonico" : "guess-singer-country"}`}>
-            <div className="guess-singer-country-container">
-                <h2 className="guess-singer-country-header">ADIVINA EL PAIS DEL CANTANTE</h2>
+        <div className={` ${daltonicMode ? "modo-daltonico" : "guess-singer-country "}`}>
+            <div className="guess-singer-country-container container text-center my-4">
+                <h2 className="guess-singer-country-header h1">{t("game.title")}</h2>
 
-                <h3 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h3>
+                <h3 className="guess-singer-country-singer fs-1">{cantanteAdivinar.nameCantante}</h3>
 
 
                 {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
@@ -233,15 +266,19 @@ const InteractiveMap = () => {
 
                 {/* Resultado de la dirección */}
 
-                {resultadoMensaje}
+
+                <p className="guess-singer-country-message fs-3">{resultadoMensaje}</p>
 
 
-
+                <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
+                <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
+                    {t("game.refresh")}
+                </button>
 
 
                 <div className="guess-singer-country-mapa-wrapper">
                     <svg className="guess-singer-country-mapa"
-                         width="800" height="446" viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
+                         viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
                          xmlns="http://www.w3.org/2000/svg"
                     >
                         <MapPaths
@@ -252,18 +289,12 @@ const InteractiveMap = () => {
                     </svg>
 
 
-
-
                 </div>
 
-                <p className="guess-singer-country-country-selected">País seleccionado: {hoveredCountry}</p>
+                <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
 
 
 
-
-                <button onClick={reiniciarJuego} className="guess-singer-country-btn" >
-                    Reiniciar Juego
-                </button>
             </div>
         </div>
     );
