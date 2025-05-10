@@ -8,7 +8,7 @@
     "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}"
   },
   "clues": {
-    "title": "Pistas",
+    "title": "Pistas:",
     "title-movil": "<--Desliza para ver más --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "Sin pistas todavía.",
     "headers": {
@@ -48,9 +48,11 @@
     }
   },
   "form": {
-    "notFound": "Canción no encontrada. Asegúrate de seleccionar de la lista. {{input}}",
+    "notFound": "Canción no encontrada o no llegó a la final",
     "correctGuess": "¡Correcto! Has adivinado la canción 🎉",
-    "placeholderSong": "Adivina la canción...",
+    "lostSub": "¡Oh no! Te has quedado sin intentos",
+    "lost": "Has perdido",
+    "placeholderSong": "Introduce el título de una canción...",
     "placeholderYear": "Introduce el año...",
     "placeholderCountry": "Introduce el país...",
     "alreadyGuessedSong": "Ya has intentado con esa, ¡prueba otra diferente!",
@@ -62,6 +64,9 @@
   },
   "game": {
     "restart": "Reiniciar Juego",
-    "showAll": "Mostrar todas las pistas 💡"
+    "showAll": "Mostrar todas las pistas 💡",
+    "guessBy" : "Adivina la cancion por ",
+    "guessByTitle" : "el título",
+    "guessByYearCountry" : "el país y el año"
   }
 }

@@ -206,6 +206,7 @@ const OrderSongsGame = () => {
                         tipo={resultadoTipo}
                         mensajePrincipal={mensajePopUp}
                         mensajeSecundario={mensajeSecundarioPopUp}
+                        buttonMessage={t('orderSongs:buttons.restart')}
                         onRestart={reiniciarJuego}
                     />
                 </div>

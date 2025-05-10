@@ -8,7 +8,7 @@
     "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
   },
   "clues": {
-    "title": "Clues",
+    "title": "Clues:",
     "title-movil": "<--Scroll to see more --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "No clues yet.",
     "headers": {
@@ -48,9 +48,11 @@
     }
   },
   "form": {
-    "notFound": "Song not found. Make sure to select from the list. {{input}}",
+    "notFound": "Song not found or did not reach the final",
     "correctGuess": "Correct! You guessed the song 🎉",
-    "placeholderSong": "Guess the song...",
+    "lostSub": "Damn it! You ran out of tries",
+    "lost": "You lost",
+    "placeholderSong": "Type a song title...",
     "placeholderYear": "Enter the year...",
     "placeholderCountry": "Enter the country...",
     "alreadyGuessedSong": "You've already tried that one, try a different one!",
@@ -62,6 +64,9 @@
   },
   "game": {
     "restart": "Restart Game",
-    "showAll": "Show all clues 💡"
+    "showAll": "Show all clues 💡",
+    "guessBy" : "Guess the song by its ",
+    "guessByTitle" : "title",
+    "guessByYearCountry" : "year and country"
   }
 }

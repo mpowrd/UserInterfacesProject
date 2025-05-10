@@ -12,6 +12,7 @@ import { useTranslation } from 'react-i18next';
 import "../css/daltonicMode.css";
 import "../css/guessSong.css"
 import YouTubePlayer from "./YouTubePlayer";
+import ResultadoPopUp from "../ResultadoPopUp";
 
 const GuessSongGame = () => {
     const { t } = useTranslation(['guessSong', 'common']);
@@ -25,8 +26,16 @@ const GuessSongGame = () => {
     const [intentosRestantes, setIntentosRestantes] = useState(totalIntentos); // Puedes ajustarlo a tu gusto
     const [acertado, setAcertado] = useState(false);
     const [pistasAdicionales, setPistasAdicionales] = useState(false); // controla si se muestra o no el popup con las pistas adicionales
+    const [tipoAdivinanza, setTipoAdivinanza] = useState('title');
+    const [nuevaPista, setNuevaPista] = useState(false);
+    const [mostradoPopupVictoria, setMostradoPopupVictoria] = useState(false);
+    const [mostradoPopupDerrota, setMostradoPopupDerrota] = useState(false);
 
     useEffect(() => {
+        setTipoAdivinanza('title');
+        setNuevaPista(false);
+        setMostradoPopupVictoria(false);
+        setMostradoPopupDerrota(false);
         // Cargamos las caciones del csv al iniciar
         Papa.parse("/canciones.csv", {
             header: true,
@@ -74,6 +83,7 @@ const GuessSongGame = () => {
 
     const mostrarPistas = () => {
         setPistasAdicionales(true);
+        setNuevaPista(false);
     };
 
     const ocultarPistas = () => {
@@ -94,14 +104,13 @@ const GuessSongGame = () => {
         }
 
         if (!guess) {
-            alert(t('guessSong:form.notFound', { input: entrada }));
+            alert(t('guessSong:form.notFound'));
             return;
         }
 
         // Verificar si el intento es correcto
         if (guess.song_name === cancionCorrecta.song_name) {
             setAcertado(true);
-            alert(t('guessSong:form.correctGuess')); // Comentado, ya se muestra en FeedbackDisplay
         } else {
             // Añadimos el fallo
             setFallos((prevFallos) => [...prevFallos, guess]);
@@ -135,6 +144,8 @@ const GuessSongGame = () => {
         ];
 
         setPistas((prevPistas) => [{ intento: guess, pistas: pistasDelIntento }, ...prevPistas]);
+
+        setNuevaPista(true);
     };
 
     const reiniciarJuego = () => {
@@ -145,6 +156,10 @@ const GuessSongGame = () => {
         setPistas([]);
         setIntentosRestantes(totalIntentos);
         setAcertado(false);
+        setNuevaPista(false);
+        setMostradoPopupVictoria(false);
+        setMostradoPopupDerrota(false);
+        setTipoAdivinanza('title')
     };
 
     const [isLoading, setIsLoading] = useState(true);
@@ -165,14 +180,32 @@ const GuessSongGame = () => {
 
                 {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
 
-                <h1>Adivina la cancion</h1>
-                <h1>por...</h1>
+                <h1 className='guess-title'>
+                    {t('guessSong:game.guessBy')}
+                    <strong
+                        className="letrasAdivinanza"
+                        data-text={tipoAdivinanza === 'title'
+                            ? t('guessSong:game.guessByTitle')
+                            : t('guessSong:game.guessByYearCountry')}>
+                        {tipoAdivinanza === 'title'
+                            ? t('guessSong:game.guessByTitle')
+                            : t('guessSong:game.guessByYearCountry')}
+                    </strong>
+                </h1>
 
                 <div className="contenido-principal">
 
                     {/* Formulario de adivinanza */}
                     {!acertado && intentosRestantes > 0 && (
-                        <GuessForm canciones={canciones} onGuess={handleGuess} fallos={fallos} mostrarPistas={mostrarPistas}/>
+                        <GuessForm
+                            canciones={canciones}
+                            onGuess={handleGuess}
+                            fallos={fallos}
+                            mostrarPistas={mostrarPistas}
+                            cambiarAdivinanza={setTipoAdivinanza}
+                            nuevaPista={nuevaPista}
+                            setNuevaPista={setNuevaPista}
+                        />
                     )}
 
                     {/* Visualización de fallos */}
@@ -201,6 +234,23 @@ const GuessSongGame = () => {
                         title={t('guessSong:extraClues.title')}
                         onCancel={ocultarPistas}
                     />}
+
+                    {acertado && !mostradoPopupVictoria &&
+                        <ResultadoPopUp tipo={'victoria'}
+                                        mensajePrincipal={t('guessSong:form.correctGuess')}
+                                        onRestart={() => setMostradoPopupVictoria(true)}
+                                        buttonMessage={t('OK')}>
+                        </ResultadoPopUp>
+                    }
+
+                    {intentosRestantes === 0 && !mostradoPopupDerrota &&
+                        <ResultadoPopUp tipo={'derrota'}
+                                        mensajePrincipal={t('guessSong:form.lost')}
+                                        mensajeSecundario={t('guessSong:form.lostSub')}
+                                        onRestart={() => setMostradoPopupDerrota(true)}
+                                        buttonMessage={t('OK')}>
+                        </ResultadoPopUp>
+                    }
 
                 </div>
             </div>

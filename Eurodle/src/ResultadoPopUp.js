@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import "./OrderSongs/OrderSongsGame.css"
 
-const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, onRestart }) => {
+const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, onRestart, buttonMessage }) => {
     const { t } = useTranslation(['orderSongs', 'common']);
 
     if (!mensajePrincipal) {
@@ -24,7 +24,7 @@ const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, on
                 )}
                 <div className="popup-botones">
                     <button onClick={onRestart} className="popup-boton-reiniciar">
-                        {t('orderSongs:buttons.restart')}
+                        {buttonMessage}
                     </button>
                 </div>
             </div>

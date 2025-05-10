@@ -29,11 +29,11 @@ const ClueDisplay = ({ pistas }) => {
     return (
         <div className="clue-display">
             {/* Línea ~6: Cambiar h2 */}
-            <h2>{t('clues.title')}</h2>
+            <h2 className='cluesTitle'>{t('clues.title')}</h2>
 
             {pistas.length === 0 ? (
                 // Línea ~9: Cambiar p
-                <p>{t('clues.noClues')}</p>
+                <p style={{marginLeft: '1%'}}>{t('clues.noClues')}</p>
             ) : (
                 <div className="div-pistas-table">
                     <table className="pistas-table">

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas }) => {
+const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, setNuevaPista }) => {
     const { t } = useTranslation('guessSong');
 
     const [entrada, setEntrada] = useState("");
@@ -115,6 +115,17 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas }) => {
 
     };
 
+    const alternarModoJuego = () => {
+
+        if(guessType === 0){
+            setGuessType(1);
+            cambiarAdivinanza('yearCountry')
+        } else{
+            setGuessType(0);
+            cambiarAdivinanza('title')
+        }
+    };
+
     const handleClickSugerencia = (titulo) => {
         setEntrada(titulo);
         setSugerencias([]);
@@ -130,74 +141,67 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas }) => {
 
 
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
-                <div className="guess-method-selector">
-                    <label className="radio-option">
-                        <input type="radio" name="guessMethod" value="0" onClick={() => setGuessType(0)}
-                               checked={guessType === 0}/>
-                        <span></span>
-                        {t('form.guessMethodTitle')}
-                    </label>
+            <div className="shuffle-icon">
+                <button onClick={alternarModoJuego} className="shuffle-btn" aria-label="Aleatorio">
+                    <i className="bi bi-shuffle"></i>
+                </button>
+            </div>
 
-                    <label className="radio-option">
-                        <input type="radio" name="guessMethod" value="1" onClick={() => setGuessType(1)}
-                               checked={guessType === 1}/>
-                        <span></span>
-                        {t('form.guessMethodYearCountry')}
-                    </label>
-                </div>
 
-                <input
-                    type="text"
-                    placeholder={t('form.placeholderSong')}
-                    value={entrada}
-                    onChange={handleChange}
-                    hidden={guessType}
-                    aria-label={t('form.placeholderSong')}
+            <input
+                type="text"
+                placeholder={t('form.placeholderSong')}
+                value={entrada}
+                onChange={handleChange}
+                hidden={guessType}
+                aria-label={t('form.placeholderSong')}
+            />
+            {/* Sugerencias dinámicas */}
+            {sugerencias.length > 0 && (
+                <ul className="sugerencias">
+                    {sugerencias.map((s, index) => (
+                        <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
+                            {s.song_name}
+                        </li>
+                    ))}
+                </ul>
+            )}
+
+
+            <div className="input-group">
+                <input className="inputYC"
+                       type="number"
+                       placeholder={t('form.placeholderYear')}
+                       value={entradaAnyo}
+                       onChange={handleChangeAnyo}
+                       hidden={!guessType}
+                       aria-label={t('form.placeholderYear')}
                 />
-                {/* Sugerencias dinámicas */}
-                {sugerencias.length > 0 && (
-                    <ul className="sugerencias">
-                        {sugerencias.map((s, index) => (
-                            <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
-                                {s.song_name}
-                            </li>
-                        ))}
-                    </ul>
-                )}
+                <input className="inputYC"
+                       type="text"
+                       placeholder={t('form.placeholderCountry')}
+                       value={entradaPais}
+                       onChange={handleChangePais}
+                       hidden={!guessType}
+                       aria-label={t('form.placeholderCountry')}
+                />
+            </div>
 
+            {sugerenciasPais.length > 0 && (
+                <ul className="sugerencias">
+                    {sugerenciasPais.map((s, index) => (
+                        <li key={index} onClick={() => handleClickSugerenciaPais(s.country)}>
+                            {s.country}
+                        </li>
+                    ))}
+                </ul>
+            )}
 
-                <div className="input-group">
-                    <input className="inputYC"
-                           type="number"
-                           placeholder={t('form.placeholderYear')}
-                           value={entradaAnyo}
-                           onChange={handleChangeAnyo}
-                           hidden={!guessType}
-                           aria-label={t('form.placeholderYear')}
-                    />
-                    <input className="inputYC"
-                           type="text"
-                           placeholder={t('form.placeholderCountry')}
-                           value={entradaPais}
-                           onChange={handleChangePais}
-                           hidden={!guessType}
-                           aria-label={t('form.placeholderCountry')}
-                    />
-                </div>
-
-                {sugerenciasPais.length > 0 && (
-                    <ul className="sugerencias">
-                        {sugerenciasPais.map((s, index) => (
-                            <li key={index} onClick={() => handleClickSugerenciaPais(s.country)}>
-                                {s.country}
-                            </li>
-                        ))}
-                    </ul>
-                )}
-
-                <button onClick={handleSubmit}>{t('form.submitButton')}</button>
-                <button onClick={mostrarPistas}>{t('form.clues')} 💡</button>
-
+            <div className='end-buttons'>
+                <button className='guess-btn' onClick={handleSubmit}>{t('form.submitButton')}</button>
+                <button className='guess-btn' onClick={mostrarPistas}>{t('form.clues')}
+                    {nuevaPista===true ?  <i className="bi bi-circle-fill icono-pista"></i> : '' }</button>
+            </div>
         </div>
     );
 };
