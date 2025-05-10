@@ -13,6 +13,7 @@ import "./OrderSongsGame.css";
 // Si daltonicMode.css es específico para este componente o una característica, está bien.
 // Si es más global, podría ir en index.js o App.js
 import "../css/daltonicMode.css";
+import HeartDisplay from "../HeartDisplay";
 
 const OrderSongsGame = () => {
     const { daltonicMode } = useSettings();
@@ -160,6 +161,14 @@ const OrderSongsGame = () => {
                             </div>
                         )}
 
+
+                        <div className="status-info-item">
+                            <span className="label">{t('orderSongs:livesLabel', 'Vidas')}</span>
+                            <span className="value"><HeartDisplay intentosFallidos={(3 - vidas) * 2} totalIntentos={6}></HeartDisplay></span>
+                        </div>
+                    </div>
+
+                    <div className="game-status-and-actions">
                         {/* Botón Comprobar en el medio o según layout de flex */}
                         {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
                             <button
@@ -175,10 +184,6 @@ const OrderSongsGame = () => {
                             </button>
                         )}
 
-                        <div className="status-info-item">
-                            <span className="label">{t('orderSongs:livesLabel', 'Vidas')}</span>
-                            <span className="value">{vidas}</span>
-                        </div>
                     </div>
 
 

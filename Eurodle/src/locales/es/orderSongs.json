@@ -5,8 +5,8 @@
   "livesLeft": "Vidas restantes: <strong>{{count}}</strong>",
   "yearLabel": "Año",
   "livesLabel": "Vidas",
-  "allClear": "Todas las tarjetas están en los huecos",
-  "avaliableCards": "Tarjetas disponibles:",
+  "allClear": "Todas las canciones están en los huecos",
+  "avaliableCards": "Canciones disponibles:",
   "emptyCard": "Vacío",
   "feedback": {
     "correct": "✔️",

@@ -45,7 +45,7 @@ body {
 
     font-size: 1em;
     margin-bottom: 20px;
-    max-width: 550px;
+    /*max-width: 550px;*/
     text-align: center;
     color: #c0c0c0;
     line-height: 1.4;
@@ -57,13 +57,16 @@ body {
     flex-wrap: wrap; /* Permite que el botón baje si no hay espacio */
     justify-content: space-around;
     align-items: center;
-    width: 100%;
-    max-width: 450px;
+    /*width: 100%;*/
     margin-bottom: 25px; /* Espacio antes de las tarjetas */
     padding: 12px 15px; /* Padding ajustado */
     background-color: rgba(255, 255, 255, 0.07); /* Un poco más visible */
     border-radius: 8px;
     box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+#hearts .heart-text {
+    display: none;
 }
 
 .status-info-item {
@@ -72,11 +75,13 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 10px; /* Espacio para que no se peguen si están muy juntos */
-    min-width: 70px;
+    min-width: 250px;
+    flex: 1;
+    font-size: 30px;
 }
 
 .status-info-item .label {
-    font-size: 0.75em;
+    font-size: 0.5em;
     color: #b0b0b0;
     margin-bottom: 3px;
     text-transform: uppercase;
@@ -99,7 +104,7 @@ body {
 
 .game-container {
     width: 100%;
-    max-width: 800px;
+    /*max-width: 800px;*/
     margin-bottom: 20px;
 }
 
@@ -227,6 +232,24 @@ body {
     transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease; /* Añadida opacidad */
     user-select: none;
     cursor: default; /* Cursor por defecto */
+}
+
+@media (max-width: 800px) {
+    .huecos {
+        grid-template-areas:
+            "h1 h2"
+            "h3 h4"
+            "h5 .";
+        grid-template-columns: 1fr;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hueco {
+        align-self: center;
+        width: 100%;
+        max-width: 400px;
+    }
 }
 
 /* Estado cuando el hueco está vacío (antes de colocar una tarjeta) */
@@ -372,7 +395,7 @@ body {
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
-    max-width: 480px;
+    /*max-width: 480px;*/
     width: 90%;
     animation: fadeInScale 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-top: 6px solid transparent;

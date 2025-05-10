@@ -5,8 +5,8 @@
   "livesLeft": "Lives remaining: <strong>{{count}}</strong>",
   "yearLabel": "Year",
   "livesLabel": "Lives",
-  "allClear": "All the cards are placed in the gaps",
-  "avaliableCards": "Avaliable cards:",
+  "allClear": "All the songs are placed in the gaps",
+  "avaliableCards": "Avaliable songs:",
   "emptyCard": "Empty",
   "feedback": {
     "correct": "✔️",
