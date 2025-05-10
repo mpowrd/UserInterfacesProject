@@ -1,52 +1,32 @@
-# Node modules
-node_modules/
+# dependencies
+Eurodle/node_modules
+Eurodle/.pnp
+.pnp.js
 
-# Build outputs
-dist/
-build/
+# testing
+Eurodle/coverage
 
-# IntelliJ IDEA project files
-.idea/
-*.iml
-*.iws
-out/
+# production
+Eurodle/build
 
-# Log files
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Dependency directories
-.bower_components/
-
-# Coverage reports
-coverage/
-*.lcov
-
-# Environment files
-.env
-.env.*.local
-
-# MacOS
-.DS_Store
-
-# VSCode (por si alguien colabora con este editor)
+# editor folders and files
+.idea/
 .vscode/
+*.sublime-workspace
+*.sublime-project
 
-# Optional npm cache directory
-.npm/
-
-# Parcel-bundler cache
-.cache/
-
-# Next.js build output (si aplicara)
-.next/
-
-# Storybook build output
-.out/
-
-# ESLint cache
-.eslintcache
-
-# SASS cache
-.sass-cache/
+# JetBrains-specific
+Eurodle/.idea/
+Eurodle/.idea/workspace.xml
