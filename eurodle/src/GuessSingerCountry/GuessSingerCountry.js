@@ -240,7 +240,7 @@ const InteractiveMap = () => {
         setFinPartida(false);
         const randomIndex = Math.floor(Math.random() * canciones.length);
         setCancionSelect(canciones[randomIndex]);
-        setResultadoMensaje("Pista: ");
+        setResultadoMensaje(t("game.hint", { arrow: '' }));
         setWrongCountries([]);
         setFallos(0);
         document.querySelectorAll("path").forEach(p => {
