@@ -290,6 +290,13 @@ footer p{
     right: 1px;
 }
 
+.heart-text {
+    font-size: 1.75rem; /* Ajusta según el tamaño deseado */
+    font-weight: bold; /* Opcional, si deseas resaltarlo */
+    color: #cccccc; /* Opcional, para controlar el color */
+}
+
+
 
 @media (max-width: 768px) {
     .eurodle-heart-logo{

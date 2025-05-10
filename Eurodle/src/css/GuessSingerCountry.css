@@ -80,6 +80,9 @@ body {
 
 .guess-singer-country-singer{
     /*font-size: 2rem;*/
+    font-weight: bold;
+    padding-left: 20px;
+    padding-right: 20px;
     color: #cccccc;
     background: linear-gradient(135deg,
     rgba(0, 176, 240, 0.9),

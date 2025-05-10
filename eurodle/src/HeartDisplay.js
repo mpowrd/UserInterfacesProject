@@ -31,7 +31,9 @@ const HeartDisplay = ({ intentosFallidos, totalIntentos }) => {
                     style={i === numHearts-1 ? { marginRight: 10 } : {}}
                 />
             ))}
-            {intentosFallidos}/{totalIntentos} {t('tries')}
+            <span className="heart-text">
+              {intentosFallidos}/{totalIntentos} {t('tries')}
+            </span>
         </div>
     );
 };

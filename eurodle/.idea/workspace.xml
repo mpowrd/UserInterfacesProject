@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="" />
+    <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/css/GuessSingerCountry.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/GuessSingerCountry.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/css/estiloEuro.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/css/estiloEuro.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/.cache/default-development/7.pack" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.cache/default-development/7.pack" afterDir="false" />
+    </list>
     <list id="d1be4970-1b31-4ca7-8123-bf1925038879" name="Changes by griva" comment="" />
     <list id="75a91be4-b4f7-411b-a5e5-7a8f5033395d" name="Changes by jtdel" comment="" />
     <option name="SHOW_DIALOG" value="false" />
