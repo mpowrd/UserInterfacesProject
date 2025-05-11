@@ -25,11 +25,16 @@ const GuessSongGame = () => {
     const [pistas, setPistas] = useState([]);
     const [intentosRestantes, setIntentosRestantes] = useState(totalIntentos); // Puedes ajustarlo a tu gusto
     const [acertado, setAcertado] = useState(false);
+
     const [pistasAdicionales, setPistasAdicionales] = useState(false); // controla si se muestra o no el popup con las pistas adicionales
     const [tipoAdivinanza, setTipoAdivinanza] = useState('title');
     const [nuevaPista, setNuevaPista] = useState(false);
+
     const [mostradoPopupVictoria, setMostradoPopupVictoria] = useState(false);
     const [mostradoPopupDerrota, setMostradoPopupDerrota] = useState(false);
+
+    const [mostrarPopupInfo, setMostrarPopupInfo] = useState(false);
+    const [mensajePopupInfo, setMensajePopupInfo] = useState("HOLAAAAAAAAA");
 
     useEffect(() => {
         setTipoAdivinanza('title');
@@ -104,7 +109,8 @@ const GuessSongGame = () => {
         }
 
         if (!guess) {
-            alert(t('guessSong:form.notFound'));
+            setMensajePopupInfo(t('guessSong:form.notFound'));
+            setMostrarPopupInfo(true);
             return;
         }
 
@@ -205,6 +211,8 @@ const GuessSongGame = () => {
                             cambiarAdivinanza={setTipoAdivinanza}
                             nuevaPista={nuevaPista}
                             setNuevaPista={setNuevaPista}
+                            mostrarPopupInfo={setMostrarPopupInfo}
+                            cambiarPopupInfo={setMensajePopupInfo}
                         />
                     )}
 
@@ -250,6 +258,13 @@ const GuessSongGame = () => {
                                         onRestart={() => setMostradoPopupDerrota(true)}
                                         buttonMessage={t('OK')}>
                         </ResultadoPopUp>
+                    }
+
+                    {mostrarPopupInfo &&
+                        <DefaultPopup title={t('guessSong:game.info')}
+                                      content={mensajePopupInfo}
+                                      onCancel={ () => setMostrarPopupInfo(false) }>
+                        </DefaultPopup>
                     }
 
                 </div>

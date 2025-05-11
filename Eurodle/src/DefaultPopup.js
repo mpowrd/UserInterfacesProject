@@ -11,7 +11,7 @@ const DefaultPopup = ({ title, content, onCancel }) => {
                     <button className="popup-Xbutton" onClick={onCancel}><i className="bi bi-x-circle"></i></button>
                 </div>
                 <h3>{title || "Título"}</h3>
-                {content.type === 'component' ? content.component : content }
+                {content.type === 'component' ? content.component : <p>{content}</p> }
             </div>
         </div>
     );

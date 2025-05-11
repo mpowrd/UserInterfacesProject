@@ -67,6 +67,7 @@
     "showAll": "Show all clues 💡",
     "guessBy" : "Guess the song by its ",
     "guessByTitle" : "title",
-    "guessByYearCountry" : "year and country"
+    "guessByYearCountry" : "year and country",
+    "info": "Information:"
   }
 }

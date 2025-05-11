@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, setNuevaPista }) => {
+const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, mostrarPopupInfo, cambiarPopupInfo }) => {
     const { t } = useTranslation('guessSong');
 
     const [entrada, setEntrada] = useState("");
@@ -88,7 +88,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 if(!falladas.includes(entrada.toLowerCase())){
                     onGuess(entrada.trim(), guessType);
                 } else{
-                    alert(t('form.alreadyGuessedSong'));
+                    cambiarPopupInfo(t('form.alreadyGuessedSong'));
+                    mostrarPopupInfo(true);
                 }
                 setEntrada("");
                 setEntradaAnyo("");
@@ -102,7 +103,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 if(!falladasPaisAnyo.includes(currYearCountryGuess)){
                     onGuess(entradaPais + "$songGuess$" + entradaAnyo.trim(), guessType);
                 } else{
-                    alert(t('form.alreadyGuessedYearCountry'));
+                    cambiarPopupInfo(t('form.alreadyGuessedYearCountry'));
+                    mostrarPopupInfo(true);
                 }
                 setEntrada("");
                 setEntradaAnyo("");

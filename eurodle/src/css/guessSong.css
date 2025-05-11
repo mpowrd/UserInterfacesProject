@@ -52,10 +52,6 @@
   z-index: 0;
 }
 
-.guess-title{
-  margin-top: 4%;
-}
-
 .guess-form {
   position: relative;
   width: 100%;
@@ -136,7 +132,15 @@
   margin-bottom: 5%;
 }
 
+.guess-title{
+  margin-top: 4%;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
 .letrasAdivinanza {
+  display: inline-block;
   /*position: relative;*/
   /*display: inline-block;*/
   /*font-weight: bold;*/
