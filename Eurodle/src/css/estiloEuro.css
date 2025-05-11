@@ -260,9 +260,21 @@ footer p{
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
-
-
 }
+
+.header-spacer {
+    height: 80px; /* Ajusta al alto real del header-abs */
+    width: 100%;
+}
+
+.header-head {
+    position: fixed; /* o absolute si ya está dentro de un contenedor relativo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
 .engranaje,.back{
     width: 40px;
     height: auto; /* mantiene la proporción */

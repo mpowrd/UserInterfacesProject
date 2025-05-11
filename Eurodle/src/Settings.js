@@ -8,7 +8,7 @@ import ConfirmPopup from './ConfirmPopup'; // Ajusta la ruta si es necesario
 import './css/settings.css';
 
 
-const Settings = () => {
+const Settings = (setShowSettings) => {
     const { t, i18n } = useTranslation('settings'); // Usa el namespace específico
     const { volume, daltonicMode, language, updateVolume, updateDaltonicMode, updateLanguage } = useSettings(); // Usamos el hook para acceder a los valores y actualizarlos
     const [selected_language, setLangu] = useState(language)

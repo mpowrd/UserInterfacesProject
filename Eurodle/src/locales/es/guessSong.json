@@ -8,7 +8,7 @@
     "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}"
   },
   "clues": {
-    "title": "Pistas:",
+    "title": "Pistas",
     "title-movil": "<--Desliza para ver más --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "Sin pistas todavía.",
     "headers": {
@@ -33,7 +33,7 @@
     "unlockedPrefix": "🔓 ",
     "videoCompleted": "Pista de video completada ✓",
     "clueTemplates": {
-      "rank": "Ranking final: puesto numero {{rank}}",
+      "rank": "Ranking final: puesto número {{rank}}",
       "neighbours": "La canción quedó {{above}}{{separator}}{{below}}",
       "neighboursParts": {
         "above": "por debajo de {{country}}",
@@ -67,6 +67,7 @@
     "showAll": "Mostrar todas las pistas 💡",
     "guessBy" : "Adivina la cancion por ",
     "guessByTitle" : "el título",
-    "guessByYearCountry" : "el país y el año"
+    "guessByYearCountry" : "el país y el año",
+    "info": "Información:"
   }
 }

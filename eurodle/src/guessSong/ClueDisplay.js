@@ -28,23 +28,23 @@ const ClueDisplay = ({ pistas }) => {
 
     return (
         <div className="clue-display">
-            {/* Línea ~6: Cambiar h2 */}
+            <div className="div-pistas-table">
             <h2 className='cluesTitle'>{t('clues.title')}</h2>
 
             {pistas.length === 0 ? (
                 // Línea ~9: Cambiar p
-                <p style={{marginLeft: '1%'}}>{t('clues.noClues')}</p>
+                <p style={{marginLeft: '1%' ,color:"white"}}>{t('clues.noClues')}</p>
             ) : (
-                <div className="div-pistas-table">
+
                     <table className="pistas-table">
                         <thead>
                         <tr>
                             {/* Líneas ~14-18: Cambiar th */}
-                            <th>{t('clues.headers.song')}</th>
-                            <th>{t('clues.headers.artist')}</th>
-                            <th>{t('clues.headers.country')}</th>
-                            <th>{t('clues.headers.year')}</th>
-                            <th>{t('clues.headers.rank')}</th>
+                            <th><span>{t('clues.headers.song')}</span></th>
+                            <th><span>{t('clues.headers.artist')}</span></th>
+                            <th><span>{t('clues.headers.country')}</span></th>
+                            <th><span>{t('clues.headers.year')}</span></th>
+                            <th><span>{t('clues.headers.rank')}</span></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -60,8 +60,9 @@ const ClueDisplay = ({ pistas }) => {
                         ))}
                         </tbody>
                     </table>
-                </div>
+
             )}
+            </div>
         </div>
     );
 };

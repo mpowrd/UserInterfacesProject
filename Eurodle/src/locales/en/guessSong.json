@@ -8,7 +8,7 @@
     "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
   },
   "clues": {
-    "title": "Clues:",
+    "title": "Clues",
     "title-movil": "<--Scroll to see more --> (Estoy en el JSON) (ESTO SOLO VA EN MOVIL)",
     "noClues": "No clues yet.",
     "headers": {
@@ -67,6 +67,7 @@
     "showAll": "Show all clues 💡",
     "guessBy" : "Guess the song by its ",
     "guessByTitle" : "title",
-    "guessByYearCountry" : "year and country"
+    "guessByYearCountry" : "year and country",
+    "info": "Information:"
   }
 }
