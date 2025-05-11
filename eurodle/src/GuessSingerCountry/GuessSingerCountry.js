@@ -153,9 +153,6 @@ const InteractiveMap = () => {
         const paisAdivin = document.getElementById(idAdivinar);
 
 
-        console.log("ID seleccionado:", idSeleccionado);
-        console.log("ID a adivinar:", idAdivinar);
-
         if (!paisSelected || !paisAdivin) {
             console.warn("Países no encontrados");
             return;
@@ -197,6 +194,8 @@ const InteractiveMap = () => {
 
     };
 
+    let nuevosFallos = fallos;
+
     function paisAdivinado(countrySelectedName) {
         if (countrySelectedName === cantanteAdivinar.nameCountry) {
             setResultadoMensaje(t("feedback.congrats"));
@@ -217,18 +216,17 @@ const InteractiveMap = () => {
         } else {
             compararPaises(countrySelectedName, cantanteAdivinar.nameCountry);
             setWrongCountries(prev => [...prev, countrySelectedName]);
-
+            setFallos(fallos+1);
 
         }
         // Condicion para guardar el pais incorrecto en estado wrongCountries
-        if (countrySelectedName !== cantanteAdivinar.nameCountry) {
-            setWrongCountries(prev => [...prev, countrySelectedName]);
-            setFallos(fallos+1);
+        // if (countrySelectedName !== cantanteAdivinar.nameCountry) {
+        //     setWrongCountries(prev => [...prev, countrySelectedName]);
+        //     //setFallos(fallos+1);
+        //
+        // }
 
-
-        }
-
-        if(fallos===intentos-1 && !finPartida){
+        if(fallos+1===intentos && !finPartida){
             setFinPartida(true);
             setResultadoMensaje(t("feedback.gameOver",{country: cantanteAdivinar.nameCountry}));
 
@@ -250,6 +248,7 @@ const InteractiveMap = () => {
             p.setAttribute("stroke-width", "1");
         });
     };
+
 
     return (
 
@@ -276,6 +275,7 @@ const InteractiveMap = () => {
                 </button>
 
 
+
                 <div className="guess-singer-country-mapa-wrapper">
                     <svg className="guess-singer-country-mapa"
                          viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
@@ -287,8 +287,6 @@ const InteractiveMap = () => {
                             handleCountryClick={handleCountryClick}
                         />
                     </svg>
-
-
                 </div>
 
                 <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
