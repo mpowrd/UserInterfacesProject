@@ -10,7 +10,7 @@ function Header() {
 
     const navigate = useNavigate();
     const location = useLocation();
-
+    const isSettingsPage = location.pathname === "/Settings";
     const [showSettings, setShowSettings] = useState(false);
 
     if (location.pathname === '/') {
@@ -36,7 +36,7 @@ function Header() {
   return (
       <div className="header-abs">
           <div className='header-head'>
-              {!showSettings && (
+              {!showSettings && !isSettingsPage && (
                   <div className="settings-icon">
                       <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
                           <img className="engranaje" src={"/engranaje.png"}/>
