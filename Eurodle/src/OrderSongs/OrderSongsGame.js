@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Papa from "papaparse";
-import { useSettings } from "../SettingsProvider";
 import Tarjetas from "./Tarjetas";
 import Huecos from "./Huecos";
 import { useTranslation } from 'react-i18next';
@@ -10,13 +9,9 @@ import ResultadoPopUp from "../ResultadoPopUp";
 
 // Asumo que OrderSongsGame.css es el principal que me pasaste
 import "./OrderSongsGame.css";
-// Si daltonicMode.css es específico para este componente o una característica, está bien.
-// Si es más global, podría ir en index.js o App.js
-import "../css/daltonicMode.css";
 import HeartDisplay from "../HeartDisplay";
 
 const OrderSongsGame = () => {
-    const { daltonicMode } = useSettings();
     const { t } = useTranslation(['orderSongs', 'common']);
 
     const [canciones, setCanciones] = useState([]);
@@ -147,7 +142,7 @@ const OrderSongsGame = () => {
 
     return (
         <DndProvider backend={HTML5Backend}>
-            <div className={`order-songs-game ${daltonicMode ? "modo-daltonico" : ""}`}>
+            <div className="order-songs-game">
                 <div className="order-songs-game-container">
                     <h1 className="title-order-song">{t('orderSongs:title')}</h1>
                     <p className="instructions">{t('orderSongs:instructions')}</p>

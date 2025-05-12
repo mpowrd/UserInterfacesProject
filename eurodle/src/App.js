@@ -1,15 +1,12 @@
 import React from 'react';
-import {SettingsProvider, useSettings} from './SettingsProvider';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import "./css/estiloEuro.css";
-import "./css/daltonicMode.css";
 
 function App() {
-    const { daltonicMode } = useSettings();
     const { t } = useTranslation('common');
     const navigate = useNavigate();
     const location = useLocation();
@@ -20,7 +17,7 @@ function App() {
     };
 
     return (
-        <div className={`eurodle-wrapper ${daltonicMode ? "modo-daltonico" : ""}`}>
+        <div className="eurodle-wrapper">
             <div className="eurodle-container">
 
 

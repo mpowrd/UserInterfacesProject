@@ -1,20 +1,15 @@
 import React, {useEffect, useRef, useState} from "react";
 import MapPaths from "../assets/MapPaths";
-import {useSettings} from "../SettingsProvider";
 import Papa from "papaparse";
 
 
 import "../css/GuessSingerCountry.css"
-import "../css/daltonicMode.css";
 import HeartDisplay from "../HeartDisplay";
 import {useTranslation} from "react-i18next";
 
 const InteractiveMap = () => {
 
     const { t } = useTranslation(['guessCountry', 'common']);
-
-
-    const { daltonicMode } = useSettings();
 
     const [canciones, setCanciones] = useState([]);
 
@@ -89,11 +84,7 @@ const InteractiveMap = () => {
         setHoveredCountry(country.getAttribute("name"));
 
         if (wrongCountries.includes(name)) {
-            country.setAttribute("class", daltonicMode ? "wrong-country-daltonic" : "wrong-country");
-        } else {
-            country.setAttribute("stroke", "#ffcc00"); // Color del borde resaltado
-            country.setAttribute("stroke-width", "2"); // Grosor del borde resaltado
-
+            country.setAttribute("class", "wrong-country");
         }
     };
 
@@ -188,7 +179,7 @@ const InteractiveMap = () => {
 
 
         const country = event.target;
-        country.setAttribute("class", daltonicMode ? "wrong-country-daltonic" : "wrong-country");
+        country.setAttribute("class", "wrong-country");
 
         paisAdivinado(countrySelectedName);
 
@@ -252,7 +243,7 @@ const InteractiveMap = () => {
 
     return (
 
-        <div className={` ${daltonicMode ? "modo-daltonico" : "guess-singer-country "}`}>
+        <div className="guess-singer-country">
             <div className="guess-singer-country-container container text-center my-4">
                 <h2 className="guess-singer-country-header h1">{t("game.title")}</h2>
 

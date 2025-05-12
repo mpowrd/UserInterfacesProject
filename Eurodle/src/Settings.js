@@ -10,10 +10,9 @@ import './css/settings.css';
 
 const Settings = (setShowSettings) => {
     const { t, i18n } = useTranslation('settings'); // Usa el namespace específico
-    const { volume, daltonicMode, language, updateVolume, updateDaltonicMode, updateLanguage } = useSettings(); // Usamos el hook para acceder a los valores y actualizarlos
+    const { volume, language, updateVolume, updateLanguage } = useSettings(); // Usamos el hook para acceder a los valores y actualizarlos
     const [selected_language, setLangu] = useState(language)
     const [selected_volume, setVolum] = useState(volume)
-    const [selected_daltonic, setDaltonic] = useState(daltonicMode)
     const [showConfirm, setShowConfirm] = useState(false);
 
     const navigate = useNavigate();
@@ -22,7 +21,6 @@ const Settings = (setShowSettings) => {
 
         updateLanguage(selected_language);
         updateVolume(selected_volume);
-        updateDaltonicMode(selected_daltonic);
 
     };
 
@@ -47,18 +45,6 @@ const Settings = (setShowSettings) => {
                     onChange={(e) => setVolum(e.target.value)} // Actualizamos la variable de estado al cambiar
                 />
                 {/*<span>{volume}</span> /!* Muestra el valor del volumen *!/*/}
-            </div>
-
-            <div className="settings-item">
-                <label htmlFor="daltonicMode">
-                    <input
-                        type="checkbox"
-                        id="daltonicMode"
-                        checked={selected_daltonic} // Enlace con la variable de estado
-                        onChange={(e) => setDaltonic(e.target.checked)} // Actualizamos la variable de estado al cambiar
-                    />
-                    {t('daltonicMode')}
-                </label>
             </div>
 
             <div className="settings-item">
