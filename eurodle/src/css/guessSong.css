@@ -359,9 +359,13 @@ th span{
 }
 
 .clue-block.unlocked {
-  background-color: #cbfaec;
+  background: linear-gradient(135deg,
+  rgb(255, 0, 42),
+  rgba(255, 49, 161, 0.7)
+  )0 0;
   font-weight: bold;
-  color: #333;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 /* Fin de styles para ExtraClues */
