@@ -260,6 +260,7 @@ footer p{
     justify-content: center;
     align-items: center;
     background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+    overflow: hidden; /* evita que sobresalga el logo al hacer hover */
 }
 
 .header-spacer {
