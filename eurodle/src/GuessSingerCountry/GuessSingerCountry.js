@@ -191,7 +191,6 @@ const InteractiveMap = () => {
         if (countrySelectedName === cantanteAdivinar.nameCountry) {
             setResultadoMensaje(t("feedback.congrats"));
             setFinPartida(true); // Termina la partida actual
-            setFallos(0);
 
             // Pinta el pais correcto de verde
             const idCorrecto = getIdByName(countrySelectedName);
