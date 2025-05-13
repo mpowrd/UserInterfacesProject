@@ -69,5 +69,11 @@
     "guessByTitle" : "title",
     "guessByYearCountry" : "year and country",
     "info": "Information:"
-  }
+  },
+
+  "noSongFound": "No song found with that name",
+
+  "noCountryFound": "No country found with that name"
+
+
 }

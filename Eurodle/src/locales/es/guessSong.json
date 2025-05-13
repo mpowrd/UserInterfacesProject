@@ -69,5 +69,10 @@
     "guessByTitle" : "el título",
     "guessByYearCountry" : "el país y el año",
     "info": "Información:"
-  }
+  },
+
+  "noSongFound": "No se encontró ninguna canción con ese nombre",
+
+  "noCountryFound": "No se encontró ningún país con ese nombre"
+
 }

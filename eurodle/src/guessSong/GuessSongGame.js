@@ -151,7 +151,7 @@ const GuessSongGame = () => {
     };
 
     const reiniciarJuego = () => {
-        // Resetear todo
+        // Reiniciar variables y estados
         const randomIndex = Math.floor(Math.random() * canciones.length);
         setCancionCorrecta(canciones[randomIndex]);
         setFallos([]);

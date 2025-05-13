@@ -159,13 +159,20 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 aria-label={t('form.placeholderSong')}
             />
             {/* Sugerencias dinámicas */}
-            {sugerencias.length > 0 && (
+            {entrada && (
                 <ul className="sugerencias">
-                    {sugerencias.map((s, index) => (
-                        <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
-                            {s.song_name}
-                        </li>
-                    ))}
+                    {sugerencias.length > 0 ? (
+                        sugerencias.map((s, index) => (
+                            <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
+                                {s.song_name}
+                            </li>
+                        ))
+                    ) : (
+                        // Solo mostrar "no found" si la entrada actual no es una canción válida
+                        !canciones.some(c => c.song_name.toLowerCase() === entrada.toLowerCase()) && (
+                            <li className="no-suggestion">{t("noSongFound")}</li>
+                        )
+                    )}
                 </ul>
             )}
 
@@ -189,15 +196,23 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 />
             </div>
 
-            {sugerenciasPais.length > 0 && (
+            {entradaPais && (
                 <ul className="sugerencias">
-                    {sugerenciasPais.map((s, index) => (
-                        <li key={index} onClick={() => handleClickSugerenciaPais(s.country)}>
-                            {s.country}
-                        </li>
-                    ))}
+                    {sugerenciasPais.length > 0 ? (
+                        sugerenciasPais.map((s, index) => (
+                            <li key={index} onClick={() => handleClickSugerenciaPais(s.country)}>
+                                {s.country}
+                            </li>
+                        ))
+                    ) : (
+                        // Solo mostrar el mensaje si la entrada actual no coincide con ningún país válido
+                        !canciones.some(c => c.country.toLowerCase() === entradaPais.toLowerCase()) && (
+                            <li className="no-suggestion">{t("noCountryFound")}</li>
+                        )
+                    )}
                 </ul>
             )}
+
 
             <div className='end-buttons'>
                 <button className='guess-btn' onClick={handleSubmit}>{t('form.submitButton')}</button>
