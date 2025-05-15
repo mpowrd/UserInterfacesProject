@@ -160,7 +160,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             />
             {/* Sugerencias dinámicas */}
             {entrada && (
-                <ul className="sugerencias">
+                <ul className="sugerencias" hidden={guessType === 1 && (entradaPais !== null || entradaPais !== "")}>
                     {sugerencias.length > 0 ? (
                         sugerencias.map((s, index) => (
                             <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
@@ -197,7 +197,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             </div>
 
             {entradaPais && (
-                <ul className="sugerencias">
+                <ul className="sugerencias" hidden={guessType === 0 && (entrada !== null || entrada !== "")}>
                     {sugerenciasPais.length > 0 ? (
                         sugerenciasPais.map((s, index) => (
                             <li key={index} onClick={() => handleClickSugerenciaPais(s.country)}>

@@ -116,6 +116,7 @@
   background-size: 100%, 100%;
   background-position: right bottom;
   transform: scale(1.02);
+  z-index: 800;
 }
 
 .icono-pista {
@@ -223,7 +224,7 @@
   width: 100%;
   max-height: 150px;
   overflow-y: auto;
-
+  z-index: 997;
 }
 
 .sugerencias li {

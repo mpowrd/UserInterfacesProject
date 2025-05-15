@@ -57,6 +57,7 @@ const YouTubePlayer = ({ videoId, startTime = 30 , setVideoDisplayed}) => {
                 playerVars: {
                     start: startTime,
                     autoplay: 1,
+                    cc_load_policy: 1,   // fuerza que los subtítulos aparezcan al iniciar
                     controls: 0,
                     showinfo: 0,
                     modestbranding: 1,

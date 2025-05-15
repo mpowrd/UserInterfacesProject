@@ -234,24 +234,6 @@ body {
     cursor: default; /* Cursor por defecto */
 }
 
-@media (max-width: 800px) {
-    .huecos {
-        grid-template-areas:
-            "h1 h2"
-            "h3 h4"
-            "h5 .";
-        grid-template-columns: 1fr;
-        width: 100%;
-        align-items: center;
-    }
-
-    .hueco {
-        align-self: center;
-        width: 100%;
-        max-width: 400px;
-    }
-}
-
 /* Estado cuando el hueco está vacío (antes de colocar una tarjeta) */
 .hueco.hueco-vacio-placeholder {
     background-color: rgba(255, 255, 255, 0.1); /* Fondo del hueco vacío */
@@ -500,5 +482,54 @@ body {
 @keyframes spin {
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* ==========================================================================
+   CAMBIOS PARA VISTA MOVIL
+   ========================================================================== */
+
+@media (max-width: 800px) {
+    .huecos {
+        grid-template-areas:
+            "h1"
+            "h2"
+            "h3"
+            "h4"
+            "h5";
+        grid-template-columns: 1fr;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hueco {
+        align-self: center;
+        width: 100%;
+        max-width: 400px;
+        height: 50px;
+    }
+
+    .tarjeta {
+        width: 100px;
+        height: 40px;
+    }
+
+    /*.game-status-and-actions{*/
+    /*    font-size: 0.7em;*/
+    /*}*/
+
+    #hearts{
+        scale: 80%;
+    }
+
+    .status-info-item {
+        /*font-size: 100%;*/
+
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .order-songs-game-container{
+        margin-top: -20px;
     }
 }
