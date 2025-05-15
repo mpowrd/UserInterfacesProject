@@ -10,6 +10,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const [sugerencias, setSugerencias] = useState([]);
     const [sugerenciasPais, setSugerenciasPais] = useState([]);
     const [guessType, setGuessType] = useState(0);
+    const [mostrarSugerencias, setMostrarSugerencias] = useState(false);
 
     const [falladas, setFalladas] = useState(fallos.map(f => f.song_name.toLowerCase()));
     const [falladasPaisAnyo, setFalladasPaisAnyo] = useState(fallos.map(f => f.country + "$songGuess$" + f.year));
@@ -39,6 +40,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             .slice(0, 10); // Mostramos 10 canciones de autocompletado
 
         setSugerencias(filtro);
+
+        setMostrarSugerencias(true);
     };
 
     const handleChangePais = (e) => {
@@ -71,6 +74,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
         const paisesUnicosArray = Object.values(paisesUnicos).slice(0, 10);
 
         setSugerenciasPais(paisesUnicosArray);
+
+        setMostrarSugerencias(true);
     };
 
     const handleChangeAnyo = (e) => {
@@ -96,6 +101,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 setEntradaPais("");
                 setSugerencias([]);
                 setSugerenciasPais([]);
+                setMostrarSugerencias(false);
             }
         } else{
             if (entradaPais.trim() !== "" && entradaAnyo.trim() !== "") {
@@ -111,6 +117,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 setEntradaPais("");
                 setSugerencias([]);
                 setSugerenciasPais([]);
+                setMostrarSugerencias(false);
             }
         }
 
@@ -131,11 +138,13 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const handleClickSugerencia = (titulo) => {
         setEntrada(titulo);
         setSugerencias([]);
+        setMostrarSugerencias(false);
     };
 
     const handleClickSugerenciaPais = (titulo) => {
         setEntradaPais(titulo);
         setSugerenciasPais([]);
+        setMostrarSugerencias(false);
     };
 
     return (
@@ -160,7 +169,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             />
             {/* Sugerencias dinámicas */}
             {entrada && (
-                <ul className="sugerencias" hidden={guessType === 1 && (entradaPais !== null || entradaPais !== "")}>
+                <ul className="sugerencias" hidden={!mostrarSugerencias || (guessType === 1 && (entradaPais !== null || entradaPais !== ""))}>
                     {sugerencias.length > 0 ? (
                         sugerencias.map((s, index) => (
                             <li key={index} onClick={() => handleClickSugerencia(s.song_name)}>
@@ -197,7 +206,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             </div>
 
             {entradaPais && (
-                <ul className="sugerencias" hidden={guessType === 0 && (entrada !== null || entrada !== "")}>
+                <ul className="sugerencias" hidden={!mostrarSugerencias || (guessType === 0 && (entrada !== null || entrada !== ""))}>
                     {sugerenciasPais.length > 0 ? (
                         sugerenciasPais.map((s, index) => (
                             <li key={index} onClick={() => handleClickSugerenciaPais(s.country)}>

@@ -142,52 +142,53 @@
 
 .letrasAdivinanza {
   display: inline-block;
-  /*position: relative;*/
-  /*display: inline-block;*/
-  /*font-weight: bold;*/
-  /*!*background: #cb0273;*!*/
-  /*background: linear-gradient(90deg,*/
+  position: relative;
+  font-weight: bold;
+  /*background: #cb0273;*/
+  background: linear-gradient(90deg,
+  rgb(104, 198, 239),   rgb(205, 125, 246),  rgb(243, 117, 180), rgb(246, 130, 130)
   /*rgba(0, 176, 240, 0.9),*/
-  /*!*rgba(123, 31, 162, 0.9),*!*/
-  /*rgba(208, 0, 111, 0.9)*/
-  /*!*rgba(230, 0, 38, 0.9)*!*/
-  /*);*/
-  /*-webkit-background-clip: text;*/
-  /*-webkit-text-fill-color: transparent;*/
+  /*rgba(123, 31, 162, 0.9),*/
+  /*rgba(208, 0, 111, 0.9),*/
+  /*rgba(230, 0, 38, 0.9)*/
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 
   /*!* Para otros navegadores que lo soporten *!*/
   /*background-clip: text;*/
   /*color: transparent;*/
 
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-  color: #cccccc;
-  background: linear-gradient(135deg,
-  rgba(0, 176, 240, 0.9),
-  rgba(123, 31, 162, 0.9),
-  rgba(208, 0, 111, 0.9),
-  rgba(230, 0, 38, 0.9)
-  );
+  /*font-weight: bold;*/
+  /*padding-left: 10px;*/
+  /*padding-right: 10px;*/
+  /*color: #cccccc;*/
+  /*background: linear-gradient(135deg,*/
+  /*rgba(0, 176, 240, 0.9),*/
+  /*rgba(123, 31, 162, 0.9),*/
+  /*rgba(208, 0, 111, 0.9),*/
+  /*rgba(230, 0, 38, 0.9)*/
+  /*);*/
 
   text-align: center;
   border-radius: 5px;
 }
 
-.letrasAdivinanza::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  filter: blur(1px);
-  /*color: white;*/
-  /*text-shadow:*/
-  /*        0 0 1px white,*/
-  /*        0 0 3px white,*/
-  /*        0 0 6px white;*/
-  /*-webkit-text-fill-color: white;*/
-}
+/*.letrasAdivinanza::after {*/
+/*  content: attr(data-text);*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  z-index: -1;*/
+/*  color: white;*/
+/*  white-space: nowrap;*/
+/*  text-shadow:*/
+/*          0 0 1px white,*/
+/*          0 0 2px white,*/
+/*          1px 1px 1px white,*/
+/*          -1px -1px 1px white;*/
+/*  pointer-events: none;*/
+/*}*/
 
 .shuffle-btn {
   background: linear-gradient(135deg,

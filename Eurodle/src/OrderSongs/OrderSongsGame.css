@@ -34,10 +34,20 @@ body {
 
 .title-order-song {
     font-size: 2.5em;
-    color: #61dafb;
+    color: #ffffff;
     margin-top: 10px;
     margin-bottom: 10px; /* MODIFICACIÓN: Reducido */
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    font-weight: bold;
+    /*background: #cb0273;*/
+    background: linear-gradient(90deg,
+    rgb(104, 198, 239),   rgb(205, 125, 246),  rgb(243, 117, 180), rgb(246, 130, 130)
+        /*rgba(0, 176, 240, 0.9),*/
+        /*rgba(123, 31, 162, 0.9),*/
+        /*rgba(208, 0, 111, 0.9),*/
+        /*rgba(230, 0, 38, 0.9)*/
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
 }
 
