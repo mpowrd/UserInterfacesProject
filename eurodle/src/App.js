@@ -28,16 +28,16 @@ function App() {
                 </header>
                 <main className="eurodle-menu">
                     <Link to="/GuessSongGame">
-                        <button className="eurodle-btn">{t('menu.guessSong')}</button>
+                        <button className="eurodle-btn ">{t('menu.guessSong')}</button>
                     </Link>
                     <Link to="/OrderSongsGame">
-                        <button className="eurodle-btn">{t('menu.orderSongs')}</button>
+                        <button className="eurodle-btn ">{t('menu.orderSongs')}</button>
                     </Link>
                     <Link to="/AdivinaPais">
-                        <button className="eurodle-btn">{t('menu.guessCountry')}</button>
+                        <button className="eurodle-btn ">{t('menu.guessCountry')}</button>
                     </Link>
 
-                    <button onClick={onSettingsClick} className="eurodle-btn eurodle-setting" aria-label="Opciones">
+                    <button onClick={onSettingsClick} className=" eurodle-setting" aria-label="Opciones">
                         {t('menu.settings')}
                     </button>
 

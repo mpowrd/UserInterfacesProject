@@ -4,7 +4,7 @@
     "arr": "Selected country:",
     "hovered": "Selected country:",
     "clicked": "You clicked on: {{countryId}}",
-    "hint": "Hint: {{arrow}}",
+    "hint": "Hint (direction): {{arrow}}",
     "correct": "Correct! You guessed the country.",
     "notFoundWarning": "Countries not found",
     "refresh": "Restart game"

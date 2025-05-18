@@ -203,29 +203,62 @@ footer p{
     width: 100%;
 }
 
-.eurodle-btn {
-    background-color: #1a1a1a;
+/*.eurodle-btn {*/
+/*    background-color: #1a1a1a;*/
+/*    color: var(--text);*/
+/*    border: 2px solid #3a3a3c;*/
+/*    padding: 1rem;*/
+/*    font-size: 1rem;*/
+/*    border-radius: 8px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.2s ease, transform 0.2s ease;*/
+/*    width: 100%;*/
+/*}*/
+
+.eurodle-btn{
+    background: linear-gradient(135deg,
+    rgba(230, 0, 38, 0.7),
+    rgba(208, 0, 111, 0.7),
+    rgba(123, 31, 162, 0.7),
+    rgba(0, 176, 240, 0.7)
+    ) 0 0;
+    background-size: 200%, 200%;
     color: var(--text);
-    border: 2px solid #3a3a3c;
+    /*border: 2px solid #3a3a3c;*/
+    border: none;
+    font-weight: bold;
     padding: 1rem;
     font-size: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: background 0.5s ease-in-out, transform 0.2s ease;
     width: 100%;
+
+}
+.eurodle-btn:hover {
+    background-size: 100%, 100%;
+    background-position: right bottom;
+    transform: scale(1.02);
 }
 
 .eurodle-setting{
-    border: none;
-    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+        background-color: #1a1a1a;
+        color: var(--text);
+        border: 2px solid #3a3a3c;
+        padding: 1rem;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background-color 0.2s ease, transform 0.2s ease;
+        width: 100%;
 }
 
-.eurodle-btn:hover {
+.eurodle-setting:hover {
     background-color: var(--tile-hover);
     transform: scale(1.02);
 }
 
-.eurodle-btn.disabled {
+.eurodle-setting.disabled {
     background-color: var(--disabled);
     color: #777;
     cursor: not-allowed;

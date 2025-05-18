@@ -3,7 +3,7 @@
     "title": "ADIVINA EL PAIS DEL CANTANTE",
     "arr": "País seleccionado:",
     "clicked": "Has hecho click en: {{countryId}}",
-    "hint": "Pista: {{arrow}}",
+    "hint": "Pista (direccion): {{arrow}}",
     "correct": "¡Correcto! Has adivinado el país.",
     "notFoundWarning": "Países no encontrados",
     "refresh": "Reiniciar Juego"

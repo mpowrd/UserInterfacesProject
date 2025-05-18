@@ -83,6 +83,9 @@ const InteractiveMap = () => {
         const name = country.getAttribute("name");
         setHoveredCountry(country.getAttribute("name"));
 
+        country.setAttribute("stroke", "yellow");
+        country.setAttribute("stroke-width", "1.5");
+
         if (wrongCountries.includes(name)) {
             country.setAttribute("class", "wrong-country");
         }
@@ -198,9 +201,7 @@ const InteractiveMap = () => {
 
 
             if (paisCorrecto) {
-
                 paisCorrecto.setAttribute("fill", "#2584d8");
-
             }
 
         } else {
@@ -256,7 +257,7 @@ const InteractiveMap = () => {
                 {/* Resultado de la dirección */}
 
 
-                <p className="guess-singer-country-message fs-3">{resultadoMensaje}</p>
+
 
 
                 <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
@@ -267,6 +268,10 @@ const InteractiveMap = () => {
 
 
                 <div className="guess-singer-country-mapa-wrapper">
+                    <div className="pista-pais">
+                        <p className="guess-singer-country-message">{resultadoMensaje}</p>
+                    </div>
+
                     <svg className="guess-singer-country-mapa"
                          viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
                          xmlns="http://www.w3.org/2000/svg"

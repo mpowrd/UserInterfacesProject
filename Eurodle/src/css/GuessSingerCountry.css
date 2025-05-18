@@ -30,6 +30,17 @@ body {
     justify-content: center;
     align-items: center;
     margin: 100px;
+    position: relative;
+    z-index: 1;
+}
+
+.pista-pais{
+    background: #1e1e1e;
+    position: absolute;
+    z-index: 10;
+
+    top: 75px;
+    left: 75px;
 }
 
 .guess-singer-country-mapa {
@@ -42,6 +53,8 @@ body {
     transform: scaleY(1.2); /* <-- ESTIRADO VERTICAL */
 
 }
+
+
 
 
 
@@ -70,6 +83,7 @@ body {
 .guess-singer-country-message{
     color: #888888;
     padding-top: 5px;
+    font-size: 1rem;
 }
 
 /*.guess-singer-country-header {*/
@@ -105,14 +119,20 @@ body {
 .guess-singer-country-btn{
 
     position: absolute;
-    top: 13rem;
+    top: 15.9rem;
     right: 1rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
     font-size: 1.25rem;
     background-color: #3a3a3c;
     font-weight: bold;
-    color: #cccccc;
+    background: linear-gradient(135deg,
+    rgba(230, 0, 38, 0.7),
+    rgba(208, 0, 111, 0.7),
+    rgba(123, 31, 162, 0.7),
+    rgba(0, 176, 240, 0.7)
+    ) 0 0;
     border: none;
+    color: white;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
