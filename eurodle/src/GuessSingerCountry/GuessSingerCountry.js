@@ -217,7 +217,7 @@ const InteractiveMap = () => {
         //
         // }
 
-        if(fallos+1===intentos && !finPartida){
+        if(fallos===intentos+1 && !finPartida){
             setFinPartida(true);
             setResultadoMensaje(t("feedback.gameOver",{country: cantanteAdivinar.nameCountry}));
 
