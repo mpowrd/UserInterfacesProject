@@ -31,6 +31,10 @@ const InteractiveMap = () => {
     const [fallos, setFallos] = useState(0);
     const intentos = 6;
 
+    // Verificar la posición del móvil
+    const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth); //como prueba la altura de la pantalla (en modo vertical)
+
+
 
     useEffect(() => {
         // Cargamos las caciones del csv al iniciar
@@ -72,6 +76,22 @@ const InteractiveMap = () => {
                 console.error("Error al cargar el CSV:", error);
             }
         });
+
+        // Renderizado de advertencia en caso de jugar en modo móvil
+        //Crea dos eventos que escuchan el cambio de tamaño de ventana
+        const handleResize = () => {
+            setIsPortrait(window.innerHeight > window.innerWidth);
+        };
+
+        window.addEventListener("resize", handleResize); //controla el cambio de tamaño en la ventana
+        window.addEventListener("orientationchange", handleResize); // evento específico de móviles cuando se gira el dispositivo
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+            window.removeEventListener("orientationchange", handleResize);
+        };
+
+
     }, []);
 
 
@@ -244,51 +264,62 @@ const InteractiveMap = () => {
     return (
 
         <div className="guess-singer-country">
-            <div className="guess-singer-country-container container text-center my-4">
-                <h2 className="guess-singer-country-header h1">{t("game.title")}</h2>
+            {isPortrait ? (
+                <div className="rotate-warning">
 
-                <h3 className="guess-singer-country-singer fs-1">{cantanteAdivinar.nameCantante}</h3>
-
-
-                {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
-
-                {/*{cantanteAdivinar && <p >Has hecho click en: {selectedCountry}</p>}*/}
-
-                {/* Resultado de la dirección */}
-
-
-
-
-
-                <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
-                <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
-                    {t("game.refresh")}
-                </button>
-
-
-
-                <div className="guess-singer-country-mapa-wrapper">
-                    <div className="pista-pais">
-                        <p className="guess-singer-country-message">{resultadoMensaje}</p>
-                    </div>
-
-                    <svg className="guess-singer-country-mapa"
-                         viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
-                         xmlns="http://www.w3.org/2000/svg"
-                    >
-                        <MapPaths
-                            handleMouseEnter={handleMouseEnter}
-                            handleMouseLeave={handleMouseLeave}
-                            handleCountryClick={handleCountryClick}
-                        />
-                    </svg>
+                    <h2 className="text-2xl font-semibold mb-2">Gira tu dispositivo</h2>
+                    <p className="text-md"> {t("game.rotateMessage")} </p>
+                    <i className="bi bi-arrow-repeat fa-2x"></i>
                 </div>
 
-                <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
+
+            ) : (
+                <div className="guess-singer-country-container ">
+                    <h2 className="guess-singer-country-header">{t("game.title")}</h2>
+
+                    <h3 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h3>
+
+
+                    {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
+
+                    {/*{cantanteAdivinar && <p >Has hecho click en: {selectedCountry}</p>}*/}
+
+                    {/* Resultado de la dirección */}
 
 
 
-            </div>
+
+
+                    <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
+                    <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
+                        {t("game.refresh")}
+                    </button>
+
+
+
+                    <div className="guess-singer-country-mapa-wrapper">
+                        <div className="pista-pais">
+                            <p className="guess-singer-country-message">{resultadoMensaje}</p>
+                        </div>
+
+                        <svg className="guess-singer-country-mapa"
+                             viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
+                             xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <MapPaths
+                                handleMouseEnter={handleMouseEnter}
+                                handleMouseLeave={handleMouseLeave}
+                                handleCountryClick={handleCountryClick}
+                            />
+                        </svg>
+                    </div>
+
+                    <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
+
+
+
+                </div>
+            )}
         </div>
     );
 };

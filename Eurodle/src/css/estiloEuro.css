@@ -287,12 +287,15 @@ footer p{
 .eurodle-header-home img{
     filter: invert(100%);
 }
+.header-head{
+    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
+    margin: 0px;
+}
 
 .eurodle-header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #E60026, #D0006F, #7B1FA2, #00B0F0);
     overflow: hidden; /* evita que sobresalga el logo al hacer hover */
 }
 
@@ -337,50 +340,118 @@ footer p{
 }
 
 .heart-text {
-    font-size: 1.75rem; /* Ajusta según el tamaño deseado */
-    font-weight: bold; /* Opcional, si deseas resaltarlo */
-    color: #cccccc; /* Opcional, para controlar el color */
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #cccccc;
 }
 
 
 
-@media (max-width: 768px) {
-    .eurodle-heart-logo{
-        width: 50px;
-        height: auto;
-        filter: invert(100%);
+/*@media (max-width: 768px) {*/
+/*    .eurodle-heart-logo{*/
+/*        width: 50px;*/
+/*        height: auto;*/
+/*        filter: invert(100%);*/
+/*    }*/
+
+/*    .eurodle-title-logo {*/
+/*        width: 110px;*/
+/*        height: auto;*/
+/*        padding-left: 15px;*/
+/*        filter: invert(100%);*/
+/*    }*/
+
+/*    .engranaje{*/
+/*        width: 30px;*/
+/*        height: auto; !* mantiene la proporción *!*/
+/*        filter: invert(100%);*/
+/*    }*/
+
+/*    .back{*/
+/*        width: 40px;*/
+/*        height: auto; !* mantiene la proporción *!*/
+/*        filter: invert(100%);*/
+/*    }*/
+
+/*    .settings-icon{*/
+/*        position: absolute;*/
+/*        top: 10px;*/
+/*        right: 1px;*/
+/*    }*/
+
+/*    .back-icon {*/
+/*        position: absolute;*/
+/*        top: 5px;*/
+/*    }*/
+
+/*}*/
+
+/* Estilos generales para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+        .eurodle-heart-logo{
+            width: 50px;
+            height: auto;
+            filter: invert(100%);
+        }
+
+        .eurodle-title-logo {
+            width: 110px;
+            height: auto;
+            padding-left: 15px;
+            filter: invert(100%);
+        }
+
+        .engranaje{
+            width: 30px;
+            height: auto; /* mantiene la proporción */
+            filter: invert(100%);
+        }
+
+        .back{
+            width: 40px;
+            height: auto; /* mantiene la proporción */
+            filter: invert(100%);
+        }
+
+        .settings-icon{
+            position: absolute;
+            top: 10px;
+            right: 1px;
+        }
+
+        .back-icon {
+            position: absolute;
+            top: 5px;
+        }
+}
+
+/* Ajuste específico para modo paisaje en móviles */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+    .header-spacer{
+        height: 50px;
     }
 
     .eurodle-title-logo {
-        width: 110px;
-        height: auto;
-        padding-left: 15px;
-        filter: invert(100%);
+        height: 40px;
     }
 
-    .engranaje{
-        width: 30px;
-        height: auto; /* mantiene la proporción */
-        filter: invert(100%);
+    .eurodle-heart-logo {
+        height: 50px;
+        width: 50px;
     }
 
-    .back{
+    .settings-btn img,
+    .back-btn img {
+        height: 40px;
         width: 40px;
-        height: auto; /* mantiene la proporción */
-        filter: invert(100%);
-    }
-
-    .settings-icon{
         position: absolute;
-        top: 10px;
-        right: 1px;
+        top: -8px;
+        right: 5px;
     }
 
-    .back-icon {
-        position: absolute;
-        top: 5px;
+    .back-btn img{
+        left: 10px;
     }
-
 }
 
 

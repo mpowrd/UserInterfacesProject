@@ -7,7 +7,9 @@
     "hint": "Hint (direction): {{arrow}}",
     "correct": "Correct! You guessed the country.",
     "notFoundWarning": "Countries not found",
-    "refresh": "Restart game"
+    "refresh": "Restart game",
+    "rotateTitle": "Rotate the screen",
+    "rotateMessage": "Please rotate your device to landscape mode to play."
   },
   "feedback": {
     "congrats": "Congratulations! You guessed the country.",

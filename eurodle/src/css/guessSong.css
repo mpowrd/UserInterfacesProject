@@ -244,12 +244,7 @@
 
 }
 
-.heart-HP{
-  width: 70px;
-  filter: invert(100%);
-  position: relative;
-  z-index: -1;
-}
+
 
 .feedback-text{
   color: white;
@@ -424,4 +419,13 @@ th span{
   background-color: #4CAF50;
   border-color: #4CAF50;
 }
+
+.heart-HP{
+  width: 70px;
+  filter: invert(100%);
+  position: relative;
+  z-index: -1;
+}
+
+
 
