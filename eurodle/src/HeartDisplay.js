@@ -29,6 +29,7 @@ const HeartDisplay = ({ intentosFallidos, totalIntentos }) => {
                     className="heart-HP"
                     src={getHeartImage(numHearts - i)}
                     style={i === numHearts-1 ? { marginRight: 10 } : {}}
+                    alt={`${numHearts - i} vida${numHearts - i === 1 ? '' : 's'} restante`}
                 />
             ))}
             <span className="heart-text">
