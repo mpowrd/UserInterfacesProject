@@ -11,6 +11,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const [sugerenciasPais, setSugerenciasPais] = useState([]);
     const [guessType, setGuessType] = useState(0);
     const [mostrarSugerencias, setMostrarSugerencias] = useState(false);
+    const [error, setError] = useState("");
 
     const [falladas, setFalladas] = useState(fallos.map(f => f.song_name.toLowerCase()));
     const [falladasPaisAnyo, setFalladasPaisAnyo] = useState(fallos.map(f => f.country + "$songGuess$" + f.year));
@@ -88,6 +89,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const handleSubmit = (e) => {
         e.preventDefault();
 
+
+
         if(guessType === 0){
             if (entrada.trim() !== "") {
                 if(!falladas.includes(entrada.toLowerCase())){
@@ -102,6 +105,10 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 setSugerencias([]);
                 setSugerenciasPais([]);
                 setMostrarSugerencias(false);
+            }
+            if (entrada.trim() === "") {  // Si no hay nada escrito en el campo de título
+                cambiarPopupInfo(t('form.errorEmptyInputSong'));
+                mostrarPopupInfo(true);
             }
         } else{
             if (entradaPais.trim() !== "" && entradaAnyo.trim() !== "") {
@@ -118,6 +125,10 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 setSugerencias([]);
                 setSugerenciasPais([]);
                 setMostrarSugerencias(false);
+            }
+            if (entrada.trim() === "") {  // Si no hay nada escrito en el campo de título
+                cambiarPopupInfo(t('form.errorEmptyInputCountry'));
+                mostrarPopupInfo(true);
             }
         }
 
@@ -150,10 +161,12 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     return (
         <div className="guess-form">
 
+            {/* Aviso de adivinar con busqueda vacia */}
+            {error && <div className="error-message" role="alert">{error}</div>}
 
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
             <div className="shuffle-icon">
-                <button onClick={alternarModoJuego} className="shuffle-btn" aria-label="Aleatorio">
+                <button onClick={alternarModoJuego} className="shuffle-btn" aria-label="Cambiar modo de juego">
                     <i className="bi bi-shuffle"></i>
                 </button>
             </div>

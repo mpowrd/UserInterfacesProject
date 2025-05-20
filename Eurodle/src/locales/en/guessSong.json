@@ -60,7 +60,9 @@
     "submitButton": "Guess",
     "guessMethodTitle": "Title",
     "guessMethodYearCountry": "Year and Country",
-    "clues": "Show more clues"
+    "clues": "Show more clues",
+    "errorEmptyInputSong": "Please, type song title.",
+    "errorEmptyInputCountry": "Please, specify details about song's year or country."
   },
   "game": {
     "restart": "Restart Game",
@@ -74,6 +76,4 @@
   "noSongFound": "No song found with that name",
 
   "noCountryFound": "No country found with that name"
-
-
 }
