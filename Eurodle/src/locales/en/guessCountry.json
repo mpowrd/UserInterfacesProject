@@ -4,12 +4,13 @@
     "arr": "Selected country:",
     "hovered": "Selected country:",
     "clicked": "You clicked on: {{countryId}}",
-    "hint": "Hint (direction): {{arrow}}",
+    "hint": "Clue Direction {{arrow}}",
     "correct": "Correct! You guessed the country.",
     "notFoundWarning": "Countries not found",
     "refresh": "Restart game",
     "rotateTitle": "Rotate the screen",
-    "rotateMessage": "Please rotate your device to landscape mode to play."
+    "rotateMessage": "Please rotate your device to landscape mode to play.",
+    "informationMap": "Zoom in and select a country"
   },
   "feedback": {
     "congrats": "Congratulations! You guessed the country.",

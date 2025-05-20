@@ -3,12 +3,13 @@
     "title": "ADIVINA EL PAIS DEL CANTANTE",
     "arr": "País seleccionado:",
     "clicked": "Has hecho click en: {{countryId}}",
-    "hint": "Pista (direccion): {{arrow}}",
+    "hint": "Pista Dirección {{arrow}}",
     "correct": "¡Correcto! Has adivinado el país.",
     "notFoundWarning": "Países no encontrados",
     "refresh": "Reiniciar Juego",
     "rotateTitle": "Gira la pantalla",
-    "rotateMessage": "Por favor gira tu dispositivo en modo horizontal para jugar."
+    "rotateMessage": "Por favor gira tu dispositivo en modo horizontal para jugar.",
+    "informationMap": "Amplia y Selecciona un País"
   },
   "feedback": {
     "congrats": "¡Enhorabuena! Has acertado el país.",
