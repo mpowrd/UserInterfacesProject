@@ -86,14 +86,8 @@ body {
     font-weight: bold;
     padding-left: 20px;
     padding-right: 20px;
-    background: linear-gradient(90deg,
-    rgb(104, 198, 239),   rgb(205, 125, 246),  rgb(243, 117, 180), rgb(246, 130, 130)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
+    color: rgb(243, 117, 180);
     text-align: center;
-    border-radius: 5px;
 }
 
 .guess-singer-country-country-selected{
@@ -231,6 +225,7 @@ svg {
     @media screen and (orientation: landscape) and  (max-width: 896px){
         .guess-singer-country-container {
             padding: 0.5rem;
+
         }
 
         .guess-singer-country-container h2,h3{
@@ -249,12 +244,14 @@ svg {
             padding-right: 5px;
             font-size: 50px; /* Aumenta ligeramente para visibilidad */
             z-index: 10; /* Número mayor → encima */
-
+            background: none;
 
         }
 
         .guess-singer-country-message {
             font-size: 0.875rem;
+            position: absolute;
+            top: 100px;
         }
 
         .guess-singer-country-btn {
@@ -264,9 +261,11 @@ svg {
         }
 
         .guess-singer-country-mapa-wrapper{
-            margin: 3.5rem; /* Reduce el margen alrededor del mapa */
-
+            position: absolute;
+            top: -34px;
         }
+
+
 
         .guess-singer-country-singer,
         .guess-singer-country-message {
@@ -286,7 +285,10 @@ svg {
 
         .guess-singer-country-container #hearts{
             position: absolute;
-            left: 10px;
+
+            filter: invert(100%);
+            left: 50px;
+            top: 20px;
             z-index: 10; /* Número mayor → encima */
 
         }
