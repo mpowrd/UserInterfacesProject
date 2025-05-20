@@ -60,7 +60,9 @@
     "submitButton": "Adivinar",
     "guessMethodTitle": "Título",
     "guessMethodYearCountry": "Año y País",
-    "clues": "Más pistas"
+    "clues": "Más pistas",
+    "errorEmptyInputSong": "Por favor, ingresa el título de la canción.",
+    "errorEmptyInputCountry": "Por favor, ingresa detalles del país y año."
   },
   "game": {
     "restart": "Reiniciar Juego",
@@ -74,5 +76,4 @@
   "noSongFound": "No se encontró ninguna canción con ese nombre",
 
   "noCountryFound": "No se encontró ningún país con ese nombre"
-
 }
