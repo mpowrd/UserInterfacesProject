@@ -1,7 +1,12 @@
 import React, {useEffect, useRef, useState} from "react";
 import MapPaths from "../assets/MapPaths";
 import Papa from "papaparse";
-
+import { ReactSVGPanZoom,
+    INITIAL_VALUE,
+    TOOL_AUTO,
+    TOOL_NONE,
+    fitToViewer,
+        fitSelection} from 'react-svg-pan-zoom';
 
 import "../css/GuessSingerCountry.css"
 import HeartDisplay from "../HeartDisplay";
@@ -131,10 +136,27 @@ const InteractiveMap = () => {
 
 
     function getCentroid(path) {
+        // const bbox = path.getBBox();
+        // return {
+        //     x: bbox.x + bbox.width / 2,
+        //     y: bbox.y + bbox.height / 2,
+        // };
         const bbox = path.getBBox();
+
+        // Crear un punto en el centro del bounding box
+        const center = path.ownerSVGElement.createSVGPoint();
+        center.x = bbox.x + bbox.width / 2;
+        center.y = bbox.y + bbox.height / 2;
+
+        // Obtener la matriz de transformación del nodo
+        const matrix = path.getCTM();
+
+        // Aplicar la transformación al punto
+        const transformed = center.matrixTransform(matrix);
+
         return {
-            x: bbox.x + bbox.width / 2,
-            y: bbox.y + bbox.height / 2,
+            x: transformed.x,
+            y: transformed.y
         };
     }
 
@@ -189,9 +211,6 @@ const InteractiveMap = () => {
     const [selectedCountry,setSelectedCountry] = useState(null);
 
     const handleCountryClick = (event) => {
-
-
-
         if (finPartida) return;
 
 
@@ -230,20 +249,17 @@ const InteractiveMap = () => {
             setFallos(fallos+1);
 
         }
-        // Condicion para guardar el pais incorrecto en estado wrongCountries
-        // if (countrySelectedName !== cantanteAdivinar.nameCountry) {
-        //     setWrongCountries(prev => [...prev, countrySelectedName]);
-        //     //setFallos(fallos+1);
-        //
-        // }
-
-        if(fallos===intentos+1 && !finPartida){
-            setFinPartida(true);
-            setResultadoMensaje(t("feedback.gameOver",{country: cantanteAdivinar.nameCountry}));
-
-        }
 
     }
+
+    // Aqui se comprueba constantemente la condicion que hace que te has quedado
+    // sin intentos y no has acertado
+    useEffect(() => {
+        if (fallos === intentos && !finPartida) {
+            setFinPartida(true);
+            setResultadoMensaje(t("feedback.gameOver",{country: cantanteAdivinar.nameCountry}));
+        }
+    }, [fallos]);
 
     const reiniciarJuego = () => {
         setFinPartida(false);
@@ -260,6 +276,19 @@ const InteractiveMap = () => {
         });
     };
 
+    // VARIABLES CONST PARA EL ZOOM DEL MAPA
+    const Viewer = useRef(null);
+    const [tool, setTool] = useState(TOOL_AUTO); // permite pan y zoom automáticamente
+    const [value, setValue] = useState(INITIAL_VALUE);
+
+    useEffect(() => {
+        if (Viewer.current) {
+            const initialValue = Viewer.current.getValue();
+            setValue(initialValue); // centra el contenido al cargar
+        }
+    }, []);
+
+// npm install react-svg-pan-zoom
 
     return (
 
@@ -296,26 +325,42 @@ const InteractiveMap = () => {
                     </button>
 
 
-
                     <div className="guess-singer-country-mapa-wrapper">
                         <div className="pista-pais">
                             <p className="guess-singer-country-message">{resultadoMensaje}</p>
                         </div>
 
-                        <svg className="guess-singer-country-mapa"
-                             viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
-                             xmlns="http://www.w3.org/2000/svg"
+                        <div className="pais-seleccionado">
+                            <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
+                        </div>
+
+                        <ReactSVGPanZoom
+                            ref={Viewer}
+                            width={window.innerWidth}
+                            height={window.innerHeight}
+                            tool={tool}
+                            onChangeTool={setTool}
+                            value={value}
+                            onChangeValue={setValue}
+                            detectAutoPan={false}
+                            background="#fff"
+                            toolbarProps={{position: 'none'}}
+                            miniatureProps={{position: 'none'}}
+                            scaleFactorMin={0.8}
                         >
-                            <MapPaths
-                                handleMouseEnter={handleMouseEnter}
-                                handleMouseLeave={handleMouseLeave}
-                                handleCountryClick={handleCountryClick}
-                            />
-                        </svg>
+                            <svg className="guess-singer-country-mapa"
+                                 viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
+                                 xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <MapPaths
+                                    handleMouseEnter={handleMouseEnter}
+                                    handleMouseLeave={handleMouseLeave}
+                                    handleCountryClick={handleCountryClick}
+                                />
+                            </svg>
+                        </ReactSVGPanZoom>
+
                     </div>
-
-                    <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
-
 
 
                 </div>
