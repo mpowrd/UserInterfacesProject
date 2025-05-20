@@ -57,7 +57,7 @@ const Settings = (setShowSettings) => {
                 >
                     <option value="es">{t('languages.es')}</option>
                     <option value="en">{t('languages.en')}</option>
-                    <option value="fr">{t('languages.fr')}</option>
+                    {/*<option value="fr">{t('languages.fr')}</option>*/}
                 </select>
             </div>
 
