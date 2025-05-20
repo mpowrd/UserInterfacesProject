@@ -135,10 +135,8 @@ svg {
 
 /* Color del pais correctamente adivinado */
 .correct-country {
-
     fill: #2584d8 !important;
-    stroke: black !important;
-    stroke-width: 1 !important;
+    stroke: black;
     pointer-events: none;
 }
 
@@ -226,6 +224,8 @@ svg {
         }
 
 
+
+
     }
 
     @media screen and (orientation: landscape) and  (max-width: 896px){
@@ -303,6 +303,8 @@ svg {
         .rotate-warning {
             display: none;
         }
+
+
 
     }
 

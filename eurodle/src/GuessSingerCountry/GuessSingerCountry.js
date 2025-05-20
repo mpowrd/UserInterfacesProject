@@ -110,10 +110,6 @@ const InteractiveMap = () => {
 
         country.setAttribute("stroke", "yellow");
         country.setAttribute("stroke-width", "1.5");
-
-        if (wrongCountries.includes(name)) {
-            country.setAttribute("class", "wrong-country");
-        }
     };
 
     const handleMouseLeave = (event) => {
@@ -221,9 +217,13 @@ const InteractiveMap = () => {
 
 
         const country = event.target;
-        country.setAttribute("class", "wrong-country");
 
-        paisAdivinado(countrySelectedName);
+        if(paisAdivinado(countrySelectedName)){
+            country.setAttribute("class", "correct-country");
+        }
+        else{
+            country.setAttribute("class", "wrong-country");
+        }
 
     };
 
@@ -243,11 +243,13 @@ const InteractiveMap = () => {
                 paisCorrecto.setAttribute("fill", "#2584d8");
             }
 
+            return true;
+
         } else {
             compararPaises(countrySelectedName, cantanteAdivinar.nameCountry);
             setWrongCountries(prev => [...prev, countrySelectedName]);
             setFallos(fallos+1);
-
+            return false;
         }
 
     }
@@ -347,6 +349,7 @@ const InteractiveMap = () => {
                             toolbarProps={{position: 'none'}}
                             miniatureProps={{position: 'none'}}
                             scaleFactorMin={0.8}
+                            scaleFactorMax={3}
                         >
                             <svg className="guess-singer-country-mapa"
                                  viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
