@@ -8,6 +8,8 @@ body {
     background: var(--bg-dark);
 }
 
+
+
 .guess-singer-country-container {
     width: 100%;
     max-width: 1000px;
@@ -19,6 +21,10 @@ body {
     align-items: center;
     position: relative;
     z-index: 0;
+}
+
+.guess-singer-country-container .heart-text{
+    display: none;
 }
 
 
@@ -35,21 +41,21 @@ body {
 }
 
 .pista-pais{
-    background: #1e1e1e;
     position: absolute;
+    left: 800px;
+    top: 300px;
     z-index: 10;
 
-    top: 25px;
-    left: 25px;
 }
 
 .pais-seleccionado{
-    background: #1e1e1e;
     position: absolute;
     z-index: 10;
-
-    top: 400px;
-    left: 25px;
+    border: 2px solid #3a3a3c;
+    border-radius: 10px;
+    background: #f9f9f9;
+    top: 750px;
+    right: 840px;
 }
 
 .guess-singer-country-mapa {
@@ -76,9 +82,13 @@ body {
 
 
 .guess-singer-country-message{
-    color: #888888;
-    padding-top: 5px;
     font-size: 1rem;
+
+    padding: 5px;
+    border:  2px solid #1e88e5;
+    border-radius: 10px;
+    background: #f9f9f9;
+    color: #1e88e5;
 }
 
 .guess-singer-country-singer{
@@ -91,14 +101,18 @@ body {
 }
 
 .guess-singer-country-country-selected{
-    color: #888888;
+    color: #1a1a1a;
+    padding: 10px;
+    font-weight: bold;
+    margin: unset;
 }
 
 .guess-singer-country-btn{
 
     position: absolute;
-    top: 14rem;
-    right: 1rem;
+    top: 200px;
+    right: 15px;
+    margin-right: 5px;
     padding: 0.75rem 1rem;
     font-size: 1.25rem;
     background-color: #666666;
@@ -119,10 +133,12 @@ body {
 }
 
 svg {
-    background: #cccccc;
+    background: #3a3a3c;
     max-width: 100%;
     height: auto;
 }
+
+
 
 
 
@@ -143,6 +159,20 @@ svg {
     pointer-events: none;
 }
 
+.guidance-label__text{
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 4px;
+    position: relative;
+    top: 30px;
+    border-radius: 5px;
+    background: #f9f9f9;
+    color: #1e1e1e;
+    border: 1px solid #1e1e1e;
+    z-index: 10;
+}
+
+
 @media (max-width: 768px) {
     .guess-singer-country-mapa {
         width: 400px;
@@ -154,10 +184,10 @@ svg {
     }
 
     .guess-singer-country-btn {
-        position: static; /* Quita el absoluto para flujo normal */
-        margin: 1rem auto; /* Centra horizontalmente */
+        position: static;
+        margin: 1rem auto;
         display: block;
-        width: 90%; /* Ocupa la mayor parte del ancho de pantalla */
+        width: 90%;
         font-size: 1rem;
 
     }
@@ -229,6 +259,7 @@ svg {
         }
 
         .guess-singer-country-container h2,h3{
+            margin: 5px;
             font-size: 25px !important;
             z-index: 10; /* Número mayor → encima */
             font-weight: bold;
@@ -240,24 +271,29 @@ svg {
         }
 
         .guess-singer-country-singer {
-            padding-left: 5px;
-            padding-right: 5px;
-            font-size: 50px; /* Aumenta ligeramente para visibilidad */
+            font-size: 40px; /* Aumenta ligeramente para visibilidad */
             z-index: 10; /* Número mayor → encima */
-            background: none;
-
+            background: #1a1a1a;
+            margin: 0;
+            padding: 0;
         }
 
+
+
         .guess-singer-country-message {
-            font-size: 0.875rem;
-            position: absolute;
-            top: 100px;
+            font-size: 15px;
+            position: fixed;
+            right: 50px;
+            top: 70px;
+
         }
 
         .guess-singer-country-btn {
             font-size: 1rem;
-            position: absolute;
-            top: 10px;
+            position: fixed;
+            top: unset;
+            bottom: 10px;
+            right: 10px;
         }
 
         .guess-singer-country-mapa-wrapper{
@@ -266,12 +302,12 @@ svg {
         }
 
 
-
         .guess-singer-country-singer,
         .guess-singer-country-message {
-            width: 100%;
             text-align: center;
             z-index: 10; /* Número mayor → encima */
+
+
 
         }
 
@@ -285,10 +321,13 @@ svg {
 
         .guess-singer-country-container #hearts{
             position: absolute;
-
-            filter: invert(100%);
-            left: 50px;
-            top: 20px;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background: #1e1e1e;
+            border-radius: 15px;
+            left: 45px;
+            top: 10px;
             z-index: 10; /* Número mayor → encima */
 
         }
@@ -306,6 +345,18 @@ svg {
             display: none;
         }
 
+        .guidance-label__text{
+            z-index: 10;
+            margin-top: unset;
+            top: unset;
+            font-weight: bold;
+            position: fixed;
+            border-radius: 5px;
+            background: #f9f9f9;
+            bottom: 0;
+            color: #1e1e1e;
+            border: 1px solid #1e1e1e;
+        }
 
 
     }

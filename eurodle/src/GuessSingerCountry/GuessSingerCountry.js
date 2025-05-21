@@ -308,7 +308,7 @@ const InteractiveMap = () => {
                 <div className="guess-singer-country-container ">
                     <h2 className="guess-singer-country-header">{t("game.title")}</h2>
 
-                    <h3 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h3>
+                    <h2 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h2>
 
 
                     {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
@@ -327,14 +327,18 @@ const InteractiveMap = () => {
                     </button>
 
 
-                    <div className="guess-singer-country-mapa-wrapper">
-                        <div className="pista-pais">
-                            <p className="guess-singer-country-message">{resultadoMensaje}</p>
-                        </div>
 
-                        <div className="pais-seleccionado">
-                            <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
-                        </div>
+                    <p className="guidance-label__text">{t("game.informationMap")}</p>
+
+                    <div className="pista-pais">
+                        <p className="guess-singer-country-message">{resultadoMensaje}</p>
+                    </div>
+
+
+
+                    <div className="guess-singer-country-mapa-wrapper">
+
+
 
                         <ReactSVGPanZoom
                             ref={Viewer}
@@ -363,7 +367,18 @@ const InteractiveMap = () => {
                             </svg>
                         </ReactSVGPanZoom>
 
+
+
+
                     </div>
+
+                    <div className="pais-seleccionado">
+                        <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
+                    </div>
+
+
+
+
 
 
                 </div>
