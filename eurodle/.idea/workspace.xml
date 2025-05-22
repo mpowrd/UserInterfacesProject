@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b94fc14-6be5-40ca-b11d-fc722168e6b5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/locales/en/guessSong.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/locales/en/guessSong.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="d1be4970-1b31-4ca7-8123-bf1925038879" name="Changes by griva" comment="" />
     <list id="75a91be4-b4f7-411b-a5e5-7a8f5033395d" name="Changes by jtdel" comment="" />
@@ -41,7 +41,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/feloy/Documents/GitHub/UserInterfacesProject/UserInterfacesProject/Eurodle&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/jtdel/Desktop/3o/2o-cuatri/Tecnología de Aplicaciones Web/expressBasico/ExpressBasico&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -85,8 +85,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+        <option value="bundled-jdk-9823dce3aa75-a94e463ab2e7-intellij.indexing.shared.core-IU-243.25659.39" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-IU-243.25659.39" />
       </set>
     </attachedChunks>
   </component>
@@ -114,6 +114,7 @@
       <workItem from="1746702102815" duration="4046000" />
       <workItem from="1746729715942" duration="6974000" />
       <workItem from="1746890612654" duration="310000" />
+      <workItem from="1747819077364" duration="71000" />
     </task>
     <servers />
   </component>
