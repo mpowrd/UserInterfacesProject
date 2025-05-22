@@ -28,11 +28,5 @@ yarn-error.log*
 *.sublime-project
 
 # JetBrains-specific
-Eurodle/.idea/
-Eurodle/.idea/workspace.xml
 /eurodle/node_modules
-eurodle/.idea/workspace.xml
-/Eurodle/node_modules
-/Eurodle/node_modules
-eurodle/node_modules/.cache/
-/eurodle/node_modules
+/eurodle/.idea/
