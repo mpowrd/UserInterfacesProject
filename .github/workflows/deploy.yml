@@ -22,10 +22,15 @@ jobs:
         run: npm install
         working-directory: ./eurodle
 
+      - name: Ensure react-scripts is executable
+        if: runner.os == 'Linux' # This command is for Linux-based runners
+        run: chmod +x ./node_modules/.bin/react-scripts
+        working-directory: ./eurodle
+
       - name: Build project
         run: npm run build
         working-directory: ./eurodle
-
+        
       - name: Deploy to GitHub Pages
         run: npm run deploy
         working-directory: ./eurodle
