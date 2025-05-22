@@ -1,38 +1,31 @@
-name: Deploy React App to GitHub Pages
+name: Build & Deploy Eurodle (gh-pages)
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+
+permissions:
+  contents: write      # necesario para crear gh-pages
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
+          cache: npm
 
-      - name: Install dependencies
-        run: npm install
-        working-directory: ./eurodle
-
-      - name: Ensure react-scripts is executable
-        if: runner.os == 'Linux' # This command is for Linux-based runners
-        run: chmod +x ./node_modules/.bin/react-scripts
+      - run: npm ci
         working-directory: ./eurodle
 
-      - name: Build project
-        run: npm run build
+      - run: npm run build
         working-directory: ./eurodle
-        
-      - name: Deploy to GitHub Pages
-        run: npm run deploy
-        working-directory: ./eurodle
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to gh-pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./eurodle/build
