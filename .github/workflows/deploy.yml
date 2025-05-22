@@ -20,14 +20,14 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./Eurodle
+        working-directory: ./eurodle
 
       - name: Build project
         run: npm run build
-        working-directory: ./Eurodle
+        working-directory: ./eurodle
 
       - name: Deploy to GitHub Pages
         run: npm run deploy
-        working-directory: ./Eurodle
+        working-directory: ./eurodle
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
