@@ -353,7 +353,7 @@ const InteractiveMap = () => {
                             toolbarProps={{position: 'none'}}
                             miniatureProps={{position: 'none'}}
                             scaleFactorMin={0.8}
-                            scaleFactorMax={3}
+                            scaleFactorMax={10}
                         >
                             <svg className="guess-singer-country-mapa"
                                  viewBox="0 0 800 446"// Ajusta según el tamaño del mapa
