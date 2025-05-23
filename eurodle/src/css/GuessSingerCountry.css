@@ -13,7 +13,7 @@ body {
 .guess-singer-country-container {
     width: 100%;
     max-width: 1000px;
-    height: auto;
+    height: 300px;
     margin: 0 auto;
     padding: 1rem;
     display: flex;
@@ -21,6 +21,7 @@ body {
     align-items: center;
     position: relative;
     z-index: 0;
+    aspect-ratio: 1 / 1;
 }
 
 .guess-singer-country-container .heart-text{
@@ -31,10 +32,9 @@ body {
 .guess-singer-country-mapa-wrapper {
     width: 100%;
     max-width: 90vw;
+    height: 0px;
     aspect-ratio: 800 / 446;
     display: flex;
-    justify-content: center;
-    align-items: center;
     margin: 25px;
     position: relative;
     z-index: 1;
@@ -43,7 +43,8 @@ body {
 .pista-pais{
     position: absolute;
     left: 800px;
-    top: 300px;
+    right: 25px;
+    top: 20px;
     z-index: 10;
 
 }
@@ -54,8 +55,9 @@ body {
     border: 2px solid #3a3a3c;
     border-radius: 10px;
     background: #f9f9f9;
-    top: 750px;
-    right: 840px;
+    top: 210px;
+    right: 700px;
+    left: 20px;
 }
 
 .guess-singer-country-mapa {
@@ -75,20 +77,17 @@ body {
 
 
 
-.guess-singer-country-mapa[width][height] {
-    width: 100% !important;
-    height: max-content !important;
-}
+
 
 
 .guess-singer-country-message{
-    font-size: 1rem;
-
-    padding: 5px;
-    border:  2px solid #1e88e5;
-    border-radius: 10px;
-    background: #f9f9f9;
-    color: #1e88e5;
+    position: absolute;
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+    border-bottom: 2px solid #1e88e5;
+    padding-bottom: 2px;
+    top: 270px;
 }
 
 .guess-singer-country-singer{
@@ -102,13 +101,12 @@ body {
 
 .guess-singer-country-country-selected{
     color: #1a1a1a;
-    padding: 10px;
+    padding: 3px;
     font-weight: bold;
     margin: unset;
 }
 
 .guess-singer-country-btn{
-
     position: absolute;
     top: 200px;
     right: 15px;
@@ -136,6 +134,7 @@ svg {
     background: #3a3a3c;
     max-width: 100%;
     height: auto;
+    max-height: 500px;
 }
 
 
@@ -166,9 +165,7 @@ svg {
     position: relative;
     top: 30px;
     border-radius: 5px;
-    background: #f9f9f9;
-    color: #1e1e1e;
-    border: 1px solid #1e1e1e;
+    color: #f9f9f9;
     z-index: 10;
 }
 
@@ -247,12 +244,16 @@ svg {
             overflow-y: hidden;
         }
 
+        .pais-seleccionado{
+            display: none;
+        }
+
 
 
 
     }
 
-    @media screen and (orientation: landscape) and  (max-width: 896px){
+    @media screen and (orientation: landscape) and  (max-width: 1000px){
         .guess-singer-country-container {
             padding: 0.5rem;
 
@@ -273,27 +274,30 @@ svg {
         .guess-singer-country-singer {
             font-size: 40px; /* Aumenta ligeramente para visibilidad */
             z-index: 10; /* Número mayor → encima */
-            background: #1a1a1a;
+            background: #f1dcdc;
             margin: 0;
             padding: 0;
+            color: rgb(243, 117, 180);
         }
 
 
 
         .guess-singer-country-message {
             font-size: 15px;
-            position: fixed;
+            position: absolute;
             right: 50px;
-            top: 70px;
+            left: -120px;
+            top: 10px;
 
         }
 
         .guess-singer-country-btn {
             font-size: 1rem;
-            position: fixed;
-            top: unset;
-            bottom: 10px;
-            right: 10px;
+            position: absolute;
+            top: 270px;
+            bottom: auto;
+            right: 50px;
+            max-width: 150px;
         }
 
         .guess-singer-country-mapa-wrapper{
@@ -302,18 +306,23 @@ svg {
         }
 
 
-        .guess-singer-country-singer,
         .guess-singer-country-message {
             text-align: center;
             z-index: 10; /* Número mayor → encima */
 
-
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+            color: white;
+            font-weight: normal;
+            border-bottom: 0px;
 
         }
 
         .guess-singer-country-mapa {
             width: 800px;
-            height:350px;
+            height: 350px;
             position: absolute;
             top: -100px;
             z-index: 0;
@@ -350,12 +359,16 @@ svg {
             margin-top: unset;
             top: unset;
             font-weight: bold;
-            position: fixed;
+            position: absolute;
             border-radius: 5px;
             background: #f9f9f9;
-            bottom: 0;
+            bottom: -30px;
             color: #1e1e1e;
             border: 1px solid #1e1e1e;
+        }
+
+        .pais-seleccionado{
+            display: none;
         }
 
 

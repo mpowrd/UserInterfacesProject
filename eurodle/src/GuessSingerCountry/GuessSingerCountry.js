@@ -311,13 +311,6 @@ const InteractiveMap = () => {
                     <h2 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h2>
 
 
-                    {/*<h3>{cantanteAdivinar.nameCountry}</h3>*/}
-
-                    {/*{cantanteAdivinar && <p >Has hecho click en: {selectedCountry}</p>}*/}
-
-                    {/* Resultado de la dirección */}
-
-
 
 
 
@@ -329,10 +322,6 @@ const InteractiveMap = () => {
 
 
                     <p className="guidance-label__text">{t("game.informationMap")}</p>
-
-                    <div className="pista-pais">
-                        <p className="guess-singer-country-message">{resultadoMensaje}</p>
-                    </div>
 
 
 
@@ -367,10 +356,13 @@ const InteractiveMap = () => {
                             </svg>
                         </ReactSVGPanZoom>
 
-
-
-
                     </div>
+
+                    <div className="pista-pais">
+                        <p className="guess-singer-country-message">{resultadoMensaje}</p>
+                    </div>
+
+
 
                     <div className="pais-seleccionado">
                         <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>

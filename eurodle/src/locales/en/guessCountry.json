@@ -10,7 +10,7 @@
     "refresh": "Restart game",
     "rotateTitle": "Rotate the screen",
     "rotateMessage": "Please rotate your device to landscape mode to play.",
-    "informationMap": "Zoom in and select a country"
+    "informationMap": "(Zoom in and select a country)"
   },
   "feedback": {
     "congrats": "Congratulations! You guessed the country.",

@@ -9,7 +9,7 @@
     "refresh": "Reiniciar Juego",
     "rotateTitle": "Gira la pantalla",
     "rotateMessage": "Por favor gira tu dispositivo en modo horizontal para jugar.",
-    "informationMap": "Amplia y Selecciona un País"
+    "informationMap": "(Amplia y Selecciona un País)"
   },
   "feedback": {
     "congrats": "¡Enhorabuena! Has acertado el país.",
