@@ -248,6 +248,16 @@
   border: 0;
 }
 
+/* Para resaltar la primera palabra en la busqueda para marcar que se autocompletará al darle Enter */
+.sugerencia-activa {
+  background: linear-gradient(135deg,
+  rgba(255, 49, 161, 0.4),
+  rgba(187, 47, 243, 0.33),
+  rgba(49, 198, 255, 0.4));
+  font-weight: bold;
+}
+
+
 /* Fin de styles para GuessSongGame */
 
 /* Styles para FeedbackDisplay */
