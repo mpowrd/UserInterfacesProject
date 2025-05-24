@@ -23,9 +23,9 @@ const FeedbackDisplay = ({ fallos, acertado, cancionCorrecta, totalIntentos }) =
 
     return (
         <div className="feedback-display" style={{ marginTop: 20 }}>
-            <h3 className="feedback-text">
+            <h2 className="feedback-text">
                 <HeartDisplay intentosFallidos={intentosFallidos} totalIntentos={totalIntentos}></HeartDisplay>
-            </h3>
+            </h2>
         </div>
     );
 };
