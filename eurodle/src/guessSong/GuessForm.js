@@ -89,48 +89,50 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if(guessType === 0){
-            if (entrada.trim() !== "") {
-                if(!falladas.includes(entrada.toLowerCase())){
-                    onGuess(entrada.trim(), guessType);
-                } else{
-                    cambiarPopupInfo(t('form.alreadyGuessedSong'));
-                    mostrarPopupInfo(true);
-                }
-                setEntrada("");
-                setEntradaAnyo("");
-                setEntradaPais("");
-                setSugerencias([]);
-                setSugerenciasPais([]);
-                setMostrarSugerencias(false);
-            }
-            if (entrada.trim() === "") {  // Si no hay nada escrito en el campo de título
+        /* ----------  MODO  TÍTULO  ---------- */
+        if (guessType === 0) {
+            if (!entrada.trim()) { // input no matchea un resultado del csv
                 cambiarPopupInfo(t('form.errorEmptyInputSong'));
                 mostrarPopupInfo(true);
+                return; // lo sacamos de este flujo de ejecucion
             }
-        } else{
-            if (entradaPais.trim() !== "" && entradaAnyo.trim() !== "") {
-                const currYearCountryGuess = entradaPais + "$songGuess$" + entradaAnyo.trim();
-                if(!falladasPaisAnyo.includes(currYearCountryGuess)){
-                    onGuess(entradaPais + "$songGuess$" + entradaAnyo.trim(), guessType);
-                } else{
-                    cambiarPopupInfo(t('form.alreadyGuessedYearCountry'));
-                    mostrarPopupInfo(true);
-                }
-                setEntrada("");
-                setEntradaAnyo("");
-                setEntradaPais("");
-                setSugerencias([]);
-                setSugerenciasPais([]);
-                setMostrarSugerencias(false);
-            }
-            if (entrada.trim() === "") {  // Si no hay nada escrito en el campo de título
-                cambiarPopupInfo(t('form.errorEmptyInputCountry'));
+
+            if (falladas.includes(entrada.toLowerCase())) { // el input ya fue escogido
+                cambiarPopupInfo(t('form.alreadyGuessedSong'));
                 mostrarPopupInfo(true);
+                return; // lo sacamos de este flujo de ejecucion
             }
+
+            onGuess(entrada.trim(), 0); // envia a handleGuess en GuessSongGame el input e identificador que adivinamos por titulo
         }
 
+        /* ---------  MODO  AÑO + PAÍS -------- */
+        if (guessType === 1) {
+            if (!entradaPais.trim() || !entradaAnyo.trim()) { // input no matchea un resultado del csv, ya sea por pais o por año
+                cambiarPopupInfo(t('form.errorEmptyInputCountry'));
+                mostrarPopupInfo(true);
+                return; // lo sacamos de este flujo de ejecucion
+            }
 
+            const clave = `${entradaPais}$songGuess$${entradaAnyo.trim()}`;
+            if (falladasPaisAnyo.includes(clave)) { // el input ya fue escogido
+                cambiarPopupInfo(t('form.alreadyGuessedYearCountry'));
+                mostrarPopupInfo(true);
+                return; // lo sacamos de este flujo de ejecucion
+            }
+
+            onGuess(clave, 1); // envia a handleGuess en GuessSongGame el input e identificador que adivinamos por pais y año
+        }
+
+        /* -------------  LIMPIEZA ------------- */
+        // Si llegamos hasta aqui, significa que se ha introducido un input correcto (camino feliz cumplido)
+        // Limpiamos todos los campos para la siguiente adivinanza
+        setEntrada("");
+        setEntradaAnyo("");
+        setEntradaPais("");
+        setSugerencias([]);
+        setSugerenciasPais([]);
+        setMostrarSugerencias(false);
     };
 
     const alternarModoJuego = () => {
