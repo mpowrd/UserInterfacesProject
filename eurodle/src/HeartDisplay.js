@@ -2,38 +2,48 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 const HeartDisplay = ({ intentosFallidos, totalIntentos }) => {
-    const { t } = useTranslation('common');
+    const { t } = useTranslation(['guessSong', 'common']);
 
     // Calculamos el número de corazones (cada uno vale 2 intentos)
     const numHearts = Math.ceil(totalIntentos / 2);
+    const vidasRestantes = totalIntentos - intentosFallidos;
 
     // Función que calcula la imagen según el índice
-    const getHeartImage = (index) => {
-        const offset = index - 1;
 
-        if (intentosFallidos >= index + 1 + offset) {
-            return "/corazonEuroVacio.png"; // Corazón vacío
-        } else if (intentosFallidos === index + offset) {
-            return "/corazonEuroMitadIzquierda.png"; // Mitad izquierda
+    const getHeartImage = (vidasQueRepresenta) => {
+        if (vidasQueRepresenta >= 2) {
+            return "/corazonEuroEntero.png";
+        } else if (vidasQueRepresenta === 1) {
+            return "/corazonEuroMitadIzquierda.png";
         } else {
-            return "/corazonEuroEntero.png"; // Corazón entero
+            return "/corazonEuroVacio.png";
         }
     };
 
     return (
         <div id="hearts">
-            {Array.from({ length: numHearts }, (_, i) => (
-                <img
-                    key={i}
-                    id={`heart${numHearts - 1 - i}`}
-                    className="heart-HP"
-                    src={getHeartImage(numHearts - i)}
-                    style={i === numHearts-1 ? { marginRight: 10 } : {}}
-                    alt={`${numHearts - i} vida${numHearts - i === 1 ? '' : 's'} restante`}
-                />
-            ))}
+            {Array.from({ length: numHearts }, (_, i) => {
+                const index = i; // de izquierda a derecha
+                const vidasQueRepresenta = Math.max(0, Math.min(2, vidasRestantes - index * 2));
+                const vidasTotales = Math.max(0, vidasRestantes - index * 2);
+
+                let alt = t('aria.lives_plural', { count: vidasTotales });
+                if(vidasQueRepresenta === 1) alt = t('aria.lives', { count: vidasTotales });
+                // console.log(`Corazón ${index + 1}: ${alt}`);
+
+                return (
+                    <img
+                        key={i}
+                        id={`heart${index}`}
+                        className="heart-HP"
+                        src={getHeartImage(vidasQueRepresenta)}
+                        alt={alt}
+                    />
+                );
+            })}
+
             <span className="heart-text">
-              {intentosFallidos}/{totalIntentos} {t('tries')}
+                {intentosFallidos}/{totalIntentos} {t('tries')}
             </span>
         </div>
     );

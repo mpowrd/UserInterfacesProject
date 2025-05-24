@@ -75,5 +75,12 @@
 
   "noSongFound": "No se encontró ninguna canción con ese nombre",
 
-  "noCountryFound": "No se encontró ningún país con ese nombre"
+  "noCountryFound": "No se encontró ningún país con ese nombre",
+
+  "aria": {
+    "lives": "{{count}} vida restante",
+    "lives_plural": "{{count}} vidas restantes"
+  }
+
+
 }
