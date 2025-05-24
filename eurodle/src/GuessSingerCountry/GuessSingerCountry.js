@@ -298,7 +298,7 @@ const InteractiveMap = () => {
             {isPortrait ? (
                 <div className="rotate-warning">
 
-                    <h2 className="text-2xl font-semibold mb-2">Gira tu dispositivo</h2>
+                    <h1 className="text-2xl font-semibold mb-2">Gira tu dispositivo</h1>
                     <p className="text-md"> {t("game.rotateMessage")} </p>
                     <i className="bi bi-arrow-repeat fa-2x"></i>
                 </div>
@@ -306,7 +306,7 @@ const InteractiveMap = () => {
 
             ) : (
                 <div className="guess-singer-country-container ">
-                    <h2 className="guess-singer-country-header">{t("game.title")}</h2>
+                    <h1 className="guess-singer-country-header">{t("game.title")}</h1>
 
                     <h2 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h2>
 

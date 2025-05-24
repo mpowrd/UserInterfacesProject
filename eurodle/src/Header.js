@@ -38,7 +38,7 @@ function Header() {
           <div className='header-head'>
               {!showSettings && !isSettingsPage && (
                   <div className="settings-icon">
-                      <button onClick={onSettingsClick} className="settings-btn" aria-label="Opciones">
+                      <button onClick={onSettingsClick} className="settings-btn">
                           <img className="engranaje" src={"/engranaje.png"} alt={"Botón de Configuración"}/>
                       </button>
                   </div>

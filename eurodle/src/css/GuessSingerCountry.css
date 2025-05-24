@@ -73,21 +73,20 @@ body {
 
 
 
-
-
-
-
-
-
-
 .guess-singer-country-message{
     position: absolute;
     font-size: 20px;
     font-weight: 600;
-    color: #222;
-    border-bottom: 2px solid #1e88e5;
-    padding-bottom: 2px;
-    top: 270px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: white;
+    font-weight: normal;
+    text-align: center;
+    
+    top: 300px;
+    left: -10px;
 }
 
 .guess-singer-country-singer{
@@ -228,7 +227,7 @@ svg {
 
         }
 
-        .rotate-warning h2 {
+        .rotate-warning h1 {
             font-size: 50px;
         }
 
@@ -256,10 +255,10 @@ svg {
     @media screen and (orientation: landscape) and  (max-width: 1000px){
         .guess-singer-country-container {
             padding: 0.5rem;
-
+            height: 80vh;
         }
 
-        .guess-singer-country-container h2,h3{
+        .guess-singer-country-container h1,h2,h3{
             margin: 5px;
             font-size: 25px !important;
             z-index: 10; /* Número mayor → encima */
@@ -278,6 +277,10 @@ svg {
             margin: 0;
             padding: 0;
             color: rgb(243, 117, 180);
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
         }
 
 
@@ -295,7 +298,7 @@ svg {
             font-size: 1rem;
             position: absolute;
             top: 270px;
-            bottom: auto;
+            bottom: 0;
             right: 50px;
             max-width: 150px;
         }
