@@ -62,7 +62,11 @@
     "guessMethodYearCountry": "Año y País",
     "clues": "Más pistas",
     "errorEmptyInputSong": "Por favor, ingresa el título de la canción.",
-    "errorEmptyInputCountry": "Por favor, ingresa detalles del país y año."
+    "errorEmptyInputCountry": "Por favor, ingresa detalles del país y año.",
+    "labelYear": "Año",
+    "labelCountry": "País",
+    "labelTitle": "Título",
+    "labelSwitch": "Alternar"
   },
   "game": {
     "restart": "Reiniciar Juego",

@@ -89,8 +89,6 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const handleSubmit = (e) => {
         e.preventDefault();
 
-
-
         if(guessType === 0){
             if (entrada.trim() !== "") {
                 if(!falladas.includes(entrada.toLowerCase())){
@@ -158,6 +156,26 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
         setMostrarSugerencias(false);
     };
 
+    const enterTitulo = (e) => {
+        if(e.key === 'Enter'){
+            if(sugerencias.length>0){
+                setEntrada(sugerencias[0].song_name);
+                setSugerencias([]);
+                setMostrarSugerencias(false);
+            }
+        }
+    };
+
+    const enterPais = (e) => {
+        if(e.key === 'Enter'){
+            if(sugerenciasPais.length>0){
+                setEntradaPais(sugerenciasPais[0].country);
+                setSugerenciasPais([]);
+                setMostrarSugerencias(false);
+            }
+        }
+    };
+
     return (
         <div className="guess-form">
 
@@ -165,20 +183,24 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             {error && <div className="error-message" role="alert">{error}</div>}
 
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
+
             <div className="shuffle-icon">
-                <button onClick={alternarModoJuego} className="shuffle-btn" aria-label="Cambiar modo de juego">
+                <button onClick={alternarModoJuego} className="shuffle-btn">
+                    <span className="visually-hidden">{t('form.labelSwitch')}</span>
                     <i className="bi bi-shuffle"></i>
                 </button>
             </div>
 
 
+            <label htmlFor="formT" className="visually-hidden">{t('form.labelTitle')}</label>
             <input
+                id="formT"
                 type="text"
                 placeholder={t('form.placeholderSong')}
                 value={entrada}
                 onChange={handleChange}
                 hidden={guessType}
-                aria-label={t('form.placeholderSong')}
+                onKeyDown={enterTitulo}
             />
             {/* Sugerencias dinámicas */}
             {entrada && (
@@ -200,21 +222,24 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
 
 
             <div className="input-group">
-                <input className="inputYC"
+                <input id="formY"
+                       className="inputYC"
                        type="number"
                        placeholder={t('form.placeholderYear')}
                        value={entradaAnyo}
                        onChange={handleChangeAnyo}
                        hidden={!guessType}
-                       aria-label={t('form.placeholderYear')}
                 />
-                <input className="inputYC"
+                <label htmlFor="formY" className="visually-hidden">{t('form.labelYear')}</label>
+                <label htmlFor="formC" className="visually-hidden">{t('form.labelCountry')}</label>
+                <input id="formC"
+                       className="inputYC"
                        type="text"
                        placeholder={t('form.placeholderCountry')}
                        value={entradaPais}
                        onChange={handleChangePais}
                        hidden={!guessType}
-                       aria-label={t('form.placeholderCountry')}
+                       onKeyDown={enterPais}
                 />
             </div>
 

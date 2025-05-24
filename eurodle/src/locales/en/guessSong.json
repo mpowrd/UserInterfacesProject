@@ -62,7 +62,11 @@
     "guessMethodYearCountry": "Year and Country",
     "clues": "Show more clues",
     "errorEmptyInputSong": "Please, type song title.",
-    "errorEmptyInputCountry": "Please, specify details about song's year or country."
+    "errorEmptyInputCountry": "Please, specify details about song's year or country.",
+    "labelYear": "Year",
+    "labelCountry": "Country",
+    "labelTitle": "Title",
+    "labelSwitch": "Switch"
   },
   "game": {
     "restart": "Restart Game",

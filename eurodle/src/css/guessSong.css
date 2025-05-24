@@ -237,6 +237,17 @@
   background: #f0f0f0;
 }
 
+.visually-hidden{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* Fin de styles para GuessSongGame */
 
 /* Styles para FeedbackDisplay */
