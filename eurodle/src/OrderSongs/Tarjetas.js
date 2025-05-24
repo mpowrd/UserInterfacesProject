@@ -71,7 +71,7 @@ const Tarjetas = ({ canciones, ordenUsuario, setOrdenUsuario, isGameFinished }) 
 
     return (
         <div ref={drop} className={containerClasses}>
-            <h3>{t('avaliableCards')}</h3> {/* Asumo que tienes un t() para esto si es multilingüe */}
+            <h2>{t('avaliableCards')}</h2>
             {availableTarjetas.length > 0 ? (
                 <div className="tarjetas-list">
                     {availableTarjetas.map((cancion) => (

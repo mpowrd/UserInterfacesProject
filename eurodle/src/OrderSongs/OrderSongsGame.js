@@ -3,11 +3,13 @@ import Papa from "papaparse";
 import Tarjetas from "./Tarjetas";
 import Huecos from "./Huecos";
 import { useTranslation } from 'react-i18next';
+
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import ResultadoPopUp from "../ResultadoPopUp";
+import { TouchBackend } from 'react-dnd-touch-backend';
 
-// Asumo que OrderSongsGame.css es el principal que me pasaste
+import ResultadoPopUp from "../ResultadoPopUp";
+// 
 import "./OrderSongsGame.css";
 import HeartDisplay from "../HeartDisplay";
 
@@ -27,6 +29,8 @@ const OrderSongsGame = () => {
     const [mensajePopUp, setMensajePopUp] = useState(null);
     const [mensajeSecundarioPopUp, setMensajeSecundarioPopUp] = useState(null);
 
+    const isMobile = typeof navigator !== 'undefined' && /Mobi|Android/i.test(navigator.userAgent);
+    const backend = isMobile ? TouchBackend : HTML5Backend;
 
     useEffect(() => {
         setIsLoading(true);
@@ -141,7 +145,7 @@ const OrderSongsGame = () => {
     // Si el resultadoTipo es 'error', el resto del juego no debería renderizarse o interactuar.
 
     return (
-        <DndProvider backend={HTML5Backend}>
+        <DndProvider backend={backend} options={isMobile ? {enableMouseEvents: true, enableTouchEventsPreview: true} : {}}>
             <div className="order-songs-game">
                 <div className="order-songs-game-container">
                     <h1 className="title-order-song">{t('orderSongs:title')}</h1>
@@ -168,7 +172,7 @@ const OrderSongsGame = () => {
                         {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
                             <button
                                 onClick={handleCheck}
-                                className="comprobar-btn" // Puede necesitar ajustes específicos si está aquí
+                                className="comprobar-btn" 
                                 disabled={
                                     !!resultadoTipo ||
                                     ordenUsuario.some(s => s === null) ||
