@@ -22,10 +22,15 @@ function App() {
 
 
                 <header className="eurodle-header-home">
-                    <img src={"/tituloEuro.png"} className="eurodle-title-logo" alt={"Título Eurodle, pulsa para regresar a la pantalla principal"}/>
-                    <img  src={"/corazonEuroVacio.png"} className="eurodle-heart-logo" alt={"Logo corazón de Eurovision, pulsa para regresar a la pantalla principal"}/>
-                    <p className="eurodle-subtitle">{t('app.subtitle')}</p>
+                    <h1>
+                        <img src={"/tituloEuro.png"} className="eurodle-title-logo" alt={"Título Eurodle, pulsa para regresar a la pantalla principal"}/>
+                        <img  src={"/corazonEuroVacio.png"} className="eurodle-heart-logo" alt={"Logo corazón de Eurovision, pulsa para regresar a la pantalla principal"}/>
+                    </h1>
+                    <h2>
+                        <p className="eurodle-subtitle">{t('app.subtitle')}</p>
+                    </h2>
                 </header>
+
                 <main className="eurodle-menu">
                     <Link to="/GuessSongGame">
                         <button className="eurodle-btn ">{t('menu.guessSong')}</button>
@@ -37,7 +42,7 @@ function App() {
                         <button className="eurodle-btn ">{t('menu.guessCountry')}</button>
                     </Link>
 
-                    <button onClick={onSettingsClick} className=" eurodle-setting" aria-label="Opciones">
+                    <button onClick={onSettingsClick} className=" eurodle-setting">
                         {t('menu.settings')}
                     </button>
 

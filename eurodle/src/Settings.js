@@ -31,7 +31,7 @@ const Settings = (setShowSettings) => {
 
     return (
         <div className="settings-panel">
-            <h2>{t('title')}</h2>
+            <h1>{t('title')}</h1>
 
             <div className="settings-item">
                 <label htmlFor="volume">{t('volume')}:</label>
