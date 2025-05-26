@@ -207,10 +207,22 @@
   /*box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);*/
 }
 
-.shuffle-btn:hover {
-  transform: rotate(180deg) scale(1.35);
-  background-size: 200%, 200%;
-  background-position: right bottom;
+/* 🖱️ Hover para PC */
+@media (hover: hover) {
+  .shuffle-btn:hover {
+    transform: rotate(180deg) scale(1.35);
+    background-size: 200% 200%;
+    background-position: right bottom;
+  }
+}
+
+/* 📱 Click animación para móviles */
+@media (hover: none) {
+  .shuffle-btn.animate {
+    transform: rotate(180deg) scale(1.35);
+    background-size: 200% 200%;
+    background-position: right bottom;
+  }
 }
 
 

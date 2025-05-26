@@ -12,6 +12,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     const [guessType, setGuessType] = useState(0);
     const [mostrarSugerencias, setMostrarSugerencias] = useState(false);
     const [error, setError] = useState("");
+    const [isAnimating, setIsAnimating] = useState(false);
 
     const [falladas, setFalladas] = useState(fallos.map(f => f.song_name.toLowerCase()));
     const [falladasPaisAnyo, setFalladasPaisAnyo] = useState(fallos.map(f => f.country + "$songGuess$" + f.year));
@@ -136,6 +137,10 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
     };
 
     const alternarModoJuego = () => {
+        setIsAnimating(true);
+        setTimeout(() => {
+            setIsAnimating(false);
+        }, 500);
 
         if(guessType === 0){
             setGuessType(1);
@@ -187,7 +192,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
 
             <div className="shuffle-icon">
-                <button onClick={alternarModoJuego} className="shuffle-btn">
+                <button onClick={alternarModoJuego} className={`shuffle-btn ${isAnimating ? "animate" : ""}`} >
                     <span className="visually-hidden">{t('form.labelSwitch')}</span>
                     <i className="bi bi-shuffle"></i>
                 </button>
@@ -209,8 +214,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 <ul className="sugerencias" hidden={!mostrarSugerencias || (guessType === 1 && (entradaPais !== null || entradaPais !== ""))}>
                     {sugerencias.length > 0 ? (
                         sugerencias.map((s, index) => (
-                            <li key={index} className={index === 0 ? "sugerencia-activa" : ""} onClick={() => handleClickSugerencia(s.song_name)}>
-                                {s.song_name}
+                            <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerencia(s.song_name)}>
+                                <p className="mb-0">{s.song_name}</p> {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
                             </li>
                         ))
                     ) : (

@@ -43,7 +43,7 @@ const HeartDisplay = ({ intentosFallidos, totalIntentos }) => {
             })}
 
             <span className="heart-text">
-                {intentosFallidos}/{totalIntentos} {t('tries')}
+                {intentosFallidos}/{totalIntentos} {t('guessSong:feedback.tries')}
             </span>
         </div>
     );

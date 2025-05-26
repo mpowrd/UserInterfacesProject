@@ -14,7 +14,7 @@ import {useTranslation} from "react-i18next";
 
 const InteractiveMap = () => {
 
-    const { t } = useTranslation(['guessCountry', 'common']);
+    const { t } = useTranslation(['guessCountry']);
 
     const [canciones, setCanciones] = useState([]);
 
@@ -298,7 +298,7 @@ const InteractiveMap = () => {
             {isPortrait ? (
                 <div className="rotate-warning">
 
-                    <h1 className="text-2xl font-semibold mb-2">Gira tu dispositivo</h1>
+                    <h1 className="text-2xl font-semibold mb-2">{t("game.rotateTitle")}</h1>
                     <p className="text-md"> {t("game.rotateMessage")} </p>
                     <i className="bi bi-arrow-repeat fa-2x"></i>
                 </div>

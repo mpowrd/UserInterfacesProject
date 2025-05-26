@@ -2,6 +2,7 @@
   "game": {
     "title": "ADIVINA EL PAIS DEL CANTANTE",
     "arr": "País seleccionado:",
+    "hovered": "Selected country:",
     "clicked": "Has hecho click en: {{countryId}}",
     "hint": "Pista Dirección {{arrow}}",
     "correct": "¡Correcto! Has adivinado el país.",

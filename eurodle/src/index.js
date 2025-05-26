@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
-import './index.css';
+import './css/index.css';
 import InteractiveMap from "./GuessSingerCountry/GuessSingerCountry";
 import GuessSongGame from "./guessSong/GuessSongGame";
 import Header from "./Header";

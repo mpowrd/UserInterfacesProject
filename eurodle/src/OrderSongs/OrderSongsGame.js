@@ -10,7 +10,7 @@ import { TouchBackend } from 'react-dnd-touch-backend';
 
 import ResultadoPopUp from "../ResultadoPopUp";
 // 
-import "./OrderSongsGame.css";
+import "../css/OrderSongsGame.css";
 import HeartDisplay from "../HeartDisplay";
 
 const OrderSongsGame = () => {

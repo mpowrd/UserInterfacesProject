@@ -5,7 +5,8 @@
     "attemptsLeft": "Incorrect, keep trying. You have {{count}} attempt left",
     "attemptsLeft_plural": "Incorrect, keep trying. You have {{count}} attempts left",
     "congrats": "Congratulations! You guessed the song.",
-    "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}"
+    "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}",
+    "tries": "tries"
   },
   "clues": {
     "title": "Clues",
