@@ -89,7 +89,7 @@ body {
     left: -10px;
 }
 
-.guess-singer-country-singer{
+.singer{
     /*font-size: 2rem;*/
     font-weight: bold;
     padding-left: 20px;
@@ -130,9 +130,11 @@ body {
 }
 
 svg {
+    position:absolute;
     background: #3a3a3c;
     max-width: 100%;
     height: auto;
+    
     max-height: 500px;
 }
 
@@ -267,10 +269,29 @@ svg {
             border-radius: 10px;
             padding-left: 5px;
             padding-right: 5px;
-
         }
 
-        .guess-singer-country-singer {
+        .guess-singer-country-header{
+            position: absolute;
+            top: 10px;
+            right: auto;
+            left: auto;
+            bottom: auto;
+
+            z-index: 10;
+        }
+
+        .guess-singer-country-singer{
+            position: absolute;
+            top: 50px;
+            right: auto;
+            left: auto;
+            bottom: auto;
+
+            z-index: 10;
+        }
+
+        .singer {
             font-size: 40px; /* Aumenta ligeramente para visibilidad */
             z-index: 10; /* Número mayor → encima */
             background: #f1dcdc;
@@ -287,20 +308,25 @@ svg {
 
         .guess-singer-country-message {
             font-size: 15px;
-            position: absolute;
-            right: 50px;
-            left: -120px;
-            top: 10px;
+            
 
+        }
+
+        .pista-pais{
+            position: absolute;
+            right: 150px;
+            left: auto;
+            top: -285px;
         }
 
         .guess-singer-country-btn {
             font-size: 1rem;
             position: absolute;
-            top: 270px;
-            bottom: 0;
+            top: auto;
+            bottom: -20px;
             right: 50px;
             max-width: 150px;
+
         }
 
         .guess-singer-country-mapa-wrapper{
@@ -323,22 +349,17 @@ svg {
 
         }
 
-        .guess-singer-country-mapa {
-            width: 800px;
-            height: 350px;
-            position: absolute;
-            top: -100px;
-            z-index: 0;
-        }
 
-        .guess-singer-country-container #hearts{
+        .hearts{
             position: absolute;
-            padding-left: 10px;
+            padding-left: 5px;
             padding-top: 5px;
             padding-bottom: 5px;
+            padding-right:5px;
             background: #1e1e1e;
             border-radius: 15px;
-            left: 45px;
+            left: 50px;
+            right: auto;
             top: 10px;
             z-index: 10; /* Número mayor → encima */
 
@@ -360,12 +381,12 @@ svg {
         .guidance-label__text{
             z-index: 10;
             margin-top: unset;
-            top: unset;
+            top: auto;
             font-weight: bold;
             position: absolute;
             border-radius: 5px;
             background: #f9f9f9;
-            bottom: -30px;
+            bottom: -25px;
             color: #1e1e1e;
             border: 1px solid #1e1e1e;
         }

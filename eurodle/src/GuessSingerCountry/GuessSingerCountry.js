@@ -306,15 +306,24 @@ const InteractiveMap = () => {
 
             ) : (
                 <div className="guess-singer-country-container ">
-                    <h1 className="guess-singer-country-header">{t("game.title")}</h1>
+                    <div className="guess-singer-country-header">
+                        <h1 className="header">{t("game.title")}</h1>
+                    </div>
 
-                    <h2 className="guess-singer-country-singer">{cantanteAdivinar.nameCantante}</h2>
+                    <div className="guess-singer-country-singer">
+                        <h2 className="singer">{cantanteAdivinar.nameCantante}</h2>
+                    </div>
+                    
 
 
 
 
+                    <div className="hearts">
+                        <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
+                    </div>
+                    
 
-                    <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
+
                     <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
                         {t("game.refresh")}
                     </button>
@@ -326,9 +335,6 @@ const InteractiveMap = () => {
 
 
                     <div className="guess-singer-country-mapa-wrapper">
-
-
-
                         <ReactSVGPanZoom
                             ref={Viewer}
                             width={window.innerWidth}
