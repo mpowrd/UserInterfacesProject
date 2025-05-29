@@ -39,7 +39,7 @@ const InteractiveMap = () => {
     // Verificar la posición del móvil
     const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth); //como prueba la altura de la pantalla (en modo vertical)
 
-
+    const [ganado, setGanado] = useState(false);
 
     useEffect(() => {
         // Cargamos las caciones del csv al iniciar
@@ -99,7 +99,7 @@ const InteractiveMap = () => {
 
     }, []);
 
-
+    var paisSeleccionado;
 
     const handleMouseEnter = (event) => {
         if (finPartida) return;
@@ -107,6 +107,8 @@ const InteractiveMap = () => {
         const country = event.target;
         const name = country.getAttribute("name");
         setHoveredCountry(country.getAttribute("name"));
+
+        paisSeleccionado = hoveredCountry;
 
         country.setAttribute("stroke", "yellow");
         country.setAttribute("stroke-width", "1.5");
@@ -117,7 +119,7 @@ const InteractiveMap = () => {
         const name = country.getAttribute("name");
 
         if (!wrongCountries.includes(name)) {
-            setHoveredCountry(null);
+            if(!ganado) {setHoveredCountry(null);}
             country.setAttribute("stroke", "black"); // Restaurar borde original
             country.setAttribute("stroke-width", "1");
             country.removeAttribute("class");
@@ -233,6 +235,8 @@ const InteractiveMap = () => {
         if (countrySelectedName === cantanteAdivinar.nameCountry) {
             setResultadoMensaje(t("feedback.congrats"));
             setFinPartida(true); // Termina la partida actual
+
+            setGanado(true);
 
             // Pinta el pais correcto de verde
             const idCorrecto = getIdByName(countrySelectedName);

@@ -433,18 +433,18 @@ body {
 
 .popup-victoria {
     background-color: #f0fff0;
-    border-top-color: #4CAF50;
+    border-top-color: #00B0F0;
 }
-.popup-victoria h2 { color: #388E3C; }
-.popup-victoria .mensaje-principal, .popup-victoria .mensaje-secundario { color: #2e7d32; }
+.popup-victoria h2 { color: #00B0F0; }
+.popup-victoria .mensaje-principal, .popup-victoria .mensaje-secundario { color: #00B0F0; }
 
 
 .popup-derrota {
     background-color: #fff0f0;
-    border-top-color: #f44336;
+    border-top-color: #E60026;
 }
-.popup-derrota h2 { color: #D32F2F; }
-.popup-derrota .mensaje-principal, .popup-derrota .mensaje-secundario { color: #c62828; }
+.popup-derrota h2 { color: #E60026; }
+.popup-derrota .mensaje-principal, .popup-derrota .mensaje-secundario { color: #E60026; }
 
 
 .popup-botones {

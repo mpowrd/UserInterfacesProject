@@ -87,4 +87,11 @@ select {
     background-color: var(--tile-hover);
     transform: scale(1.02);
 }
+    
+
+@media (max-width: 800px) {
+    .settings-panel {
+        padding: calc(5% + 70px) 10% 5%;
+    }
+}
 
