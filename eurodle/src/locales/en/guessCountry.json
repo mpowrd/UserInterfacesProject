@@ -1,6 +1,6 @@
 {
   "game":  {
-    "title": "GUESS THE SINGER'S COUNTRY",
+    "title": "Guess the singer's country",
     "arr": "Selected country:",
     "hovered": "Selected country:",
     "clicked": "You clicked on: {{countryId}}",

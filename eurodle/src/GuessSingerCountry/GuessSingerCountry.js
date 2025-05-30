@@ -245,6 +245,7 @@ const InteractiveMap = () => {
 
             if (paisCorrecto) {
                 paisCorrecto.setAttribute("fill", "#2584d8");
+                setHoveredCountry(cantanteAdivinar.nameCountry);
             }
 
             return true;
@@ -274,6 +275,7 @@ const InteractiveMap = () => {
         setResultadoMensaje(t("game.hint", { arrow: '' }));
         setWrongCountries([]);
         setFallos(0);
+        setHoveredCountry("");
         document.querySelectorAll("path").forEach(p => {
             p.removeAttribute("class");
             p.setAttribute("fill", "#cccccc");
@@ -325,12 +327,14 @@ const InteractiveMap = () => {
                     <div className="hearts">
                         <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
                     </div>
-                    
+
+                    {finPartida &&  (
+                        <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
+                            {t("game.refresh")}
+                        </button>)
+                    }
 
 
-                    <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
-                        {t("game.refresh")}
-                    </button>
 
 
 

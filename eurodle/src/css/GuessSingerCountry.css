@@ -94,7 +94,15 @@ body {
     font-weight: bold;
     padding-left: 20px;
     padding-right: 20px;
-    color: rgb(243, 117, 180);
+    background: linear-gradient(90deg,
+    rgb(104, 198, 239),   rgb(205, 125, 246),  rgb(243, 117, 180), rgb(246, 130, 130)
+        /*rgba(0, 176, 240, 0.9),*/
+        /*rgba(123, 31, 162, 0.9),*/
+        /*rgba(208, 0, 111, 0.9),*/
+        /*rgba(230, 0, 38, 0.9)*/
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-align: center;
 }
 
@@ -112,14 +120,22 @@ body {
     margin-right: 5px;
     padding: 0.75rem 1rem;
     font-size: 1.25rem;
-    background-color: #666666;
     font-weight: bold;
     border: none;
-    color: white;
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     z-index: 10;
+
+    background: linear-gradient(135deg,
+    rgba(230, 0, 38, 1),
+    rgba(208, 0, 111, 1),
+    rgba(123, 31, 162, 1),
+    rgba(0, 176, 240, 1)
+    ) 0 0;
+    background-size: 200%, 200%;
+    color: var(--text);
+    opacity: 1;
 }
 
 #columnaSVG{
@@ -294,11 +310,16 @@ svg {
         .singer {
             font-size: 40px; /* Aumenta ligeramente para visibilidad */
             z-index: 10; /* Número mayor → encima */
-            background: #f1dcdc;
             margin: 0;
             padding: 0;
-            color: rgb(243, 117, 180);
-            background-color: #1a1a1a;
+            background: linear-gradient(90deg,
+                /*rgba(230, 0, 38, 1),*/
+                rgba(208, 0, 111, 1),
+                rgba(123, 31, 162, 1)
+                /*rgba(0, 176, 240, 1)*/
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             border-radius: 10px;
             padding-left: 5px;
             padding-right: 5px;

@@ -285,10 +285,10 @@ body {
 
 /* Feedback de la canción correcta/incorrecta */
 .hueco.feedback-correct {
-    border-color: green !important;
+    border-color: #2d7bd3 !important;
 }
 .hueco.feedback-incorrect {
-    border-color: red !important;
+    border-color: #de003e !important;
 }
 
 /* Estilos para el icono de feedback */
@@ -356,7 +356,7 @@ body {
     color: white;
 
     position: relative;
-    bottom: 70px;
+    bottom: 50px;
 }
 .comprobar-btn:hover:not(:disabled) {
     background-color: rgba(0, 176, 240, 0.7);
@@ -433,18 +433,18 @@ body {
 
 .popup-victoria {
     background-color: #f0fff0;
-    border-top-color: #00B0F0;
+    border-top-color: #2d7bd3;
 }
-.popup-victoria h2 { color: #00B0F0; }
-.popup-victoria .mensaje-principal, .popup-victoria .mensaje-secundario { color: #00B0F0; }
+.popup-victoria h2 { color: #2d7bd3; }
+.popup-victoria .mensaje-principal, .popup-victoria .mensaje-secundario { color: #2d7bd3; }
 
 
 .popup-derrota {
     background-color: #fff0f0;
-    border-top-color: #E60026;
+    border-top-color: #de003e;
 }
-.popup-derrota h2 { color: #E60026; }
-.popup-derrota .mensaje-principal, .popup-derrota .mensaje-secundario { color: #E60026; }
+.popup-derrota h2 { color: #de003e; }
+.popup-derrota .mensaje-principal, .popup-derrota .mensaje-secundario { color: #de003e; }
 
 
 .popup-botones {
@@ -467,7 +467,12 @@ body {
 }
 
 .popup-boton-reiniciar {
-    background-color: #1e88e5;
+    background: linear-gradient(135deg,
+    rgba(230, 0, 38, 0.9),
+    rgba(208, 0, 111, 0.9),
+    rgba(123, 31, 162, 0.9),
+    rgba(0, 176, 240, 0.9)
+    ) 0 0;
     color: white;
     box-shadow: 0 2px 5px rgba(0,0,0,0.15);
 }

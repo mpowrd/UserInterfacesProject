@@ -195,6 +195,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 <button onClick={alternarModoJuego} className={`shuffle-btn ${isAnimating ? "animate" : ""}`} >
                     <span className="visually-hidden">{t('form.labelSwitch')}</span>
                     <i className="bi bi-shuffle"></i>
+                    {/*Cambiar Modo*/}
                 </button>
             </div>
 

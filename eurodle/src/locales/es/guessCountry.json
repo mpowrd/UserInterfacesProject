@@ -1,6 +1,6 @@
 {
   "game": {
-    "title": "ADIVINA EL PAIS DEL CANTANTE",
+    "title": "Adivina el país del cantante",
     "arr": "País seleccionado:",
     "hovered": "Selected country:",
     "clicked": "Has hecho click en: {{countryId}}",

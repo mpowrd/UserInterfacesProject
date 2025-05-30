@@ -197,27 +197,29 @@ const OrderSongsGame = () => {
                         buttonMessage={t('orderSongs:buttons.restart')}
                         onRestart={reiniciarJuego}
                     />
+
+                    <div className="game-status-and-actions-btn">
+                        {/* Botón Comprobar en el medio o según layout de flex */}
+                        {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
+                            <button
+                                onClick={handleCheck}
+                                className="comprobar-btn"
+                                disabled={
+                                    !!resultadoTipo ||
+                                    ordenUsuario.some(s => s === null) ||
+                                    !!feedback
+                                }
+                            >
+                                {t('orderSongs:buttons.check')}
+                            </button>
+                        )}
+
+                    </div>
                 </div>
 
             </div>
 
-            <div className="game-status-and-actions-btn">
-                {/* Botón Comprobar en el medio o según layout de flex */}
-                {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
-                    <button
-                        onClick={handleCheck}
-                        className="comprobar-btn"
-                        disabled={
-                            !!resultadoTipo ||
-                            ordenUsuario.some(s => s === null) ||
-                            !!feedback
-                        }
-                    >
-                        {t('orderSongs:buttons.check')}
-                    </button>
-                )}
 
-            </div>
         </DndProvider>
 
 

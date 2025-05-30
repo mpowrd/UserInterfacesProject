@@ -60,12 +60,12 @@ h3 {
 }
 
 .popup-buttons button:first-child {
-    background-color: #4caf50;
+    background-color: #2d7bd3;
     color: white;
 }
 
 .popup-buttons button:last-child {
-    background-color: #f44336;
+    background-color: #de003e;
     color: white;
 }
 
