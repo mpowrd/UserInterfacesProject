@@ -255,8 +255,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 <ul className="sugerencias" hidden={!mostrarSugerencias || (guessType === 0 && (entrada !== null || entrada !== ""))}>
                     {sugerenciasPais.length > 0 ? (
                         sugerenciasPais.map((s, index) => (
-                            <li key={index} className={index === 0 ? "sugerencia-activa" : ""} onClick={() => handleClickSugerenciaPais(s.country)}>
-                                {s.country}
+                            <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerenciaPais(s.country)}>
+                                <p className="mb-0">{s.country}</p> {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
                             </li>
                         ))
                     ) : (
