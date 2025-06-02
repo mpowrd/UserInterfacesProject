@@ -29,10 +29,8 @@ const ExtraClues = ({ songData, fallos, acertado }) => {
         t('extraClues.clueTemplates.rank', { rank: songData.final_place || '?' }),
 
         (() => {
-            const paisAbajo = songData.paisAbajo === "Desconocido" ? t('extraClues.clueTemplates.neighboursParts.unknown') : songData.paisAbajo;
-            const paisArriba = songData.paisArriba === "Desconocido" ? t('extraClues.clueTemplates.neighboursParts.unknown') : songData.paisArriba;
-            const partBelow = paisAbajo !== t('extraClues.clueTemplates.neighboursParts.unknown') ? t('extraClues.clueTemplates.neighboursParts.below', { country: paisAbajo }) : "";
-            const partAbove = paisArriba !== t('extraClues.clueTemplates.neighboursParts.unknown') ? t('extraClues.clueTemplates.neighboursParts.above', { country: paisArriba }) : "";
+            const partBelow = songData.paisAbajo !== t('extraClues.clueTemplates.neighboursParts.unknown') ? t('extraClues.clueTemplates.neighboursParts.below', { country: songData.paisAbajo }) : "";
+            const partAbove = songData.paisArriba !== t('extraClues.clueTemplates.neighboursParts.unknown') ? t('extraClues.clueTemplates.neighboursParts.above', { country: songData.paisArriba }) : "";
             const separator = partBelow && partAbove ? t('extraClues.clueTemplates.neighboursParts.separator') : "";
 
             return t('extraClues.clueTemplates.neighbours', { below: partBelow, separator: separator, above: partAbove });

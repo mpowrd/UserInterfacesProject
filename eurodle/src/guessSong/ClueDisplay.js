@@ -33,7 +33,7 @@ const ClueDisplay = ({ pistas }) => {
 
             {pistas.length === 0 ? (
                 // Línea ~9: Cambiar p
-                <p style={{marginLeft: '1%' ,color:"white"}}>{t('clues.noClues')}</p>
+                <p style={{marginLeft: '1%' ,color:"#888888"}}>{t('clues.noClues')}</p>
             ) : (
 
                     <table className="pistas-table">

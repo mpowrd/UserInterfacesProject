@@ -194,6 +194,7 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  color: #aeaeae;
 
 }
 
@@ -207,7 +208,7 @@
   background: #1e1e1e;
   border-radius: 10px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   display: inline-block; /* o width: fit-content */
 }
 
