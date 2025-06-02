@@ -276,7 +276,7 @@ svg {
             height: 80vh;
         }
 
-        .guess-singer-country-container h1,h2,h3{
+        .header{
             margin: 5px;
             font-size: 25px !important;
             z-index: 10; /* Número mayor → encima */
@@ -285,6 +285,33 @@ svg {
             border-radius: 10px;
             padding-left: 5px;
             padding-right: 5px;
+        }
+
+        .guess-singer-country-singer{
+            background-color: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .singer{
+            margin: 5px;
+            font-size: 25px !important;
+            z-index: 10; /* Número mayor → encima */
+            font-weight: bold;
+            border-radius: 10px;
+            padding-left: 5px;
+            padding-right: 5px;
+
+            padding: 0;
+            background: linear-gradient(90deg,
+                /*rgba(230, 0, 38, 1),*/
+            rgba(208, 0, 111, 1),
+            rgba(123, 31, 162, 1)
+                /*rgba(0, 176, 240, 1)*/
+            );
+            background-color: #1a1a1a !important;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
         }
 
         .guess-singer-country-header{
@@ -304,27 +331,10 @@ svg {
             left: auto;
             bottom: auto;
 
+
+
             z-index: 10;
         }
-
-        .singer {
-            font-size: 40px; /* Aumenta ligeramente para visibilidad */
-            z-index: 10; /* Número mayor → encima */
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(90deg,
-                /*rgba(230, 0, 38, 1),*/
-                rgba(208, 0, 111, 1),
-                rgba(123, 31, 162, 1)
-                /*rgba(0, 176, 240, 1)*/
-            );
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            border-radius: 10px;
-            padding-left: 5px;
-            padding-right: 5px;
-        }
-
 
 
         .guess-singer-country-message {
