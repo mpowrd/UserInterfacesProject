@@ -190,14 +190,20 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
             {error && <div className="error-message" role="alert">{error}</div>}
 
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
+            <div className="wrapper">
+                <div className="changeMode-container">
+                    <div className="shuffle-txt">{t('form.changeMode')}</div>
 
-            <div className="shuffle-icon">
-                <button onClick={alternarModoJuego} className={`shuffle-btn ${isAnimating ? "animate" : ""}`} >
-                    <span className="visually-hidden">{t('form.labelSwitch')}</span>
-                    <i className="bi bi-shuffle"></i>
-                    {/*Cambiar Modo*/}
-                </button>
+                    <div className="shuffle-icon">
+                        <button onClick={alternarModoJuego} className={`shuffle-btn ${isAnimating ? "animate" : ""}`}>
+                            <span className="visually-hidden">{t('form.labelSwitch')}</span>
+                            <i className="bi bi-arrow-repeat"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
+
+
 
 
             <label htmlFor="formT" className="visually-hidden">{t('form.labelTitle')}</label>

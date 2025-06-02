@@ -67,7 +67,8 @@
     "labelYear": "Año",
     "labelCountry": "País",
     "labelTitle": "Título",
-    "labelSwitch": "Alternar"
+    "labelSwitch": "Alternar",
+    "changeMode": "Cambiar modo de juego"
   },
   "game": {
     "restart": "Reiniciar Juego",

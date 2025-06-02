@@ -1,10 +1,7 @@
-// Tarjetas.js
 import React from "react";
 import { useDrag, useDrop } from "react-dnd";
 import {useTranslation} from "react-i18next";
-// Asumo que OrderSongsGame.css o un CSS global contiene los estilos.
-// Si tienes un Tarjetas.css específico, impórtalo:
-// import "./Tarjetas.css";
+
 
 const DRAG_TYPES = {
     TARJETA_NUEVA: "TARJETA",

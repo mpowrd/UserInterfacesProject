@@ -178,7 +178,6 @@ body {
     box-sizing: border-box;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: opacity 0.2s ease, transform 0.15s ease-out, box-shadow 0.15s ease-out, background-color 0.2s;
-    user-select: none;
     opacity: 1; /* Opacidad por defecto */
 }
 
@@ -244,7 +243,6 @@ body {
     box-sizing: border-box;
     position: relative;
     transition: background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease; /* Añadida opacidad */
-    user-select: none;
     cursor: default; /* Cursor por defecto */
 }
 
@@ -395,7 +393,6 @@ body {
     justify-content: center;
     z-index: 1000;
     padding: 20px;
-    backdrop-filter: blur(3px); /* Efecto de desenfoque del fondo */
 }
 
 .resultado-popup-content {

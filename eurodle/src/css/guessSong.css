@@ -190,6 +190,29 @@
 /*  pointer-events: none;*/
 /*}*/
 
+.shuffle-txt{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.changeMode-container {
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block; /* o width: fit-content */
+}
+
+
+
 .shuffle-btn {
   background: linear-gradient(135deg,
   rgb(255, 0, 42),
@@ -206,6 +229,8 @@
   transition: background 0.7s ease-in-out, transform 0.5s ease;
   /*box-shadow: 0 0 10px rgba(40, 167, 69, 0.4);*/
 }
+
+
 
 /* 🖱️ Hover para PC */
 @media (hover: hover) {
@@ -341,6 +366,10 @@ th span{
 
 .pistas-table tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+.heart-text{
+  display: none;
 }
 
 
