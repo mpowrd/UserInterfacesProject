@@ -15,15 +15,12 @@ import HeartDisplay from "../HeartDisplay";
 
 const OrderSongsGame = () => {
     const { t } = useTranslation(['orderSongs', 'common']);
-
     const [canciones, setCanciones] = useState([]);
     const [ordenCorrecto, setOrdenCorrecto] = useState([]);
     const [ordenUsuario, setOrdenUsuarioState] = useState([]);
     const [feedback, setFeedback] = useState(null);
     const [year, setYear] = useState(null);
     const [vidas, setVidas] = useState(3);
-    // 'mensaje' ya no se usa directamente para el display, ahora es 'mensajePopUp'
-    // const [mensaje, setMensaje] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [resultadoTipo, setResultadoTipo] = useState(null);
     const [mensajePopUp, setMensajePopUp] = useState(null);
@@ -72,12 +69,12 @@ const OrderSongsGame = () => {
                 setOrdenCorrecto(topSongs.map(c => c.song_name));
                 const shuffledSongs = [...topSongs].sort(() => Math.random() - 0.5);
                 setCanciones(shuffledSongs);
-                setOrdenUsuarioState(Array(topSongs.length).fill(null)); // Usar topSongs.length
+                setOrdenUsuarioState(Array(topSongs.length).fill(null)); 
                 setFeedback(null);
-                setResultadoTipo(null); // Asegurar que se resetea al cargar
+                setResultadoTipo(null); 
                 setMensajePopUp(null);
                 setMensajeSecundarioPopUp(null);
-                setVidas(3); // Resetear vidas
+                setVidas(3); 
                 setIsLoading(false);
             },
             error: (error) => {
@@ -87,7 +84,7 @@ const OrderSongsGame = () => {
                 setIsLoading(false);
             },
         });
-    }, [t]); // t como dependencia
+    }, [t]); 
 
     const setOrdenUsuario = (newOrdenUsuarioSetter) => {
         setOrdenUsuarioState(prevOrdenUsuario => {
@@ -167,9 +164,6 @@ const OrderSongsGame = () => {
                         </div>
                     </div>
 
-
-
-
                     {resultadoTipo !== 'error' && (
                         <>
                             <div className="game-container">
@@ -186,7 +180,6 @@ const OrderSongsGame = () => {
                                     isGameFinished={!!resultadoTipo}
                                 />
                             </div>
-                            {/* El div .action-buttons original se elimina o se vacía */}
                         </>
                     )}
 
@@ -199,7 +192,6 @@ const OrderSongsGame = () => {
                     />
 
                     <div className="game-status-and-actions-btn">
-                        {/* Botón Comprobar en el medio o según layout de flex */}
                         {resultadoTipo !== 'error' && ( // Solo mostrar botón si se puede jugar
                             <button
                                 onClick={handleCheck}
@@ -216,13 +208,8 @@ const OrderSongsGame = () => {
 
                     </div>
                 </div>
-
             </div>
-
-
         </DndProvider>
-
-
     );
 };
 

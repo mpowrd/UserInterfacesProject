@@ -8,7 +8,7 @@ const DRAG_TYPES = {
     TARJETA_EN_HUECO: "TARJETA_EN_HUECO"
 };
 
-// Componente Tarjeta individual (arrastrable)
+// Componente Tarjeta individual 
 const Tarjeta = ({ cancion, isGameFinished }) => {
 
     const [{ isDragging }, drag] = useDrag(() => ({
@@ -18,12 +18,12 @@ const Tarjeta = ({ cancion, isGameFinished }) => {
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),
-    }), [cancion.song_name, isGameFinished]); // Agregada cancion.song_name a dependencias
+    }), [cancion.song_name, isGameFinished]); 
 
     const tarjetaClasses = [
         "tarjeta", // Clase base de la tarjeta
         isDragging ? "is-dragging" : "", // Clase cuando se está arrastrando
-        isGameFinished ? "game-finished" : "" // Clase si el juego ha terminado (para el cursor)
+        isGameFinished ? "game-finished" : "" // Clase si el juego ha terminado
     ].filter(Boolean).join(" ");
 
     return (
@@ -33,7 +33,7 @@ const Tarjeta = ({ cancion, isGameFinished }) => {
     );
 };
 
-// Componente Tarjetas (contenedor y DropTarget)
+// Componente Tarjetas
 const Tarjetas = ({ canciones, ordenUsuario, setOrdenUsuario, isGameFinished }) => {
 
     const { t } = useTranslation(['orderSongs']);
@@ -80,7 +80,7 @@ const Tarjetas = ({ canciones, ordenUsuario, setOrdenUsuario, isGameFinished }) 
                     ))}
                 </div>
             ) : (
-                <p className="no-available-tarjetas-message"> {/* Clase para el mensaje */}
+                <p className="no-available-tarjetas-message"> 
                     {t('allClear')}
                 </p>
             )}

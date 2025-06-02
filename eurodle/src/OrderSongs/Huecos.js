@@ -11,7 +11,7 @@ const DRAG_TYPES = {
 // Componente Huecos (plural)
 const Huecos = ({ ordenUsuario, setOrdenUsuario, feedback, isGameFinished }) => {
     return (
-        <div className="huecos"> {/* Esta clase ya está en tu CSS */}
+        <div className="huecos"> 
             {ordenUsuario.map((songNameInSlot, index) => (
                 <Hueco
                     key={index}
@@ -20,7 +20,6 @@ const Huecos = ({ ordenUsuario, setOrdenUsuario, feedback, isGameFinished }) => 
                     setOrdenUsuario={setOrdenUsuario}
                     feedbackIcon={feedback ? feedback[index] : null}
                     isGameFinished={isGameFinished}
-                    // ordenUsuarioLength no parece usarse en Hueco, se puede quitar si es así
                 />
             ))}
         </div>
@@ -70,12 +69,12 @@ const Hueco = ({ index, currentSongName, setOrdenUsuario, feedbackIcon, isGameFi
 
     // Aplicar clases dinámicas en lugar de estilos en línea siempre que sea posible
     const huecoClasses = [
-        "hueco", // Clase base
+        "hueco",
         isDraggingThisHuecoContent ? "is-dragging-source" : "",
         isOver && canDrop ? "is-over-can-drop" : "",
         feedbackIcon === "✔️" ? "feedback-correct" : "",
         feedbackIcon === "❌" ? "feedback-incorrect" : "",
-        !currentSongName && !feedbackIcon ? "hueco-vacio-placeholder" : "", // Para el texto (Vacío)
+        !currentSongName && !feedbackIcon ? "hueco-vacio-placeholder" : "", // Para el texto
         currentSongName ? "hueco-con-cancion" : "" // Para cuando tiene una canción
     ].filter(Boolean).join(" "); // Filtra vacíos y une
 
@@ -105,26 +104,22 @@ const Hueco = ({ index, currentSongName, setOrdenUsuario, feedbackIcon, isGameFi
             style={dynamicHuecoStyle}
         >
             {currentSongName ? (
-                // La canción dentro del hueco ahora usa la clase .cancion-en-hueco
-                // que definiremos en CSS para que se parezca a .tarjeta
                 <div className="cancion-en-hueco" onDoubleClick={handleDoubleClick}>
                     <span>{currentSongName}</span>
                     {feedbackIcon && (
                         <span
-                            className="feedback-icono" // Clase para el ícono
-                            style={{ color: feedbackIcon === "✔️" ? "green" : "red" }} // El color del ícono sí es dinámico
+                            className="feedback-icono" 
+                            style={{ color: feedbackIcon === "✔️" ? "green" : "red" }} 
                         >
             {feedbackIcon}
           </span>
                     )}
                 </div>
             ) : (
-                // El texto "(Vacío)" se estilizará con .hueco-vacio-placeholder o .texto-hueco-vacio
                 <span className="texto-hueco-vacio">({t("emptyCard")})</span>
             )}
         </div>
     );
-
 };
 
 export default Huecos;
