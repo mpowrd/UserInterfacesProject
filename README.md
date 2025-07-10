@@ -9,7 +9,7 @@ Grupo P
 | 🏆 Nombre     | 🎯 Correo | 🔍 Rol |
 |----------------------|--------------|-----------|
 | Eduardo García Rivas     | eduardogarr@uma.es | CTO |
-| Francisco Eloy González Castillo  | eloygonzalez@uma.es. | CEO |
+| Francisco Eloy González Castillo  | eloygonzalez@uma.es | CEO |
 | Francisco Javier Jordá Garay      | francisco.jorda@uma.es | CIO |
 | María Paulina Ordóñez Walkowiak      | mpow@uma.es  | COO |
 | Javier Toledo Delgado       | javier.toledo.delgado@uma.es | CXO |
