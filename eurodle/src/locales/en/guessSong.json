@@ -68,13 +68,13 @@
     "labelCountry": "Country",
     "labelTitle": "Title",
     "labelSwitch": "Switch",
-    "changeMode": "Change game mode"
-
+    "changeMode": "Change game mode",
+    "newClues": "You have new clues!"
   },
   "game": {
     "restart": "Restart Game",
     "showAll": "Show all clues 💡",
-    "guessBy" : "Guess the song by its ",
+    "guessBy" : "Guess the song by its... ",
     "guessByTitle" : "title",
     "guessByYearCountry" : "year and country",
     "info": "Information:"

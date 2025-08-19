@@ -296,17 +296,17 @@ body {
 .hueco::before {
     content: "";
     position: absolute;
-    top: -22px;
+    top: -38px;
     left: 50%;
     transform: translateX(-50%);
     color: #aaa;
-    font-size: 0.8em;
+    font-size: 1.5em;
     font-weight: bold;
     padding: 2px 5px;
 }
-.hueco:nth-child(1)::before { content: "1"; }
-.hueco:nth-child(2)::before { content: "2"; }
-.hueco:nth-child(3)::before { content: "3"; }
+.hueco:nth-child(1)::before { content: "🥇"; }
+.hueco:nth-child(2)::before { content: "🥈"; }
+.hueco:nth-child(3)::before { content: "🥉"; }
 .hueco:nth-child(4)::before { content: "4"; }
 .hueco:nth-child(5)::before { content: "5"; }
 
@@ -386,7 +386,7 @@ body {
 }
 
 .resultado-popup-content {
-    padding: 35px 45px;
+    padding: 25px 35px;
     border-radius: 12px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
     text-align: center;
@@ -401,13 +401,24 @@ body {
     margin-bottom: 20px;
     font-size: 2.2em;
     font-weight: 600;
+
+}
+
+/* 📱 Ajuste en móviles */
+@media (max-width: 480px) {
+    .resultado-popup-content h2 {
+        font-size: 1.8em;   /* más pequeño */
+        line-height: 1.4; /* opcional, para compactar */
+    }
 }
 
 .resultado-popup-content .mensaje-principal {
     font-size: 1.25em;
     margin-bottom: 15px;
     line-height: 1.6;
-    color: #333; 
+    color: #333;
+
+
 }
 
 .resultado-popup-content .mensaje-secundario {

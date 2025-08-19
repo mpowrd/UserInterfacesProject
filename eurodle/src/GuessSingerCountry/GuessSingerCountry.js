@@ -11,6 +11,7 @@ import { ReactSVGPanZoom,
 import "../css/GuessSingerCountry.css"
 import HeartDisplay from "../HeartDisplay";
 import {useTranslation} from "react-i18next";
+import ResultadoPopUp from "../ResultadoPopUp";
 
 const InteractiveMap = () => {
 
@@ -34,7 +35,7 @@ const InteractiveMap = () => {
 
     // Número de fallos realizados
     const [fallos, setFallos] = useState(0);
-    const intentos = 6;
+    const intentos = 3;
 
     // Verificar la posición del móvil
     const [isPortrait, setIsPortrait] = useState(window.innerHeight > window.innerWidth); //como prueba la altura de la pantalla (en modo vertical)
@@ -233,7 +234,6 @@ const InteractiveMap = () => {
 
     function paisAdivinado(countrySelectedName) {
         if (countrySelectedName === cantanteAdivinar.nameCountry) {
-            setResultadoMensaje(t("feedback.congrats"));
             setFinPartida(true); // Termina la partida actual
 
             setGanado(true);
@@ -253,20 +253,17 @@ const InteractiveMap = () => {
         } else {
             compararPaises(countrySelectedName, cantanteAdivinar.nameCountry);
             setWrongCountries(prev => [...prev, countrySelectedName]);
-            setFallos(fallos+1);
+            const currFallos = fallos+1;
+            setFallos(currFallos);
+
+            if (currFallos === intentos && !finPartida) {
+                setFinPartida(true);
+            }
+
             return false;
         }
 
     }
-
-    // Aqui se comprueba constantemente la condicion que hace que te has quedado
-    // sin intentos y no has acertado
-    useEffect(() => {
-        if (fallos === intentos && !finPartida) {
-            setFinPartida(true);
-            setResultadoMensaje(t("feedback.gameOver",{country: cantanteAdivinar.nameCountry}));
-        }
-    }, [fallos]);
 
     const reiniciarJuego = () => {
         setFinPartida(false);
@@ -301,6 +298,14 @@ const InteractiveMap = () => {
     return (
 
         <div className="guess-singer-country">
+
+            { finPartida && <ResultadoPopUp
+                tipo={ganado===true ? 'victoria' : 'derrota'}
+                mensajePrincipal={ganado===true ? t("feedback.congrats") : t("feedback.gameOver",{country: cantanteAdivinar.nameCountry})}
+                onRestart={reiniciarJuego}
+                buttonMessage={t("game.refresh")}
+            />}
+
             {isPortrait ? (
                 <div className="rotate-warning">
 
@@ -325,7 +330,7 @@ const InteractiveMap = () => {
 
 
                     <div className="hearts">
-                        <HeartDisplay intentosFallidos={fallos} totalIntentos={intentos}/>
+                        <HeartDisplay intentosFallidos={fallos*2} totalIntentos={intentos*2}/>
                     </div>
 
                     {finPartida &&  (

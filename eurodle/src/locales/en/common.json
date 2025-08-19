@@ -18,5 +18,8 @@
     "loading": "Loading...",
     "errorLoading": "Error loading data.",
     "errorNotEnoughSongsForYear": "Not enough songs for this year in the database"
+  },
+  "buttons": {
+    "home": "Go home"
   }
 }

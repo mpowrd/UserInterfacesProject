@@ -68,12 +68,13 @@
     "labelCountry": "País",
     "labelTitle": "Título",
     "labelSwitch": "Alternar",
-    "changeMode": "Cambiar modo de juego"
+    "changeMode": "Cambiar modo de juego",
+    "newClues": "¡Tienes pistas nuevas!"
   },
   "game": {
     "restart": "Reiniciar Juego",
     "showAll": "Mostrar todas las pistas 💡",
-    "guessBy" : "Adivina la cancion por ",
+    "guessBy" : "Adivina la cancion por... ",
     "guessByTitle" : "el título",
     "guessByYearCountry" : "el país y el año",
     "info": "Información:"

@@ -25,6 +25,8 @@ const GuessSongGame = () => {
     const [pistasAdicionales, setPistasAdicionales] = useState(false); // controla si se muestra o no el popup con las pistas adicionales
     const [tipoAdivinanza, setTipoAdivinanza] = useState('title');
     const [nuevaPista, setNuevaPista] = useState(false);
+    const [parpadeo, setParpadeo] = useState(false);
+
 
     const [mostradoPopupVictoria, setMostradoPopupVictoria] = useState(false);
     const [mostradoPopupDerrota, setMostradoPopupDerrota] = useState(false);
@@ -35,8 +37,9 @@ const GuessSongGame = () => {
     useEffect(() => {
         setTipoAdivinanza('title');
         setNuevaPista(false);
-        setMostradoPopupVictoria(false);
-        setMostradoPopupDerrota(false);
+        setParpadeo(false);
+        // setMostradoPopupVictoria(false);
+        // setMostradoPopupDerrota(false);
         // Cargamos las caciones del csv al iniciar
         Papa.parse("/canciones.csv", {
             header: true,
@@ -85,6 +88,7 @@ const GuessSongGame = () => {
     const mostrarPistas = () => {
         setPistasAdicionales(true);
         setNuevaPista(false);
+        setParpadeo(false);
     };
 
     const ocultarPistas = () => {
@@ -117,6 +121,11 @@ const GuessSongGame = () => {
             // Añadimos el fallo
             setFallos((prevFallos) => [...prevFallos, guess]);
             setIntentosRestantes((prev) => prev - 1);
+            setNuevaPista(true);
+            setParpadeo(true);
+            setTimeout(() => {
+                setParpadeo(false);
+            }, 3000);
         }
 
         // Generar pistas
@@ -146,8 +155,6 @@ const GuessSongGame = () => {
         ];
 
         setPistas((prevPistas) => [{ intento: guess, pistas: pistasDelIntento }, ...prevPistas]);
-
-        setNuevaPista(true);
     };
 
     const reiniciarJuego = () => {
@@ -159,6 +166,7 @@ const GuessSongGame = () => {
         setIntentosRestantes(totalIntentos);
         setAcertado(false);
         setNuevaPista(false);
+        setParpadeo(false);
         setMostradoPopupVictoria(false);
         setMostradoPopupDerrota(false);
         setTipoAdivinanza('title')
@@ -180,19 +188,10 @@ const GuessSongGame = () => {
         <div className=".eurodle-wrapper">
             <div className="guess-song-container">
 
-                {/*{cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}*/}
+                {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
 
                 <h1 className='guess-title'>
                     {t('guessSong:game.guessBy')}
-                    <strong
-                        className="letrasAdivinanza"
-                        data-text={tipoAdivinanza === 'title'
-                            ? t('guessSong:game.guessByTitle')
-                            : t('guessSong:game.guessByYearCountry')}>
-                        {tipoAdivinanza === 'title'
-                            ? t('guessSong:game.guessByTitle')
-                            : t('guessSong:game.guessByYearCountry')}
-                    </strong>
                 </h1>
 
                 <div className="contenido-principal">
@@ -207,6 +206,7 @@ const GuessSongGame = () => {
                             cambiarAdivinanza={setTipoAdivinanza}
                             nuevaPista={nuevaPista}
                             setNuevaPista={setNuevaPista}
+                            parpadeo={parpadeo}
                             mostrarPopupInfo={setMostrarPopupInfo}
                             cambiarPopupInfo={setMensajePopupInfo}
                         />

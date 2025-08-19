@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, mostrarPopupInfo, cambiarPopupInfo }) => {
+const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, parpadeo, mostrarPopupInfo, cambiarPopupInfo }) => {
     const { t } = useTranslation('guessSong');
 
     const [entrada, setEntrada] = useState("");
@@ -37,9 +37,32 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
         const filtro = canciones
             .filter((cancion) =>
                 cancion.song_name.toLowerCase().includes(valor.toLowerCase()) &&
-                !falladasNew.includes(cancion.song_name.toLowerCase())
+                !falladasNew.includes(cancion.song_name.toLowerCase()) &&
+                !falladasPANew.includes(cancion.country.toLowerCase()+"$songGuess$"+cancion.year.toLowerCase())
             )
-            .slice(0, 10); // Mostramos 10 canciones de autocompletado
+            .slice(0, 10) // Mostramos 10 canciones de autocompletado
+            .map((cancion) => {
+                const name = cancion.song_name;
+                const lowerName = name.toLowerCase();
+                const lowerValor = valor.toLowerCase();
+
+                const index = lowerName.indexOf(lowerValor);
+
+                let parts;
+                if (index !== -1) {
+                    const before = name.slice(0, index);
+                    const match = name.slice(index, index + valor.length);
+                    const after = name.slice(index + valor.length);
+                    parts = [before, match, after];
+                } else {
+                    parts = [name, "", ""]; // fallback por si acaso
+                }
+
+                return {
+                    ...cancion,
+                    highlightParts: parts
+                };
+            });
 
         setSugerencias(filtro);
 
@@ -61,7 +84,29 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
         const filtro = canciones
             .filter((cancion) =>
                 cancion.country.toLowerCase().includes(valor.toLowerCase())
-            );
+            ).slice(0, 10)
+            .map((cancion) => {
+                const pais = cancion.country;
+                const lowerName = pais.toLowerCase();
+                const lowerValor = valor.toLowerCase();
+
+                const index = lowerName.indexOf(lowerValor);
+
+                let parts;
+                if (index !== -1) {
+                    const before = pais.slice(0, index);
+                    const match = pais.slice(index, index + valor.length);
+                    const after = pais.slice(index + valor.length);
+                    parts = [before, match, after];
+                } else {
+                    parts = [pais, "", ""]; // fallback por si acaso
+                }
+
+                return {
+                    ...cancion,
+                    highlightParts: parts
+                };
+            });
 
         // Creamos un objeto para mantener los países únicos, usando el país como clave.
         const paisesUnicos = filtro.reduce((acc, cancion) => {
@@ -192,7 +237,20 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 {/*RADIO DE TITULO Y AÑO/PAIS*/}
             <div className="wrapper">
                 <div className="changeMode-container">
-                    <div className="shuffle-txt">{t('form.changeMode')}</div>
+
+                    <h1 className="guess-title">
+                        <strong
+                            className="letrasAdivinanza"
+                            data-text={guessType === 0
+                                ? t('guessSong:game.guessByTitle')
+                                : t('guessSong:game.guessByYearCountry')}>
+                            {guessType === 0
+                                ? t('guessSong:game.guessByTitle')
+                                : t('guessSong:game.guessByYearCountry')}
+                        </strong>
+                    </h1>
+
+                    {/*<div className="shuffle-txt">{t('form.changeMode')}</div>*/}
 
                     <div className="shuffle-icon">
                         <button onClick={alternarModoJuego} className={`shuffle-btn ${isAnimating ? "animate" : ""}`}>
@@ -222,7 +280,12 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                     {sugerencias.length > 0 ? (
                         sugerencias.map((s, index) => (
                             <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerencia(s.song_name)}>
-                                <p className="mb-0">{s.song_name}</p> {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
+                                <span>
+                                <span>{s.highlightParts[0]}</span>
+                                <strong>{s.highlightParts[1]}</strong>
+                                <span>{s.highlightParts[2]}</span>
+                                </span>
+                                {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
                             </li>
                         ))
                     ) : (
@@ -261,8 +324,13 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 <ul className="sugerencias" hidden={!mostrarSugerencias || (guessType === 0 && (entrada !== null || entrada !== ""))}>
                     {sugerenciasPais.length > 0 ? (
                         sugerenciasPais.map((s, index) => (
-                            <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerenciaPais(s.country)}>
-                                <p className="mb-0">{s.country}</p> {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
+                            <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerencia(s.song_name)}>
+                                <span>
+                                <span>{s.highlightParts[0]}</span>
+                                <strong>{s.highlightParts[1]}</strong>
+                                <span>{s.highlightParts[2]}</span>
+                                </span>
+                                {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
                             </li>
                         ))
                     ) : (
@@ -280,6 +348,13 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 <button className='guess-btn' onClick={mostrarPistas}>{t('form.clues')}
                     {nuevaPista===true ?  <i className="bi bi-circle-fill icono-pista"></i> : '' }</button>
             </div>
+
+            {nuevaPista && parpadeo && (
+                <div className="tooltip-bocadillo animate-blink">
+                    {t('form.newClues')}
+                </div>
+            )}
+
         </div>
     );
 };

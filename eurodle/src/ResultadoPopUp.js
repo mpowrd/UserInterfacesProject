@@ -2,9 +2,11 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import "./css/OrderSongsGame.css"
+import {useNavigate} from "react-router-dom";
 
-const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, onRestart, buttonMessage }) => {
+const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onRestart, buttonMessage }) => {
     const { t } = useTranslation(['orderSongs', 'common']);
+    const navigate = useNavigate();
 
     if (!mensajePrincipal) {
         return null; // No mostrar nada si no hay mensaje
@@ -13,6 +15,9 @@ const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, on
     const esVictoria = tipo === 'victoria';
     const popUpClass = esVictoria ? 'popup-victoria' : 'popup-derrota';
     const titulo = esVictoria ? t('orderSongs:results.winTitle') : t('orderSongs:results.loseTitle');
+    const goHome = ()=> {
+        navigate("/");
+    }
 
     return (
         <div className="resultado-popup-overlay">
@@ -25,6 +30,9 @@ const ResultadoPopUp = ({ tipo, mensajePrincipal, mensajeSecundario, onClose, on
                 <div className="popup-botones">
                     <button onClick={onRestart} className="popup-boton-reiniciar">
                         {buttonMessage}
+                    </button>
+                    <button onClick={goHome} className="popup-boton-reiniciar">
+                        {t("common:buttons.home")}
                     </button>
                 </div>
             </div>
