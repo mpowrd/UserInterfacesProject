@@ -88,8 +88,20 @@
 .end-buttons {
   display: flex;
   justify-content: space-around;
-
   padding: 2%;
+}
+
+.end-buttons_final {
+    display: flex;
+    justify-content: space-around;
+    padding: 2%;
+}
+
+@media (max-width: 800px) {
+    .end-buttons_final {
+
+        padding: 2% 2% 10%;
+    }
 }
 
 .tooltip-bocadillo {
@@ -336,6 +348,13 @@
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
 }
 
+.sugerencias {
+    font-family: "Roboto"
+}
+
+.sugerencias .texto_prin{
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.34);
+}
 
 /* Fin de styles para GuessSongGame */
 

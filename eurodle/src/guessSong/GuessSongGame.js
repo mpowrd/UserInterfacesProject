@@ -9,7 +9,6 @@ import { useTranslation } from 'react-i18next';
 
 
 import "../css/guessSong.css"
-import YouTubePlayer from "./YouTubePlayer";
 import ResultadoPopUp from "../ResultadoPopUp";
 
 const GuessSongGame = () => {
@@ -188,10 +187,10 @@ const GuessSongGame = () => {
         <div className=".eurodle-wrapper">
             <div className="guess-song-container">
 
-                {cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}
+                {/*{cancionCorrecta? cancionCorrecta.song_name + cancionCorrecta.year + cancionCorrecta.country : ""}*/}
 
                 <h1 className='guess-title'>
-                    {t('guessSong:game.guessBy')}
+                    {intentosRestantes === 0 ? t('guessSong:feedback.gameOver2') : acertado ? t('guessSong:feedback.congrats2') : t('guessSong:game.guessBy')}
                 </h1>
 
                 <div className="contenido-principal">
@@ -220,7 +219,7 @@ const GuessSongGame = () => {
 
                     {/* Botón para reiniciar cuando acabe el juego */}
                     {(acertado || intentosRestantes <= 0) && (
-                        <div className='end-buttons'>
+                        <div className='end-buttons_final'>
                         <button className='guess-btn' onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
                             {t('guessSong:game.restart')}
                         </button>

@@ -50,6 +50,7 @@ function App() {
 
                 <footer className="eurodle-footer">
                     <p>{t('app.footer')}</p>
+                    <p><a href="/about-us">{t('about')}</a> | <a href="/terms-of-use">{t('terms')}</a> | <a href="/cookies&privacy">{t('privacy')}</a></p>
                 </footer>
             </div>
         </div>

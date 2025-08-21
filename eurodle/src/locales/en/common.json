@@ -1,5 +1,8 @@
 {
   "tries": "tries",
+  "about": "About us",
+  "terms": "Terms of Use",
+  "privacy": "Cookies & Privacy",
   "app": {
     "title": "Eurodle",
     "subtitle": "Inspired by Eurovision",

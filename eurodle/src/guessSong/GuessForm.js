@@ -281,9 +281,9 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                         sugerencias.map((s, index) => (
                             <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerencia(s.song_name)}>
                                 <span>
-                                <span>{s.highlightParts[0]}</span>
-                                <strong>{s.highlightParts[1]}</strong>
-                                <span>{s.highlightParts[2]}</span>
+                                <span className="texto_sec">{s.highlightParts[0]}</span>
+                                <strong className="texto_prin">{s.highlightParts[1]}</strong>
+                                <span className="texto_sec">{s.highlightParts[2]}</span>
                                 </span>
                                 {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
                             </li>
@@ -324,11 +324,11 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                 <ul className="sugerencias" hidden={!mostrarSugerencias || (guessType === 0 && (entrada !== null || entrada !== ""))}>
                     {sugerenciasPais.length > 0 ? (
                         sugerenciasPais.map((s, index) => (
-                            <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerencia(s.song_name)}>
+                            <li key={index} className={index === 0 ? "sugerencia-activa d-flex justify-content-between align-items-center" : ""} onClick={() => handleClickSugerenciaPais(s.country)}>
                                 <span>
-                                <span>{s.highlightParts[0]}</span>
-                                <strong>{s.highlightParts[1]}</strong>
-                                <span>{s.highlightParts[2]}</span>
+                                <span className="texto_sec">{s.highlightParts[0]}</span>
+                                <strong className="texto_prin">{s.highlightParts[1]}</strong>
+                                <span className="texto_sec">{s.highlightParts[2]}</span>
                                 </span>
                                 {index === 0 ? <i className="bi bi-box-arrow-in-right"></i> : ""}
                             </li>

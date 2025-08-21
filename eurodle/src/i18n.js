@@ -12,6 +12,8 @@ import orderSongs_en from './locales/en/orderSongs.json';
 import orderSongs_es from './locales/es/orderSongs.json';
 import guessCountry_en from './locales/en/guessCountry.json';
 import guessCountry_es from './locales/es/guessCountry.json';
+import userInfo_en from './locales/en/userInfo.json';
+import userInfo_es from './locales/es/userInfo.json';
 import {useSettings} from "./SettingsProvider";
 import LanguageDetector from 'i18next-browser-languagedetector';
 
@@ -25,14 +27,16 @@ i18n // Detecta el idioma del navegador
                 common: common_en,
                 guessSong: guessSong_en,
                 orderSongs: orderSongs_en,
-                guessCountry: guessCountry_en
+                guessCountry: guessCountry_en,
+                userInfo: userInfo_en
             },
             es: {
                 settings: settings_es, // Tu namespace existente
                 common: common_es,
                 guessSong: guessSong_es,
                 orderSongs: orderSongs_es,
-                guessCountry: guessCountry_es
+                guessCountry: guessCountry_es,
+                userInfo: userInfo_es
             }
         },
         // lng: 'es', // Puedes quitar esto si usas LanguageDetector

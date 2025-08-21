@@ -6,7 +6,9 @@
     "attemptsLeft_plural": "Incorrect, keep trying. You have {{count}} attempts left",
     "congrats": "Congratulations! You guessed the song.",
     "gameOver": "You ran out of attempts. 😢 The song was: {{songName}}",
-    "tries": "tries"
+    "tries": "tries",
+    "congrats2": "Congratulations!",
+    "gameOver2": "You ran out of attempts"
   },
   "clues": {
     "title": "Clues",

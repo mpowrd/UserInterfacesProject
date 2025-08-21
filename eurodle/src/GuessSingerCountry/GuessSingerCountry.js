@@ -120,7 +120,7 @@ const InteractiveMap = () => {
         const name = country.getAttribute("name");
 
         if (!wrongCountries.includes(name)) {
-            if(!ganado) {setHoveredCountry(null);}
+            // if(!ganado) {setHoveredCountry(null);} AL QUITAR EL MOUSE REMOVE CHILD NULL
             country.setAttribute("stroke", "black"); // Restaurar borde original
             country.setAttribute("stroke-width", "1");
             country.removeAttribute("class");
@@ -272,7 +272,7 @@ const InteractiveMap = () => {
         setResultadoMensaje(t("game.hint", { arrow: '' }));
         setWrongCountries([]);
         setFallos(0);
-        setHoveredCountry("");
+        // setHoveredCountry(""); AL REINICIAR EL JUEGO CHILD NULL
         document.querySelectorAll("path").forEach(p => {
             p.removeAttribute("class");
             p.setAttribute("fill", "#cccccc");

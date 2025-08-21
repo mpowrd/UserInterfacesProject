@@ -9,6 +9,9 @@ import { Routes, Route } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import OrderSongsGame from './OrderSongs/OrderSongsGame';
+import Aboutus from './userInfo/Aboutus';
+import Terms from './userInfo/Terms';
+import Privacy from './userInfo/Privacy';
 import Settings from "./Settings";
 import { SettingsProvider } from './SettingsProvider';
 import './i18n';
@@ -27,6 +30,9 @@ root.render(
 
         {/* Puedes poner una ruta por defecto si quieres */}
         {/* <Route path="/" element={<HomeComponent />} /> */}
+        <Route path="/about-us" element={<Aboutus />} />
+        <Route path="/terms-of-use" element={<Terms />} />
+        <Route path="/cookies&privacy" element={<Privacy />} />
       </Routes>
     </BrowserRouter>
   </SettingsProvider>

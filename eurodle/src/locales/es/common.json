@@ -1,5 +1,8 @@
 {
   "tries": "intentos",
+  "about": "Sobre nosotros",
+  "terms": "Términos de Uso",
+  "privacy": "Privacidad y Cookies",
   "app": {
     "title": "Eurodle",
     "subtitle": "Inspirado en Eurovisión",

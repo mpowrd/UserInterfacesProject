@@ -6,7 +6,9 @@
     "attemptsLeft_plural": "Has fallado, sigue intentándolo. Te quedan {{count}} intentos",
     "congrats": "¡Enhorabuena! Has acertado la canción.",
     "gameOver": "Te has quedado sin intentos. 😢 La canción era: {{songName}}",
-    "tries": "intentos"
+    "tries": "intentos",
+    "congrats2": "¡Enhorabuena!",
+    "gameOver2": "Te has quedado sin intentos"
   },
   "clues": {
     "title": "Pistas",

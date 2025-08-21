@@ -271,6 +271,10 @@ footer p{
     color: #666;
 }
 
+.eurodle-footer a{
+    color: #797c88;
+}
+
 .eurodle-heart-logo{
     width: 70px;
     height: auto;
