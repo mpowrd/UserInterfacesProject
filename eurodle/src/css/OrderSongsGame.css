@@ -484,6 +484,11 @@ body {
    ========================================================================== */
 
 .loading-message-container {
+    position: fixed; /* Fijo para que esté siempre sobre todo lo demás */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -492,7 +497,7 @@ body {
     color: #e0e0e0;
     background-color: #282c34; 
     text-align: center;
-    padding: 20px;
+    /*padding: 20px;*/
     box-sizing: border-box;
 }
 

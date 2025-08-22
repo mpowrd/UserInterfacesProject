@@ -22,8 +22,6 @@
       "rank": "Ranking"
     },
     "comparison": {
-      "correct": "✅",
-      "incorrect": "❌",
       "yearHigher": "🔼 Look for newer",
       "yearLower": "🔽 Look for older",
       "rankHigher": "🔼 Higher ranking",
@@ -71,7 +69,8 @@
     "labelTitle": "Title",
     "labelSwitch": "Switch",
     "changeMode": "Change game mode",
-    "newClues": "You have new clues!"
+    "newClues": "You have new clues!",
+    "rangeLimit": "You have exceeded the chosen range"
   },
   "game": {
     "restart": "Restart Game",
@@ -79,8 +78,19 @@
     "guessBy" : "Guess the song by its... ",
     "guessByTitle" : "title",
     "guessByYearCountry" : "year and country",
-    "info": "Information:"
+    "info": "Information:",
+    "mode": "Guess the Song",
+    "modes": "Game Modes:",
+    "mode1": "Classic mode",
+    "mode2": "Hardcore mode 💀",
+    "mode3": "Year Range",
+    "yearStart": "Start Year",
+    "yearEnd": "End Year",
+    "help" : "Help"
   },
+
+  "help_info": "Eurodle´s main game has 3 different Modes\n\n 1. Classic mode:\n\t The standard Eurodle experience, you have extra clues and songs from 2009 to 2025. \n\n 2. The hardcore mode:\n\t No extra clues, just you and your knowledge versus the world.\n\n3. Year range mode: \n\tIf you were not into Eurovision for some time or you just want a custom experience, this is your game mode.\n\tYou must enter a valid range to be able to play this game mode (between 2009 and 2025)",
+
 
   "noSongFound": "No song found with that name",
 

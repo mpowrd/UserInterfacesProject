@@ -1,7 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from "react-router-dom";
-import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 import "./css/estiloEuro.css";
@@ -9,9 +8,6 @@ import "./css/estiloEuro.css";
 function App() {
     const { t } = useTranslation('common');
     const navigate = useNavigate();
-    const location = useLocation();
-    const isSettingsPage = location.pathname === "/Settings";
-
     const onSettingsClick = () => {
         navigate("/Settings");
     };
@@ -32,7 +28,7 @@ function App() {
                 </header>
 
                 <main className="eurodle-menu">
-                    <Link to="/GuessSongGame">
+                    <Link to="/GuessSongGame/GameModeSelector">
                         <button className="eurodle-btn ">{t('menu.guessSong')}</button>
                     </Link>
                     <Link to="/OrderSongsGame">

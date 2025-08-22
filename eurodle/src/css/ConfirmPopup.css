@@ -26,6 +26,14 @@
     justify-content: right ;
 }
 
+.preserve-whitespace {
+    white-space: pre-wrap; /* respeta \n y \t */
+}
+
+.non-centered{
+    text-align: left;
+}
+
 .popup-Xbutton {
     font-weight: bold;
     font-size: xx-large;

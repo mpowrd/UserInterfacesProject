@@ -1,24 +1,19 @@
 import React from "react";
 import { useTranslation } from 'react-i18next'; // <-- Añadir
 
-const ClueDisplay = ({ pistas }) => {
+const ClueDisplay = ({ pistas, noYear }) => {
     const { t } = useTranslation('guessSong'); // <-- Añadir (namespace 'guessSong')
 
     // Helper function to translate comparison results
     const translateComparison = (comparisonText) => {
         switch (comparisonText) {
-            case "✅":
-            case "✔️ Correcto": // Asegúrate de que coincida con lo que genera handleGuess
-                return t('clues.comparison.correct');
-            case "❌":
-                return t('clues.comparison.incorrect');
-            case "🔼 Busca más reciente":
+            case "🔼 year":
                 return t('clues.comparison.yearHigher');
-            case "🔽 Busca más antiguo":
+            case "🔽 year":
                 return t('clues.comparison.yearLower');
-            case "🔼 Ranking más alto":
+            case "🔼 ranking":
                 return t('clues.comparison.rankHigher');
-            case "🔽 Ranking más bajo":
+            case "🔽 ranking":
                 return t('clues.comparison.rankLower');
             default:
                 return comparisonText; // Devuelve el texto original si no hay coincidencia
@@ -43,7 +38,7 @@ const ClueDisplay = ({ pistas }) => {
                             <th><span>{t('clues.headers.song')}</span></th>
                             <th><span>{t('clues.headers.artist')}</span></th>
                             <th><span>{t('clues.headers.country')}</span></th>
-                            <th><span>{t('clues.headers.year')}</span></th>
+                            {!noYear && <th><span>{t('clues.headers.year')}</span></th>}
                             <th><span>{t('clues.headers.rank')}</span></th>
                         </tr>
                         </thead>

@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 
-const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, parpadeo, mostrarPopupInfo, cambiarPopupInfo }) => {
+const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanza, nuevaPista, parpadeo, mostrarPopupInfo, cambiarPopupInfo,
+validRange, yearRange, hardcore}) => {
     const { t } = useTranslation('guessSong');
 
     const [entrada, setEntrada] = useState("");
@@ -137,7 +138,7 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
 
         /* ----------  MODO  TÍTULO  ---------- */
         if (guessType === 0) {
-            if (!entrada.trim()) { // input no matchea un resultado del csv
+            if (!entrada.trim()) { // input no existente
                 cambiarPopupInfo(t('form.errorEmptyInputSong'));
                 mostrarPopupInfo(true);
                 return; // lo sacamos de este flujo de ejecucion
@@ -154,8 +155,15 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
 
         /* ---------  MODO  AÑO + PAÍS -------- */
         if (guessType === 1) {
-            if (!entradaPais.trim() || !entradaAnyo.trim()) { // input no matchea un resultado del csv, ya sea por pais o por año
+
+            if (!entradaPais.trim() || !entradaAnyo.trim()) { // input no existente
                 cambiarPopupInfo(t('form.errorEmptyInputCountry'));
+                mostrarPopupInfo(true);
+                return; // lo sacamos de este flujo de ejecucion
+            }
+
+            if (validRange && (entradaAnyo.trim() < yearRange[0] || entradaAnyo.trim() > yearRange[1])) { // rango exedido
+                cambiarPopupInfo(t('form.rangeLimit'));
                 mostrarPopupInfo(true);
                 return; // lo sacamos de este flujo de ejecucion
             }
@@ -258,6 +266,8 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
                             <i className="bi bi-arrow-repeat"></i>
                         </button>
                     </div>
+
+                    {validRange && <p className='small-text'>{yearRange[0]===yearRange[1] ? yearRange[0] : yearRange[0] + ' - ' + yearRange[1]}</p>}
                 </div>
             </div>
 
@@ -345,11 +355,11 @@ const GuessForm = ({ canciones, onGuess, fallos, mostrarPistas, cambiarAdivinanz
 
             <div className='end-buttons'>
                 <button className='guess-btn' onClick={handleSubmit}>{t('form.submitButton')}</button>
-                <button className='guess-btn' onClick={mostrarPistas}>{t('form.clues')}
-                    {nuevaPista===true ?  <i className="bi bi-circle-fill icono-pista"></i> : '' }</button>
+                {!hardcore && <button className='guess-btn' onClick={mostrarPistas}>{t('form.clues')}
+                    {nuevaPista===true ?  <i className="bi bi-circle-fill icono-pista"></i> : '' }</button>}
             </div>
 
-            {nuevaPista && parpadeo && (
+            {!hardcore && nuevaPista && parpadeo && (
                 <div className="tooltip-bocadillo animate-blink">
                     {t('form.newClues')}
                 </div>

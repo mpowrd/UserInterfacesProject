@@ -13,6 +13,7 @@ import Aboutus from './userInfo/Aboutus';
 import Terms from './userInfo/Terms';
 import Privacy from './userInfo/Privacy';
 import Settings from "./Settings";
+import GamemodeSelector from "./guessSong/GamemodeSelector";
 import { SettingsProvider } from './SettingsProvider';
 import './i18n';
 
@@ -25,6 +26,7 @@ root.render(
         <Route path="/" element={<App />} />
         <Route path="/AdivinaPais" element={<InteractiveMap />} />
         <Route path="/GuessSongGame" element={<GuessSongGame />} />
+          <Route path="/GuessSongGame/GameModeSelector" element={<GamemodeSelector />} />
         <Route path="/OrderSongsGame" element={<OrderSongsGame />} />
         <Route path="/Settings" element={<Settings />} />
 

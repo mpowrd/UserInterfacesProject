@@ -12,7 +12,8 @@
     "guessSong": "Guess the Song",
     "orderSongs": "Order the Songs",
     "guessCountry": "Singer's Country",
-    "settings": "Settings"
+    "settings": "Settings",
+    "help": "Help"
   },
   "settings": {
     "buttonLabel": "Settings"

@@ -6,12 +6,19 @@ import ClueDisplay from "./ClueDisplay";
 import ExtraClues from "./ExtraClues";
 import DefaultPopup from "../DefaultPopup";
 import { useTranslation } from 'react-i18next';
-
+import { useSearchParams } from 'react-router-dom';
 
 import "../css/guessSong.css"
 import ResultadoPopUp from "../ResultadoPopUp";
 
 const GuessSongGame = () => {
+    const [searchParams] = useSearchParams();
+    const hardcore = searchParams.get('hardcore') === '1';
+    const yearRange = [searchParams.get('yearStart'), searchParams.get('yearEnd')];
+    const validRange = yearRange && yearRange[0] && yearRange[1] && yearRange[0] !== "" && (yearRange[1] !== "" &&
+        ((yearRange[0]<=yearRange[1]) && yearRange[0].length === 4 && yearRange[0] <= 2025 && yearRange[0] >= 2009)
+        && (yearRange[1]>=yearRange[0]) && yearRange[1].length === 4 && yearRange[1] <= 2025 && yearRange[1] >= 2009)
+
     const { t } = useTranslation(['guessSong', 'common']);
     const totalIntentos = 8;
     const [canciones, setCanciones] = useState([]);
@@ -48,12 +55,17 @@ const GuessSongGame = () => {
                 Vamos a filtrar la cancion por el atributo song_name asegurandonos que
                 todos los campos clave existan y no estén vacíos.
                  */
-                const listaCanciones = results.data.filter(c =>
+                let listaCanciones = results.data.filter(c =>
                     c.song_name && c.song_name.trim() !== "" &&
                     c.artist_name && c.artist_name.trim() !== "" &&
                     c.country && c.country.trim() !== "" &&
                     c.year && c.year.trim() !== ""
                 );
+
+                if(validRange){
+                    listaCanciones = listaCanciones.filter(c =>
+                    c.year >= yearRange[0] && c.year <= yearRange[1])
+                }
 
                 setCanciones(listaCanciones);
 
@@ -136,9 +148,9 @@ const GuessSongGame = () => {
                 acertado: (() => {
                     const guessYear = parseInt(guess.year);
                     const correctYear = parseInt(cancionCorrecta.year);
-                    if (guessYear === correctYear) return "✔️ Correcto"; // Clave interna que ClueDisplay traducirá
-                    if (guessYear < correctYear) return "🔼 Busca más reciente"; // Clave interna
-                    return "🔽 Busca más antiguo"; // Clave interna
+                    if (guessYear === correctYear) return "✔️"; // Clave interna que ClueDisplay traducirá
+                    if (guessYear < correctYear) return "🔼 year"; // Clave interna
+                    return "🔽 year"; // Clave interna
                 })()
             },
             {
@@ -146,14 +158,19 @@ const GuessSongGame = () => {
                 acertado: (() => {
                     const guessRank = parseInt(guess.final_place);
                     const correctRank = parseInt(cancionCorrecta.final_place);
-                    if (guessRank === correctRank) return "✔️ Correcto"; // Clave interna
-                    if (guessRank > correctRank) return "🔼 Ranking más alto"; // Clave interna
-                    return "🔽 Ranking más bajo"; // Clave interna
+                    if (guessRank === correctRank) return "✔️"; // Clave interna
+                    if (guessRank > correctRank) return "🔼 ranking"; // Clave interna
+                    return "🔽 ranking"; // Clave interna
                 })()
             }
         ];
 
-        setPistas((prevPistas) => [{ intento: guess, pistas: pistasDelIntento }, ...prevPistas]);
+        if((validRange && yearRange[0] === yearRange[1])){
+            const pistasFiltradas = pistasDelIntento.filter((_, index) => index !== 2);
+            setPistas((prevPistas) => [{ intento: guess, pistas: pistasFiltradas }, ...prevPistas]);
+        } else{
+            setPistas((prevPistas) => [{ intento: guess, pistas: pistasDelIntento }, ...prevPistas]);
+        }
     };
 
     const reiniciarJuego = () => {
@@ -180,7 +197,7 @@ const GuessSongGame = () => {
     // Mostrar carga mientras cancionCorrecta es null
     if (isLoading) {
         // Línea ~130 (nueva): Mostrar mensaje de carga
-        return <div>{t('common:other.loading')}</div>;
+        return <div className="loading-message-container">{t('common:other.loading')}</div>;
     }
 
     return (
@@ -208,6 +225,9 @@ const GuessSongGame = () => {
                             parpadeo={parpadeo}
                             mostrarPopupInfo={setMostrarPopupInfo}
                             cambiarPopupInfo={setMensajePopupInfo}
+                            validRange={validRange}
+                            yearRange={yearRange}
+                            hardcore={hardcore}
                         />
                     )}
 
@@ -215,7 +235,7 @@ const GuessSongGame = () => {
                     <FeedbackDisplay fallos={fallos} acertado={acertado} cancionCorrecta={cancionCorrecta} totalIntentos={totalIntentos}/>
 
                     {/* Visualización de pistas */}
-                    <ClueDisplay pistas={pistas}/>
+                    <ClueDisplay pistas={pistas} noYear={validRange && yearRange[0] === yearRange[1]}/>
 
                     {/* Botón para reiniciar cuando acabe el juego */}
                     {(acertado || intentosRestantes <= 0) && (
@@ -223,9 +243,9 @@ const GuessSongGame = () => {
                         <button className='guess-btn' onClick={reiniciarJuego} style={{ marginTop: "20px" }}>
                             {t('guessSong:game.restart')}
                         </button>
-                        <button className='guess-btn' onClick={mostrarPistas} style={{ marginTop: "20px" }}>
+                        {!hardcore && <button className='guess-btn' onClick={mostrarPistas} style={{ marginTop: "20px" }}>
                             {t('guessSong:game.showAll')}
-                        </button>
+                        </button>}
                         </div>
                     )}
 

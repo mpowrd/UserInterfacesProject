@@ -15,7 +15,7 @@ import ResultadoPopUp from "../ResultadoPopUp";
 
 const InteractiveMap = () => {
 
-    const { t } = useTranslation(['guessCountry']);
+    const { t } = useTranslation(['guessCountry', 'common']);
 
     const [canciones, setCanciones] = useState([]);
 
@@ -25,7 +25,7 @@ const InteractiveMap = () => {
     // Con css los pintamos de rojo en la pantalla
     const [wrongCountries, setWrongCountries] = useState([]);
 
-    const [resultadoMensaje, setResultadoMensaje] = useState(t("game.hint", { arrow: '' }));
+    const [resultadoMensaje, setResultadoMensaje] = useState(t("guessCountry:game.hint", { arrow: '' }));
 
     // Estados para almacenar el país seleccionado
     const [hoveredCountry, setHoveredCountry] = useState(null);
@@ -42,8 +42,11 @@ const InteractiveMap = () => {
 
     const [ganado, setGanado] = useState(false);
 
+    const [isLoading, setIsLoading] = useState(true);
+
     useEffect(() => {
         // Cargamos las caciones del csv al iniciar
+        setIsLoading(true);
         Papa.parse("/canciones.csv", {
             header: true,
             download: true,
@@ -77,9 +80,11 @@ const InteractiveMap = () => {
                 // cancionSeleccionada.paisAbajo = cancionAbajo.length === 0 ? "Desconocido" : cancionAbajo[0].country;
 
                 setCancionSelect(cancionSeleccionada);
+                setIsLoading(false);
             },
             error: (error) => {
                 console.error("Error al cargar el CSV:", error);
+                setIsLoading(false);
             }
         });
 
@@ -200,7 +205,7 @@ const InteractiveMap = () => {
         const centroHasta = getCentroid(paisAdivin);
         const {dir, arrow} = getDirectionWithArrow(centroDesde, centroHasta);
 
-        const mensaje = t("game.hint", { arrow: arrow || '?' });
+        const mensaje = t("guessCountry:game.hint", { arrow: arrow || '?' });
 
         setResultadoMensaje(mensaje);
     }
@@ -269,7 +274,7 @@ const InteractiveMap = () => {
         setFinPartida(false);
         const randomIndex = Math.floor(Math.random() * canciones.length);
         setCancionSelect(canciones[randomIndex]);
-        setResultadoMensaje(t("game.hint", { arrow: '' }));
+        setResultadoMensaje(t("guessCountry:game.hint", { arrow: '' }));
         setWrongCountries([]);
         setFallos(0);
         // setHoveredCountry(""); AL REINICIAR EL JUEGO CHILD NULL
@@ -295,22 +300,27 @@ const InteractiveMap = () => {
 
 // npm install react-svg-pan-zoom
 
+    if (isLoading) {
+        // Línea ~130 (nueva): Mostrar mensaje de carga
+        return <div className="loading-message-container">{t('common:other.loading')}</div>;
+    }
+
     return (
 
         <div className="guess-singer-country">
 
             { finPartida && <ResultadoPopUp
                 tipo={ganado===true ? 'victoria' : 'derrota'}
-                mensajePrincipal={ganado===true ? t("feedback.congrats") : t("feedback.gameOver",{country: cantanteAdivinar.nameCountry})}
+                mensajePrincipal={ganado===true ? t("guessCountry:feedback.congrats") : t("guessCountry:feedback.gameOver",{country: cantanteAdivinar.nameCountry})}
                 onRestart={reiniciarJuego}
-                buttonMessage={t("game.refresh")}
+                buttonMessage={t("guessCountry:game.refresh")}
             />}
 
             {isPortrait ? (
                 <div className="rotate-warning">
 
-                    <h1 className="text-2xl font-semibold mb-2">{t("game.rotateTitle")}</h1>
-                    <p className="text-md"> {t("game.rotateMessage")} </p>
+                    <h1 className="text-2xl font-semibold mb-2">{t("guessCountry:game.rotateTitle")}</h1>
+                    <p className="text-md"> {t("guessCountry:game.rotateMessage")} </p>
                     <i className="bi bi-arrow-repeat fa-2x"></i>
                 </div>
 
@@ -318,7 +328,7 @@ const InteractiveMap = () => {
             ) : (
                 <div className="guess-singer-country-container ">
                     <div className="guess-singer-country-header">
-                        <h1 className="header">{t("game.title")}</h1>
+                        <h1 className="header">{t("guessCountry:game.title")}</h1>
                     </div>
 
                     <div className="guess-singer-country-singer">
@@ -335,7 +345,7 @@ const InteractiveMap = () => {
 
                     {finPartida &&  (
                         <button onClick={reiniciarJuego} className="guess-singer-country-btn ">
-                            {t("game.refresh")}
+                            {t("guessCountry:game.refresh")}
                         </button>)
                     }
 
@@ -343,7 +353,7 @@ const InteractiveMap = () => {
 
 
 
-                    <p className="guidance-label__text">{t("game.informationMap")}</p>
+                    <p className="guidance-label__text">{t("guessCountry:game.informationMap")}</p>
 
 
 
@@ -384,7 +394,7 @@ const InteractiveMap = () => {
 
 
                     <div className="pais-seleccionado">
-                        <p className="guess-singer-country-country-selected">{t("game.arr")} {hoveredCountry}</p>
+                        <p className="guess-singer-country-country-selected">{t("guessCountry:game.arr")} {hoveredCountry}</p>
                     </div>
 
 

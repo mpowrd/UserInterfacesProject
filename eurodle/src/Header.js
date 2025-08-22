@@ -13,7 +13,7 @@ function Header() {
     const isSettingsPage = location.pathname === "/Settings";
     const [showSettings, setShowSettings] = useState(false);
 
-    if (location.pathname === '/') {
+    if (location.pathname === '/' || location.pathname === '/GuessSongGame/GameModeSelector') {
         return null;
     }
 

@@ -12,7 +12,8 @@
     "guessSong": "Adivina la Canción",
     "orderSongs": "Ordena las Canciones",
     "guessCountry": "País del Cantante",
-    "settings": "Configuración"
+    "settings": "Configuración",
+    "help": "Ayuda"
   },
   "settings": {
     "buttonLabel": "Opciones"

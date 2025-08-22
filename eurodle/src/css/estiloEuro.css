@@ -23,6 +23,11 @@ body {
 
 
 .eurodle-wrapper {
+    position: fixed; /* Fijo para que esté siempre sobre todo lo demás */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -203,6 +208,10 @@ footer p{
     width: 100%;
 }
 
+.eurodle-menu h2{
+    text-align: center;
+}
+
 /*.eurodle-btn {*/
 /*    background-color: #1a1a1a;*/
 /*    color: var(--text);*/
@@ -214,6 +223,27 @@ footer p{
 /*    transition: background-color 0.2s ease, transform 0.2s ease;*/
 /*    width: 100%;*/
 /*}*/
+
+.disabled-eurodle-btn{
+    background: linear-gradient(135deg,
+    rgba(67, 0, 11, 0.7),
+    rgba(97, 0, 50, 0.7),
+    rgba(72, 18, 92, 0.7),
+    rgba(0, 90, 122, 0.7)
+    ) 0 0;
+    background-size: 200%, 200%;
+    color: var(--text);
+    /*border: 2px solid #3a3a3c;*/
+    border: none;
+    font-weight: bold;
+    padding: 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out, transform 0.2s ease;
+    width: 100%;
+
+}
 
 .eurodle-btn{
     background: linear-gradient(135deg,
@@ -271,6 +301,13 @@ footer p{
     color: #666;
 }
 
+.small-text {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.75rem;
+    color: #666;
+}
+
 .eurodle-footer a{
     color: #797c88;
 }
@@ -279,6 +316,15 @@ footer p{
     width: 70px;
     height: auto;
     filter: invert(100%);
+}
+
+.eurodle-header-home h1 {
+    transition: transform 0.3s ease; /* <--- transición suave */
+}
+
+.eurodle-header-home h1:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* Usa transform, no scale directamente */
 }
 
 .eurodle-title-logo {
@@ -324,7 +370,7 @@ footer p{
 
 
 .eurodle-header-text{
-
+    z-index: 999;
     transition: transform 0.2s ease;
 }
 

@@ -22,8 +22,6 @@
       "rank": "Ranking"
     },
     "comparison": {
-      "correct": "✅",
-      "incorrect": "❌",
       "yearHigher": "🔼 Busca más reciente",
       "yearLower": "🔽 Busca más antiguo",
       "rankHigher": "🔼 Ranking más alto",
@@ -71,7 +69,8 @@
     "labelTitle": "Título",
     "labelSwitch": "Alternar",
     "changeMode": "Cambiar modo de juego",
-    "newClues": "¡Tienes pistas nuevas!"
+    "newClues": "¡Tienes pistas nuevas!",
+    "rangeLimit": "El valor del año no se encuentra en el rango seleccionado"
   },
   "game": {
     "restart": "Reiniciar Juego",
@@ -79,8 +78,18 @@
     "guessBy" : "Adivina la cancion por... ",
     "guessByTitle" : "el título",
     "guessByYearCountry" : "el país y el año",
-    "info": "Información:"
+    "info": "Información:",
+    "mode": "Adivina la Canción",
+    "modes": "Modos de Juego:",
+    "mode1": "Modo Clásico",
+    "mode2": "Modo Hardcore 💀",
+    "mode3": "Rango de Tiempo",
+    "yearStart": "Año Inicio",
+    "yearEnd": "Año Fin",
+    "help" : "Ayuda"
   },
+
+  "help_info": "El modo de juego principal de Eurodle tiene 3 sub-modos:\n\n 1. Modo clásico:\n\tLa experiencia por defecto de Eurodle, dispones de pistas adicionales y juegas en el rango del año 2009 hasta el año 2025. \n\n 2. El modo hardcore:\n\t No hay pistas extra, solo estás tú y tu conocimiento contra el mundo.\n\n3. Modo de rango de tiempo: \n\tSi no empezaste a consumir Eurovisión hasta cierto año o simplemente quieres una experiencia personalizada, este modo es para tí.\n\tDebes ingresar un rango de tiempo válido para poder jugar a este modo (desde 2009 hasta 2025)",
 
   "noSongFound": "No se encontró ninguna canción con ese nombre",
 
