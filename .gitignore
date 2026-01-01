@@ -30,3 +30,6 @@ yarn-error.log*
 # JetBrains-specific
 /eurodle/node_modules
 /eurodle/.idea/
+
+
+node_modules/
