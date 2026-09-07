@@ -7,7 +7,6 @@ import GuessSongGame from "./guessSong/GuessSongGame";
 import Header from "./Header";
 import { Routes, Route } from 'react-router-dom';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 import OrderSongsGame from './OrderSongs/OrderSongsGame';
 import Aboutus from './userInfo/Aboutus';
 import Terms from './userInfo/Terms';
@@ -40,7 +39,3 @@ root.render(
   </SettingsProvider>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

@@ -29,6 +29,9 @@ yarn-error.log*
 
 # JetBrains-specific
 /eurodle/node_modules
+/eurodle/dist
+/eurodle/.npm-cache
+/.npm-cache
 /eurodle/.idea/
 
 

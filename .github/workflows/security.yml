@@ -1,0 +1,45 @@
+name: Dependency security
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: '23 3 * * 1'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        directory: [., eurodle]
+    defaults:
+      run:
+        working-directory: ${{ matrix.directory }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ${{ matrix.directory == '.' && 'package-lock.json' || 'eurodle/package-lock.json' }}
+      - run: npm ci --ignore-scripts
+      - run: npm audit --audit-level=low
+
+  verify:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: eurodle
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: eurodle/package-lock.json
+      - run: npm ci --ignore-scripts
+      - run: npm test -- --run
+      - run: npm run build
