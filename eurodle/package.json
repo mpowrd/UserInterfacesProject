@@ -10,7 +10,7 @@
     "i18next": "^26.4.2",
     "i18next-browser-languagedetector": "^8.2.1",
     "papaparse": "^5.7.0",
-    "react": "^19.2.8",
+    "react": "^19.3.0",
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dnd-touch-backend": "^16.0.1",
