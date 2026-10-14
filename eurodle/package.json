@@ -6,7 +6,7 @@
   "homepage": ".",
   "dependencies": {
     "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1",
+    "bootstrap-icons": "^1.13.2",
     "i18next": "^26.4.2",
     "i18next-browser-languagedetector": "^8.2.1",
     "papaparse": "^5.7.0",
